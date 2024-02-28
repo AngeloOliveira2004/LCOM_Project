@@ -43,23 +43,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
     return 1;
   }
   
-  switch (timer)
-  {
-  case 0:
-    port = TIMER_0;
-    break;
-
-  case 1:
-    port = TIMER_1;
-    break;
-
-  case 2:
-    port = TIMER_2;
-    break;
-
-  default:
-    return 1;
-  }
+  port = TIMER_0 + timer;
 
 
   if(util_sys_inb(port,st)) //Calls util_sys_inb
@@ -81,33 +65,42 @@ int (timer_display_conf)(uint8_t timer, uint8_t st,enum timer_status_field field
     break;
 
   case tsf_initial: // Timer initialization mode
-      if(st & TIMER_LSB){
 
-        val.in_mode = TIMER_LSB; // Timer set to LSB
+      st = st & TIMER_LSB_MSB;
+      st >>= 4;
 
-      }else if(st & TIMER_MSB){
+      switch (st){
 
-        val.in_mode = TIMER_MSB; // Timer set to MSB
+      case 1:
+        val.in_mode = LSB_only;
+        break;
 
-      }else if(st & TIMER_LSB_MSB){
+      case 2:
+        val.in_mode = MSB_only;
+        break;
 
-        val.in_mode = TIMER_LSB_MSB; // Timer set to LSB and MSB, in this order
+      case 3:
+        val.in_mode = MSB_after_LSB;
+        break;
 
-      }else{
-        val.in_mode = INVAL_val; // Invalid Initialization mode
+      default:
+        val.in_mode = INVAL_val;
+        break;
       }
 
     break;
 
   case tsf_mode: // Counting mode
-    if(st & TIMER_RATE_GEN){
+    st = st & TIMER_OP_EXTRACT;
 
-      val.count_mode = 2; // Count Mode 2 (Rate generator) , probably not to be used
-
-    }else if(st & TIMER_SQR_WAVE){
-
-      val.count_mode = 3; // Count Mode 3 (Square Wave Generator)
-
+    switch (st) {
+    case 2:
+      val.count_mode = TIMER_RATE_GEN;
+      break;
+    case 3:
+      val.count_mode = TIMER_SQR_WAVE;
+    default:
+      break;
     }
     break;
 
