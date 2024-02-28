@@ -6,10 +6,61 @@
 #include "i8254.h"
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  //mudar frequencia, manter config atual
+  //1. ler config (done)
+  //2. construir config
+  //3. Calcular valor de init (done) linha 15
 
-  return 1;
+  uint8_t st,lsb,msb;
+  uint32_t freqFinal = TIMER_FREQ / freq;
+
+  if(timer_get_conf(timer,&st)){
+    return 1;
+  }
+
+  switch (timer) {
+  case 0:
+    st &= 0x0F;
+    st |= TIMER_SEL0; // Máscara com 0 e 0 no bit 6 e 7 respetivamente
+    break;
+
+  case 1:
+    st &= 0x0F;
+    st |= TIMER_SEL1; //Máscara com 1 e 0 no bit 6 e 7 respetivamente
+    break;
+  
+  case 2:
+    st &= 0x0F;
+    st |= TIMER_SEL2; //Máscara com 0 e 1 no bit 6 e 7 respetivamente
+    break;
+
+  default:
+    break;
+  }
+
+  st |= TIMER_LSB_MSB; // Coloca a 1 e 1 o bit 4 e 5 , significa que o MSB vai ser lido após o LSB
+
+  if(sys_outb(TIMER_CTRL,st)){
+    return 1;
+  }
+
+  if(util_get_LSB(freqFinal,&lsb)){
+    return 1;
+  }
+
+  if(sys_outb(TIMER_0+timer,lsb)){
+    return 1;
+  }
+
+  if(util_get_MSB(freqFinal,&msb)){
+    return 1;
+  }
+
+  if(sys_outb(TIMER_0+timer,msb)){
+    return 1;
+  }
+
+  return 0;
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
