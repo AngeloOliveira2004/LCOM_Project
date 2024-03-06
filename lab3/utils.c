@@ -2,6 +2,8 @@
 
 #include <stdint.h>
 
+uint32_t cnt;
+
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
   *lsb = (uint8_t) val;
   return 0;
@@ -22,6 +24,10 @@ int (util_sys_inb)(int port, uint8_t *value) {
   }
 
   *value = (uint8_t) val;
+
+  #ifdef LAB3
+  cnt++;
+  #endif
 
   return 0;
 }

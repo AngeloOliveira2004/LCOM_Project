@@ -4,6 +4,7 @@
 #include <stdint.h>
 
 #include "i8042.h"
+#include "keyboard.h"
 
 int hook_id = 1;
 uint8_t scancode;
@@ -28,22 +29,6 @@ int (keyboard_unsubscribe_int)() {
   return 0;
 }
 
-void (keyboard_int_handler)() {
-  uint8_t st; //Caso o bit 7 ou 6 esteja ativo descartar a informação do output buffer
-  read_status_register(&st);
-  if(st & OUT_BUFF_FULL){
-    if(sys_inb(OUT_SCANCODES,scancode)){
-      return 1;
-    }
-    read_out_buffer(scancode);
-
-    if((scancode & KEYBOARD_STATUS_ERRORS) != 0){
-      scancode = 0;
-    }
-  }
-  tickdelay(DELAY_US);
-}
-
 int (read_status_register)(uint8_t *st){
   if(util_sys_inb(STATUS_BYTE,st)){
     return 1;
@@ -58,9 +43,18 @@ int (read_out_buffer)(uint8_t *out){
   return 0;
 }
 
+void (kbc_ih)() {
+  uint8_t st; //Caso o bit 7 ou 6 esteja ativo descartar a informação do output buffer
+  read_status_register(&st);
+  if(st & OUT_BUFF_FULL){
+      read_out_buffer(&scancode);
+    }
 
-//to do:
-// fazer make or break code func
+    if((st & KEYBOARD_STATUS_ERRORS) != 0){
+      scancode = -1;
+    }
+  }
+ // tickdelay(micros_to_ticks(DELAY_US));
 
 
 
