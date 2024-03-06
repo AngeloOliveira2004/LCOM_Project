@@ -1,0 +1,30 @@
+#ifndef _LCOM_I8042_H_
+#define _LCOM_I8042_H_
+
+#define IRQ_KEYBOARD 1
+
+#define IRQ_REENABLE_EXCLUSIVE (IRQ_REENABLE | IRQ_EXCLUSIVE)
+
+#define IN_KBC_COMMANDS 0x64
+
+#define IN_KBC_COMMAND_ARGS 0x60
+
+#define OUT_SCANCODES 0x60
+
+#define OUT_KBC_COMMAND_RET 0x60
+
+#define STATUS_BYTE 0x64
+
+#define ESC_BREAK_CODE 0x81
+
+#define PARITY_ERROR BIT(7)
+
+#define TIMEOUT_ERROR BIT(6)
+
+#define OUT_BUFF_FULL BIT(0)
+
+#define KEYBOARD_STATUS_ERRORS (BIT(6) | BIT(7))
+
+#define DELAY_US 20000
+
+#endif
