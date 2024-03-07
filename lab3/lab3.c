@@ -10,8 +10,7 @@
 
 extern uint8_t scancode;
 extern uint32_t cnt;
-
-bool valid = true;
+extern struct scancode_info scan_info;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -44,6 +43,7 @@ int(kbd_test_scan)() {
 
   int ipc_status,r;
   message msg;
+  bool valid = true;
 
   uint8_t irq_set;
 
@@ -56,42 +56,17 @@ int(kbd_test_scan)() {
         printf("driver_receive failed with: %d", r);
         continue;
     }
-    uint8_t bytes[2];
-    uint8_t counter = 0;
-    bool make_code = false;
 
     if (is_ipc_notify(ipc_status)) {
             switch (_ENDPOINT_P(msg.m_source)) {
               case HARDWARE:			
                 if (msg.m_notify.interrupts & BIT(irq_set)) { 
                   kbc_ih();
-                  memset(bytes, 0, sizeof(bytes));
+                  clean_scan_info(&scan_info);
 
-                  if(scancode == ESC_BREAK_CODE){
+                  if(!receive_keyboard_scan(&scan_info,&scancode)){
                     valid = false;
-                    make_code = false;
-                    counter = 1;
-                    bytes[0] = ESC_BREAK_CODE;
-                  }else{
-
-                    if(scancode == 0xE0){ 
-                      bytes[0] = scancode;
-                      counter++;
-                      read_out_buffer(&scancode);
-                    }
-
-                    if((scancode >> 7) & 1){ //Vê se o bit msb do scancode é break code (1)
-                      make_code = false;
-                    }else{
-                      make_code = true;
-                    }
-
-                    bytes[counter] = scancode; //Adiciona ao index de byte 0 ou 1 dependendo do   número de bytes do scancode
-                    counter++; //Incrementa o counter para ser passado para a print_scancode
                   }
-
-                  kbd_print_scancode(make_code,counter,bytes); // Dá print ao valor do scancode
-
                 }
                 break;
             }
@@ -110,10 +85,26 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  bool valid = true;
+  uint8_t st;
+  while(valid){
+    read_status_register(&st); //Fica sempre a ler o st register
+    if(test_status_polling(st)){ // Valida o valor para ver se o AUX está desativado e OUT_BUFF está cheio
+      read_out_buffer(&scancode); //Lê o valor do buffer
+      clean_scan_info(&scan_info); //Limpa todos os valores que se encontravam antes na struct
+      if(!receive_keyboard_scan(&scan_info,&scancode)){
+        valid = false;
+      }
+    }
+  }
 
-  return 1;
+
+
+  if(kbd_print_no_sysinb(cnt) != 0){
+    return 1;
+  }
+
+  return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {

@@ -29,4 +29,10 @@
 
 #define DELAY_US 20000 //Define o tempo de delay
 
+#define KBC_ST_REG 0x64
+
+#define KBC_CMD_REG 0x64
+
+#define AUX_STATUS_REG BIT(5)
+
 #endif
