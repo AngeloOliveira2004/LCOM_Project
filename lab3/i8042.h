@@ -35,4 +35,12 @@
 
 #define AUX_STATUS_REG BIT(5)
 
+#define ENABLE_INTERRUPT_OBF_KEYBOARD BIT(1)
+
+#define READ_COMMAND_BYTE 0x20
+
+#define WRITE_COMMAND_BYTE 0x60
+
+
+
 #endif

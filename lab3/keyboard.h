@@ -17,5 +17,6 @@ int read_out_buffer(uint8_t *out);
 bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode);
 void(clean_scan_info)(struct scancode_info *scan);
 bool(test_status_polling)(uint8_t st);
+int(kbc_enable_interrupts)();
 
 #endif /* KEYBOARD_H */

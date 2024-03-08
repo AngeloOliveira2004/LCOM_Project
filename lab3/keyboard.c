@@ -5,6 +5,7 @@
 
 #include "i8042.h"
 #include "keyboard.h"
+#include "kbc.h"
 
 int hook_id = 1;
 uint8_t scancode;
@@ -104,9 +105,28 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
   }
 }
 
+int(kbc_enable_interrupts)(){
+  uint8_t command_byte;
+  if(kbc_write_command(READ_COMMAND_BYTE) != 0){
+    return 1;
+  }
 
-//TODO:
-//Função que dá enable aos interrupts do kernel após o poll
+  if(read_out_buffer(&command_byte) != 0){
+    return 1;
+  }
+
+  command_byte |= ENABLE_INTERRUPT_OBF_KEYBOARD;
+
+  if(kbc_write_command(WRITE_COMMAND_BYTE) != 0){
+    return 1;
+  }
+
+  if(kbc_write_command_args(&command_byte) != 0){
+    return 1;
+  }
+
+  return 0;
+}
 
 
 

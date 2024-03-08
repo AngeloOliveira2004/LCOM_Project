@@ -104,6 +104,10 @@ int(kbd_test_poll)() {
     return 1;
   }
 
+  if(kbc_enable_interrupts() != 0){
+    return 1;
+  }
+
   return 0;
 }
 
