@@ -55,8 +55,6 @@ void (kbc_ih)() {
   if((st & KEYBOARD_STATUS_ERRORS) != 0){
     scancode = -1;
   }
-
-  // tickdelay(micros_to_ticks(DELAY_US)); Perguntar ao professor porquê que sempre que executo este comando ele da um erro ao testar
 }
 
 bool(test_status_polling)(uint8_t st){
@@ -84,7 +82,7 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
     if(*scancode == 0xE0){ 
       scan_info->bytes[0] = *scancode;
       scan_info->size_counter++;
-      read_out_buffer(scancode);
+      read_out_buffer(scancode); // Voltar a ver esta função, talvez deva esperar pelo interrupt
     }
 
     if((*scancode >> 7) & 1){ //Vê se o bit msb do scancode é break code (1)
@@ -111,8 +109,8 @@ int(kbc_enable_interrupts)(){
     return 1;
   }
 
-  if(read_out_buffer(&command_byte) != 0){
-    return 1;
+  if(read_out_buffer(&command_byte) != 0){ //Fazer um tickdelay antes
+    return 1;                               //Try read output buffer porque com polling tem de esperar para ir buscar o valor
   }
 
   command_byte |= ENABLE_INTERRUPT_OBF_KEYBOARD;
