@@ -7,15 +7,15 @@
 #include "keyboard.h"
 #include "kbc.h"
 
-int hook_id = 1;
+int _hook_id = 1;
 uint8_t scancode;
 struct scancode_info scan_info;
 
 int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
-  *bit_no = hook_id;
+  *bit_no = _hook_id;
 
-  if(sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE_EXCLUSIVE ,&hook_id) != 0){
+  if(sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE_EXCLUSIVE ,&_hook_id) != 0){
     return 1;
   }
 
@@ -24,7 +24,7 @@ int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
 int (keyboard_unsubscribe_int)() {
   
-  if(sys_irqrmpolicy(&hook_id) != 0){
+  if(sys_irqrmpolicy(&_hook_id) != 0){
     return 1;
   }
 

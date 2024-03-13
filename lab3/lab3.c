@@ -43,15 +43,14 @@ int(kbd_test_scan)() {
 
   int ipc_status,r;
   message msg;
-  bool valid = true;
 
   uint8_t irq_set;
-
+  bool valid = true;
   if(keyboard_subscribe_int(&irq_set) != 0){
     return 1;
   }
 
-  while(1) { 
+  while(valid) { 
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
         printf("driver_receive failed with: %d", r);
         continue;
@@ -65,7 +64,7 @@ int(kbd_test_scan)() {
                   clean_scan_info(&scan_info);
 
                   if(!receive_keyboard_scan(&scan_info,&scancode)){
-                    break;
+                    valid = false;
                   }
                 }
                 break;
@@ -85,14 +84,17 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-  bool valid = true;
   uint8_t st;
-  while(!receive_keyboard_scan(&scan_info,&scancode)){
+  bool valid = true;
+  while(valid){
     read_status_register(&st); //Fica sempre a ler o st register
     if(test_status_polling(st)){ // Valida o valor para ver se o AUX está desativado e OUT_BUFF está cheio
       read_out_buffer(&scancode); //Lê o valor do buffer
       clean_scan_info(&scan_info); //Limpa todos os valores que se encontravam antes na struct
     }
+
+    if(!receive_keyboard_scan(&scan_info,&scancode))
+      valid = false;
   }
 
   if(kbd_print_no_sysinb(cnt) != 0){
@@ -106,7 +108,7 @@ int(kbd_test_poll)() {
   return 0;
 }
 
-extern counter;
+extern int counter;
 
 int(kbd_test_timed_scan)(uint8_t n) {
 
@@ -123,7 +125,9 @@ int(kbd_test_timed_scan)(uint8_t n) {
   timer_subscribe_int(&irq_set_timer);
   keyboard_subscribe_int(&irq_set_keyboard);
 
-  while(1) { 
+  bool valid = true;
+
+  while(valid) { 
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
         printf("driver_receive failed with: %d", r);
         continue;
@@ -138,7 +142,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
                   clean_scan_info(&scan_info);
 
                   if(!receive_keyboard_scan(&scan_info,&scancode)){
-                    break;
+                    valid = false;
                   }
                   timer = n;
                 }
@@ -149,7 +153,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
                   }
 
                   if(timer == 0)
-                    break;
+                    valid = false;
                 }
                 break;
               default:
