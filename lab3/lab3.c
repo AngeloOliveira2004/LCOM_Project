@@ -51,7 +51,7 @@ int(kbd_test_scan)() {
     return 1;
   }
 
-  while(valid) { 
+  while(1) { 
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
         printf("driver_receive failed with: %d", r);
         continue;
@@ -65,7 +65,7 @@ int(kbd_test_scan)() {
                   clean_scan_info(&scan_info);
 
                   if(!receive_keyboard_scan(&scan_info,&scancode)){
-                    valid = false;
+                    break;
                   }
                 }
                 break;
@@ -87,18 +87,13 @@ int(kbd_test_scan)() {
 int(kbd_test_poll)() {
   bool valid = true;
   uint8_t st;
-  while(valid){
+  while(!receive_keyboard_scan(&scan_info,&scancode)){
     read_status_register(&st); //Fica sempre a ler o st register
     if(test_status_polling(st)){ // Valida o valor para ver se o AUX está desativado e OUT_BUFF está cheio
       read_out_buffer(&scancode); //Lê o valor do buffer
       clean_scan_info(&scan_info); //Limpa todos os valores que se encontravam antes na struct
-      if(!receive_keyboard_scan(&scan_info,&scancode)){
-        valid = false;
-      }
     }
   }
-
-
 
   if(kbd_print_no_sysinb(cnt) != 0){
     return 1;
@@ -111,9 +106,60 @@ int(kbd_test_poll)() {
   return 0;
 }
 
+extern counter;
+
 int(kbd_test_timed_scan)(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+
+  //stops when either the ESC_KEY is released or when X seconds passed
+  int ipc_status,r;
+  message msg;
+
+  uint8_t irq_set_timer;
+  uint8_t irq_set_keyboard;
+
+  uint8_t timer = n;
+  //uint n seconds
+
+  timer_subscribe_int(&irq_set_timer);
+  keyboard_subscribe_int(&irq_set_keyboard);
+
+  while(1) { 
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+        printf("driver_receive failed with: %d", r);
+        continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+            switch (_ENDPOINT_P(msg.m_source)) {
+              case HARDWARE:			
+                if (msg.m_notify.interrupts & BIT(irq_set_keyboard)) { 
+
+                  kbc_ih();
+                  clean_scan_info(&scan_info);
+
+                  if(!receive_keyboard_scan(&scan_info,&scancode)){
+                    break;
+                  }
+                  timer = n;
+                }
+                if(msg.m_notify.interrupts & BIT(irq_set_timer)){
+                  timer_int_handler();
+                  if(counter % 60 == 0){
+                    timer--;
+                  }
+
+                  if(timer == 0)
+                    break;
+                }
+                break;
+              default:
+                break;
+            }
+    }
+ } 
+  
+  timer_unsubscribe_int();
+  keyboard_unsubscribe_int();
 
   return 1;
 }

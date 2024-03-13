@@ -56,7 +56,7 @@ void (kbc_ih)() {
     scancode = -1;
   }
 
-  // tickdelay(micros_to_ticks(DELAY_US)); Perguntar ao professor porquê que sempre que executo este comando ele da um erro ao testar
+  //tickdelay(micros_to_ticks(DELAY_US));
 }
 
 bool(test_status_polling)(uint8_t st){
