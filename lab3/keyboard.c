@@ -109,8 +109,8 @@ int(kbc_enable_interrupts)(){
     return 1;
   }
 
-  if(read_out_buffer(&command_byte) != 0){ //Fazer um tickdelay antes
-    return 1;                               //Try read output buffer porque com polling tem de esperar para ir buscar o valor
+  if(try_read_out_buffer(&command_byte) != 0){
+    return 1;                               
   }
 
   command_byte |= ENABLE_INTERRUPT_OBF_KEYBOARD;
@@ -125,6 +125,28 @@ int(kbc_enable_interrupts)(){
 
   return 0;
 }
+
+int try_read_out_buffer(uint8_t *out){
+  uint8_t st; 
+  uint8_t temp_out;
+
+  while(1){
+    read_status_register(&st);
+    if(st & OUT_BUFF_FULL){
+      read_out_buffer(&temp_out);
+      if((st & KEYBOARD_STATUS_ERRORS) == 0){
+        *out = temp_out;
+        return 0;
+      }else{
+        *out = -1;
+        return 1;
+      }
+    }
+    tickdelay(micros_to_ticks(DELAY_US));
+  }               
+}
+
+
 
 
 
