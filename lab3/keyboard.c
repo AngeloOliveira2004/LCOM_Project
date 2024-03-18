@@ -72,6 +72,7 @@ void(clean_scan_info)(struct scancode_info *scan){
 
 bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
   bool valid = true;
+  bool is_E0 = false;
   if(*scancode == ESC_BREAK_CODE){ //Caso específico para o ESC_BREAK_CODE, se for só o make code , ele não apresenta problemas, apenas fecha o programa quando recebe o break code
     valid = false; // Encerra o loop
     scan_info->make_code = false; //Coloca make_code a falso, para salientar que é break code
@@ -82,20 +83,22 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
     if(*scancode == 0xE0){ 
       scan_info->bytes[0] = *scancode;
       scan_info->size_counter++;
-      read_out_buffer(scancode); // Voltar a ver esta função, talvez deva esperar pelo interrupt
-    }
-
-    if((*scancode >> 7) & 1){ //Vê se o bit msb do scancode é break code (1)
-     scan_info->make_code = false;
+      is_E0 = true; //Valid se for o is_EO e espera pela segunda chamar do ih
     }else{
-      scan_info->make_code = true;
-    }
-
+      if((*scancode >> 7) & 1){ //Vê se o bit msb do scancode é break code (1)
+        scan_info->make_code = false;
+      }else{
+        scan_info->make_code = true;
+      }
       scan_info->bytes[scan_info->size_counter] = *scancode; //Adiciona ao index de byte 0 ou   1       dependendo do   número de bytes do scancode
       scan_info->size_counter++; //Incrementa o counter para ser passado para a print_scancode
+    }
   }
 
-  kbd_print_scancode(scan_info->make_code,scan_info->size_counter,scan_info->bytes); // Dá print ao valor do scancode
+  if(!is_E0){
+    kbd_print_scancode(scan_info->make_code,scan_info->size_counter,scan_info->bytes); 
+    clean_scan_info(scan_info);
+  }
   if(valid){
     return true;
   }else{

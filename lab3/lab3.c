@@ -65,7 +65,6 @@ int(kbd_test_scan)() {
                 if (msg.m_notify.interrupts & BIT(irq_set)) { 
                   kbc_ih();
                   tickdelay(micros_to_ticks(DELAY_US));
-                  clean_scan_info(&scan_info);
 
                   if(!receive_keyboard_scan(&scan_info,&scancode)){
                     valid = false;
