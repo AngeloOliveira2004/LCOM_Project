@@ -1,9 +1,15 @@
 #include <lcom/lcf.h>
-#include <lcom/lab2.h>
+
+#include <lcom/lab3.h>
 
 #include <stdbool.h>
 #include <stdint.h>
-extern uint32_t count;
+#include "Keyboard.h"
+#include "i8042.h"
+
+
+extern  uint8_t scancode ;
+extern uint32_t cnt;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -11,11 +17,11 @@ int main(int argc, char *argv[]) {
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/g1/lab2/trace.txt");
+  lcf_trace_calls("/home/lcom/labs/g1/lab3/trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/g1/lab2/output.txt");
+  lcf_log_output("/home/lcom/labs/g1/lab3/output.txt");
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
@@ -29,39 +35,21 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
-  uint8_t val;
-  if (timer_get_conf(timer, &val)) {
-    return 1;
-  }
-  if (timer_display_conf(timer, val, field))
-  {
-    return 1;
-  }
-
-  return 0;
-}
-
-int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
-  if(timer_set_frequency(timer, freq)){
-    return 1;
-  }
-
-  return 0;
-}
-
-
-int(timer_test_int)(uint8_t time) {
+int(kbd_test_scan)() {
   uint8_t irq_set;
-  if (timer_subscribe_int(&irq_set)){
+  if (kbc_si(&irq_set)) {
     return 1;
   }
   int ipc_status, r;
+  
   message msg;
- 
-  while(time != 0) { /* You may want to use a different condition */
+
+  while(scancode != ESC) { /* You may want to use a different condition */
      /* Get a request message. */
-    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+  
+    uint8_t ar[2];
+    bool segundoByte = false;
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
       continue;
     }
@@ -69,11 +57,22 @@ int(timer_test_int)(uint8_t time) {
       switch (_ENDPOINT_P(msg.m_source)) {
           case HARDWARE: /* hardware interrupt notification */				
             if (msg.m_notify.interrupts & BIT(irq_set)) { /* subscribed interrupt */
-              timer_int_handler();                   /* process it */
-              if (count % 60 == 0)
+              kbc_ih();                                    /* process it */            
+              if (segundoByte) {
+                ar[1] = scancode;
+                kbd_print_scancode(!(scancode & BIT(7)), 2, ar);
+
+              }
+              else if (scancode != 0xe0)
               {
-                timer_print_elapsed_time();
-                time--;
+                ar[0] = scancode;
+                kbd_print_scancode(!((scancode >> 7) & 1), 1, ar);
+              }
+               else if (scancode == 0xe0) //2 bytes
+              {
+            
+                ar[0] = 0xe0;
+                segundoByte = true;
               }
             }
             break;
@@ -84,9 +83,31 @@ int(timer_test_int)(uint8_t time) {
         /* no standard messages expected: do nothing */
     }
  }
-  if(timer_unsubscribe_int()){
-    return 1;
+ kbc_ui();
+ if (kbd_print_no_sysinb(cnt) != 0) {
+   return 1;
+ }
+
+ return 0;
+}
+
+int(kbd_test_poll)() {
+  uint8_t st;
+  while (1) {
+    read_status_reg(st);
+    if ()
+    {
+      /* code */
+    }
+    
   }
 
   return 0;
+}
+
+int(kbd_test_timed_scan)(uint8_t n) {
+  /* To be completed by the students */
+  printf("%s is not yet implemented!\n", __func__);
+
+  return 1;
 }
