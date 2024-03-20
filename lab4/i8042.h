@@ -5,7 +5,8 @@
 
 #define WB_COMMAND 0xD4 //writes to auxiliary device
 
-#define MOUSE_IRQ 2
+#define IRQ_KEYBOARD 1
+#define IRQ_MOUSE 12
 
 #define IRQ_REENABLE_EXCLUSIVE (IRQ_REENABLE | IRQ_EXCLUSIVE)
 
@@ -20,6 +21,8 @@
 #define STATUS_BYTE 0x64
 
 #define ESC_BREAK_CODE 0x81
+
+#define MOUSE_DATA BIT(5) //tell status register that data comes from mouse
 
 #define PARITY_ERROR BIT(7) // Parity error ativa em 1 no bit 7
 
@@ -44,5 +47,11 @@
 #define WRITE_COMMAND_BYTE 0x60
 
 
+
+#define MOUSE_WB 0xD4
+#define MOUSE_PORT 0x60
+#define STATUS_BYTE 0x64
+
+#define MOUSE_ACK 0xFA
 
 #endif

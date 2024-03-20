@@ -3,6 +3,15 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <lcom/lab4.h>
+#include <lcom/timer.h>
+#include <kbc.h>
+#include <i8042.h>
+#include <mouse.h>
+#include <i8254.h>
+
+extern struct packet pp;
+extern uint8_t byte_index;
 
 // Any header files included below this line should have been created by you
 
@@ -30,16 +39,56 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-
+/*
+  configure the mouse properly
+  receive the number of mouse packets specified in its argument via interrupts
+  parse the mouse packets
+  print them in a friendly way
+  reset the mouse to Minix's default configuration, before exiting
+*/
 int (mouse_test_packet)(uint32_t cnt) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, cnt);
-    return 1;
+    int ipc_status , r;
+    message msg;
+    bool valid = true;
+
+    uint8_t irq_set;
+
+    if(mouse_suscribe_int(&irq_set)){
+        return 1;
+    }
+
+    while(cnt) { 
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+        printf("driver_receive failed with: %d", r);
+        continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+            switch (_ENDPOINT_P(msg.m_source)) {
+              case HARDWARE:			
+                if(msg.m_notify.interrupts & irq_set) {
+                    mouse_ih();
+                    mouse_sync_bytes();
+                }
+
+
+                break;  
+              }
+                break;
+            }
+    }
+
+    if (mouse_unsubscribe_int() != OK){
+        return 1;
+    }
+
+    return 0;
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, idle_time);
+    
+
+
     return 1;
 }
 

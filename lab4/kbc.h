@@ -4,11 +4,12 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <lcom/lcf.h>
-#include <lcom/lab3.h>
+#include <lcom/lab4.h>
 #include "i8042.h"
 
+int kbc_write_command(uint8_t command);
+int kbc_write_command_args(uint8_t* arguments);
 
-int mouse_subscribe_int(uint8_t *bit_no);
-int mouse_unsubscribe_int();
+int kbc_read_command(uint8_t *command);
   
 #endif
