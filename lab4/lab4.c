@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include "i8042.h"
 
 // Any header files included below this line should have been created by you
 
@@ -32,10 +33,44 @@ int main(int argc, char *argv[]) {
 
 
 int (mouse_test_packet)(uint32_t cnt) {
-    mouse_enable_data_reporting();
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, cnt);
+
+  int ipc_status,r;
+  message msg;
+  bool valid = true;
+
+  uint8_t irq_set;
+
+
+  mouse_enable_data_reporting(); // Fazer algo idêntico
+
+  if(mouse_subscribe_int(&irq_set) != 0){ //Não conseguiu subscrever ao interrupt
     return 1;
+  }
+
+  while(valid) { 
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:			
+          if (msg.m_notify.interrupts & BIT(irq_set)) { 
+            kbc_ih();
+            tickdelay(micros_to_ticks(DELAY_US));
+          }
+        break;
+      }
+    }
+  }
+
+  if(mouse_unsubscribe_int() != 0){ //Não conseguiu subscrever ao interrupt
+    return 1;
+  }
+
+
+  return 0;
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
