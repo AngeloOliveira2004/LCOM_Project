@@ -55,8 +55,6 @@ void (kbc_ih)() {
   if((st & KEYBOARD_STATUS_ERRORS) != 0){
     scancode = -1;
   }
-
-  //tickdelay(micros_to_ticks(DELAY_US));
 }
 
 bool(test_status_polling)(uint8_t st){
@@ -74,6 +72,7 @@ void(clean_scan_info)(struct scancode_info *scan){
 
 bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
   bool valid = true;
+  bool is_E0 = false;
   if(*scancode == ESC_BREAK_CODE){ //Caso específico para o ESC_BREAK_CODE, se for só o make code , ele não apresenta problemas, apenas fecha o programa quando recebe o break code
     valid = false; // Encerra o loop
     scan_info->make_code = false; //Coloca make_code a falso, para salientar que é break code
@@ -84,20 +83,22 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
     if(*scancode == 0xE0){ 
       scan_info->bytes[0] = *scancode;
       scan_info->size_counter++;
-      read_out_buffer(scancode);
-    }
-
-    if((*scancode >> 7) & 1){ //Vê se o bit msb do scancode é break code (1)
-     scan_info->make_code = false;
+      is_E0 = true; //Valid se for o is_EO e espera pela segunda chamar do ih
     }else{
-      scan_info->make_code = true;
-    }
-
+      if((*scancode >> 7) & 1){ //Vê se o bit msb do scancode é break code (1)
+        scan_info->make_code = false;
+      }else{
+        scan_info->make_code = true;
+      }
       scan_info->bytes[scan_info->size_counter] = *scancode; //Adiciona ao index de byte 0 ou   1       dependendo do   número de bytes do scancode
       scan_info->size_counter++; //Incrementa o counter para ser passado para a print_scancode
+    }
   }
 
-  kbd_print_scancode(scan_info->make_code,scan_info->size_counter,scan_info->bytes); // Dá print ao valor do scancode
+  if(!is_E0){
+    kbd_print_scancode(scan_info->make_code,scan_info->size_counter,scan_info->bytes); 
+    clean_scan_info(scan_info);
+  }
   if(valid){
     return true;
   }else{
@@ -111,8 +112,8 @@ int(kbc_enable_interrupts)(){
     return 1;
   }
 
-  if(read_out_buffer(&command_byte) != 0){
-    return 1;
+  if(try_read_out_buffer(&command_byte) != 0){
+    return 1;                               
   }
 
   command_byte |= ENABLE_INTERRUPT_OBF_KEYBOARD;
@@ -127,6 +128,28 @@ int(kbc_enable_interrupts)(){
 
   return 0;
 }
+
+int try_read_out_buffer(uint8_t *out){
+  uint8_t st; 
+  uint8_t temp_out;
+
+  while(1){
+    read_status_register(&st);
+    if(st & OUT_BUFF_FULL){
+      read_out_buffer(&temp_out);
+      if((st & KEYBOARD_STATUS_ERRORS) == 0){
+        *out = temp_out;
+        return 0;
+      }else{
+        *out = -1;
+        return 1;
+      }
+    }
+    tickdelay(micros_to_ticks(DELAY_US));
+  }               
+}
+
+
 
 
 

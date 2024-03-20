@@ -11,6 +11,7 @@
 extern uint8_t scancode;
 extern uint32_t cnt;
 extern struct scancode_info scan_info;
+extern int counter;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -43,9 +44,10 @@ int(kbd_test_scan)() {
 
   int ipc_status,r;
   message msg;
+  bool valid = true;
 
   uint8_t irq_set;
-  bool valid = true;
+
   if(keyboard_subscribe_int(&irq_set) != 0){
     return 1;
   }
@@ -61,7 +63,7 @@ int(kbd_test_scan)() {
               case HARDWARE:			
                 if (msg.m_notify.interrupts & BIT(irq_set)) { 
                   kbc_ih();
-                  clean_scan_info(&scan_info);
+                  tickdelay(micros_to_ticks(DELAY_US));
 
                   if(!receive_keyboard_scan(&scan_info,&scancode)){
                     valid = false;
@@ -84,18 +86,20 @@ int(kbd_test_scan)() {
 }
 
 int(kbd_test_poll)() {
-  uint8_t st;
   bool valid = true;
+  uint8_t st;
   while(valid){
     read_status_register(&st); //Fica sempre a ler o st register
     if(test_status_polling(st)){ // Valida o valor para ver se o AUX está desativado e OUT_BUFF está cheio
       read_out_buffer(&scancode); //Lê o valor do buffer
       clean_scan_info(&scan_info); //Limpa todos os valores que se encontravam antes na struct
+      if(!receive_keyboard_scan(&scan_info,&scancode)){
+        valid = false;
+      }
     }
-
-    if(!receive_keyboard_scan(&scan_info,&scancode))
-      valid = false;
   }
+
+
 
   if(kbd_print_no_sysinb(cnt) != 0){
     return 1;
@@ -108,62 +112,65 @@ int(kbd_test_poll)() {
   return 0;
 }
 
-extern int counter;
-
 int(kbd_test_timed_scan)(uint8_t n) {
-
-  //stops when either the ESC_KEY is released or when X seconds passed
   int ipc_status,r;
   message msg;
-
-  uint8_t irq_set_timer;
-  uint8_t irq_set_keyboard;
-
-  uint8_t timer = n;
-  //uint n seconds
-
-  timer_subscribe_int(&irq_set_timer);
-  keyboard_subscribe_int(&irq_set_keyboard);
-
+  int time = n;
   bool valid = true;
 
-  while(valid) { 
+  uint8_t irq_set_keyboard;
+  uint8_t irq_set_timer;
+
+  if(keyboard_subscribe_int(&irq_set_keyboard) != 0){
+    return 1;
+  }
+
+  if(timer_subscribe_int(&irq_set_timer) != 0){
+    return 1;
+  }
+
+  while(time != 0 && valid) { 
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
         printf("driver_receive failed with: %d", r);
         continue;
     }
-
     if (is_ipc_notify(ipc_status)) {
             switch (_ENDPOINT_P(msg.m_source)) {
               case HARDWARE:			
-                if (msg.m_notify.interrupts & BIT(irq_set_keyboard)) { 
+                if (msg.m_notify.interrupts & BIT(irq_set_timer)) { 
+                  timer_int_handler();
+                  if(counter % 60 == 0){
+                    time--;
+                  }
+                }
 
+                if (msg.m_notify.interrupts & BIT(irq_set_keyboard)) { 
                   kbc_ih();
+                  tickdelay(micros_to_ticks(DELAY_US));
                   clean_scan_info(&scan_info);
 
                   if(!receive_keyboard_scan(&scan_info,&scancode)){
                     valid = false;
                   }
-                  timer = n;
+                  time = n;
                 }
-                if(msg.m_notify.interrupts & BIT(irq_set_timer)){
-                  timer_int_handler();
-                  if(counter % 60 == 0){
-                    timer--;
-                  }
 
-                  if(timer == 0)
-                    valid = false;
-                }
                 break;
               default:
-                break;
+                  break;
             }
+    } else { 
     }
- } 
-  
-  timer_unsubscribe_int();
-  keyboard_unsubscribe_int();
+ }
+
+  if(timer_unsubscribe_int() != 0){
+    return 1;
+  }
+
+  if(keyboard_unsubscribe_int() != 0){
+    return 1;
+  }
+
 
   return 1;
 }
