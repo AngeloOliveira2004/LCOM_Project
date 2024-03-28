@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "Keyboard.h"
+#include "kbc.c"
 #include "i8042.h"
 
 
@@ -66,6 +67,7 @@ int(kbd_test_scan)() {
               else if (scancode != 0xe0)
               {
                 ar[0] = scancode;
+
                 kbd_print_scancode(!((scancode >> 7) & 1), 1, ar);
               }
                else if (scancode == 0xe0) //2 bytes
@@ -91,19 +93,89 @@ int(kbd_test_scan)() {
  return 0;
 }
 
+
 int(kbd_test_poll)() {
   uint8_t st;
-  while (1) {
-    read_status_reg(st);
-    if ()
+  uint8_t command_byte;
+  uint8_t ar[2];
+  bool segundoByte = false;
+  /*while (scancode != ESC) {
+    if(read_status_reg(&st)){
+      return 1;
+    }
+    if (Check_oub_full(st) !=0 ) {
+      return 1;
+    }
+    read_out_buf(&scancode);
+    if (!(st & ERROR_KEYB_KBC))
     {
-      /* code */
+      if (segundoByte) {
+        ar[1] = scancode;
+        kbd_print_scancode(!(scancode & BIT(7)), 2, ar);
+
+      }
+      else if (scancode != 0xe0)
+      {
+        ar[0] = scancode;
+        kbd_print_scancode(!((scancode >> 7) & 1), 1, ar);
+      }
+      else if (scancode == 0xe0) 
+      {
+        ar[0] = 0xe0;
+        segundoByte = true;
+      }
+      
     }
     
   }
+  if (kbd_print_no_sysinb(cnt) != 0) {
+   return 1;
+  }
+  if(write_command(WRITE_COMMAND)!= 0){
+    return 1;
+  }*/
+  while (scancode != ESC)
+  {
+    read_status_reg(&st);
+    if(Check_oub_full(st)){
+      read_out_buf(&scancode);
+      if (!(st & ERROR_KEYB_KBC))
+      {
+        if (segundoByte) {
+          ar[1] = scancode;
+          kbd_print_scancode(!(scancode & BIT(7)), 2, ar);
+        }
+        else if (scancode != 0xe0)
+        {
+          ar[0] = scancode;
+          kbd_print_scancode(!((scancode >> 7) & 1), 1, ar);
+        }
+        else if (scancode == 0xe0) 
+        {
+          ar[0] = 0xe0;
+          segundoByte = true;
+        }
+      }
+    }
+  }
+  if (kbd_print_no_sysinb(cnt) != 0) {
+   return 1;
+  }
+  if (write_command(READ_COMMAND)) return 1;
+  if(write_command_return(&command_byte)) return 1;
+  command_byte = command_byte | BIT(0);
+  command_byte = command_byte | BIT(6);
+  
 
+
+  if (write_command(WRITE_COMMAND))
+    return 1;
+  if (write_command_argumments(&command_byte))
+    return 1;
+  
   return 0;
 }
+
 
 int(kbd_test_timed_scan)(uint8_t n) {
   /* To be completed by the students */

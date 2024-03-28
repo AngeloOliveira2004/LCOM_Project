@@ -12,7 +12,7 @@
 #define INPUT_BUFFER 0X60
 #define OUTPUT_BUFFER 0X64
 #define KBC_OUT_BUF 0x60
-#define DELAY_US    20000
+#define DELAY_US   20000
 #define PARITY BIT(7)
 #define TIMEOUT BIT(6)
 #define AUX BIT(5)
