@@ -20,5 +20,4 @@ bool(test_status_polling)(uint8_t st);
 int(kbc_enable_interrupts)();
 int try_read_out_buffer(uint8_t *out);
 
-
 #endif /* KEYBOARD_H */

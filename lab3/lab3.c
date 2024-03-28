@@ -7,6 +7,7 @@
 
 #include "keyboard.h"
 #include "i8042.h"
+#include "timer.h"
 
 extern uint8_t scancode;
 extern uint32_t cnt;
@@ -92,7 +93,6 @@ int(kbd_test_poll)() {
     read_status_register(&st); //Fica sempre a ler o st register
     if(test_status_polling(st)){ // Valida o valor para ver se o AUX está desativado e OUT_BUFF está cheio
       read_out_buffer(&scancode); //Lê o valor do buffer
-      clean_scan_info(&scan_info); //Limpa todos os valores que se encontravam antes na struct
       if(!receive_keyboard_scan(&scan_info,&scancode)){
         valid = false;
       }
@@ -172,5 +172,5 @@ int(kbd_test_timed_scan)(uint8_t n) {
   }
 
 
-  return 1;
+  return 0;
 }

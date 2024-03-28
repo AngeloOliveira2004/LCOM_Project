@@ -6,7 +6,7 @@
 #include "i8254.h"
 
 uint32_t counter = 0;
-int32_t hook_id = TIMER0_IRQ;
+int32_t hook_id_ = TIMER0_IRQ;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   //mudar frequencia, manter config atual
@@ -72,9 +72,9 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
    //2º Argumento = IRQ_REENABLE reativa o irq depois do interrupt
    //3º Argumento = hook_id
 
-   *bit_no = hook_id;
+   *bit_no = hook_id_;
 
-   if(sys_irqsetpolicy(TIMER0_IRQ,IRQ_REENABLE,&hook_id) != 0){
+   if(sys_irqsetpolicy(TIMER0_IRQ,IRQ_REENABLE,&hook_id_) != 0){
     return 1;
    }
 
@@ -83,7 +83,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 
 int (timer_unsubscribe_int)() {
   
-  if(sys_irqrmpolicy(&hook_id) != 0){
+  if(sys_irqrmpolicy(&hook_id_) != 0){
     return 1;
   }
 
