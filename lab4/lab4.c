@@ -40,20 +40,23 @@ int main(int argc, char *argv[]) {
 }
 
 /*
-  configure the mouse properly
-  receive the number of mouse packets specified in its argument via interrupts
-  parse the mouse packets
-  print them in a friendly way
-  reset the mouse to Minix's default configuration, before exiting
+  configure the mouse properly - no idea how to do this
+  receive the number of mouse packets specified in its argument via interrupts  mouse_ih()
+  parse the mouse packets 
+  print them in a friendly way (mouse_print_packet())
+  reset the mouse to Minix's default configuration, before exiting sync_bytes()
 */
 int (mouse_test_packet)(uint32_t cnt) {
     int ipc_status , r;
     message msg;
-    bool valid = true;
-
+    
     uint8_t irq_set;
 
-    if(mouse_suscribe_int(&irq_set)){
+    if(mouse_subscribe_int(&irq_set)){
+        return 1;
+    }
+
+    if(mouse_write_command(MOUSE_ENABLE)){
         return 1;
     }
 
@@ -70,12 +73,19 @@ int (mouse_test_packet)(uint32_t cnt) {
                     mouse_ih();
                     mouse_sync_bytes();
                 }
-
-
-                break;  
+                if(byte_index == 3){
+                    mouse_parse_packet(); //quando tivermos 3 bytes damos parse ao pacote e pritamos
+                    mouse_print_packet(&pp);
+                    byte_index = 0;
+                    cnt--; //decrementamos o contador para repetir cnt vezes
+                }
               }
                 break;
             }
+    }
+
+    if(mouse_write_command(MOUSE_DISABLE) != OK){
+        return 1;
     }
 
     if (mouse_unsubscribe_int() != OK){
@@ -92,7 +102,7 @@ int (mouse_test_async)(uint8_t idle_time) {
     return 1;
 }
 
-int (mouse_test_gesture)() {
+int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
     /* To be completed */
     printf("%s: under construction\n", __func__);
     return 1;

@@ -1,6 +1,6 @@
 IRQ
 Mouser controller raises IRQ line 12
-Interrupt handler reads the bytes of the packet, one per interrupt
+Interrupt handler reads the bytes of the packet, one per interrupt 
 
 Mouse Packets
 PS/2 mouse uses 3-byte packets

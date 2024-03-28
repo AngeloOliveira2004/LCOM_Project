@@ -10,6 +10,9 @@
 int kbc_write_command(uint8_t command);
 int kbc_write_command_args(uint8_t* arguments);
 
+
+int kbc_read_status(uint8_t *status);
+int kbc_read_output(uint8_t *out , uint8_t mouse , uint8_t port);
 int kbc_read_command(uint8_t *command);
   
 #endif

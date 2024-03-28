@@ -24,7 +24,7 @@ int (kbc_write_command)(uint8_t command){
   while (attemps > 0)
   {
     read_status_register(&stat);
-    if (stat & BIT(1) == 0)
+    if ((stat & BIT(1)) == 0)
     {
       if(sys_outb(KBC_CMD_REG, command) != OK){
         printf("Error in sys_outb\n");
@@ -38,6 +38,41 @@ int (kbc_write_command)(uint8_t command){
   }
   
   return 1;
+}
+
+int kbc_read_output(uint8_t *out , uint8_t mouse , uint8_t port){
+  uint8_t stat;
+  int attemps = 10; //arbitrary number of attemps
+
+  while (attemps > 0)
+  {
+    read_status_register(&stat);
+    if ((stat & BIT(0)) == 1)
+    {
+      if(util_sys_inb(port, out) != OK){
+        printf("Error in sys_inb\n");
+        return 1;
+      }
+
+      if(mouse){
+        if((stat & (PARITY_ERROR | TIMEOUT_ERROR)) != OK){
+          return 1;
+        }
+      }
+      else{
+        if((stat & (KEYBOARD_DATA | PARITY_ERROR | !TIMEOUT_ERROR)) != OK){
+          return 1;
+        }
+      }
+
+      return 0;
+    }
+    attemps--;
+    tickdelay(micros_to_ticks(DELAY_US));
+  }
+  
+  return 1;
+
 }
 
 /*
