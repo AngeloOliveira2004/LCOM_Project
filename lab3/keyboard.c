@@ -8,12 +8,12 @@
 #include "Keyboard.h"
  
 
-int hook_id = 2;
+int hook_id_keyboard = 2;
 uint8_t scancode;
 
 int (kbc_si) (uint8_t *bit_no){
-  *bit_no = hook_id;
-  if (sys_irqsetpolicy(KEYBOARD_IRQ , IRQ_EXCLUSIVE_SET, &hook_id))
+  *bit_no = hook_id_keyboard;
+  if (sys_irqsetpolicy(KEYBOARD_IRQ , IRQ_EXCLUSIVE_SET, &hook_id_keyboard))
   {
     return 1;
   }
@@ -21,13 +21,18 @@ int (kbc_si) (uint8_t *bit_no){
 }
 
 int (kbc_ui) (){
-  if(sys_irqrmpolicy(&hook_id)){
+  if(sys_irqrmpolicy(&hook_id_keyboard)){
     return 1;
   }
   return 0;
 }
 
 int (read_status_reg) (uint8_t *st){
+  if (st == NULL)
+  {
+    return 1;
+  }
+
   if (util_sys_inb(READ_STATUS_BYTE, st))
   {
     return 1; 
@@ -35,6 +40,11 @@ int (read_status_reg) (uint8_t *st){
   return 0;
 }
 int (read_out_buf) (uint8_t *out){
+  if (out == NULL)
+  {
+    return 1;
+  }
+
   if (util_sys_inb(KBC_OUT_BUF, out))
   {
     return 1;
