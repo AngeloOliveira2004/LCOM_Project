@@ -63,7 +63,7 @@ void(kbc_ih) (){
       scancode = -1;
     }
   }
-  //tickdelay(micros_to_ticks(DELAY_US));
+
 }
 
 bool(Check_oub_full) (uint8_t st){

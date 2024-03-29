@@ -39,6 +39,7 @@ int main(int argc, char *argv[]) {
 }
 
 int(kbd_test_scan)() {
+  uint8_t st;
   uint8_t irq_set;
   if (kbc_si(&irq_set)) {
     return 1;
@@ -60,21 +61,27 @@ int(kbd_test_scan)() {
       switch (_ENDPOINT_P(msg.m_source)) {
           case HARDWARE: /* hardware interrupt notification */				
             if (msg.m_notify.interrupts & BIT(irq_set)) { /* subscribed interrupt */
-              kbc_ih();                                    /* process it */            
+              kbc_ih();                                    /* process it */
+              read_status_reg(&st);
+              if (Check_oub_full(st))
+              {
+                tickdelay(micros_to_ticks(DELAY_US));
+
+              }
+              
               if (segundoByte) {
                 ar[1] = scancode;
                 kbd_print_scancode(!(scancode & BIT(7)), 2, ar);
-
               }
               else if (scancode != 0xe0)
               {
                 ar[0] = scancode;
-
                 kbd_print_scancode(!((scancode >> 7) & 1), 1, ar);
+                
+
               }
                else if (scancode == 0xe0) //2 bytes
               {
-            
                 ar[0] = 0xe0;
                 segundoByte = true;
               }
@@ -150,6 +157,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
   uint8_t time = 0;
   bool segundoByte = false;
   uint8_t ar[2];
+  uint8_t st;
 
   if(kbc_si(&irq_set_kbd))
     return 1;
@@ -178,6 +186,12 @@ int(kbd_test_timed_scan)(uint8_t n) {
             }
             if (msg.m_notify.interrupts & BIT(irq_set_kbd)){
               kbc_ih();
+              read_status_reg(&st);
+              if (Check_oub_full(st))
+              {
+                tickdelay(micros_to_ticks(DELAY_US));
+
+              }
               if (segundoByte) {
                 ar[1] = scancode;
                 kbd_print_scancode(!(scancode & BIT(7)), 2, ar);
@@ -195,7 +209,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
                 ar[0] = 0xe0;
                 segundoByte = true;
               }
-              time = 0;
+              count = 0;
             }
             break;
           default:
