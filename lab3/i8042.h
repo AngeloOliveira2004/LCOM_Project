@@ -39,6 +39,8 @@
 
 #define READ_COMMAND_BYTE 0x20
 
+#define MAKE_CODE 0xE0
+
 #define WRITE_COMMAND_BYTE 0x60
 
 #define KBC_ST_IBF BIT(1)

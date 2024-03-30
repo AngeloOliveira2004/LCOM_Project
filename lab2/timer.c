@@ -95,13 +95,12 @@ void (timer_int_handler)() {
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
-
   int port; // Has the port from which we will get the config
             // receives it's value from timer since it ranges from 0 to 2
 
   uint8_t rb_command = TIMER_RB_CMD; // BIT(6) | BIT(7) Para dizer que é Read-Back Command
-  rb_command = rb_command | TIMER_RB_COUNT_; // BIT(5) Para dizer que é para ler o counter
-  rb_command = rb_command | TIMER_RB_SEL(timer); //Para dizer que é para ler o time selecionado
+  rb_command = rb_command | TIMER_RB_COUNT_; // BIT(5) Perguntar se como lê em 0, tenho de trocar   o valor.
+  rb_command = rb_command | TIMER_RB_SEL(timer); //Perguntar o mesmo
 
   if(sys_outb(TIMER_CTRL,rb_command)){
     return 1;
@@ -114,7 +113,6 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
     return 1;
 
   return 0;
-  
 }
 
 int (timer_display_conf)(uint8_t timer, uint8_t st,enum timer_status_field field) {
