@@ -63,7 +63,7 @@ int(kbd_test_scan)() {
             switch (_ENDPOINT_P(msg.m_source)) {
               case HARDWARE:			
                 if (msg.m_notify.interrupts & BIT(irq_set)) { 
-                  kbc_ih();
+                  kbc_ih(); 
                   tickdelay(micros_to_ticks(DELAY_US));
 
                   if(!receive_keyboard_scan(&scan_info,&scancode)){
@@ -98,8 +98,6 @@ int(kbd_test_poll)() {
       }
     }
   }
-
-
 
   if(kbd_print_no_sysinb(cnt) != 0){
     return 1;

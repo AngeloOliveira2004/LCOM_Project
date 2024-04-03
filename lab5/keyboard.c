@@ -1,5 +1,4 @@
-#include <lcom/lcf.h>
-#include <lcom/lab3.h>
+#include "lcom/lcf.h"
 #include <stdbool.h>
 #include <stdint.h>
 
@@ -15,7 +14,7 @@ int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
   *bit_no = hook_id;
 
-  if(sys_irqsetpolicy(IRQ_KEYBOARD , IRQ_REENABLE_EXCLUSIVE , &hook_id) != OK)
+  if(sys_irqsetpolicy(IRQ_KEYBOARD , 0x001 | 0x002 , &hook_id) != OK)
     return 1;
 
   return 0;
@@ -109,7 +108,6 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
   }
 
   if(!is_E0){
-    kbd_print_scancode(scan_info->make_code , scan_info->size_counter , scan_info->bytes);
     clean_scan_info(scan_info);
   }
 
@@ -167,7 +165,44 @@ int try_read_out_buffer(uint8_t *out){
 }
 
 
+int (wait_for_ESC)(){
+    int ipc_status,r;
+  message msg;
+  bool valid = true;
 
+  uint8_t irq_set;
+
+  if(keyboard_subscribe_int(&irq_set) != 0){
+    return 1;
+  }
+
+  while(valid) { 
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+        printf("driver_receive failed with: %d", r);
+        continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+            switch (_ENDPOINT_P(msg.m_source)) {
+              case HARDWARE:			
+                if (msg.m_notify.interrupts & BIT(irq_set)) { 
+                  kbc_ih(); 
+
+                  if(!receive_keyboard_scan(&scan_info,&scancode)){
+                    valid = false;
+                  }
+                }
+                break;
+            }
+    }
+ }
+
+  if(keyboard_unsubscribe_int() != 0){
+    return 1;
+  }
+
+  return 0;
+}
 
 
 

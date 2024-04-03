@@ -1,5 +1,4 @@
-#include <lcom/lcf.h>
-#include <lcom/lab3.h>
+#include "lcom/lcf.h"
 #include <stdbool.h>
 #include <stdint.h>
 #include "i8042.h"
