@@ -6,6 +6,15 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
-  "files.associations": {},
+  "files.associations": {
+    "*.cpp": "cpp",
+    "*.html": "html",
+    "lcf.h": "c",
+    "timer.h": "c",
+    "stdbool.h": "c",
+    "lab2.h": "c",
+    "liblm.h": "c",
+    "syslib.h": "c"
+  },
   "C_Cpp_Runner.msvcBatchPath": ""
 }

@@ -3,6 +3,8 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 
+#define MOUSE_IRQ 12
+
 #define IRQ_EXCLUSIVE_SET (IRQ_REENABLE|IRQ_EXCLUSIVE) 
 #define ESC 0x81
 #define READ_STATUS_BYTE 0X64
@@ -11,7 +13,7 @@
 #define KBC_COMMAND_RETURN 0X60
 #define INPUT_BUFFER 0X60
 #define OUTPUT_BUFFER 0X60
-#define READ_OUT_BUF 0x60
+#define  READ_OUT_BUF 0x60
 #define DELAY_US   20000
 #define PARITY BIT(7)
 #define TIMEOUT BIT(6)

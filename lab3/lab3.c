@@ -139,8 +139,6 @@ int(kbd_test_poll)() {
   if(write_command_return(&command_byte)) return 1;
   command_byte = command_byte | BIT(0);
   command_byte = command_byte | BIT(6);
-  
-
 
   if (write_command(WRITE_COMMAND))
     return 1;

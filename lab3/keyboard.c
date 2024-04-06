@@ -45,7 +45,7 @@ int (read_out_buf) (uint8_t *out){
     return 1;
   }
 
-  if (util_sys_inb(KBC_OUT_BUF, out))
+  if (util_sys_inb(READ_OUT_BUF, out))
   {
     return 1;
   }
