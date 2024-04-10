@@ -31,7 +31,7 @@ int (set_graphic_mode)(uint16_t mode){
   reg86.intno = 0x10; /* BIOS video services always ten*/
   reg86.ah = 0x4F; /* Set Video Mode */
   reg86.al = 0x02; /* Mode 0x105 */
-  reg86.ax = 0x4F02; /* 0x4F02 */
+  //reg86.ax = 0x4F02; /* 0x4F02 */
 
   /**
    * Sets the mode of the reg86.bx register with the given mode value.
@@ -71,32 +71,30 @@ int (set_text_mode)(){
 
 int (set_frame_mode)(uint16_t* mode){
   
-
   memset(&mode_info, 0, sizeof(mode_info));
   if(vbe_get_mode_info(*mode, &mode_info)){
     return 1;
   }
 
-  unsigned int bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
-  unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytes_per_pixel;
-  
+  unsigned int bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
+  unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
+
+  int r;
+
   // preenchimento dos endereços físicos
   struct minix_mem_range physic_addresses;
   physic_addresses.mr_base = mode_info.PhysBasePtr; // início físico do buffer
   physic_addresses.mr_limit = physic_addresses.mr_base + frame_size; // fim físico do buffer
   
   // alocação física da memória necessária para o frame buffer
-  if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)) {
-    printf("Physical memory allocation failed\n");
-    return 1;
-  }
+  if( OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)))
+   panic("sys_privctl (ADD_MEM) failed: %d\n", r);
 
   // alocação virtual da memória necessária para o frame buffer
   drawBuffer = vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size);
-  if (drawBuffer == NULL) {
-    printf("Virtual memory allocation failed\n");
-    return 1;
-  }
+
+  if(drawBuffer == MAP_FAILED)
+   panic("couldn't map video memory");
 
   return 0;
 
@@ -115,13 +113,13 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
   if(x > mode_info.XResolution || y > mode_info.YResolution) return 1;
   
   // Cálculo dos Bytes per pixel da cor escolhida. Arredondamento por excesso.
-  unsigned BytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
+  unsigned bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
 
   // Índice (em bytes) da zona do píxel a colorir
-  unsigned int index = (mode_info.XResolution * y + x) * BytesPerPixel;
+  unsigned int index = (mode_info.XResolution * y + x) * bytesPerPixel;
 
   // A partir da zona frame_buffer[index], copia @BytesPerPixel bytes da @color
-  if (memcpy(&drawBuffer[index], &color, BytesPerPixel) == NULL) return 1;
+  if (memcpy(&drawBuffer[index], &color, bytesPerPixel) == NULL) return 1;
 
   return 0;
 }
@@ -152,7 +150,6 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y,uint16_t width, uint16_t height, 
   
   for(unsigned i = 0; i < height ; i++)
     if (vg_draw_hline(x, y+i, width, color) != 0) {
-      vg_exit();
       return 1;
     }
 
