@@ -24,4 +24,25 @@
 #define ERROR_KEYB_KBC (BIT(6)|BIT(7))
 #define READ_COMMAND 0x20
 #define WRITE_COMMAND 0x60  
+
+#define WRITE_BYTE_MOUSE 0xD4
+
+#define LEFT_BUTTON BIT(0)
+#define RIGHT_BUTTON BIT(1)
+#define MIDDLE_BUTTON BIT(2)
+#define MSB_X_DELTA BIT(4)
+#define MSB_Y_DELTA BIT(5)
+#define X_OVL BIT(6)
+#define Y_OVL BIT(7)
+
+#define ACK 0xFA
+#define NACK 0xFE
+#define ERROR 0xFC
+
+#define ERROR_MOUSE_KBC (BIT(6)|BIT(7))
+
+
+#define DISABLE_MRP 0xF5
+#define ENABLE_MRP 0xF4
+
 #endif
