@@ -4,6 +4,8 @@ PROG=proj
 .PATH: ${.CURDIR}/graphics
 .PATH: ${.CURDIR}/keyboard
 .PATH: ${.CURDIR}/game
+.PATH: ${.CURDIR}/utils 
+.PATH: ${.CURDIR}/peripherals
 
 # source code files to be compiled
 SRCS = main.c utils.c keyboard.c kbc.c graphic.c game.c

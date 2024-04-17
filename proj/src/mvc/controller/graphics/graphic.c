@@ -3,15 +3,17 @@
 #include <lcom/lcf.h>
 #include "../keyboard/kbc.h"
 #include "../keyboard/i8042.h"
-#include "VBE.H"
 #include <stdint.h>
 #include <stdio.h>
 #include "../keyboard/keyboard.h"
 
+uint8_t *frontBuffer; // The front buffer
+uint8_t *backBuffer;  // The back buffer
+uint16_t bufferSize;
 
-uint8_t *drawBuffer;
-unsigned bytesPerPixel;
+unsigned bytesPerPixel = -1;
 uint16_t xRes, yRes;
+
 vbe_mode_info_t mode_info;
 uint8_t* vAddr_base;
 
@@ -92,9 +94,9 @@ int (set_frame_mode)(uint16_t* mode){
    panic("sys_privctl (ADD_MEM) failed: %d\n", r);
 
   // alocação virtual da memória necessária para o frame buffer
-  drawBuffer = vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size);
+  frontBuffer = vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size);
 
-  if(drawBuffer == MAP_FAILED)
+  if(frontBuffer == MAP_FAILED)
    panic("couldn't map video memory");
 
   return 0;
@@ -120,7 +122,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
   unsigned int index = (mode_info.XResolution * y + x) * bytesPerPixel;
 
   // A partir da zona frame_buffer[index], copia @BytesPerPixel bytes da @color
-  if (memcpy(&drawBuffer[index], &color, bytesPerPixel) == NULL) return 1;
+  if (memcpy(&frontBuffer[index], &color, bytesPerPixel) == NULL) return 1;
 
   return 0;
 }
@@ -157,13 +159,27 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y,uint16_t width, uint16_t height, 
   return 0;
 }
 
-int (normalize_color)(uint32_t color, uint32_t* new_color){
+int (adjust_color)(uint32_t color, uint16_t* new_color){
 
-  if (mode_info.BitsPerPixel == 32) {
-    *new_color = color;
-  } else {
-    *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
-  }
+  if (mode_info.BitsPerPixel == 32 || mode_info.BitsPerPixel == 3 || mode_info.BitsPerPixel == 1) {
+    *new_color = color;  
+    return 0;
+  } 
+
+  uint8_t redMask = (color >> 16) & 0xFF;
+  redMask <<= (8 - mode_info.RedMaskSize);
+  redMask >>= mode_info.RedMaskSize;
+
+  uint8_t greenMask = (color >> 8) & 0xFF;
+  greenMask <<= (8 - mode_info.RedMaskSize);
+  greenMask >>= mode_info.RedMaskSize;
+
+  uint8_t blueMask = color & 0xFF;
+  blueMask <<= (8 - mode_info.RedMaskSize);
+  blueMask >>= mode_info.RedMaskSize;
+
+  *new_color = (mode_info.RedFieldPosition << redMask) | (mode_info.RedFieldPosition << greenMask) | (mode_info.RedFieldPosition << blueMask);
+
   return 0;
 
 }
@@ -201,41 +217,76 @@ int (draw)(){
   return 0;
 }
 
-int (normalize_color_32_to_16)(uint32_t color, uint16_t* new_color){
-
-  uint16_t normalizedRed = ((color >> 16) & 0xFF) << 11;
-  uint16_t normalizedGreen = (color >> 8) & 0xFF << 5;
-  uint16_t normalizedBlue = color & 0xFF;
-
-  *new_color = (uint16_t) (normalizedRed | normalizedGreen | normalizedBlue);
-
-  return 0;
-}
-
-
 int (draw_board)(){
 
   uint32_t bege = 0xf5f5dc;
   uint32_t brown = 0x964B00;
 
-  //uint16_t bege_16 = 0xf7bb; 
-  //uint16_t brown_16 = 0x4120;
-  
-  //normalize_color_32_to_16(bege , &bege_16);
-  //normalize_color_32_to_16(brown , &brown_16);
+  uint16_t bege_16;
+  uint16_t brown_16;
 
   for(int i = 0; i < 8; i++){
     for(int j = 0; j < 8; j++){
       if((i+j) % 2 == 0){
-        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, bege) != 0){
+        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, bege_16) != 0){
           return 1;
         }
       }else{
-        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, brown) != 0){
+        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, brown_16) != 0){
           return 1;
         }
       }
     }
+  }
+
+  return 0;
+}
+
+int activate_double_buffer() {
+
+    if (allocate_buffers() != 0)
+        return 1;
+
+    return 0;
+}
+
+int erase_buffer() {
+    memset(backBuffer, 0, bufferSize);
+
+    return 0;
+}
+
+int swap_buffer() {
+
+    uint8_t *temp = frontBuffer;
+    frontBuffer = backBuffer;
+    backBuffer = temp;
+
+    memcpy(vAddr_base, frontBuffer, bufferSize);
+
+    return 0;
+}
+
+int allocate_buffers(){
+
+  if(bytesPerPixel == -1){
+    bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
+  }
+
+  bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
+  
+  // Allocate the front buffer
+  frontBuffer = (uint8_t*) malloc(bufferSize);
+  if(frontBuffer == NULL){
+    printf("Error: Failed to allocate memory for the front buffer\n");
+    return 1;
+  }
+
+  // Allocate the back buffer
+  backBuffer = (uint8_t*) malloc(bufferSize);
+  if(backBuffer == NULL){
+    printf("Error: Failed to allocate memory for the back  buffer\n");
+    return 1;
   }
 
   return 0;

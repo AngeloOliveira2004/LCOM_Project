@@ -1,7 +1,21 @@
 #include <lcom/lcf.h>
 #include <stdio.h>
 #include <machine/int86.h>
-#include "graphics/graphic.h"
+#include "mvc/controller/graphics/VBE.h"
+#include "mvc/controller/graphics/graphic.h"
+#include "mvc/controller/keyboard/keyboard.h"
+#include "mvc/controller/timer/timer.h"
+
+
+const int desiredFrameRate = 60;
+const double targetFrameTime = 1.0 / desiredFrameRate;
+
+extern counter;
+bool isRunning = true;
+
+uint8_t timer_hook_id = 0;
+uint8_t beyboard_hook_id = 0;
+uint8_t mouse_hook_id = 0;
 
 
 int main(int argc, char *argv[]){
@@ -28,10 +42,62 @@ int main(int argc, char *argv[]){
   return 0;
 }
 
+int setup(){
+
+  if(timer_subscribe_int(&timer_hook_id) != 0) return 1;
+  if(keyboard_subscribe_int(&timer_hook_id) != 0) return 1;
+  if(timer_set_frequency(0, desiredFrameRate) != 0) return 1;
+
+  if(set_frame_mode(VBE_800x600_DC) != 0) return 1;
+  if(set_graphic_mode(VBE_800x600_DC) != 0) return 1;
+  //todo enable double buffer
+
+  return 0;
+}
+
+int exit(){
+
+  if(vg_exit() != 0) return 1;
+
+  if(timer_unsubscribe_int() != 0) return 1;
+  if(keyboard_unsubscribe_int() != 0) return 1;
+  //if(mouse_unsubscribe_int() != 0) return 1;
+
+  if(set_text_mode() != 0) return 1;
+}
 
 int (proj_main_loop)(int argc , char* argv[]){
 
-  draw();
+
+  setup();
+
+  int ipc_status,r;
+  message msg;
+
+  setup();
+
+  while (isRunning)
+  {
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+        printf("driver_receive failed with: %d", r);
+        continue;
+    }
+
+    if (is_ipc_notify(ipc_status)){
+      switch (_ENDPOINT_P(msg.m_source)) {
+
+        if(msg.m_notify.interrupts & BIT(timer_hook_id)){
+        }
+
+        if(msg.m_notify.interrupts & BIT(beyboard_hook_id)){
+        }
+        //if(msg.m_notify.interrupts & BIT(mouse_hook_id)){
+      }
+    }
+  }
+
+  exit();
+  
 
   return 0;
 }
