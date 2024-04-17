@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "i8042.h"
+#include "mouse.h"
 
 // Any header files included below this line should have been created by you
 
@@ -31,23 +32,27 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
+extern struct packet mouse;
+extern int counter;
+int counter_packet_print = 0;
+
 
 int (mouse_test_packet)(uint32_t cnt) {
 
   int ipc_status,r;
   message msg;
-  bool valid = true;
 
   uint8_t irq_set;
 
-
-  mouse_enable_data_reporting(); // Fazer algo idêntico
+  if(enable_mouse_report() != 0){
+    return 1;
+  }
 
   if(mouse_subscribe_int(&irq_set) != 0){ //Não conseguiu subscrever ao interrupt
     return 1;
   }
 
-  while(valid) { 
+  while(cnt) { 
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
       printf("driver_receive failed with: %d", r);
       continue;
@@ -57,18 +62,23 @@ int (mouse_test_packet)(uint32_t cnt) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:			
           if (msg.m_notify.interrupts & BIT(irq_set)) { 
-            kbc_ih();
-            tickdelay(micros_to_ticks(DELAY_US));
+            mouse_ih();
+            if(counter_packet_print % 3 == 0){
+              cnt--;
+            }
           }
         break;
       }
     }
   }
 
-  if(mouse_unsubscribe_int() != 0){ //Não conseguiu subscrever ao interrupt
+  if(mouse_unsubscribe_int() != 0){
     return 1;
   }
 
+  if(disable_mouse_report() != 0){
+    return 1;
+  }
 
   return 0;
 }
