@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "i8042.h"
 #include "mouse.h"
+#include <lcom/timer.h>
 
 // Any header files included below this line should have been created by you
 
@@ -35,6 +36,7 @@ int main(int argc, char *argv[]) {
 extern struct packet mouse;
 extern int counter;
 int counter_packet_print = 0;
+extern int counter_timer;
 
 
 int (mouse_test_packet)(uint32_t cnt) {
@@ -84,9 +86,66 @@ int (mouse_test_packet)(uint32_t cnt) {
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, idle_time);
+    
+  int ipc_status,r;
+  message msg;
+
+  uint8_t irq_set_mouse,irq_set_timer;
+
+  uint8_t idle_time_track = idle_time;
+
+  uint32_t frequency = sys_hz(); // Kernel call que permite ao sistema ir buscar a frequência do timer
+
+  if(enable_mouse_report() != 0){
     return 1;
+  }
+
+  if(mouse_subscribe_int(&irq_set_mouse) != 0){
+    return 1;
+  }
+
+  if(timer_subscribe_int(&irq_set_timer) != 0){
+    return 1;
+  }
+
+  while(idle_time_track) { 
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:			
+          if (msg.m_notify.interrupts & BIT(irq_set_mouse)) { 
+            mouse_ih();
+            idle_time_track = idle_time; // Colocar o valor do tracker igual ao idle_time fornecido , para reiniciar a contagem do while loop
+            counter_timer = 0; // Reset o counter para não guardar informação anterior
+          }
+          if (msg.m_notify.interrupts & BIT(irq_set_timer)) { 
+            timer_int_handler(); // Incrementa o counter_timer
+            if(counter_timer % frequency == 0){
+              idle_time_track--;
+            }
+          }
+        break;
+      }
+    }
+  }
+
+  if(timer_unsubscribe_int() != 0){
+    return 1;
+  }
+
+  if(mouse_unsubscribe_int() != 0){
+    return 1;
+  }
+
+  if(disable_mouse_report() != 0){
+    return 1;
+  }
+
+    return 0;
 }
 
 int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
