@@ -64,7 +64,7 @@ void (mouse_ih) (){
   read_status_reg(&st);
   if (st & OBF)
   {
-    if (((st & PARITY) != 0) && ((st & TIMEOUT) != 0))
+    if (((st & PARITY) != 0) || ((st & TIMEOUT) != 0))
     {
       code = 1;
     }
@@ -89,13 +89,20 @@ void (packet__) (struct packet *pp)
   pp->x_ov = (pp->bytes[0] & X_OVL) >> 6;
   pp->y_ov = (pp->bytes[0] & Y_OVL) >> 7;
 
-  if (!(x_msb))
+  
+  
+  pp->delta_x = (uint16_t)pp->bytes[1];
+  
+ 
+  
+  pp->delta_y = (uint16_t)pp->bytes[2];
+  if (x_msb == 1)
   {
-    pp->delta_x = pp->bytes[1];
+    pp->delta_x = pp->delta_x | 0xff00;
   }
-  if (!(y_msb))
+  if (y_msb == 1)
   {
-    pp->delta_y = pp->bytes[2];
+    pp->delta_y = pp->delta_y | 0xff00;
   }
 }
 

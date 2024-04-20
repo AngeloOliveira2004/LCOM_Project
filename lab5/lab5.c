@@ -6,9 +6,12 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "graphic.h"
+#include "i8042.h"
+#include "Keyboard.h"
+#include "i8254.h"
 
 extern vbe_mode_info_t vmi;
-
+uint8_t scancode;
 
 // Any header files included below this line should have been created by you
 
@@ -55,12 +58,46 @@ uint32_t color) {
   {
     return 1;
   }
-
-  if (set_mode(mode)!=0)
-  {
+  if (set_mode(mode) != 0) {
     return 1;
   }
+  if (vg_draw_rectangle(x, y, width, height, color) != 0) {
+    return 1;
+  }
+  uint8_t irq_set;
+  if (kbc_si(&irq_set)) {
+    return 1;
+  }
+  int ipc_status, r;
 
+  message msg;
+
+  while(scancode != ESC) { /* You may want to use a different condition */
+     /* Get a request message. */
+     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+       printf("driver_receive failed with: %d", r);
+       continue;
+     }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+          case HARDWARE: /* hardware interrupt notification */				
+            if (msg.m_notify.interrupts & BIT(irq_set)) { /* subscribed interrupt */
+              kbc_ih();                                    /* process it */
+              
+            }
+            break;
+          default:
+            break; /* no other notifications expected: do nothing */	
+        }
+    } else { /* received a standard message, not a notification */
+        /* no standard messages expected: do nothing */
+    }
+ }
+ kbc_ui();
+ if (vg_exit() != 0) {
+    return 1;
+  }
+ 
   return 0;
 }
 

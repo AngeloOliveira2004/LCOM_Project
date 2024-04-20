@@ -4,11 +4,10 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "mouse.h"
-#include "timer.c"
 
 extern  uint8_t packet;
-extern struct packet pp;
-extern uint8_t data;
+
+extern uint8_t data_receiver;
 uint32_t count = 0;
 int code = 0;
 
@@ -45,10 +44,9 @@ int (mouse_test_packet)(uint32_t cnt1) {
     return 1;
   }
   int ipc_status, r, packet_count = 0;
-  uint8_t index = 0;
-  struct pp;
 
   message msg;
+  struct packet pp;
 
   while(cnt1) { /* You may want to use a different condition */
      /* Get a request message. */
@@ -62,27 +60,27 @@ int (mouse_test_packet)(uint32_t cnt1) {
           case HARDWARE: /* hardware interrupt notification */				
             if (msg.m_notify.interrupts & BIT(irq_set)) { /* subscribed interrupt */
               mouse_ih();                                 /* process it */
-              if (code == 0)
+              if (code == 1)
               {
                 return 1;
               }
 
               if (packet_count == 0)
               {              
-                if ((index & BIT(3))!= 0)
+                if ((data_receiver & BIT(3))!= 0)
                 {
-                  pp.bytes[0] = data;
+                  pp.bytes[0] = data_receiver;
                   packet_count++;
                 }
                 else continue;
               }
               else if (packet_count == 1)
               {
-                pp.bytes[1] = data;
+                pp.bytes[1] = data_receiver;
                 packet_count++;
               }
               else{
-                pp.bytes[2] = data;
+                pp.bytes[2] = data_receiver;
                 packet__(&pp);
                 mouse_print_packet(&pp);
                 packet_count = 0;
@@ -114,13 +112,12 @@ int (mouse_test_async)(uint8_t idle_time) {
     return 1;
   }
   int ipc_status, r, packet_count = 0;
-  uint8_t index = 0;
-  struct pp;
   
   message msg;
-  uint32_t counter = 0;
+  struct packet pp;
 
-  while(count < idle_time*sys_hz()) { /* You may want to use a different condition */
+
+  while(count < idle_time*60) { /* You may want to use a different condition */
      /* Get a request message. */
   
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -134,45 +131,43 @@ int (mouse_test_async)(uint8_t idle_time) {
             		
           if (msg.m_notify.interrupts & BIT(irq_set_mouse)) { /* subscribed interrupt */
           mouse_ih();                                 /* process it */
-          if (code == 0)
-          {
-            return 1;
-          }
-
+         
           if (packet_count == 0)
           {              
-            if ((index & BIT(3))!= 0)
+            if ((data_receiver & BIT(3))!= 0)
             {
-              pp.bytes[0] = data;
+              pp.bytes[0] = data_receiver;
               packet_count++;
             }
               else continue;
           }
           else if (packet_count == 1)
           {
-            pp.bytes[1] = data;
+            pp.bytes[1] = data_receiver;
             packet_count++;
           }
           else{
-            pp.bytes[2] = data;
+            pp.bytes[2] = data_receiver;
             packet__(&pp);
             mouse_print_packet(&pp);
             packet_count = 0;
             count = 0;
-            counter++;
           }
         }
         if (msg.m_notify.interrupts & BIT(irq_set_timer)) { /* subscribed interrupt */
         timer_int_handler();                   /* process it */
-        if (count % sys_hz() == 0)
+        if (count % 60 == 0)
         {
           timer_print_elapsed_time();
         }
       }
+       break;
+          default:
+            break; /* no other notifications expected: do nothing */
+        }
+      }
     }
-  }
- }
- mouse_unsubscribe_int(&irq_set_mouse);
+ mouse_unsubscribe_int();
  timer_unsubscribe_int();
  mouse_report(DISABLE_MRP);
  return 0;

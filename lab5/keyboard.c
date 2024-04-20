@@ -9,7 +9,7 @@
  
 
 int hook_id_keyboard = 2;
-uint8_t scancode;
+extern uint8_t scancode;
 
 int (kbc_si) (uint8_t *bit_no){
   *bit_no = hook_id_keyboard;
