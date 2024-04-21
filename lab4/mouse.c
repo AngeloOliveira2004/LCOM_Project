@@ -15,6 +15,8 @@ int counter = 0;
 
 extern int counter_packet_print;
 
+enum States current_state = INITIAL;
+
 void (mouse_ih)() {
   uint8_t data;
   read_commands_kbc(&data);
@@ -52,6 +54,9 @@ int(reset_mouse_struct)(struct packet *mouse){
 }
 
 int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
+  if(*cnt == 0){
+    clean_packet(pp);
+  }
   *cnt += 1;
   if(*cnt == 1){
     if((!sync_v) && ((data & SYNC) == 1)){
@@ -102,7 +107,6 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
   if(*cnt == 3){
     *cnt = 0;
     mouse_print_packet(pp);
-    clean_packet(pp);
   }
 
   return 0;
@@ -174,5 +178,88 @@ int(enable_mouse_report)(){
   }
   return 0;
 }
+
+int16_t total_x_movement = 0;
+int16_t total_y_movement = 0;
+
+int (mouse_gesture)(uint8_t x_len,uint8_t tolerance){
+
+  int16_t delta_x = mouse.delta_x; //Deslocamento do rato no eixo dos x
+  int16_t delta_y = mouse.delta_y; //Deslocamento do rato no eixo dos y
+
+  switch(current_state){
+    case INITIAL:
+      //Verificar que apenas o botão esquerdo está ativado
+      if(mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
+        current_state = DRAWING_FIRST_LINE;
+      }
+
+      break;
+
+    case DRAWING_FIRST_LINE:
+      if(mouse.lb != BUTTON_PRESSED){ //Condição que verifica que o botão esquerdo foi largado
+        if(total_x_movement != 0 &&                                                (total_y_movement/total_x_movement > 1) &&                                       total_x_movement >= x_len){
+          current_state = DRAWING_VERTEX_ZONE; //Se o deslocamento de x for não nulo, o slope for maior do que 1 e o movimento de x for maior que o valor dado pelo x_len trocar de estado
+        }else{
+          current_state = INITIAL;
+        }
+        total_x_movement = 0;
+        total_y_movement = 0;
+      }else if(mouse.mb == BUTTON_PRESSED || mouse.rb == BUTTON_PRESSED){
+        current_state = INITIAL; // Outro botão foi clicado durante a criação da linha
+      }else if((delta_x <= 0 || delta_y <= 0) && (abs(delta_x) > tolerance || abs(delta_y) > tolerance)){
+        current_state = INITIAL; //Caso o deslocamento seja feito para a esquerda e/ou o valor ultrapasse o valor da tolerância, retorna ao início
+      }else{ //Caso passe as condições, o movimento está dentro das margens de tolerância e poderá prosseguir
+        total_x_movement += delta_x;
+        total_y_movement += delta_y;
+      }
+
+      break;
+
+    case DRAWING_VERTEX_ZONE:
+      if((abs(delta_x) > tolerance || abs(delta_y) > tolerance)){
+        current_state = INITIAL;
+      }else if(mouse.lb != BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
+        total_x_movement += delta_x;
+        total_y_movement += delta_y;
+      }else if(mouse.lb != BUTTON_PRESSED && mouse.rb == BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
+        if(total_x_movement <= tolerance){
+          current_state = DRAWING_SECOND_LINE;
+        }else{
+          current_state = INITIAL;
+        }
+        total_x_movement = 0;
+        total_y_movement = 0;
+      }
+      break;
+
+    case DRAWING_SECOND_LINE:
+
+      if(mouse.rb != BUTTON_PRESSED){ //Condição que verifica que o botão esquerdo foi largado
+        if(total_x_movement != 0 &&                                                                (abs(total_y_movement/total_x_movement) > 1) &&                                       total_x_movement >= x_len){
+          current_state = COMPLETE; //Se o deslocamento de x for não nulo, o absoluto da slope for maior do que 1 e o movimento de x for maior que o valor dado pelo x_len trocar de estado
+          return 0;
+        }else{
+          current_state = INITIAL;
+        }
+        total_x_movement = 0;
+        total_y_movement = 0;
+      }else if(mouse.lb == BUTTON_PRESSED || mouse.rb == BUTTON_PRESSED){
+        current_state = INITIAL;
+      }else if((delta_x <= 0 || delta_y >= 0) && (abs(delta_x) > tolerance || abs(delta_y) > tolerance)){
+        current_state = INITIAL;
+      }else{ //Caso passe as condições, o movimento está dentro das margens de tolerância e poderá prosseguir
+        total_x_movement += delta_x;
+        total_y_movement += delta_y;
+      }
+      break;
+    case COMPLETE:
+      current_state = COMPLETE;
+      break;    
+  }
+
+  return 0;
+}
+
 
 

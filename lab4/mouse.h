@@ -14,6 +14,15 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp);
 int(disable_mouse_report)();
 int(enable_mouse_report)();
 void clean_packet(struct packet *mouse);
+int (mouse_gesture)(uint8_t x_len,uint8_t tolerance);
+
+enum States{
+  INITIAL,
+  DRAWING_FIRST_LINE,
+  DRAWING_VERTEX_ZONE,
+  DRAWING_SECOND_LINE,
+  COMPLETE,
+};
 
 
 

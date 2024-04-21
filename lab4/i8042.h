@@ -59,4 +59,6 @@
 
 #define ERROR 0xFC
 
+#define BUTTON_PRESSED 1
+
 #endif

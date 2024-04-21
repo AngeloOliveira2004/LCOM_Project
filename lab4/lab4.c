@@ -37,6 +37,7 @@ extern struct packet mouse;
 extern int counter;
 int counter_packet_print = 0;
 extern int counter_timer;
+extern enum States current_state;
 
 
 int (mouse_test_packet)(uint32_t cnt) {
@@ -149,9 +150,48 @@ int (mouse_test_async)(uint8_t idle_time) {
 }
 
 int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
-    /* To be completed */
-    printf("%s: under construction\n", __func__);
+    int ipc_status,r;
+  message msg;
+
+  uint8_t irq_set;
+
+  if(enable_mouse_report() != 0){
     return 1;
+  }
+
+  if(mouse_subscribe_int(&irq_set) != 0){
+    return 1;
+  }
+
+  while(current_state != COMPLETE) { 
+
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:			
+          if (msg.m_notify.interrupts & BIT(irq_set)) { 
+            mouse_ih();
+            if(counter_packet_print % 3 == 0){
+              mouse_gesture(x_len,tolerance);
+            }
+          }
+        break;
+      }
+    }
+  }
+
+  if(mouse_unsubscribe_int() != 0){
+    return 1;
+  }
+
+  if(disable_mouse_report() != 0){
+    return 1;
+  }
+  return 0;
 }
 
 int (mouse_test_remote)(uint16_t period, uint8_t cnt) {
