@@ -1,0 +1,17 @@
+#ifndef VBE_H
+#define VBE_H
+
+#define INTERRUPT_VIDEO_SERVERS 0x10
+#define SET_VIDEOMODE 0x00
+
+#define VBE_INDEXED_768p 0x105
+#define VBE_DIRECT_480p 0x110
+#define VBE_DIRECT_600p 0x115
+#define VBE_DIRECT_1024p 0x11A
+#define VBE_DIRECT_864p 0x14C
+
+#define SET_VBE_MODE 0x4F02
+
+#define BX_LINEAR_FB BIT(14)
+
+#endif
