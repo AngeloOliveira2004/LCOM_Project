@@ -49,7 +49,7 @@ int(mapping_line_frame_buffer)(uint16_t mode) {
 }
 
 int(vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-  printf("e");
+
   if (x > vmi.XResolution || y > vmi.YResolution) {
     return 1;
   }
@@ -94,3 +94,23 @@ int(get_color)(uint32_t *color, uint16_t col, uint16_t row, uint8_t no_rectangle
 
   return 0;
 }
+
+
+int (draw_xpm) (xpm_map_t xpm, uint16_t x, uint16_t y){
+  xpm_image_t image;
+
+  uint8_t *color = xpm_load(xpm, XPM_INDEXED, &image);
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.height; j++)
+    {
+      if (vg_draw_pixel(x + j, y + i, *color))
+      {
+        return 1;
+      }
+      color++;
+    }
+  }
+
+  return 0;
+}
+
