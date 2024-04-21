@@ -102,11 +102,68 @@ uint32_t color) {
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  /* To be completed */
-  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__,
-         mode, no_rectangles, first, step);
 
-  return 1;
+  if (mapping_line_frame_buffer(mode)!=0)
+  {
+    return 1;
+  }
+  printf("a");
+  if (set_mode(mode)) {
+    return 1;
+  }
+  printf("b");
+
+  unsigned int hori = vmi.XResolution / no_rectangles;
+  unsigned int verti = vmi.YResolution / no_rectangles;
+
+  uint32_t color = first;
+
+  for (unsigned int i = 0; i < no_rectangles; i++)
+  {
+    printf("c");
+    for (unsigned int j = 0; j < no_rectangles; j++)
+    {
+      printf("d");
+      get_color(&color, i, j, no_rectangles, first, step);
+      vg_draw_rectangle(j * hori, i * verti, hori, verti, color);
+    }
+  }
+  uint8_t irq_set;
+  if (kbc_si(&irq_set)) {
+    return 1;
+  }
+  int ipc_status, r;
+
+  message msg;
+
+  while(scancode != ESC) { /* You may want to use a different condition */
+     /* Get a request message. */
+     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+       printf("driver_receive failed with: %d", r);
+       continue;
+     }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+          case HARDWARE: /* hardware interrupt notification */				
+            if (msg.m_notify.interrupts & BIT(irq_set)) { /* subscribed interrupt */
+              kbc_ih();                                    /* process it */
+              
+            }
+            break;
+          default:
+            break; /* no other notifications expected: do nothing */	
+        }
+    } else { /* received a standard message, not a notification */
+        /* no standard messages expected: do nothing */
+    }
+ }
+ kbc_ui();
+  printf("t");
+ if(vg_exit() != 0){
+   return 1;
+ }
+
+  return 0;
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
