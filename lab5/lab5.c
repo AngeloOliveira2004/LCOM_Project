@@ -3,12 +3,15 @@
 
 #include <lcom/lab5.h>
 
+#include <VBE.h>
+#include <graphic.h>
+#include <i8042.h>
+#include <i8254.h>
+#include <kbc.h>
+#include <keyboard.h>
+#include <lcom/timer.h>
 #include <stdint.h>
 #include <stdio.h>
-#include <graphic.h>
-#include <keyboard.h>
-#include <kbc.h>
-#include <i8042.h>
 
 // Any header files included below this line should have been created by you
 
@@ -42,87 +45,82 @@ int main(int argc, char *argv[]) {
 
 int(video_test_init)(uint16_t mode, uint8_t delay) {
 
-
-  if(change_graphics_mode(mode) != 0){ // Muda para graphics mode com resolução dada no mode
+  if (change_graphics_mode(mode) != 0) { // Muda para graphics mode com resolução dada no mode
     return 1;
   }
 
+  sleep(delay); // Espera o tempo delay antes de sair do modo
 
-  sleep(delay); //Espera o tempo delay antes de sair do modo
-
-
-
-  if(vg_exit() != 0){ //Volta para o modo texto
+  if (vg_exit() != 0) { // Volta para o modo texto
     return 1;
   }
-  
 
   return 0;
 }
 
 int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
-                            
-  //Perguntar porque quando eu uso o 0x105, o rectângulo não desenha mas passa o teste
-  
-  int ipc_status,r;
+
+  // Perguntar porque quando eu uso o 0x105, o rectângulo não desenha mas passa o teste
+
+  int ipc_status, r;
   message msg;
   bool valid = true;
 
   uint8_t irq_set;
 
-  if(keyboard_subscribe_int(&irq_set) != 0){
+  if (keyboard_subscribe_int(&irq_set) != 0) {
     return 1;
   }
 
-  memset(&vbe_mode_info,0,sizeof(vbe_mode_info)); // Para evitar unexpected behaviour , devemos limpar os registros que não foram usados com o memset
+  memset(&vbe_mode_info, 0, sizeof(vbe_mode_info)); // Para evitar unexpected behaviour , devemos limpar os registros que não foram usados com o memset
 
-  if(vbe_get_mode_info(mode,&vbe_mode_info) != 0){
+  if (vbe_get_mode_info(mode, &vbe_mode_info) != 0) {
     return 1;
   }
 
-  if(map_physical_into_virtual_ram() != 0){
+  if (map_physical_into_virtual_ram() != 0) {
     return 1;
   }
 
-  if(change_graphics_mode(mode) != 0){ // Muda para graphics mode com resolução dada no mode
+  if (change_graphics_mode(mode) != 0) { // Muda para graphics mode com resolução dada no mode
     return 1;
   }
 
-  if(draw_rectangle(x,y,color,width,height) != 0){
+  if (draw_rectangle(x, y, color, width, height) != 0) {
     return 1;
   }
 
-  while(valid) { 
-    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
-        printf("driver_receive failed with: %d", r);
-        continue;
+  while (valid) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed with: %d", r);
+      continue;
     }
 
     if (is_ipc_notify(ipc_status)) {
-            switch (_ENDPOINT_P(msg.m_source)) {
-              case HARDWARE:			
-                if (msg.m_notify.interrupts & BIT(irq_set)) { 
-                  kbc_ih();
-                  tickdelay(micros_to_ticks(DELAY_US));
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if (msg.m_notify.interrupts & BIT(irq_set)) {
+            kbc_ih();
+            tickdelay(micros_to_ticks(DELAY_US));
 
-                  if(!receive_keyboard_scan(&scan_info,&scancode)){
-                    valid = false;
-                  }
-                }
-                break;
+            if (!receive_keyboard_scan(&scan_info, &scancode)) {
+              valid = false;
             }
+          }
+          break;
+      }
     }
- }
+  }
 
-  if(keyboard_unsubscribe_int() != 0){
+  if (keyboard_unsubscribe_int() != 0) {
     return 1;
-  }   
+  }
 
-  if(vg_exit() != 0){ //Volta para o modo texto
+  if (vg_exit() != 0) { // Volta para o modo texto
     return 1;
-  }                       
-  
+  }
+
   return 0;
 }
 
@@ -135,19 +133,176 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u): under construction\n", __func__, xpm, x, y);
 
-  return 1;
+  int ipc_status, r;
+  message msg;
+  bool valid = true;
+
+  uint8_t irq_set;
+
+  if (keyboard_subscribe_int(&irq_set) != 0) {
+    return 1;
+  }
+
+  memset(&vbe_mode_info, 0, sizeof(vbe_mode_info)); // Para evitar unexpected behaviour , devemos limpar os registros que não foram usados com o memset
+
+  if (vbe_get_mode_info(VBE_INDEXED_768p, &vbe_mode_info) != 0) {
+    return 1;
+  }
+
+  if (map_physical_into_virtual_ram() != 0) {
+    return 1;
+  }
+
+  if (change_graphics_mode(VBE_INDEXED_768p) != 0) { // Muda para graphics mode 0x105, o suportador pelo xpm
+    return 1;
+  }
+
+  if (draw_from_xpm(xpm, x, y) != 0) {
+    return 1;
+  }
+
+  while (valid) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if (msg.m_notify.interrupts & BIT(irq_set)) {
+            kbc_ih();
+            tickdelay(micros_to_ticks(DELAY_US));
+
+            if (!receive_keyboard_scan(&scan_info, &scancode)) {
+              valid = false;
+            }
+          }
+          break;
+      }
+    }
+  }
+
+  if (vg_exit() != 0) { // Volta para o modo texto
+    return 1;
+  }
+
+  if (keyboard_unsubscribe_int() != 0) {
+    return 1;
+  }
+
+  return 0;
 }
 
 int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,
                      int16_t speed, uint8_t fr_rate) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u, %u, %u, %d, %u): under construction\n",
-         __func__, xpm, xi, yi, xf, yf, speed, fr_rate);
 
-  return 1;
+  int ipc_status, r;
+  message msg;
+  bool valid = true;
+
+  uint8_t irq_set_keyboard, irq_set_timer;
+  bool movement = false; // movement false = vertical , true = horizontal
+
+  if (xi < xf && yi == yf) {
+    movement = true; // O movimento é na horizontal
+  }
+  else if (xi == xf && yi < yf) {
+    movement = false; // O movimento é na vertical
+  }
+  else {
+    return 1; // Movimento não é vertical nem horizontal
+  }
+
+  if (timer_subscribe_int(&irq_set_timer) != 0) {
+    return 1;
+  }
+
+  if (keyboard_subscribe_int(&irq_set_keyboard) != 0) {
+    return 1;
+  }
+
+  if (timer_set_frequency(0, fr_rate) != 0) {
+    return 1;
+  }
+
+  memset(&vbe_mode_info, 0, sizeof(vbe_mode_info)); // Para evitar unexpected behaviour , devemos limpar os registros que não foram usados com o memset
+
+  if (vbe_get_mode_info(VBE_INDEXED_768p, &vbe_mode_info) != 0) {
+    return 1;
+  }
+
+  if (map_physical_into_virtual_ram() != 0) {
+    return 1;
+  }
+
+  if (change_graphics_mode(VBE_INDEXED_768p) != 0) { // Muda para graphics mode 0x105, o suportador pelo xpm
+    return 1;
+  }
+
+  if (draw_from_xpm(xpm, xi, yi) != 0) {
+    return 1; // Desenha na primeira posição
+  }
+
+  while (valid) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if (msg.m_notify.interrupts & BIT(irq_set_keyboard)) {
+            kbc_ih();
+            tickdelay(micros_to_ticks(DELAY_US));
+
+            if (!receive_keyboard_scan(&scan_info, &scancode)) {
+              valid = false;
+            }
+          }
+          if (msg.m_notify.interrupts & BIT(irq_set_timer)) {
+            if (movement) {
+              if (xi >= xf) {
+                xi = xf;
+                valid = false;
+              }
+              else {
+                xi += speed;
+              }
+            }else {
+              if (yi >= yf) {
+                yi = yf;
+                valid = false;
+              }
+              else {
+                yi += speed;
+              }
+            }
+
+            if (draw_from_xpm(xpm, xi, yi) != 0) {
+              return 1; // Desenha na posição seguinte
+            }
+          }
+          break;
+      }
+    }
+  }
+
+  if (vg_exit() != 0) { // Volta para o modo texto
+    return 1;
+  }
+
+  if (timer_unsubscribe_int() != 0) {
+    return 1;
+  }
+
+  if (keyboard_unsubscribe_int() != 0) {
+    return 1;
+  }
+
+  return 0;
 }
 
 int(video_test_controller)() {

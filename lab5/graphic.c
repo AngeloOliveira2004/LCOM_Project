@@ -125,3 +125,26 @@ int draw_rectangle(uint16_t x, uint16_t y, uint32_t color,uint16_t width,uint16_
 }
 
 
+int draw_from_xpm(xpm_map_t xpm, uint16_t x, uint16_t y){
+  xpm_image_t xpm_image;
+
+  uint8_t *pixel_colors = xpm_load(xpm,XPM_INDEXED,&xpm_image);
+  if(pixel_colors == NULL){
+    printf("Failed to load xpm");
+    return 1;
+  }
+
+  for(int width = 0; width < xpm_image.width;width++){
+    for(int height = 0; height < xpm_image.height;height++){
+      if(draw_pixel(x+width,y+height,*pixel_colors) != 0 ){
+        return 1;
+      }else{
+        pixel_colors++; //Vai para a cor seguinte no xpm
+      }
+    }
+  }
+
+  return 0;
+}
+
+
