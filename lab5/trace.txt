@@ -1,0 +1,76 @@
+@lcflib.a:2019, lcf_start
+  video_test_rectangle(mode, x, y, width, height, color)
+> video_test_rectangle(0x110, 10, 10, 50, 400, 0x000000ff [255])
+  @keyboard.c:18, keyboard_subscribe_int
+    sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE_EXCLUSIVE, &hook_id)
+  > sys_irqsetpolicy(1, 3, addr: 0x822dc3c [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x822dc3c [10]) -> (ret: 0)
+  @lab5.c:78, video_test_rectangle
+    vbe_get_mode_info(mode, &vbe_mode_info)
+  > vbe_get_mode_info(0x110, addr: 0x824a654)
+  < vbe_get_mode_info(0x110, addr: 0x824a654 [0xe0000000, 640x480, 5:5:5 (15) <600 KiB>]) -> (ret: 0)
+  @graphic.c:72, map_physical_into_virtual_ram
+    sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)
+  > sys_privctl(SELF, SYS_PRIV_ADD_MEM, addr: 0xeffff590 [0xe0000000 - 0xe0096000 <600 KiB>])
+  < sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr) -> (ret: 0)
+  @graphic.c:77, map_physical_into_virtual_ram
+    vm_map_phys(SELF, (void *) mr.mr_base, vram_size)
+  < vm_map_phys(SELF, addr: 0xe0000000, 600 KiB) -> (ret: 0xef965000)
+  @graphic.c:21, change_graphics_mode
+    sys_int86(&r)
+  > sys_int86(addr: 0xeffff570 [AX: 4f02, BX: 4110, CX: 0000, DX: 0000, ES: 0000, DI: 0000])
+  < sys_int86(addr: 0xeffff570 [AX: 004f, BX: 4110, CX: 0000, DX: 0000, ES: 0000, DI: 0000]) -> (ret: 0)
+  @lab5.c:95, video_test_rectangle
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff5d0, addr: 0xeffff618)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab5.c:104, video_test_rectangle
+    kbc_ih()
+    @utils.c:22, util_sys_inb
+      sys_inb(port, &value)
+    > sys_inb(0x64, addr: 0xeffff4f8)
+    < sys_inb(0x64, addr: 0xeffff4f8 [0x1d = 0b00011101])
+    @utils.c:22, util_sys_inb
+      sys_inb(port, &value)
+    > sys_inb(0x60, addr: 0xeffff4f8)
+    < sys_inb(0x60, addr: 0xeffff4f8 [0x01 = 0b00000001])
+  @lab5.c:105, video_test_rectangle
+    micros_to_ticks(DELAY_US)
+  @lab5.c:105, video_test_rectangle
+    tickdelay(micros_to_ticks(DELAY_US))
+  > tickdelay(1 [16.7 ms])
+  @keyboard.c:99, receive_keyboard_scan
+    kbd_print_scancode(scan_info->make_code, scan_info->size_counter, scan_info->bytes)
+    "Makecode: 0x01"
+  < kbd_print_scancode(true, 1, addr: 0x824a75a [0x01]) -> (ret: 0)
+  @lab5.c:95, video_test_rectangle
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff5d0, addr: 0xeffff618)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @lab5.c:104, video_test_rectangle
+    kbc_ih()
+    @utils.c:22, util_sys_inb
+      sys_inb(port, &value)
+    > sys_inb(0x64, addr: 0xeffff4f8)
+    < sys_inb(0x64, addr: 0xeffff4f8 [0x1d = 0b00011101])
+    @utils.c:22, util_sys_inb
+      sys_inb(port, &value)
+    > sys_inb(0x60, addr: 0xeffff4f8)
+    < sys_inb(0x60, addr: 0xeffff4f8 [0x81 = 0b10000001])
+  @lab5.c:105, video_test_rectangle
+    micros_to_ticks(DELAY_US)
+  @lab5.c:105, video_test_rectangle
+    tickdelay(micros_to_ticks(DELAY_US))
+  > tickdelay(1 [16.7 ms])
+  @keyboard.c:99, receive_keyboard_scan
+    kbd_print_scancode(scan_info->make_code, scan_info->size_counter, scan_info->bytes)
+    "Breakcode: 0x81"
+  < kbd_print_scancode(false, 1, addr: 0x824a75a [0x81]) -> (ret: 0)
+  @keyboard.c:27, keyboard_unsubscribe_int
+    sys_irqrmpolicy(&hook_id)
+  > sys_irqrmpolicy(addr: 0x822dc3c [10])
+  < sys_irqrmpolicy(addr: 0x822dc3c [10]) -> (ret: 0)
+  @lab5.c:120, video_test_rectangle
+    vg_exit()
+  < vg_exit() -> (ret: 0)
+< video_test_rectangle(0x110, 10, 10, 50, 400, 0x000000ff [255]) -> (ret: 0)

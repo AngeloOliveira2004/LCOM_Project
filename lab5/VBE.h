@@ -11,6 +11,7 @@
 #define VBE_DIRECT_864p 0x14C
 
 #define SET_VBE_MODE 0x4F02
+#define SET_TEXT_MODE 0x0003
 
 #define BX_LINEAR_FB BIT(14)
 

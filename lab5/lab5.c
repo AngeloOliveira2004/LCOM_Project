@@ -6,8 +6,15 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <graphic.h>
+#include <keyboard.h>
+#include <kbc.h>
+#include <i8042.h>
 
 // Any header files included below this line should have been created by you
+
+extern uint8_t scancode;
+extern struct scancode_info scan_info;
+extern vbe_mode_info_t vbe_mode_info;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -55,11 +62,68 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
 
 int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
-  /* To be completed */
-  printf("%s(0x%03X, %u, %u, %u, %u, 0x%08x): under construction\n",
-         __func__, mode, x, y, width, height, color);
+                            
+  //Perguntar porque quando eu uso o 0x105, o rectângulo não desenha mas passa o teste
+  
+  int ipc_status,r;
+  message msg;
+  bool valid = true;
 
-  return 1;
+  uint8_t irq_set;
+
+  if(keyboard_subscribe_int(&irq_set) != 0){
+    return 1;
+  }
+
+  memset(&vbe_mode_info,0,sizeof(vbe_mode_info)); // Para evitar unexpected behaviour , devemos limpar os registros que não foram usados com o memset
+
+  if(vbe_get_mode_info(mode,&vbe_mode_info) != 0){
+    return 1;
+  }
+
+  if(map_physical_into_virtual_ram() != 0){
+    return 1;
+  }
+
+  if(change_graphics_mode(mode) != 0){ // Muda para graphics mode com resolução dada no mode
+    return 1;
+  }
+
+  if(draw_rectangle(x,y,color,width,height) != 0){
+    return 1;
+  }
+
+  while(valid) { 
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+        printf("driver_receive failed with: %d", r);
+        continue;
+    }
+
+    if (is_ipc_notify(ipc_status)) {
+            switch (_ENDPOINT_P(msg.m_source)) {
+              case HARDWARE:			
+                if (msg.m_notify.interrupts & BIT(irq_set)) { 
+                  kbc_ih();
+                  tickdelay(micros_to_ticks(DELAY_US));
+
+                  if(!receive_keyboard_scan(&scan_info,&scancode)){
+                    valid = false;
+                  }
+                }
+                break;
+            }
+    }
+ }
+
+  if(keyboard_unsubscribe_int() != 0){
+    return 1;
+  }   
+
+  if(vg_exit() != 0){ //Volta para o modo texto
+    return 1;
+  }                       
+  
+  return 0;
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
