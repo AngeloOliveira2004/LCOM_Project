@@ -9,9 +9,11 @@
 #include "i8042.h"
 #include "Keyboard.h"
 #include "i8254.h"
+#include "timer.c"
 
 extern vbe_mode_info_t vmi;
 uint8_t scancode;
+uint32_t count;
 
 // Any header files included below this line should have been created by you
 
@@ -124,7 +126,7 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
     for (unsigned int j = 0; j < no_rectangles; j++)
     {
  
-      get_color(&color, i, j, no_rectangles, first, step);
+      get_color(&color, j, i, no_rectangles, first, step);
       vg_draw_rectangle(j * hori, i * verti, hori, verti, color);
     }
   }
@@ -221,13 +223,106 @@ int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
   return 0;
 }
 
-int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,
-                     int16_t speed, uint8_t fr_rate) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u, %u, %u, %d, %u): under construction\n",
-         __func__, xpm, xi, yi, xf, yf, speed, fr_rate);
+int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,int16_t speed, uint8_t fr_rate) {
+  uint8_t irq_set_keyborad;
+  uint8_t irq_set_timer;
 
-  return 1;
+  bool movimento = false;
+
+  if (xi < xf && yi == yf)
+  {
+    movimento = true;
+  }
+  else if (xi == xf && yi < yf)
+  {
+    movimento = false;
+  }
+  else{
+    return 1;
+  }
+
+  if (timer_subscribe_int(&irq_set_timer)){
+    return 1;
+  }   
+  if (kbc_si(&irq_set_keyborad)) {
+    return 1;
+  }
+  if (timer_set_frequency(0,fr_rate)!=0)
+  {
+    return 1;
+  }
+
+  
+
+  if (mapping_line_frame_buffer(0x105)!=0)
+  {
+    return 1;
+  }
+
+  if (set_mode(0x105) != 0)
+  {
+    return 1;
+  }
+
+  if (draw_xpm(xpm, xi, yi) != 0)
+  {
+    return 1;
+  }
+
+  int ipc_status, r;
+  message msg;
+ 
+  while(scancode != ESC && (xi < xf || yi < yf)) { /* You may want to use a different condition */
+     /* Get a request message. */
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+      printf("driver_receive failed with: %d", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) { /* received notification */
+      switch (_ENDPOINT_P(msg.m_source)) {
+          case HARDWARE: /* hardware interrupt notification */
+          	if (msg.m_notify.interrupts & BIT(irq_set_keyborad)) { /* subscribed interrupt */
+              kbc_ih();                                    /* process it */
+            }
+            if (msg.m_notify.interrupts & BIT(irq_set_timer)) { /* subscribed interrupt */
+              vg_draw_rectangle(xi, yi, 100, 100, 0x0000);
+              if (movimento) {
+                xi += speed;
+                if (xi > xf) {
+                  xi = xf;
+
+                }
+                else {
+                  yi += speed;
+                  if (yi > yf) {
+                    yi = yf;
+                  }
+                }
+                
+                if (draw_xpm(xpm, xi, yi) != 0) {
+                  return 1;
+                }
+                printf("x = %d\n", xi);
+              } /* process it */
+            }
+            break;
+          default:
+            break; /* no other notifications expected: do nothing */	
+        }
+    } else { /* received a standard message, not a notification */
+        /* no standard messages expected: do nothing */
+    }
+ }
+  if(timer_unsubscribe_int()){
+    return 1;
+  }
+  kbc_ui();
+
+  if(vg_exit() != 0){
+   return 1;
+ }
+  
+  return 0;
 }
 
 int(video_test_controller)() {
@@ -236,3 +331,4 @@ int(video_test_controller)() {
 
   return 1;
 }
+

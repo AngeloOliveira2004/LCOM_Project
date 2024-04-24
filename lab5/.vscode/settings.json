@@ -11,6 +11,9 @@
     "*.html": "html",
     "keyboard.h": "c",
     "i8042.h": "c",
-    "graphic.h": "c"
+    "graphic.h": "c",
+    "lcf.h": "c",
+    "lab5.h": "c",
+    "time.h": "c"
   },
 }
