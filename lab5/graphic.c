@@ -84,26 +84,30 @@ int(map_physical_into_virtual_ram)(){
   return 0;
 }
 
-int draw_pixel(uint16_t x, uint16_t y, uint32_t color){
+int (draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
 
   if(x > vbe_mode_info.XResolution || y > vbe_mode_info.YResolution){
     printf("The values %d for x and %d for y are out of bounds",x,y);
     return 1;
   }
 
+  uint8_t *conversion = (uint8_t *) frame_buffer;
+
   uint8_t bits_per_pixel = ((vbe_mode_info.BitsPerPixel + 7) / 8);
 
   unsigned int index_position = ((vbe_mode_info.XResolution * y) + x) * bits_per_pixel;
 
-  if(memcpy(&frame_buffer[index_position],&color,bits_per_pixel) == NULL){
+  conversion += index_position;
+
+  if(memcpy((void *) conversion,&color,bits_per_pixel) == NULL){
     printf("Failed to copy");
     return 1;
   }
   return 0;
 }
 
-int draw_line(uint16_t x, uint16_t y, uint32_t color,uint16_t width){
-  for(int i = 0; i < width;i++){
+int (draw_line)(uint16_t x, uint16_t y, uint32_t color,uint16_t width){
+  for(uint16_t i = 0; i < width;i++){
 
     if(draw_pixel(x+i,y,color) != 0){
       printf("Failed to draw pixel");
@@ -114,8 +118,8 @@ int draw_line(uint16_t x, uint16_t y, uint32_t color,uint16_t width){
   return 0;
 }
 
-int draw_rectangle(uint16_t x, uint16_t y, uint32_t color,uint16_t width,uint16_t height){
-  for(int i = 0; i < height;i++){
+int (draw_rectangle)(uint16_t x, uint16_t y, uint32_t color,uint16_t width,uint16_t height){
+  for(uint16_t i = 0; i < height;i++){
     if(draw_line(x,y+i,color,width) != 0){
       printf("Failed to draw line");
       return 1;
@@ -125,7 +129,7 @@ int draw_rectangle(uint16_t x, uint16_t y, uint32_t color,uint16_t width,uint16_
 }
 
 
-int draw_from_xpm(xpm_map_t xpm, uint16_t x, uint16_t y){
+int (draw_from_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y){
   xpm_image_t xpm_image;
 
   uint8_t *pixel_colors = xpm_load(xpm,XPM_INDEXED,&xpm_image);
@@ -134,8 +138,8 @@ int draw_from_xpm(xpm_map_t xpm, uint16_t x, uint16_t y){
     return 1;
   }
 
-  for(int width = 0; width < xpm_image.width;width++){
-    for(int height = 0; height < xpm_image.height;height++){
+  for(uint16_t height = 0; height < xpm_image.height;height++){
+    for(uint16_t width = 0; width < xpm_image.width;width++){
       if(draw_pixel(x+width,y+height,*pixel_colors) != 0 ){
         return 1;
       }else{
@@ -144,6 +148,17 @@ int draw_from_xpm(xpm_map_t xpm, uint16_t x, uint16_t y){
     }
   }
 
+  return 0;
+}
+
+int normalize_color(uint32_t old_color, uint32_t *normalized) {
+  if (vbe_mode_info.BitsPerPixel == 32) {
+    *normalized = old_color;
+  } else {
+    int bpp = vbe_mode_info.BitsPerPixel;
+    uint32_t mask = BIT(bpp) - 1;
+    *normalized = old_color & mask;
+  }
   return 0;
 }
 

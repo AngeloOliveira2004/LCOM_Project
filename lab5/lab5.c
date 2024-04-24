@@ -87,7 +87,13 @@ int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
     return 1;
   }
 
-  if (draw_rectangle(x, y, color, width, height) != 0) {
+  uint32_t normalized_color;
+  if (normalize_color(color, &normalized_color) != 0) {
+    return 1;
+    
+  }
+
+  if (draw_rectangle(x, y, normalized_color, width, height) != 0) {
     return 1;
   }
 
@@ -213,6 +219,11 @@ int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint1
   }
   else {
     return 1; // Movimento não é vertical nem horizontal
+  }
+
+  if(fr_rate < 19){
+    printf("Frame-rate overflow");
+    return 1;
   }
 
   if (timer_subscribe_int(&irq_set_timer) != 0) {
