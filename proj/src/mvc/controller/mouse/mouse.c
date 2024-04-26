@@ -5,7 +5,7 @@
 #include "mouse.h"
 #include "kbc.h"
 
-int hook_id_mouse = 2;
+int hook_id_mouse = 4;
 
 struct packet mouse;
 
@@ -25,9 +25,9 @@ void (mouse_ih)() {
 
 int(mouse_subscribe_int)(uint8_t *bit_no){
 
-  *bit_no = hook_id_mouse;
+  *bit_no = BIT(hook_id_mouse);
 
-  if(sys_irqsetpolicy(IRQ_MOUSE,IRQ_COMMAND_BYTE,&hook_id_mouse) != 0){
+  if(sys_irqsetpolicy(IRQ_MOUSE,IRQ_REENABLE | IRQ_EXCLUSIVE , &hook_id_mouse) != 0){
     return 1;
   }
   return 0;

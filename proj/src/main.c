@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/g1/proj/stc/trace.txt");
+  lcf_trace_calls("/home/lcom/labs/g1/proj/src/trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
@@ -47,9 +47,7 @@ int main(int argc, char *argv[]){
 
 int setup(){
 
-  if(timer_subscribe_int(&timer_hook_id) != 0) return 1;
-  if(keyboard_subscribe_int(&timer_hook_id) != 0) return 1;
-  //if(mouse_subscribe_int(&mouse_hook_id) !=0) return 1;
+
   if(timer_set_frequency(0, desiredFrameRate) != 0) return 1;
 
   uint16_t mode = VBE_800x600_DC;
@@ -61,69 +59,69 @@ int setup(){
 
 int _exit_(){
 
-  if(vg_exit() != 0) return 1;
-
-  if(timer_unsubscribe_int() != 0) return 1;
-  if(keyboard_unsubscribe_int() != 0) return 1;
   //if(mouse_unsubscribe_int() != 0) return 1;
+  if(timer_unsubscribe_int() != 0) return 1;
+  if(keyboard_unsubscribe_int() != 0) return 1; 
 
-  if(set_text_mode() != 0) return 1;
-
+  if(vg_exit() != 0) return 1;
+  
   return 0;
 }
 
-int check_interrupts(){
-  int ipc_status,r;
-  message msg;
-
-  printf("checking interrupts\n");
-
-  if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
-        printf("driver_receive failed with: %d", r);
-    }
-
-    printf("received message\n");
-    if (is_ipc_notify(ipc_status)){
-      switch (_ENDPOINT_P(msg.m_source)) {
-
-        if(msg.m_notify.interrupts & BIT(timer_hook_id)){
-          printf("timer interrupt\n");
-          timer_int_handler();
-          if(counter % 60){
-            elapsed_seconds += 1; 
-          }
-        }
-
-        if(msg.m_notify.interrupts & BIT(keyboard_hook_id)){
-          printf("keyboard interrupt\n");
-          if(check_ESC() != 0) return 1;
-        }
-
-        if(msg.m_notify.interrupts & BIT(mouse_hook_id)){
-          //do nothing for now
-        }
-      }
-    }
-
-  return 0;
-}
 
 int (proj_main_loop)(int argc , char* argv[]){
+
+  int ipc_status,r;
+  message msg;
+  uint8_t irq_timer, irq_keyboard;  //,irq_mouse ;
+
+  if(timer_subscribe_int(&irq_timer) != 0) return 1;
+  if(keyboard_subscribe_int(&irq_keyboard) != 0) return 1;
+  //if(mouse_subscribe_int(&irq_mouse) !=0) return 1;
 
   setup();
 
   while (isRunning)
   {
-    if(check_interrupts() != 0){
-      isRunning = false;
+
+    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+          printf("driver_receive failed with: %d", r);
+      }
+
+    if (is_ipc_notify(ipc_status)){
+      printf("received message\n");
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if(msg.m_notify.interrupts & irq_timer){
+            printf("timer interrupt\n");
+            timer_int_handler();
+            if(counter % 60){
+              elapsed_seconds += 1; 
+            }
+          }
+
+          if(msg.m_notify.interrupts & irq_keyboard){
+            printf("keyboard interrupt\n");
+            if(check_ESC() != 0) isRunning = false;
+          }
+          /*
+          if(msg.m_notify.interrupts & irq_mouse){
+            //do nothing for now
+          }*/
+          break;
+        default:
+          break; 
+      }
     }
 
     if(draw() != 0){
       printf("Error drawing\n");
-    } 
+    }
+
+    
   }
 
-  if(_exit_() != 0) return 1;
-  
+  _exit_();
+
   return 0;
 }

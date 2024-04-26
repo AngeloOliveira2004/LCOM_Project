@@ -59,7 +59,7 @@ int (set_text_mode)(){
 
   memset(&reg86, 0, sizeof(reg86));
 
-  reg86.intno = 0x10; /* BIOS video services always ten*/
+  reg86.intno = 0x10; /* set_texBIOS video services always ten*/
   reg86.ah = 0x00; /* Set Video Mode */
   reg86.al = 0x03; /* Mode 0x105 */
   reg86.ax = 0x0003; /* 0x4F02 */
@@ -69,6 +69,7 @@ int (set_text_mode)(){
     return 1;
   }
 
+  printf("Text mode setted\n");
   return 0;
 }
 
@@ -176,7 +177,7 @@ void erase_buffer() {
 
 void swap_buffers() {
     memcpy(frontBuffer, backBuffer, bufferSize);
-     printf("Buffers Swapped");
+    printf("Buffers Swapped\n");
 }
 
 int allocate_buffers(){

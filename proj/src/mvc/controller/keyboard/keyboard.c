@@ -12,9 +12,9 @@ struct scancode_info scan_info;
 
 int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
-  *bit_no = hook_id;
+  *bit_no = BIT(hook_id);
 
-  if(sys_irqsetpolicy(IRQ_KEYBOARD , 0x001 | 0x002 , &hook_id) != OK)
+  if(sys_irqsetpolicy(IRQ_KEYBOARD , IRQ_REENABLE | IRQ_EXCLUSIVE , &hook_id) != OK)
     return 1;
 
   return 0;
@@ -116,6 +116,8 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
   }else{
     return false;
   }
+
+  printf("Scancode: 0x%02X\n",*scancode);
 }
 
 int(kbc_enable_interrupts)(){
@@ -167,11 +169,16 @@ int try_read_out_buffer(uint8_t *out){
 
 int (check_ESC)(){
 
+  
+
   kbc_ih(); 
 
   if(!receive_keyboard_scan(&scan_info,&scancode)){
+    printf("Pressed ESC\n");
+    
     return 1;
   }
+
 
   return 0;
 }
