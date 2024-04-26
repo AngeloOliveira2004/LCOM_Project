@@ -9,10 +9,6 @@ uint32_t counter = 0;
 int32_t hook_id = TIMER0_IRQ;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  //mudar frequencia, manter config atual
-  //1. ler config (done)
-  //2. construir config
-  //3. Calcular valor de init (done) linha 15
 
   uint8_t st , msb , lsb;
   int finalFreq = TIMER_FREQ/freq;
@@ -59,11 +55,6 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-   //Para subscrever um interrupt usamos o comando sys_irqsetpolicy
-   //1º Argumento = IRQ do timer que é 0
-   //2º Argumento = IRQ_REENABLE reativa o irq depois do interrupt
-   //3º Argumento = hook_id
-
   *bit_no = hook_id;
 
   if(sys_irqsetpolicy(TIMER0_IRQ , IRQ_REENABLE , &hook_id) != OK)

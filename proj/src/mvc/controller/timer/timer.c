@@ -6,7 +6,7 @@
 #include "i8254.h"
 
 uint32_t counter = 0;
-int32_t hook_id = TIMER0_IRQ;
+int32_t el_hook_id = TIMER0_IRQ;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
@@ -55,9 +55,9 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-  *bit_no = hook_id;
+  *bit_no = el_hook_id;
 
-  if(sys_irqsetpolicy(TIMER0_IRQ , IRQ_REENABLE , &hook_id) != OK)
+  if(sys_irqsetpolicy(TIMER0_IRQ , IRQ_REENABLE , &el_hook_id) != OK)
     return 1;
  
   return 0;
@@ -65,7 +65,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 
 int (timer_unsubscribe_int)() {
   
-  if(sys_irqrmpolicy(&hook_id) != OK)
+  if(sys_irqrmpolicy(&el_hook_id) != OK)
     return 1;
  
   return 0;

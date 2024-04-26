@@ -1,14 +1,31 @@
 # name of the program (Minix service)
 PROG=proj
 
+.PATH: ${.CURDIR}/mvc/controller/graphics
+
+.PATH: ${.CURDIR}/mvc/controller/keyboard
+
+#.PATH: ${.CURDIR}/mvc/controller/mouse
+
+.PATH: ${.CURDIR}/mvc/controller/rtc
+
+.PATH: ${.CURDIR}/mvc/controller/serial_port
+
+.PATH: ${.CURDIR}/mvc/controller/timer
+
+.PATH: ${.CURDIR}/mvc/model
+.PATH: ${.CURDIR}/mvc/view
+
 .PATH: ${.CURDIR}/graphics
 .PATH: ${.CURDIR}/keyboard
-.PATH: ${.CURDIR}/game
+.PATH: ${.CURDIR}/mouse
+.PATH: ${.CURDIR}/timer
 .PATH: ${.CURDIR}/utils 
-.PATH: ${.CURDIR}/peripherals
+ 
+
 
 # source code files to be compiled
-SRCS = main.c utils.c keyboard.c kbc.c graphic.c game.c
+SRCS = main.c utils.c keyboard.c kbc.c graphic.c view.c timer.c
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
 CFLAGS += -pedantic

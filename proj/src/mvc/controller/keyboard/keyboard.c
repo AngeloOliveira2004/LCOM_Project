@@ -165,39 +165,11 @@ int try_read_out_buffer(uint8_t *out){
 }
 
 
-int (wait_for_ESC)(){
-  int ipc_status,r;
-  message msg;
-  bool valid = true;
+int (check_ESC)(){
 
-  uint8_t irq_set;
+  kbc_ih(); 
 
-  if(keyboard_subscribe_int(&irq_set) != 0){
-    return 1;
-  }
-
-  while(valid) { 
-    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
-        printf("driver_receive failed with: %d", r);
-        continue;
-    }
-
-    if (is_ipc_notify(ipc_status)) {
-            switch (_ENDPOINT_P(msg.m_source)) {
-              case HARDWARE:			
-                if (msg.m_notify.interrupts & BIT(irq_set)) { 
-                  kbc_ih(); 
-
-                  if(!receive_keyboard_scan(&scan_info,&scancode)){
-                    valid = false;
-                  }
-                }
-                break;
-            }
-    }
- }
-
-  if(keyboard_unsubscribe_int() != 0){
+  if(!receive_keyboard_scan(&scan_info,&scancode)){
     return 1;
   }
 

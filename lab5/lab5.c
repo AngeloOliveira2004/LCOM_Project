@@ -37,55 +37,47 @@ int main(int argc, char *argv[]) {
 
 int(video_test_init)(uint16_t mode, uint8_t delay) {
   
-  if(set_graphic_mode(mode) != 0 ){
-    printf("video_test_init: set_mode() failed\n");
+  if(set_graphic_mode(mode) != 0){
     return 1;
   }
 
-  if(delay > 0){
-    sleep(delay);
-  }
+  sleep(delay);
 
-  if(vg_exit() != 0){
-    printf("video_test_init: vg_exit() failed\n");
-    return 1;
-  }
+
+  vg_exit();
+
 
   return 0;
 }
 
 int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
                           uint16_t width, uint16_t height, uint32_t color) {
-  if(set_graphic_mode(mode) != 0 )
-    return 1;
-  if(set_frame_mode(&mode) != 0 )
-      return 1;
-
   
-    
-  uint32_t new_color;
-
-  if(normalize_color(color, &new_color) != 0)
-    return 1;
-  
-  if(vg_draw_rectangle(x , y , width , height , new_color) != 0)
-    return 1;
-
-  if(wait_for_ESC_() != 0)
-    return 1;
-  
-  if(vg_exit() != 0){
-    printf("video_test_init: vg_exit() failed\n");
+  if(set_graphic_mode(mode) != 0){
     return 1;
   }
+
+  if(set_frame_mode(&mode) != 0){
+    return 1;
+  }
+
+  uint32_t new_color;
+
+  normalize_color(color , &new_color);
+
+  for(int j = 0 ; j < height ; j++){
+    vg_draw_hline(x , y , width , new_color);
+  }
+  
+  wait_for_ESC_();
+
+  vg_exit();
 
   return 0;
 }
 
 int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, uint8_t step) {
-  /* To be completed */
-  printf("%s(0x%03x, %u, 0x%08x, %d): under construction\n", __func__,
-         mode, no_rectangles, first, step);
+  
 
   return 1;
 }

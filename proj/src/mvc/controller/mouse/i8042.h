@@ -15,14 +15,6 @@
 
 #define INPUT_BUFFER 0x60
 
-#define DISABLE_MOUSE 0xA7
-
-#define ENABLE_MOUSE 0xA8
-
-#define CHECK_MOUSE_INTERFACE 0xA9
-
-#define WRITE_BYTE_TO_MOUSE 0xD4
-
 #define AUX_STATUS_REG BIT(5)
 
 #define READ_COMMAND_BYTE 0x20
@@ -70,4 +62,3 @@
 #define BUTTON_PRESSED 1
 
 #endif
-

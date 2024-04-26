@@ -14,12 +14,9 @@ typedef struct {
 } DoublyLinkedList;
 
 DoublyLinkedList* create_doubly_linked_list();
-
 Node* createNode(int data);
 
-
 void initializeList(DoublyLinkedList* list);
-
 void insertAtBeginning(DoublyLinkedList* list, int data);
 void insertAtEnd(DoublyLinkedList* list, int data);
 void insertAtPosition(DoublyLinkedList* list, int data, int position);

@@ -26,78 +26,56 @@ intno 	              0x10 	        0x10
 int (set_graphic_mode)(uint16_t mode){
   reg86_t reg86;
 
-  memset(&reg86, 0, sizeof(reg86));
+  memset(&reg86 , 0 , sizeof(reg86));
 
-  reg86.intno = 0x10; /* BIOS video services always ten*/
-  reg86.ah = 0x4F; /* Set Video Mode */
-  reg86.al = 0x02; /* Mode 0x105 */
-  //reg86.ax = 0x4F02; /* 0x4F02 */
+  reg86.ah = 0x4F;
+  reg86.al = 0x02;
+  reg86.intno = 0x10;
+  reg86.bx = mode | BIT(14);
 
-  /**
-   * Sets the mode of the reg86.bx register with the given mode value.
-   * The mode value is combined with the BIT(14) flag using the bitwise OR operator.
-   *
-   * @param mode The mode value to set.
-   */
-   reg86.bx = mode | BIT(14);
-
-  if (sys_int86(&reg86) != OK) {
-    printf("set_mode: sys_int86() failed \n");
+  if(sys_int86(&reg86) != 0 ){
     return 1;
   }
 
   return 0;
-
 }
 
-
 int (set_text_mode)(){
-  reg86_t reg86;
-
-  memset(&reg86, 0, sizeof(reg86));
-
-  reg86.intno = 0x10; /* BIOS video services always ten*/
-  reg86.ah = 0x00; /* Set Video Mode */
-  reg86.al = 0x03; /* Mode 0x105 */
-  reg86.ax = 0x0003; /* 0x4F02 */
-
-  if (sys_int86(&reg86) != OK) {
-    printf("set_mode: sys_int86() failed \n");
-    return 1;
-  }
-
+  
   return 0;
 }
 
 int (set_frame_mode)(uint16_t* mode){
-  
-  memset(&mode_info, 0, sizeof(mode_info));
-  if(vbe_get_mode_info(*mode, &mode_info)){
+
+  memset(&mode_info , 0 , sizeof(mode_info));
+
+  if(vbe_get_mode_info(*mode , &mode_info) != 0){
     return 1;
   }
 
-  unsigned int bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
-  unsigned int frame_size = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
-
   int r;
 
-  // preenchimento dos endereços físicos
-  struct minix_mem_range physic_addresses;
-  physic_addresses.mr_base = mode_info.PhysBasePtr; // início físico do buffer
-  physic_addresses.mr_limit = physic_addresses.mr_base + frame_size; // fim físico do buffer
-  
-  // alocação física da memória necessária para o frame buffer
-  if( OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)))
-   panic("sys_privctl (ADD_MEM) failed: %d\n", r);
+  struct minix_mem_range mr;
 
-  // alocação virtual da memória necessária para o frame buffer
-  drawBuffer = vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size);
+  bytesPerPixel = (mode_info.BitsPerPixel* 7)  /8;
 
-  if(drawBuffer == MAP_FAILED)
-   panic("couldn't map video memory");
+  unsigned int vram_size = (mode_info.XResolution * mode_info.YResolution) * bytesPerPixel;
+
+  mr.mr_base = mode_info.PhysBasePtr;
+  mr.mr_limit = vram_size + mr.mr_base;
+
+  if(OK != (r = sys_privctl(SELF,SYS_PRIV_ADD_MEM,&mr))){
+    panic("sys_privctl (Physical memory alocation error) failed: %d\n",r);
+    return 1;
+  }
+
+  drawBuffer = vm_map_phys(SELF , (void *) mr.mr_base , vram_size);
+
+  if(drawBuffer == MAP_FAILED){
+    return 1;
+  }
 
   return 0;
-
 }
 
 int (get_h_res)(){
@@ -108,39 +86,36 @@ int (get_v_res)(){
 }
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
-  
-  // As coordenadas têm de ser válidas
-  if(x > mode_info.XResolution || y > mode_info.YResolution) return 1;
-  
-  // Cálculo dos Bytes per pixel da cor escolhida. Arredondamento por excesso.
+
+  if(x > mode_info.XResolution || y > mode_info.YResolution || x < 0 || y < 0){
+    printf("invalid coordiates");
+    return 1;
+  }
+
   unsigned bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
 
-  // Índice (em bytes) da zona do píxel a colorir
-  unsigned int index = (mode_info.XResolution * y + x) * bytesPerPixel;
+  uint8_t coordinates = (mode_info.XResolution * y) + x;
 
-  // A partir da zona frame_buffer[index], copia @BytesPerPixel bytes da @color
-  if (memcpy(&drawBuffer[index], &color, bytesPerPixel) == NULL) return 1;
+  if(memcpy(&drawBuffer[coordinates] , &color , bytesPerPixel) == NULL){
+    return 1;
+  }
 
   return 0;
 }
 
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
 
-  for(int i = 0 ; i < len; i++){
-    if(vg_draw_pixel(x+i, y, color) != 0){
-      return 1;
-    }
+  for(int i = x ; i < len ; i++){
+    vg_draw_pixel(i+x , y , color);
   }
-
+  
   return 0;
 }
 
 int (vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
 
-  for(unsigned   i = 0 ; i < len; i++){
-    if(vg_draw_pixel(x, y+i, color) != 0){
-      return 1;
-    }
+  for(int i = y ; i < len ; i++){
+    vg_draw_pixel(x , i+y , color);
   }
 
   return 0;
@@ -148,23 +123,27 @@ int (vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color){
 
 int (vg_draw_rectangle)(uint16_t x, uint16_t y,uint16_t width, uint16_t height, uint32_t color){
   
-  for(unsigned i = 0; i < height ; i++)
-    if (vg_draw_hline(x, y+i, width, color) != 0) {
+  for(uint16_t i = 0; i < height;i++){
+    if(draw_line(x,y+i,color,width) != 0){
+      printf("Failed to draw line");
       return 1;
     }
-
+  }
   return 0;
+
 }
 
 int (normalize_color)(uint32_t color, uint32_t* new_color){
 
-  if (mode_info.BitsPerPixel == 32) {
+  if(mode_info.BitsPerPixel == 32){
     *new_color = color;
-  } else {
-    *new_color = color & (BIT(mode_info.BitsPerPixel) - 1);
+  }else{
+    int bbp = mode_info.BitsPerPixel;
+    uint32_t mask = BIT(bbp) -1 ;
+    *new_color = mask & color;
   }
+  
   return 0;
-
 }
 
 int (wait_for_ESC_)(){

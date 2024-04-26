@@ -10,8 +10,12 @@
 #include <mouse.h>
 #include <i8254.h>
 
-extern struct packet pp;
-extern uint8_t byte_index;
+extern struct packet mouse;
+extern int counter;
+int counter_packet_print = 0;
+extern int counter_timer;
+extern enum States current_state;
+
 
 // Any header files included below this line should have been created by you
 
@@ -47,51 +51,8 @@ int main(int argc, char *argv[]) {
   reset the mouse to Minix's default configuration, before exiting sync_bytes()
 */
 int (mouse_test_packet)(uint32_t cnt) {
-    int ipc_status , r;
-    message msg;
-    
-    uint8_t irq_set;
-
-    if(mouse_subscribe_int(&irq_set)){
-        return 1;
-    }
-
-    if(mouse_write_command(MOUSE_ENABLE)){
-        return 1;
-    }
-
-    while(cnt) { 
-    if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
-        printf("driver_receive failed with: %d", r);
-        continue;
-    }
-
-    if (is_ipc_notify(ipc_status)) {
-            switch (_ENDPOINT_P(msg.m_source)) {
-              case HARDWARE:			
-                if(msg.m_notify.interrupts & irq_set) {
-                    mouse_ih();
-                    mouse_sync_bytes();
-                }
-                if(byte_index == 3){
-                    mouse_parse_packet(); //quando tivermos 3 bytes damos parse ao pacote e pritamos
-                    mouse_print_packet(&pp);
-                    byte_index = 0;
-                    cnt--; //decrementamos o contador para repetir cnt vezes
-                }
-              }
-                break;
-            }
-    }
-
-    if(mouse_write_command(MOUSE_DISABLE) != OK){
-        return 1;
-    }
-
-    if (mouse_unsubscribe_int() != OK){
-        return 1;
-    }
-
+     /* To be completed */
+    printf("%s: under construction\n", __func__);
     return 0;
 }
 

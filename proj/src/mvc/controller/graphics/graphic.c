@@ -9,13 +9,13 @@
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
+uint8_t *activeBuffer; // The active buffer
 uint16_t bufferSize;
 
 unsigned bytesPerPixel = -1;
 uint16_t xRes, yRes;
 
 vbe_mode_info_t mode_info;
-uint8_t* vAddr_base;
 
 /*
 Parâmetro reg86_t 	Text Mode 	Graphic Mode
@@ -26,7 +26,7 @@ bx 	                  0x0000 	submode | BIT(14)
 intno 	              0x10 	        0x10
 
 */
-int (set_graphic_mode)(uint16_t mode){
+int (set_graphic_mode)(uint16_t* mode){
   reg86_t reg86;
 
   memset(&reg86, 0, sizeof(reg86));
@@ -42,7 +42,7 @@ int (set_graphic_mode)(uint16_t mode){
    *
    * @param mode The mode value to set.
    */
-   reg86.bx = mode | BIT(14);
+   reg86.bx = *mode | BIT(14);
 
   if (sys_int86(&reg86) != OK) {
     printf("set_mode: sys_int86() failed \n");
@@ -86,8 +86,8 @@ int (set_frame_mode)(uint16_t* mode){
 
   // preenchimento dos endereços físicos
   struct minix_mem_range physic_addresses;
-  physic_addresses.mr_base = mode_info.PhysBasePtr; // início físico do buffer
-  physic_addresses.mr_limit = physic_addresses.mr_base + frame_size; // fim físico do buffer
+  physic_addresses.mr_base = mode_info.PhysBasePtr;
+  physic_addresses.mr_limit = physic_addresses.mr_base + frame_size; 
   
   // alocação física da memória necessária para o frame buffer
   if( OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)))
@@ -112,16 +112,13 @@ int (get_v_res)(){
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
   
-  // As coordenadas têm de ser válidas
   if(x > mode_info.XResolution || y > mode_info.YResolution) return 1;
   
-  // Cálculo dos Bytes per pixel da cor escolhida. Arredondamento por excesso.
-  unsigned bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
+  bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
+  
 
-  // Índice (em bytes) da zona do píxel a colorir
   unsigned int index = (mode_info.XResolution * y + x) * bytesPerPixel;
 
-  // A partir da zona frame_buffer[index], copia @BytesPerPixel bytes da @color
   if (memcpy(&frontBuffer[index], &color, bytesPerPixel) == NULL) return 1;
 
   return 0;
@@ -161,117 +158,31 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y,uint16_t width, uint16_t height, 
 
 int (adjust_color)(uint32_t color, uint16_t* new_color){
 
-  if (mode_info.BitsPerPixel == 32 || mode_info.BitsPerPixel == 3 || mode_info.BitsPerPixel == 1) {
+  if (mode_info.BitsPerPixel == 32 ) {
     *new_color = color;  
     return 0;
-  } 
-
-  uint8_t redMask = (color >> 16) & 0xFF;
-  redMask <<= (8 - mode_info.RedMaskSize);
-  redMask >>= mode_info.RedMaskSize;
-
-  uint8_t greenMask = (color >> 8) & 0xFF;
-  greenMask <<= (8 - mode_info.RedMaskSize);
-  greenMask >>= mode_info.RedMaskSize;
-
-  uint8_t blueMask = color & 0xFF;
-  blueMask <<= (8 - mode_info.RedMaskSize);
-  blueMask >>= mode_info.RedMaskSize;
-
-  *new_color = (mode_info.RedFieldPosition << redMask) | (mode_info.RedFieldPosition << greenMask) | (mode_info.RedFieldPosition << blueMask);
-
-  return 0;
-
-}
-
-int (wait_for_ESC_)(){
-
-  if(wait_for_ESC() != OK){
-    return 1;
+  }else{
+    uint32_t mask = BIT(mode_info.BitsPerPixel) -1;
+    *new_color = color & mask;
   }
 
   return 0;
 }
 
-int (draw)(){
 
-  uint16_t mode = VBE_800x600_DC;
-
-  if(set_graphic_mode(mode) != 0 )
-    return 1;
-
-  if(set_frame_mode(&mode) != 0 )
-      return 1;
-
-  if(draw_board() != 0)
-    return 1;
-
-  if(wait_for_ESC_() != 0)
-    return 1;
-  
-  if(vg_exit() != 0){
-    printf("video_test_init: vg_exit() failed\n");
-    return 1;
-  }
-
-  return 0;
-}
-
-int (draw_board)(){
-
-  uint32_t bege = 0xf5f5dc;
-  uint32_t brown = 0x964B00;
-
-  uint16_t bege_16;
-  uint16_t brown_16;
-
-  for(int i = 0; i < 8; i++){
-    for(int j = 0; j < 8; j++){
-      if((i+j) % 2 == 0){
-        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, bege_16) != 0){
-          return 1;
-        }
-      }else{
-        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, brown_16) != 0){
-          return 1;
-        }
-      }
-    }
-  }
-
-  return 0;
-}
-
-int activate_double_buffer() {
-
-    if (allocate_buffers() != 0)
-        return 1;
-
-    return 0;
-}
-
-int erase_buffer() {
+void erase_buffer() {
     memset(backBuffer, 0, bufferSize);
-
-    return 0;
 }
 
-int swap_buffer() {
-
-    uint8_t *temp = frontBuffer;
-    frontBuffer = backBuffer;
-    backBuffer = temp;
-
-    memcpy(vAddr_base, frontBuffer, bufferSize);
-
-    return 0;
+void swap_buffers() {
+    memcpy(frontBuffer, backBuffer, bufferSize);
+     printf("Buffers Swapped");
 }
 
 int allocate_buffers(){
 
-  if(bytesPerPixel == -1){
-    bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
-  }
+  bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
+  
 
   bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
   

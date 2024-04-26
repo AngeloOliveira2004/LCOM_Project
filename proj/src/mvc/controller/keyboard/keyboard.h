@@ -22,7 +22,7 @@ int(kbc_enable_interrupts)();
 int try_read_out_buffer(uint8_t *out);
 
 
-int (wait_for_ESC)();
+int (check_ESC)();
 int (break_from_cycles)();
 
 #endif /* KEYBOARD_H */

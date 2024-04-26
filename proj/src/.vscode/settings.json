@@ -9,6 +9,10 @@
   "files.associations": {
     "graphic.h": "c",
     "keyboard.h": "c",
-    "timer.h": "c"
+    "timer.h": "c",
+    "mouse.h": "c",
+    "kbc.h": "c",
+    "vbe.h": "c",
+    "view.h": "c"
   },
 }
