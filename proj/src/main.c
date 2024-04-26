@@ -76,14 +76,18 @@ int check_interrupts(){
   int ipc_status,r;
   message msg;
 
+  printf("checking interrupts\n");
+
   if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
         printf("driver_receive failed with: %d", r);
     }
 
+    printf("received message\n");
     if (is_ipc_notify(ipc_status)){
       switch (_ENDPOINT_P(msg.m_source)) {
 
         if(msg.m_notify.interrupts & BIT(timer_hook_id)){
+          printf("timer interrupt\n");
           timer_int_handler();
           if(counter % 60){
             elapsed_seconds += 1; 
@@ -91,6 +95,7 @@ int check_interrupts(){
         }
 
         if(msg.m_notify.interrupts & BIT(keyboard_hook_id)){
+          printf("keyboard interrupt\n");
           if(check_ESC() != 0) return 1;
         }
 
