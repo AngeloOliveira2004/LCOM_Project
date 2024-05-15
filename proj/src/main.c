@@ -94,10 +94,16 @@ int (proj_main_loop)(int argc , char* argv[]){
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
           if(msg.m_notify.interrupts & irq_timer){
+            
             printf("timer interrupt\n");
             timer_int_handler();
-            if(counter % 60){
+            if(counter % 30){
               elapsed_seconds += 1; 
+              counter = 0;
+
+              if(draw() != 0){
+                printf("Error drawing\n");
+              }
             }
           }
 
@@ -115,9 +121,7 @@ int (proj_main_loop)(int argc , char* argv[]){
       }
     }
 
-    if(draw() != 0){
-      printf("Error drawing\n");
-    }
+    
   }
 
   _exit_();
