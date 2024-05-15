@@ -156,10 +156,13 @@ int normalize_color(uint32_t old_color, uint32_t *normalized) {
     *normalized = old_color;
   } else {
     int bpp = vbe_mode_info.BitsPerPixel;
-    uint32_t mask = BIT(bpp) - 1;
-    *normalized = old_color & mask;
+    // uint32_t mask = BIT(bpp) - 1;
+    // *normalized = old_color & mask;
+    old_color &= UINT32_MAX >> (32-bpp);
+    *normalized = old_color;
   }
   return 0;
 }
+
 
 

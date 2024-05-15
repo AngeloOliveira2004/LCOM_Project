@@ -274,6 +274,10 @@ int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint1
             }
           }
           if (msg.m_notify.interrupts & BIT(irq_set_timer)) {
+            if (draw_rectangle(xi,yi,250,64,64) != 0) {
+              return 1; // Desenha na posição seguinte
+            }
+
             if (movement) {
               if (xi >= xf) {
                 xi = xf;
