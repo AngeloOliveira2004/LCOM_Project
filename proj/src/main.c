@@ -60,6 +60,7 @@ int setup(){
 int _exit_(){
 
   //if(mouse_unsubscribe_int() != 0) return 1;
+  if(set_text_mode() != 0) return 1;
   if(timer_unsubscribe_int() != 0) return 1;
   if(keyboard_unsubscribe_int() != 0) return 1; 
 
@@ -117,8 +118,6 @@ int (proj_main_loop)(int argc , char* argv[]){
     if(draw() != 0){
       printf("Error drawing\n");
     }
-
-    
   }
 
   _exit_();

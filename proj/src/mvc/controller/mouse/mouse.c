@@ -5,13 +5,13 @@
 #include "mouse.h"
 #include "kbc.h"
 
-int hook_id_mouse = 4;
+int hook_id_mouse = 2;
 
 struct packet mouse;
 
 bool sync_v = false;
 
-int counter_ = 0;
+int counter = 0;
 
 extern int counter_packet_print;
 
@@ -19,15 +19,15 @@ enum States current_state = INITIAL;
 
 void (mouse_ih)() {
   uint8_t data;
-  read_commands_kbc_(&data);
-  parse_values(data,&counter_,&mouse);
+  read_commands_kbc(&data);
+  parse_values(data,&counter,&mouse);
 }
 
 int(mouse_subscribe_int)(uint8_t *bit_no){
 
-  *bit_no = BIT(hook_id_mouse);
+  *bit_no = hook_id_mouse;
 
-  if(sys_irqsetpolicy(IRQ_MOUSE,IRQ_REENABLE | IRQ_EXCLUSIVE , &hook_id_mouse) != 0){
+  if(sys_irqsetpolicy(IRQ_MOUSE,IRQ_COMMAND_BYTE,&hook_id_mouse) != 0){
     return 1;
   }
   return 0;
@@ -41,7 +41,7 @@ int(mouse_unsubscribe_int)(){
 }
 
 
-int (read_status_register_)(uint8_t *st){
+int (read_status_register)(uint8_t *st){
   if(util_sys_inb(STATUS_BYTE,st)){
     return 1;
   }
@@ -125,16 +125,16 @@ void clean_packet(struct packet *mouse){
 
 int(disable_mouse_report)(){
 
-  if(send_commands_kbc_(WRITE_BYTE_TO_MOUSE,KBC_IN_CMD) != 0){
+  if(send_commands_kbc(WRITE_BYTE_TO_MOUSE,KBC_IN_CMD) != 0){
     return 1;
   }
 
-  if(send_commands_kbc_(DISABLE_DATA_REPORTING,KBC_OUT_CMD) != 0){
+  if(send_commands_kbc(DISABLE_DATA_REPORTING,KBC_OUT_CMD) != 0){
     return 1;
   }
 
   uint8_t error;
-  read_commands_kbc_(&error);
+  read_commands_kbc(&error);
   switch (error){
   case ACK:
     return 0;
@@ -153,16 +153,16 @@ int(disable_mouse_report)(){
 
 int(enable_mouse_report)(){
 
-  if(send_commands_kbc_(WRITE_BYTE_TO_MOUSE,KBC_IN_CMD) != 0){
+  if(send_commands_kbc(WRITE_BYTE_TO_MOUSE,KBC_IN_CMD) != 0){
     return 1;
   }
 
-  if(send_commands_kbc_(ENABLE_DATA_REPORTING,KBC_OUT_CMD) != 0){
+  if(send_commands_kbc(ENABLE_DATA_REPORTING,KBC_OUT_CMD) != 0){
     return 1;
   }
 
   uint8_t error;
-  read_commands_kbc_(&error);
+  read_commands_kbc(&error);
   switch (error){
   case ACK:
     return 0;

@@ -3,15 +3,15 @@
 
 int initialize_graphics(uint16_t* mode){
 
-  if(allocate_buffers() != 0)
-    return 1;
-  
   if(set_graphic_mode(mode) != 0 )
     return 1;
 
   if(set_frame_mode(mode) != 0 )
     return 1;
 
+  if(allocate_buffers() != 0)
+    return 1;
+  
   printf("Initialized");
   return 0;
 }

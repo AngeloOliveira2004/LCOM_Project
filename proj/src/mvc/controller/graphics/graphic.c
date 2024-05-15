@@ -187,13 +187,6 @@ int allocate_buffers(){
 
   bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
   
-  // Allocate the front buffer
-  frontBuffer = (uint8_t*) malloc(bufferSize);
-  if(frontBuffer == NULL){
-    printf("Error: Failed to allocate memory for the front buffer\n");
-    return 1;
-  }
-
   // Allocate the back buffer
   backBuffer = (uint8_t*) malloc(bufferSize);
   if(backBuffer == NULL){

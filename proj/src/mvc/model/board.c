@@ -12,18 +12,18 @@ struct Piece
 void init_board(struct Board *board){
 
   struct Piece WhitePawn = {PAWN, {0, 1}, true, true, true, false};
-  struct Piece WhiteKnight = {PAWN, {1, 0}, true, true, true, false};
-  struct Piece WhiteQueen = {PAWN, {3, 0}, true, true, true, false};
-  struct Piece WhiteKing = {PAWN, {4, 0}, true, true, true, false};
-  struct Piece WhiteBishop = {PAWN, {2, 0}, true, true, true, false};
-  struct Piece WhiteRook = {PAWN, {0, 0}, true, true, true, false};
+  struct Piece WhiteKnight = {KNIGHT, {1, 0}, true, true, true, false};
+  struct Piece WhiteQueen = {QUEEN, {3, 0}, true, true, true, false};
+  struct Piece WhiteKing = {KING, {4, 0}, true, true, true, false};
+  struct Piece WhiteBishop = {BISHOP, {2, 0}, true, true, true, false};
+  struct Piece WhiteRook = {ROOK, {0, 0}, true, true, true, false};
 
   struct Piece BlackPawn = {PAWN, {0, 6}, true, false, true, false};
-  struct Piece BlackKnight = {PAWN, {1, 6}, true, false, true, false};
-  struct Piece BlackQueen = {PAWN, {3, 6}, true, false, true, false};
-  struct Piece BlackKing = {PAWN, {4, 6}, true, false, true, false};
-  struct Piece BlackBishop = {PAWN, {2, 6}, true, false, true, false};
-  struct Piece BlackRook = {PAWN, {0, 6}, true, false, true, false};
+  struct Piece BlackKnight = {KNIGHT, {1, 6}, true, false, true, false};
+  struct Piece BlackQueen = {QUEEN, {3, 6}, true, false, true, false};
+  struct Piece BlackKing = {KING, {4, 6}, true, false, true, false};
+  struct Piece BlackBishop = {BISHOP, {2, 6}, true, false, true, false};
+  struct Piece BlackRook = {ROOK, {0, 6}, true, false, true, false};
 
   board->movesIndex = 0;
   for(int i = 0; i < 32; i++){
