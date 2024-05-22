@@ -49,6 +49,26 @@ int (draw_board)(){
   return 0;
 }
 
+
+int draw_Clocks(){
+
+  for(int i = 650 ; i < 800; i++){
+    for(int j = 0; j < 100; j++){
+      if(vg_draw_pixel(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, 0xFFFFF) != 0){
+        continue;
+      }
+    }
+
+    for(int j = 600 ; j > 500; j--){
+      if(vg_draw_pixel(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, 0xFFFFFF) != 0){
+        continue;
+      }
+    }
+  }
+
+  return 0;
+}
+
 int draw_piece(){
   return 0;
 }
@@ -63,9 +83,13 @@ int draw_backBackGround(){
 
   erase_buffer();
 
-   printf("Drawing Background\n");
+  printf("Drawing Background\n");
+  
   if(draw_board() != 0)
     return 1;
+
+  //if(draw_Clocks() != 0)
+    //return 1;
   
   printf("Finished Drawing Background\n");
   swap_buffers();

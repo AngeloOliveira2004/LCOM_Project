@@ -8,6 +8,7 @@ int (fill)(int x , int y , int width , int height , uint32_t color);
 int (draw_board)();
 int (draw_board)();
 int (draw_backBackGround)();
+int (draw_Clocks)();
 int draw_piece();
 int draw_initial_pos();
 
