@@ -1,4 +1,5 @@
 #include "../controller/graphics/graphic.h"
+#include "sprites/pieces.xpm"
 #include "view.h"
 
 int initialize_graphics(uint16_t* mode){
@@ -50,6 +51,14 @@ int (draw_board)(){
 }
 
 int draw_piece(){
+  draw_xpm(Chess_blt45, 20, 20);
+  draw_xpm(Chess_klt45, 70, 70);
+  draw_xpm(Chess_nlt45, 120, 120);
+  draw_xpm(Chess_plt45, 170, 170);
+  draw_xpm(Chess_qlt45, 220, 220);
+  draw_xpm(Chess_rlt45, 270, 270);
+  draw_xpm(Chess_qlt45, 320, 320);
+
   return 0;
 }
 
@@ -75,6 +84,10 @@ int draw_backBackGround(){
   return 0;
 }
 
+
+
+
+
 int draw(){
   erase_buffer();
 
@@ -85,3 +98,5 @@ int draw(){
 
   return 0;
 }
+
+

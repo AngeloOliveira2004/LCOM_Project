@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "../keyboard/keyboard.h"
+#include "../../../sprites/pieces.xpm"
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
@@ -205,3 +206,26 @@ int allocate_buffers(){
 
   return 0;
 }
+
+int (draw_xpm) (xpm_map_t img, uint16_t x, uint16_t y) {
+  
+  xpm_image_t image;
+  uint8_t *map;
+  map = xpm_load(img, XPM_8_8_8, &image);
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+      
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type))
+      if (vg_draw_pixel(x + j, y + i, color)) {
+        return 1;
+      }
+    }
+  }
+  swap_buffers();
+  return 0;
+}
+

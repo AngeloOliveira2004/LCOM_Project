@@ -81,10 +81,17 @@ int (proj_main_loop)(int argc , char* argv[]){
   //if(mouse_subscribe_int(&irq_mouse) !=0) return 1;
 
   setup();
+    
 
-  if(draw_backBackGround() != 0){
+  if(draw_board() != 0){
     return 1;
   }
+
+
+  if (draw_piece() != 0){
+    return 1;
+  }
+  
 
 
   while (isRunning)

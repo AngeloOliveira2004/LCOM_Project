@@ -10,5 +10,4 @@ int (draw_board)();
 int (draw_backBackGround)();
 int draw_piece();
 int draw_initial_pos();
-
 int draw();
