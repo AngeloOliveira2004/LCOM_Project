@@ -7,7 +7,7 @@
 #define WIDTH 800
 #define HEIGHT 600
 
-#define CELL_SIZE_WIDTH 800/8
+#define CELL_SIZE_WIDTH 600/8
 #define CELL_SIZE_HEIGHT 600/8
 
 #define VBE_1024x768_IC 0x105 //8 bits per pixel

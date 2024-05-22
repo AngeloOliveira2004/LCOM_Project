@@ -3,10 +3,10 @@
 
 int initialize_graphics(uint16_t* mode){
 
-  if(set_graphic_mode(mode) != 0 )
+  if(set_frame_mode(mode) != 0 )
     return 1;
 
-  if(set_frame_mode(mode) != 0 )
+  if(set_graphic_mode(mode) != 0 )
     return 1;
 
   if(allocate_buffers() != 0)
@@ -54,6 +54,24 @@ int draw_piece(){
 }
 
 int draw_initial_pos(){
+  return 0;
+}
+
+int draw_backBackGround(){
+   printf("Erased Buffer\n");
+ 
+
+  erase_buffer();
+
+   printf("Drawing Background\n");
+  if(draw_board() != 0)
+    return 1;
+  
+  printf("Finished Drawing Background\n");
+  swap_buffers();
+
+  
+  printf("Finished Swapping buffers\n");
   return 0;
 }
 

@@ -82,6 +82,11 @@ int (proj_main_loop)(int argc , char* argv[]){
 
   setup();
 
+  if(draw_backBackGround() != 0){
+    return 1;
+  }
+
+
   while (isRunning)
   {
 
@@ -100,10 +105,10 @@ int (proj_main_loop)(int argc , char* argv[]){
             if(counter % 30){
               elapsed_seconds += 1; 
               counter = 0;
-
+              /*
               if(draw() != 0){
                 printf("Error drawing\n");
-              }
+              }*/
             }
           }
 

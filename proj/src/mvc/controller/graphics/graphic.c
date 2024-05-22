@@ -10,7 +10,7 @@
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
 uint8_t *activeBuffer; // The active buffer
-uint16_t bufferSize;
+uint32_t bufferSize;
 
 unsigned bytesPerPixel = -1;
 uint16_t xRes, yRes;
@@ -97,6 +97,8 @@ int (set_frame_mode)(uint16_t* mode){
   // alocação virtual da memória necessária para o frame buffer
   frontBuffer = vm_map_phys(SELF, (void*) physic_addresses.mr_base, frame_size);
 
+  printf("front buffer size : %d\n", frame_size);
+
   if(frontBuffer == MAP_FAILED)
    panic("couldn't map video memory");
 
@@ -117,11 +119,11 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
   
   bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
   
-
   unsigned int index = (mode_info.XResolution * y + x) * bytesPerPixel;
 
-  if (memcpy(&frontBuffer[index], &color, bytesPerPixel) == NULL) return 1;
-
+  //printf("colouring on %d %d\n", x, y);
+  if (memcpy(&backBuffer[index], &color, bytesPerPixel) == NULL) return 1;
+  //printf("coloured on %d %d\n", x, y);
   return 0;
 }
 
@@ -172,10 +174,12 @@ int (adjust_color)(uint32_t color, uint16_t* new_color){
 
 
 void erase_buffer() {
+  printf("Erasing Buffer\n");
     memset(backBuffer, 0, bufferSize);
 }
 
 void swap_buffers() {
+    bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
     memcpy(frontBuffer, backBuffer, bufferSize);
     printf("Buffers Swapped\n");
 }
@@ -189,6 +193,11 @@ int allocate_buffers(){
   
   // Allocate the back buffer
   backBuffer = (uint8_t*) malloc(bufferSize);
+  printf("XResolution : %d\n", mode_info.XResolution);  
+  printf("YResolution : %d\n", mode_info.YResolution);
+  printf("Bytes per pixel : %d\n", bytesPerPixel);
+
+  printf("Back buffer size : %d\n", bufferSize);
   if(backBuffer == NULL){
     printf("Error: Failed to allocate memory for the back  buffer\n");
     return 1;
