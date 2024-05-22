@@ -60,23 +60,14 @@ int draw_Clocks(){
 }
 
 int draw_backBackGround(){
-   printf("Erased Buffer\n");
  
-
   erase_buffer();
-
-  printf("Drawing Background\n");
   
   if(draw_board_without_Pieces() != 0)
     return 1;
 
-  
-  printf("Finished Drawing Background\n");
-
   swap_buffers();
 
-  
-  printf("Finished Swapping buffers\n");
   return 0;
 }
 
@@ -197,4 +188,112 @@ int draw_piece(struct Piece* piece){
   }
 
   return 0;
+}
+
+int return_to_initial_pos(struct Piece* piece, struct Position* initialPos) {
+    int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
+    int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
+
+    int currentX = piece->position.x * CELL_SIZE_WIDTH + 10;
+    int currentY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+
+    if (currentX == initialX && currentY == initialY) {
+        return 0; // Already at the initial position
+    }
+
+    double m = 0;
+    if (currentX != initialX) {
+        m = (double)(currentY - initialY) / (currentX - initialX);
+    }
+    double b = currentY - m * currentX;
+
+    while (currentX != initialX || currentY != initialY) {
+        printf("Current Position Before Move: %d %d\n", currentX, currentY);
+
+        if (currentX != initialX) {
+            if (currentX > initialX) {
+                currentX--;
+            } else {
+                currentX++;
+            }
+        }
+
+        if (currentX != initialX) {
+            currentY = (int)(m * currentX + b);
+        } else if (currentY != initialY) {
+            if (currentY > initialY) {
+                currentY--;
+            } else {
+                currentY++;
+            }
+        }
+
+        printf("Current Position After Move: %d %d\n", currentX, currentY);
+
+        if (piece->isWhite) {
+            draw_white_piece(Chess_plt45, currentX, currentY);
+        } else {
+            draw_black_piece(Chess_black_plt45, currentX, currentY);
+        }
+        swap_buffers();
+    }
+
+    piece->position.x = initialPos->x;
+    piece->position.y = initialPos->y;
+
+    return 0;
+}
+
+int (advance_piece)(struct Piece* piece , struct Position* initialPos){
+  int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
+    int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
+
+    int currentX = piece->position.x * CELL_SIZE_WIDTH + 10;
+    int currentY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+
+    if (currentX == initialX && currentY == initialY) {
+        return 0; // Already at the initial position
+    }
+
+    double m = 0;
+    if (currentX != initialX) {
+        m = (double)(currentY - initialY) / (currentX - initialX);
+    }
+    double b = currentY - m * currentX;
+
+    while (currentX != initialX || currentY != initialY) {
+        printf("Current Position Before Move: %d %d\n", currentX, currentY);
+
+        if (currentX != initialX) {
+            if (currentX > initialX) {
+                currentX--;
+            } else {
+                currentX++;
+            }
+        }
+
+        if (currentX != initialX) {
+            currentY = (int)(m * currentX + b);
+        } else if (currentY != initialY) {
+            if (currentY > initialY) {
+                currentY--;
+            } else {
+                currentY++;
+            }
+        }
+
+        printf("Current Position After Move: %d %d\n", currentX, currentY);
+
+        if (piece->isWhite) {
+            draw_white_piece(Chess_plt45, currentX, currentY);
+        } else {
+            draw_black_piece(Chess_black_plt45, currentX, currentY);
+        }
+        swap_buffers();
+    }
+
+    piece->position.x = initialPos->x;
+    piece->position.y = initialPos->y;
+
+    return 0;
 }

@@ -97,7 +97,16 @@ int (proj_main_loop)(int argc , char* argv[]){
     return 1;
   }
 
-  return 1;
+  struct Position initalPos = board->pieces[0].position;
+  initalPos.y = 1;
+  initalPos.x = 5;
+  board->pieces[0].position.x = 4;
+  board->pieces[0].position.y = 7;
+
+
+  if(return_to_initial_pos(&board->pieces[0] , &initalPos) != 0){
+    return 1;
+  }
 
   while (isRunning)
   {

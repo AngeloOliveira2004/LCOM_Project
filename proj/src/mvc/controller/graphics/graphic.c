@@ -175,14 +175,12 @@ int (adjust_color)(uint32_t color, uint16_t* new_color){
 
 
 void erase_buffer() {
-  printf("Erasing Buffer\n");
     memset(backBuffer, 0, bufferSize);
 }
 
 void swap_buffers() {
     bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
     memcpy(frontBuffer, backBuffer, bufferSize);
-    printf("Buffers Swapped\n");
 }
 
 int allocate_buffers(){

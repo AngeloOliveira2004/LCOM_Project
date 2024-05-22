@@ -13,6 +13,8 @@ int (draw_Clocks)();
 int draw_piece();
 int draw_initial_pos();
 
+int (return_to_initial_pos)(struct Piece* piece , struct Position* initialPos);
+int (advance_piece)(struct Piece* piece , struct Position* initialPos);
 
 int (draw_pawn)(struct Piece* piece);
 int (draw_rook)();
