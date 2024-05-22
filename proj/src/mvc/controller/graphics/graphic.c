@@ -229,3 +229,70 @@ int (draw_xpm) (xpm_map_t img, uint16_t x, uint16_t y) {
   return 0;
 }
 
+
+int (draw_black_piece)(xpm_map_t img , uint16_t x, uint16_t y){
+  xpm_image_t image;
+  uint8_t *map;
+  map = xpm_load(img, XPM_8_8_8, &image);
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(x + j, y + i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+
+  return 0;
+}
+
+int (draw_white_piece)(xpm_map_t img , uint16_t x, uint16_t y){
+  xpm_image_t image;
+  uint8_t *map;
+  map = xpm_load(img, XPM_8_8_8, &image);
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+
+        uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+        uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+        uint32_t color = 0;
+        memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+        if (color != xpm_transparency_color(image.type)){
+          if (vg_draw_pixel(x + j, y + i, color)) {
+            return 1;
+          }
+        }
+    }
+  }
+
+  return 0;
+}
+
+int (draw_board_without_Pieces)(){
+
+  uint32_t bege = 0xf5f5dc;
+  uint32_t brown = 0x964B00;
+
+  for(int i = 0; i < 8; i++){
+    for(int j = 0; j < 8; j++){
+      if((i+j) % 2 == 0){
+        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, bege) != 0){
+          return 1;
+        }
+      }else{
+        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, brown) != 0){
+          return 1;
+        }
+      }
+    }
+  }
+
+  return 0;
+
+}

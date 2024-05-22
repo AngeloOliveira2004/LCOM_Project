@@ -20,6 +20,10 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 int (adjust_color)(uint32_t color, uint16_t* new_color);
 
 int (draw_xpm) (xpm_map_t img, uint16_t x, uint16_t y);
+int (draw_black_piece)(xpm_map_t img , uint16_t x, uint16_t y);
+int (draw_white_piece)(xpm_map_t img , uint16_t x, uint16_t y);
+
+int (draw_board_without_Pieces)();
 
 int (wait_for_ESC_)();
 

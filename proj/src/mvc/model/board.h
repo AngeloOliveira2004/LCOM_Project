@@ -1,6 +1,8 @@
 #include <lcom/lcf.h>
 #include <stdio.h>
 
+#pragma once
+
 enum PieceType {
   PAWN = 0,
   ROOK = 1,
@@ -47,6 +49,7 @@ struct Piece
   bool isWhite;
   bool canMove;
   bool hasMoved;
+  bool isSelected;
 };
 
 struct Board {

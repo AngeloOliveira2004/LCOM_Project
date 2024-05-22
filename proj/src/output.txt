@@ -9,231 +9,262 @@ Drawing Background
 Finished Drawing Background
 Buffers Swapped
 Finished Swapping buffers
-received message
-timer interrupt
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-Pressed ESC
-Text mode setted
+Drawing Piece
+Piece Type: 0
+Piece Position: 0 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 1 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 2 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 3 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 4 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 5 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 6 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 7 1
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 1
+Piece Position: 0 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 2
+Piece Position: 1 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 3
+Piece Position: 2 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 4
+Piece Position: 3 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 5
+Piece Position: 4 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 3
+Piece Position: 5 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 2
+Piece Position: 6 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 1
+Piece Position: 7 0
+Piece isAlive: 1
+Piece isWhite: 1
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 0 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 1 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 2 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 3 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 4 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 5 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 6 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 0
+Piece Position: 7 6
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 1
+Piece Position: 0 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Black Rook
+Drawing Piece
+Piece Type: 2
+Piece Position: 1 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 3
+Piece Position: 2 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 4
+Piece Position: 3 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 5
+Piece Position: 4 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 3
+Piece Position: 5 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 2
+Piece Position: 6 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Piece
+Piece Type: 1
+Piece Position: 7 7
+Piece isAlive: 1
+Piece isWhite: 0
+Piece canMove: 1
+Piece hasMoved: 0
+Piece isSelected: 0
+Drawing Black Rook
+Buffers Swapped

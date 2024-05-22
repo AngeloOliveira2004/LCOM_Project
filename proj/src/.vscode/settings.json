@@ -14,7 +14,8 @@
     "kbc.h": "c",
     "vbe.h": "c",
     "view.h": "c",
-    "board.h": "c"
+    "board.h": "c",
+    "*.xpm": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }

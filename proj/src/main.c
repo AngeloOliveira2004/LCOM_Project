@@ -89,19 +89,15 @@ int (proj_main_loop)(int argc , char* argv[]){
   setup();
     
 
-  if(draw_board() != 0){
+  if(draw_backBackGround() != 0){
     return 1;
   }
 
-  if(draw_Clocks() != 0){
+  if(draw_board(board) != 0){
     return 1;
   }
 
-  if (draw_piece() != 0){
-    return 1;
-  }
-  
-
+  return 1;
 
   while (isRunning)
   {

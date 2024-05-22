@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include "string.h"
 
+#pragma once
+
 struct Menu {
     char* name;
     char* description;

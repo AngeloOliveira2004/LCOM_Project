@@ -18,84 +18,76 @@ struct Board* create_board(){
   }
   return board;
 }
-void init_board(struct Board *board){
 
-  struct Piece WhitePawn = {PAWN, {0, 1}, true, true, true, false};
-  struct Piece WhiteKnight = {KNIGHT, {1, 0}, true, true, true, false};
-  struct Piece WhiteQueen = {QUEEN, {3, 0}, true, true, true, false};
-  struct Piece WhiteKing = {KING, {4, 0}, true, true, true, false};
-  struct Piece WhiteBishop = {BISHOP, {2, 0}, true, true, true, false};
-  struct Piece WhiteRook = {ROOK, {0, 0}, true, true, true, false};
-
-  struct Piece BlackPawn = {PAWN, {0, 6}, true, false, true, false};
-  struct Piece BlackKnight = {KNIGHT, {1, 6}, true, false, true, false};
-  struct Piece BlackQueen = {QUEEN, {3, 6}, true, false, true, false};
-  struct Piece BlackKing = {KING, {4, 6}, true, false, true, false};
-  struct Piece BlackBishop = {BISHOP, {2, 6}, true, false, true, false};
-  struct Piece BlackRook = {ROOK, {0, 6}, true, false, true, false};
-
-  board->movesIndex = 0;
-  for(int i = 0; i < 32; i++){
-    board->pieces[i].isAlive = true;
-    board->pieces[i].canMove = true;
-    board->pieces[i].position.x = 0;
-    board->pieces[i].position.y = 0;
-    if(i < 16){
-      board->pieces[i].isWhite = true;
-    }else{
-      board->pieces[i].isWhite = false;
+void init_board(struct Board *board) {
+    // Initialize moves and movesIndex
+    board->movesIndex = 0;
+    for (int i = 0; i < 1024; i++) {
+        board->moves[i] = NULL;
     }
-  }
-  for(int i = 0; i < 1024; i++){
-    board->moves[i] = NULL;
-  }
 
-  for(int i = 0; i < 8; i++){
-    for(int j = 0; j < 8; j++){
-      board->squares[i][j].type = EMPTY;
-      board->squares[i][j].position.x = i;
-      board->squares[i][j].position.y = j;
-      board->squares[i][j].isAlive = false;
-      board->squares[i][j].isWhite = false;
-      board->squares[i][j].canMove = false;
-      board->squares[i][j].hasMoved = false;
+    // Initialize squares
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            board->squares[i][j].type = EMPTY;
+            board->squares[i][j].position.x = i;
+            board->squares[i][j].position.y = j;
+            board->squares[i][j].isAlive = false;
+            board->squares[i][j].isWhite = false;
+            board->squares[i][j].canMove = false;
+            board->squares[i][j].hasMoved = false;
+        }
     }
-  }
 
-  for(int j = 0; j < 8; j++){
-    WhitePawn.position.y = j;
-    board->squares[j][1] = WhitePawn;
-  }
+    // Initialize white pawns
+    for (int j = 0; j < 8; j++) {
+        struct Piece whitePawn = {PAWN, {j, 1}, true, true, true, false, false};
+        board->squares[j][1] = whitePawn;
+        board->pieces[j] = whitePawn;
+    }
 
-  for(int j = 0; j < 8; j++){
-    BlackPawn.position.y = j;
-    board->squares[j][6] = WhitePawn;
-  }
-  
-  board->squares[0][0] = WhiteRook;
-  board->squares[0][1] = WhiteKnight;
-  board->squares[0][2] = WhiteBishop;
-  board->squares[0][3] = WhiteQueen;
-  board->squares[0][4] = WhiteKing;
-  WhiteBishop.position.x = 5;  
-  board->squares[0][5] = WhiteBishop;
-  WhiteKnight.position.x = 6;
-  board->squares[0][6] = WhiteKnight;
-  WhiteRook.position.x = 7;
-  board->squares[0][7] = WhiteRook;
+    // Initialize black pawns
+    for (int j = 0; j < 8; j++) {
+        struct Piece blackPawn = {PAWN, {j, 6}, true, false, true, false, false};
+        board->squares[j][6] = blackPawn;
+        board->pieces[16 + j] = blackPawn;
+    }
 
-  board->squares[7][0] = BlackRook;
-  board->squares[7][1] = BlackKnight;
-  board->squares[7][2] = BlackBishop;
-  board->squares[7][3] = BlackQueen;
-  board->squares[7][4] = BlackKing;
-  BlackBishop.position.x = 5;
-  board->squares[7][5] = BlackBishop;
-  BlackKnight.position.x = 6;
-  board->squares[7][6] = BlackKnight;
-  BlackRook.position.x = 7;
-  board->squares[7][7] = BlackRook;
+    // Initialize white pieces
+    struct Piece whitePieces[] = {
+        {ROOK, {0, 0}, true, true, true, false, false},
+        {KNIGHT, {1, 0}, true, true, true, false, false},
+        {BISHOP, {2, 0}, true, true, true, false, false},
+        {QUEEN, {3, 0}, true, true, true, false, false},
+        {KING, {4, 0}, true, true, true, false, false},
+        {BISHOP, {5, 0}, true, true, true, false, false},
+        {KNIGHT, {6, 0}, true, true, true, false, false},
+        {ROOK, {7, 0}, true, true, true, false, false}
+    };
+
+    for (int i = 0; i < 8; i++) {
+        board->squares[i][0] = whitePieces[i];
+        board->pieces[8 + i] = whitePieces[i];
+    }
+
+    // Initialize black pieces
+    struct Piece blackPieces[] = {
+        {ROOK, {0, 7}, true, false, true, false, false},
+        {KNIGHT, {1, 7}, true, false, true, false, false},
+        {BISHOP, {2, 7}, true, false, true, false, false},
+        {QUEEN, {3, 7}, true, false, true, false, false},
+        {KING, {4, 7}, true, false, true, false, false},
+        {BISHOP, {5, 7}, true, false, true, false, false},
+        {KNIGHT, {6, 7}, true, false, true, false, false},
+        {ROOK, {7, 7}, true, false, true, false, false}
+    };
+
+    for (int i = 0; i < 8; i++) {
+        board->squares[i][7] = blackPieces[i];
+        board->pieces[24 + i] = blackPieces[i];
+    }
 }
+
 void init_game(struct Game *game){
   init_board(&game->board);
   game->state = START;
