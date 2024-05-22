@@ -8,6 +8,8 @@
 #include "mvc/controller/mouse/mouse.h"
 #include "mvc/controller/mouse/kbc.h"
 #include "mvc/view/view.h"
+#include "mvc/model/board.h"
+#include "mvc/model/menu.h"
 
 extern int counter;
 int elapsed_seconds = true;
@@ -76,6 +78,10 @@ int (proj_main_loop)(int argc , char* argv[]){
   message msg;
   uint8_t irq_timer, irq_keyboard;  //,irq_mouse ;
 
+  struct Board* board = create_board();
+
+  init_board(board);
+
   if(timer_subscribe_int(&irq_timer) != 0) return 1;
   if(keyboard_subscribe_int(&irq_keyboard) != 0) return 1;
   //if(mouse_subscribe_int(&irq_mouse) !=0) return 1;
@@ -87,6 +93,9 @@ int (proj_main_loop)(int argc , char* argv[]){
     return 1;
   }
 
+  if(draw_Clocks() != 0){
+    return 1;
+  }
 
   if (draw_piece() != 0){
     return 1;

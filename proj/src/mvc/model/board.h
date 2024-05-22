@@ -17,8 +17,8 @@ enum PieceColor {
   BLACK = 1
 };
 
-enum States{
-  INITIAL,
+enum GameStates{
+  START,
   STALEMATE,
   CHECKMATE,
   DRAW,
@@ -71,11 +71,11 @@ struct Game{
   struct Board board;
   struct Player Black_player;
   struct Player White_player;
-  enum States state;  
+  enum GameStates state;  
   uint8_t piece_count;
 };
 
-
+struct Board* create_board();
 void init_board(struct Board *board);
 void init_game(struct Game *game);
 void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piece,

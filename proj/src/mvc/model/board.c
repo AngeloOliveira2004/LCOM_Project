@@ -9,6 +9,15 @@ struct Piece
   bool canMove;
   bool hasMoved;
 };*/
+
+
+struct Board* create_board(){
+  struct Board* board = (struct Board*) malloc(sizeof(struct Board));
+  if(board == NULL){
+    return NULL;
+  }
+  return board;
+}
 void init_board(struct Board *board){
 
   struct Piece WhitePawn = {PAWN, {0, 1}, true, true, true, false};
@@ -89,7 +98,7 @@ void init_board(struct Board *board){
 }
 void init_game(struct Game *game){
   init_board(&game->board);
-  game->state = INITIAL;
+  game->state = START;
   game->piece_count = 32;
   game->Black_player.isWhite = false;
   game->Black_player.isWinner = false;
@@ -192,8 +201,8 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
         int x_diff = init_pos->x - final_pos->x;
         int y_diff = init_pos->y - final_pos->y;
 
-        if ((x_diff == 2 || x_diff == -2) && (y_diff == 1 || y_diff == -1) ||
-            (x_diff == 1 || x_diff == -1) && (y_diff == 2 || y_diff == -2)) {
+        if (((x_diff == 2 || x_diff == -2) && (y_diff == 1 || y_diff == -1)) ||
+            ((x_diff == 1 || x_diff == -1) && (y_diff == 2 || y_diff == -2))) {
             if (board->squares[final_pos->x][final_pos->y].type == EMPTY || 
                 board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite) {
                 return true;
@@ -202,6 +211,8 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
             }
         }
     }
+    break; // Make sure to include a break statement to avoid falling through
+
     return false;
     break;
 case BISHOP:
@@ -219,7 +230,10 @@ case BISHOP:
     default:
       break;
     }
+
+    return false;
 }
+
 
 bool is_check(struct Game *game);
 bool is_checkmate(struct Game *game);
@@ -232,8 +246,8 @@ bool is_inside_board(struct Position *pos){
 
 void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piece,
                 struct Position *init_pos, struct Position *final_pos){
-
-  if(is_movement_legal(game, PieceType, piece, init_pos, final_pos) && is_inside_board(final_pos)){
+  struct Board *board = &game->board;
+  if(is_movement_legal(board, PieceType, piece, init_pos, final_pos) && is_inside_board(final_pos)){
     for(int i = 0; i < 32; i++){
       if(game->board.pieces[i].position.x == init_pos->x && 
          game->board.pieces[i].position.y == init_pos->y){
