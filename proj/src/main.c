@@ -10,6 +10,7 @@
 #include "mvc/view/view.h"
 #include "mvc/model/board.h"
 #include "mvc/model/menu.h"
+#include "sprites/pieces.xpm"
 
 extern int counter;
 int elapsed_seconds = true;
@@ -55,6 +56,19 @@ int setup(){
   uint16_t mode = VBE_800x600_DC;
 
   if(initialize_graphics( &mode) != 0) return 1;
+
+  load_xpm(Chess_plt45 , PAWN , WHITE);
+  load_xpm(Chess_black_plt45 , PAWN , BLACK);
+  load_xpm(Chess_blt45 , BISHOP , WHITE);
+  load_xpm(Chess_black_blt45 , BISHOP , BLACK);
+  load_xpm(Chess_nlt45 , KNIGHT , WHITE);
+  load_xpm(Chess_black_nlt45 , KNIGHT , BLACK);
+  load_xpm(Chess_qlt45 , QUEEN , WHITE);
+  load_xpm(Chess_black_qlt45 , QUEEN , BLACK);
+  load_xpm(Chess_klt45 , KING , WHITE);
+  load_xpm(Chess_black_klt45 , KING , BLACK);
+  load_xpm(Chess_rlt45 , ROOK , WHITE);
+  load_xpm(Chess_black_rlt45 , ROOK , BLACK);
 
   return 0;
 }

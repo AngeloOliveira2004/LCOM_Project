@@ -11,6 +11,20 @@
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
 uint8_t *backgroundBuffer; // The active buffer
+
+xpm_image_t whitePawnXPM;
+xpm_image_t blackPawnXPM;
+xpm_image_t whiteBishopXPM;
+xpm_image_t blackBishopXPM;
+xpm_image_t whiteKnightXPM;
+xpm_image_t blackKnightXPM;
+xpm_image_t whiteQueenXPM;
+xpm_image_t blackQueenXPM;
+xpm_image_t whiteKingXPM;
+xpm_image_t blackKingXPM;
+xpm_image_t whiteRookXPM;
+xpm_image_t blackRookXPM;
+
 uint32_t bufferSize;
 
 unsigned bytesPerPixel = -1;
@@ -114,6 +128,52 @@ int (get_v_res)(){
   return mode_info.YResolution;
 }
 
+int (load_xpm)(xpm_map_t img , enum PieceType pieceType , bool isWhite){
+  switch (pieceType)
+  {
+  case PAWN:
+    if(isWhite)
+      xpm_load(img, XPM_8_8_8, &whitePawnXPM);
+    else
+      xpm_load(img, XPM_8_8_8, &blackPawnXPM);
+    break;
+  case BISHOP:
+    if(isWhite)
+      xpm_load(img, XPM_8_8_8, &whiteBishopXPM);
+    else
+      xpm_load(img, XPM_8_8_8, &blackBishopXPM);
+    break;
+  case KNIGHT:
+    if(isWhite)
+      xpm_load(img, XPM_8_8_8, &whiteKnightXPM);
+    else
+      xpm_load(img, XPM_8_8_8, &blackKnightXPM);
+    break;
+  case QUEEN:
+    if(isWhite)
+      xpm_load(img, XPM_8_8_8, &whiteQueenXPM);
+    else
+      xpm_load(img, XPM_8_8_8, &blackQueenXPM);
+    break;
+  case KING:
+    if(isWhite)
+      xpm_load(img, XPM_8_8_8, &whiteKingXPM);
+    else
+      xpm_load(img, XPM_8_8_8, &blackKingXPM);
+    break;
+  case ROOK:
+    if(isWhite)
+      xpm_load(img, XPM_8_8_8, &whiteRookXPM);
+    else
+      xpm_load(img, XPM_8_8_8, &blackRookXPM);
+    break;
+  default:
+    return 1;
+    break;
+  }
+  return 0;
+}
+
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
   
   if(x > mode_info.XResolution || y > mode_info.YResolution) return 1;
@@ -122,9 +182,8 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
   
   unsigned int index = (mode_info.XResolution * y + x) * bytesPerPixel;
 
-  //printf("colouring on %d %d\n", x, y);
   if (memcpy(&backBuffer[index], &color, bytesPerPixel) == NULL) return 1;
-  //printf("coloured on %d %d\n", x, y);
+  
   return 0;
 }
 
@@ -232,10 +291,35 @@ int (draw_xpm) (xpm_map_t img, uint16_t x, uint16_t y) {
 }
 
 
-int (draw_black_piece)(xpm_map_t img , uint16_t x, uint16_t y){
+int (draw_black_piece)(uint16_t x, uint16_t y , enum PieceType pieceType){
+  
   xpm_image_t image;
-  uint8_t *map;
-  map = xpm_load(img, XPM_8_8_8, &image);
+
+  switch (pieceType)
+  {
+  case PAWN:
+    image = blackPawnXPM;
+    break;
+  case BISHOP:
+    image = blackBishopXPM;
+    break;
+  case KNIGHT:
+    image = blackKnightXPM;
+    break;
+  case QUEEN:
+    image = blackQueenXPM;
+    break;
+  case KING:
+    image = blackKingXPM;
+    break;
+  case ROOK:
+    image = blackRookXPM;
+    break;
+  default:
+    return 1;
+    break;
+  }
+  
   for (unsigned int i = 0; i < image.height; i++) {
     for (unsigned int j = 0; j < image.width; j++) {
     
@@ -254,10 +338,35 @@ int (draw_black_piece)(xpm_map_t img , uint16_t x, uint16_t y){
   return 0;
 }
 
-int (draw_white_piece)(xpm_map_t img , uint16_t x, uint16_t y){
+int (draw_white_piece)(uint16_t x, uint16_t y , enum PieceType pieceType){
+
   xpm_image_t image;
-  uint8_t *map;
-  map = xpm_load(img, XPM_8_8_8, &image);
+  
+  switch (pieceType)
+  {
+  case PAWN:
+    image = whitePawnXPM;
+    break;
+  case BISHOP:
+    image = whiteBishopXPM;
+    break;
+  case KNIGHT:
+    image = whiteKnightXPM;
+    break;
+  case QUEEN:
+    image = whiteQueenXPM;
+    break;
+  case KING:
+    image = whiteKingXPM;
+    break;
+  case ROOK:
+    image = whiteRookXPM;
+    break;
+  default:
+    return 1;
+    break;
+  }
+
   for (unsigned int i = 0; i < image.height; i++) {
     for (unsigned int j = 0; j < image.width; j++) {
 

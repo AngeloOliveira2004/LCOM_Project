@@ -96,9 +96,9 @@ int (draw_pawn)(struct Piece* piece){
 
 
   if(piece->isWhite){
-    draw_white_piece(Chess_plt45, initialX, initialY);
+    draw_white_piece(initialX, initialY , piece->type);
   }else{
-    draw_black_piece(Chess_black_plt45, initialX, initialY);
+    draw_black_piece(initialX, initialY , piece->type);
   }
 
   return 0;
@@ -107,11 +107,10 @@ int (draw_pawn)(struct Piece* piece){
 int (draw_rook)(struct Piece* piece){
   int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
   int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
-
   if(piece->isWhite){
-    draw_white_piece(Chess_rlt45, initialX, initialY);
+    draw_white_piece(initialX, initialY , piece->type);
   }else{
-    draw_black_piece(Chess_black_rlt45, initialX, initialY);
+    draw_black_piece(initialX, initialY , piece->type);
   }
 
   return 0;
@@ -122,9 +121,9 @@ int (draw_knight)(struct Piece* piece){
   int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
 
   if(piece->isWhite){
-    draw_white_piece(Chess_nlt45, initialX, initialY);
+    draw_white_piece(initialX, initialY , piece->type);
   }else{
-    draw_black_piece(Chess_black_nlt45, initialX, initialY);
+    draw_black_piece(initialX, initialY , piece->type);
   }
 
   return 0;
@@ -135,9 +134,9 @@ int (draw_bishop)(struct Piece* piece){
   int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
 
   if(piece->isWhite){
-    draw_white_piece(Chess_blt45, initialX, initialY);
+    draw_white_piece(initialX, initialY , piece->type);
   }else{
-    draw_black_piece(Chess_black_blt45, initialX, initialY);
+    draw_black_piece(initialX, initialY , piece->type);
   }
 
   return 0;
@@ -149,9 +148,9 @@ int (draw_queen)(struct Piece* piece){
   int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
 
   if(piece->isWhite){
-    draw_white_piece(Chess_qlt45, initialX, initialY);
+    draw_white_piece(initialX, initialY , piece->type);
   }else{
-    draw_black_piece(Chess_black_qlt45, initialX, initialY);
+    draw_black_piece(initialX, initialY , piece->type);
   }
 
   return 0;
@@ -162,9 +161,9 @@ int (draw_king)(struct Piece* piece){
   int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
 
   if(piece->isWhite){
-    draw_white_piece(Chess_klt45, initialX, initialY);
+    draw_white_piece(initialX, initialY , piece->type);
   }else{
-    draw_black_piece(Chess_black_klt45, initialX, initialY);
+    draw_black_piece(initialX, initialY , piece->type);
   }
 
   return 0;
@@ -241,11 +240,12 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
         draw_board_except_one_piece(piece->id , board);
         
         if (piece->isWhite) {
-            draw_white_piece(Chess_plt45, currentX, currentY);
+            draw_white_piece(currentX, currentY , piece->type);
         } else {
-            draw_black_piece(Chess_black_plt45, currentX, currentY);
+            draw_black_piece(currentX, currentY , piece->type);
         }
         swap_buffers();
+        sleep(1);
     }
 
     piece->position.x = initialPos->x;
@@ -254,13 +254,8 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
     return 0;
 }
 
-<<<<<<< HEAD
-/*int (advance_piece)(struct Piece* piece , struct Position* initialPos){
-  int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
-=======
 int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct Board* board){
     int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
->>>>>>> refs/remotes/origin/jose
     int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
 
     int currentX = piece->position.x * CELL_SIZE_WIDTH + 10;
@@ -302,9 +297,9 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct B
         draw_board_except_one_piece(piece->id , board);
 
         if (piece->isWhite) {
-            draw_white_piece(Chess_plt45, currentX, currentY);
+            draw_white_piece(currentX, currentY , piece->type);
         } else {
-            draw_black_piece(Chess_black_plt45, currentX, currentY);
+            draw_black_piece(currentX, currentY , piece->type);
         }
         swap_buffers();
     }
@@ -313,4 +308,4 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct B
     piece->position.y = initialPos->y;
 
     return 0;
-}*/
+}
