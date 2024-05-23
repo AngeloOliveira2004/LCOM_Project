@@ -6,5 +6,16 @@
   "editor.tabSize": 2,
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
-  "files.associations": { },
+  "files.associations": {
+    "graphic.h": "c",
+    "keyboard.h": "c",
+    "timer.h": "c",
+    "mouse.h": "c",
+    "kbc.h": "c",
+    "vbe.h": "c",
+    "view.h": "c",
+    "board.h": "c",
+    "*.xpm": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled",
 }
