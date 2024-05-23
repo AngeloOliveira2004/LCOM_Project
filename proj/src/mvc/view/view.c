@@ -254,13 +254,8 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
     return 0;
 }
 
-<<<<<<< HEAD
-/*int (advance_piece)(struct Piece* piece , struct Position* initialPos){
-  int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
-=======
 int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct Board* board){
     int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
->>>>>>> refs/remotes/origin/jose
     int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
 
     int currentX = piece->position.x * CELL_SIZE_WIDTH + 10;
@@ -313,4 +308,4 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct B
     piece->position.y = initialPos->y;
 
     return 0;
-}*/
+}
