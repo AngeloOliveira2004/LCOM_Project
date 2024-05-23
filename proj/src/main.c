@@ -161,6 +161,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
           if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & irq_keyboard) {
             uint32_t status;
+            printf("interrupt\n");
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {
               if (status & AUX_STATUS_REG) {
