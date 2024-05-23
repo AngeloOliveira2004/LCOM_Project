@@ -1,8 +1,8 @@
 #include "graphic.h"
 #include <machine/int86.h>
 #include <lcom/lcf.h>
-#include "../keyboard/kbc.h"
-#include "../keyboard/i8042.h"
+#include "../kbc/kbc.h"
+#include "../kbc/i8042.h"
 #include <stdint.h>
 #include <stdio.h>
 #include "../keyboard/keyboard.h"

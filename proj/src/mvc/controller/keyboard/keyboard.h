@@ -3,7 +3,7 @@
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
-#include "i8042.h"
+#include "../kbc/i8042.h"
 
 struct scancode_info {
   uint8_t size_counter;

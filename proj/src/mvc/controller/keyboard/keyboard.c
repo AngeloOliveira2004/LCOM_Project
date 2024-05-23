@@ -2,9 +2,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "i8042.h"
+#include "../kbc/i8042.h"
 #include "keyboard.h"
-#include "kbc.h"
+#include "../kbc/kbc.h"
 
 int hook_id = 1;
 uint8_t scancode;
@@ -124,7 +124,7 @@ int(kbc_enable_interrupts)(){
   
   uint8_t command_byte;
 
-  if(kbc_write_command(READ_COMMAND_BYTE) != OK){
+  if(send_commands_kbc(READ_COMMAND_BYTE,IRQ_KEYBOARD) != OK){
     return 1;
   }
 
@@ -134,7 +134,7 @@ int(kbc_enable_interrupts)(){
 
   command_byte |= ENABLE_INTERRUPT_OBF_KEYBOARD;
 
-  if(kbc_write_command(WRITE_COMMAND_BYTE) != OK){
+  if(send_commands_kbc(WRITE_COMMAND_BYTE,IRQ_KEYBOARD) != OK){
     return 1;
   }
 

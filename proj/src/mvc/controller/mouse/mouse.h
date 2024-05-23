@@ -4,7 +4,8 @@
 #include <lcom/lcf.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "i8042.h"
+#include "../kbc/i8042.h"
+#include "../kbc/kbc.h"
 
 int(mouse_subscribe_int)(uint8_t *bit_no);
 int(mouse_unsubscribe_int)();
@@ -14,9 +15,9 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp);
 int(disable_mouse_report)();
 int(enable_mouse_report)();
 void clean_packet(struct packet *mouse);
-int (mouse_gesture)(uint8_t x_len,uint8_t tolerance);
+int (in_game_mouse_movement)();
 
-enum States{
+enum InGameStates{
   INITIAL,
   PIECE_SELECTED,
   PIECE_CLICKED,

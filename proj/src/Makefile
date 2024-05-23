@@ -5,7 +5,9 @@ PROG=proj
 
 .PATH: ${.CURDIR}/mvc/controller/keyboard
 
-#.PATH: ${.CURDIR}/mvc/controller/mouse
+.PATH: ${.CURDIR}/mvc/controller/mouse
+
+.PATH: ${.CURDIR}/mvc/controller/kbc
 
 .PATH: ${.CURDIR}/mvc/controller/rtc
 
@@ -25,7 +27,7 @@ PROG=proj
 
 
 # source code files to be compiled
-SRCS = main.c utils.c keyboard.c kbc.c graphic.c view.c timer.c board.c menu.c
+SRCS = main.c utils.c keyboard.c kbc.c mouse.c graphic.c view.c timer.c board.c menu.c
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
 CFLAGS += -pedantic

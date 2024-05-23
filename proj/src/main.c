@@ -6,7 +6,7 @@
 #include "mvc/controller/keyboard/keyboard.h"
 #include "mvc/controller/timer/timer.h"
 #include "mvc/controller/mouse/mouse.h"
-#include "mvc/controller/mouse/kbc.h"
+#include "mvc/controller/kbc/kbc.h"
 #include "mvc/view/view.h"
 #include "mvc/model/board.h"
 #include "mvc/model/menu.h"
@@ -23,6 +23,8 @@ bool isRunning = true;
 uint8_t timer_hook_id = 0;
 uint8_t keyboard_hook_id = 1;
 uint8_t mouse_hook_id = 2;
+
+int counter_packet_print = 0;
 
 int main(int argc, char *argv[]){
 
@@ -75,10 +77,10 @@ int setup(){
 
 int _exit_(){
 
-  //if(mouse_unsubscribe_int() != 0) return 1;
   if(set_text_mode() != 0) return 1;
   if(timer_unsubscribe_int() != 0) return 1;
   if(keyboard_unsubscribe_int() != 0) return 1; 
+  if(mouse_unsubscribe_int() != 0) return 1;
 
   if(vg_exit() != 0) return 1;
   
@@ -90,7 +92,7 @@ int (proj_main_loop)(int argc , char* argv[]){
 
   int ipc_status,r;
   message msg;
-  uint8_t irq_timer, irq_keyboard;  //,irq_mouse ;
+  uint8_t irq_timer, irq_keyboard,irq_mouse;
 
   struct Board* board = create_board();
 
@@ -98,7 +100,7 @@ int (proj_main_loop)(int argc , char* argv[]){
 
   if(timer_subscribe_int(&irq_timer) != 0) return 1;
   if(keyboard_subscribe_int(&irq_keyboard) != 0) return 1;
-  //if(mouse_subscribe_int(&irq_mouse) !=0) return 1;
+  if(mouse_subscribe_int(&irq_mouse) !=0) return 1;
 
   setup();
     
@@ -149,14 +151,15 @@ int (proj_main_loop)(int argc , char* argv[]){
             }
           }
 
+          if(msg.m_notify.interrupts & irq_mouse){
+            mouse_ih();
+          }
+
           if(msg.m_notify.interrupts & irq_keyboard){
             printf("keyboard interrupt\n");
             if(check_ESC() != 0) isRunning = false;
           }
-          /*
-          if(msg.m_notify.interrupts & irq_mouse){
-            //do nothing for now
-          }*/
+
           break;
         default:
           break; 

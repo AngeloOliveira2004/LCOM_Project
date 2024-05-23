@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include "i8042.h"
 #include "kbc.h"
+#include "../keyboard/keyboard.h"
 
 int(read_commands_kbc)(uint8_t *data){
   int x = 5;
@@ -52,4 +53,23 @@ int(send_commands_kbc)(uint8_t command,int port){
 
 }
 
+int(kbc_write_command_args)(uint8_t *command_byte){
+  uint8_t st;
+  int count = 0;
+  while (1)
+  {
+      read_status_register(&st);
+      if(count == 5){
+        return 1;
+      }
 
+      if((st & KBC_ST_IBF) == 0){
+        sys_outb(IN_KBC_COMMAND_ARGS , *command_byte);
+        return 0;
+      }else{
+        count ++;
+        tickdelay(micros_to_ticks(DELAY_US));
+      }
+  }
+  return 0;
+}
