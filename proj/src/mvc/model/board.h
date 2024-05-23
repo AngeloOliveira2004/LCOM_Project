@@ -50,6 +50,7 @@ struct Piece
   bool canMove;
   bool hasMoved;
   bool isSelected;
+  int id;
 };
 
 struct Board {
