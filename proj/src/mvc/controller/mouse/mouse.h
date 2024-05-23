@@ -18,9 +18,9 @@ int (mouse_gesture)(uint8_t x_len,uint8_t tolerance);
 
 enum States{
   INITIAL,
-  DRAWING_FIRST_LINE,
-  DRAWING_VERTEX_ZONE,
-  DRAWING_SECOND_LINE,
+  PIECE_SELECTED,
+  PIECE_CLICKED,
+  PIECE_DRAGGED,
   COMPLETE,
 };
 
