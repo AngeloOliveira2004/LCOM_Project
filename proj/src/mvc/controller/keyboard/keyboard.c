@@ -124,7 +124,7 @@ int(kbc_enable_interrupts)(){
   
   uint8_t command_byte;
 
-  if(send_commands_kbc(READ_COMMAND_BYTE,IRQ_KEYBOARD) != OK){
+  if(send_commands_kbc(READ_COMMAND_BYTE,KBC_CMD_REG) != OK){
     return 1;
   }
 
@@ -134,11 +134,11 @@ int(kbc_enable_interrupts)(){
 
   command_byte |= ENABLE_INTERRUPT_OBF_KEYBOARD;
 
-  if(send_commands_kbc(WRITE_COMMAND_BYTE,IRQ_KEYBOARD) != OK){
+  if(send_commands_kbc(WRITE_COMMAND_BYTE,KBC_CMD_REG) != OK){
     return 1;
   }
 
-  if(kbc_write_command_args(&command_byte) != OK){
+  if(send_commands_kbc(command_byte,IN_KBC_COMMAND_ARGS) != OK){
     return 1;
   }
 
@@ -168,8 +168,6 @@ int try_read_out_buffer(uint8_t *out){
 
 
 int (check_ESC)(){
-
-  
 
   kbc_ih(); 
 

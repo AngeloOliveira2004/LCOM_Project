@@ -8,6 +8,7 @@
 #include "kbc.h"
 #include "../keyboard/keyboard.h"
 
+
 int(read_commands_kbc)(uint8_t *data){
   int x = 5;
   uint8_t st;
@@ -50,7 +51,6 @@ int(send_commands_kbc)(uint8_t command,int port){
     tickdelay(micros_to_ticks(DELAY_US));
   }
   return 1;
-
 }
 
 int(kbc_write_command_args)(uint8_t *command_byte){

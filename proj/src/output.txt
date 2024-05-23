@@ -1,393 +1,369 @@
 front buffer size : 1440000
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x01 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x01 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xfd LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-3
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xfc LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-4
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xfe LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-2
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xfd LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-3
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xfe LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-2
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xfd B3=0xfd LB=0 MB=0 RB=0 XOV=0 X=-3 YOV=0 Y=-3
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xfe B3=0xfd LB=0 MB=0 RB=0 XOV=0 X=-2 YOV=0 Y=-3
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xfd B3=0xfd LB=0 MB=0 RB=0 XOV=0 X=-3 YOV=0 Y=-3
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xfd B3=0xfd LB=0 MB=0 RB=0 XOV=0 X=-3 YOV=0 Y=-3
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xfe B3=0xfe LB=0 MB=0 RB=0 XOV=0 X=-2 YOV=0 Y=-2
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xfe LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-2
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xfe LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-2
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xfe LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-2
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xfe LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-2
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x01 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x38 B2=0xff B3=0xff LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x00 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x00 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x00 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x00 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x00 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x18 B2=0xff B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=-1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x00 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x00 B3=0x01 LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x08 B2=0x01 B3=0x00 LB=0 MB=0 RB=0 XOV=0 X=1 YOV=0 Y=0
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
+mouse interrupt
+mouse interrupt
+mouse interrupt
+B1=0x28 B2=0x00 B3=0xff LB=0 MB=0 RB=0 XOV=0 X=0 YOV=0 Y=-1
 keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-B1=0x01 B2=0x81 B3=0x01 LB=1 MB=0 RB=0 XOV=0 X=129 YOV=0 Y=1
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-B1=0x81 B2=0x01 B3=0x81 LB=1 MB=0 RB=0 XOV=0 X=1 YOV=1 Y=129
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-B1=0x01 B2=0x81 B3=0x01 LB=1 MB=0 RB=0 XOV=0 X=129 YOV=0 Y=1
-keyboard interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-timer interrupt
-received message
-keyboard interrupt
-received message
-timer interrupt
-received message
-B1=0x81 B2=0x01 B3=0x01 LB=1 MB=0 RB=0 XOV=0 X=1 YOV=1 Y=1
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-timer interrupt
-B1=0x81 B2=0x81 B3=0x81 LB=1 MB=0 RB=0 XOV=0 X=129 YOV=1 Y=129
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-timer interrupt
-B1=0x81 B2=0x81 B3=0x81 LB=1 MB=0 RB=0 XOV=0 X=129 YOV=1 Y=129
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-timer interrupt
-B1=0x81 B2=0x01 B3=0x01 LB=1 MB=0 RB=0 XOV=0 X=1 YOV=1 Y=1
-keyboard interrupt
-received message
-timer interrupt
-keyboard interrupt
-received message
-timer interrupt
 keyboard interrupt
 Pressed ESC
 Text mode setted
