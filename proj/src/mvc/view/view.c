@@ -208,7 +208,7 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
     int currentY = piece->position.y * CELL_SIZE_HEIGHT + 10;
 
     if (currentX == initialX && currentY == initialY) {
-        return 0; // Already at the initial position
+        return 0; 
     }
 
     double m = 0;
@@ -246,7 +246,6 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
             draw_black_piece(Chess_black_plt45, currentX, currentY);
         }
         swap_buffers();
-        erase_buffer();
     }
 
     piece->position.x = initialPos->x;
@@ -263,7 +262,7 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct B
     int currentY = piece->position.y * CELL_SIZE_HEIGHT + 10;
 
     if (currentX == initialX && currentY == initialY) {
-        return 0; // Already at the initial position
+        return 0; 
     }
 
     double m = 0;

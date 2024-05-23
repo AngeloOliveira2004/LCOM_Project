@@ -102,7 +102,7 @@ int (proj_main_loop)(int argc , char* argv[]){
 
   struct Position initalPos = board->pieces[0].position;
   initalPos.y = 1;
-  initalPos.x = 5;
+  initalPos.x = 6;
   board->pieces[0].position.x = 4;
   board->pieces[0].position.y = 7;
 
@@ -113,7 +113,6 @@ int (proj_main_loop)(int argc , char* argv[]){
 
   while (isRunning)
   {
-
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
           printf("driver_receive failed with: %d", r);
       }
