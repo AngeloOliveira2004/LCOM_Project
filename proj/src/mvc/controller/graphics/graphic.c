@@ -10,7 +10,7 @@
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
-uint8_t *activeBuffer; // The active buffer
+uint8_t *backgroundBuffer; // The active buffer
 uint32_t bufferSize;
 
 unsigned bytesPerPixel = -1;
@@ -173,7 +173,6 @@ int (adjust_color)(uint32_t color, uint16_t* new_color){
   return 0;
 }
 
-
 void erase_buffer() {
     memset(backBuffer, 0, bufferSize);
 }
@@ -183,22 +182,27 @@ void swap_buffers() {
     memcpy(frontBuffer, backBuffer, bufferSize);
 }
 
+void swap_BackgroundBuffer(){
+    bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
+    memcpy(backBuffer, backgroundBuffer, bufferSize);
+}
+
+void copy_BackGroundBuffer(){
+    bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
+    memcpy(backgroundBuffer, backBuffer, bufferSize);
+}
+
 int allocate_buffers(){
 
   bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
   
-
   bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
   
-  // Allocate the back buffer
   backBuffer = (uint8_t*) malloc(bufferSize);
-  printf("XResolution : %d\n", mode_info.XResolution);  
-  printf("YResolution : %d\n", mode_info.YResolution);
-  printf("Bytes per pixel : %d\n", bytesPerPixel);
+  backgroundBuffer = (uint8_t*) malloc(bufferSize);
 
-  printf("Back buffer size : %d\n", bufferSize);
-  if(backBuffer == NULL){
-    printf("Error: Failed to allocate memory for the back  buffer\n");
+  if(backBuffer == NULL || backgroundBuffer == NULL){
+    printf("Error: Failed to allocate memory for the buffers\n");
     return 1;
   }
 

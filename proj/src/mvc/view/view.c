@@ -13,7 +13,6 @@ int initialize_graphics(uint16_t* mode){
   if(allocate_buffers() != 0)
     return 1;
   
-  printf("Initialized");
   return 0;
 }
 
@@ -40,6 +39,19 @@ int (draw_board)(struct Board* board){
 }
 
 
+int draw_board_except_one_piece(int id , struct Board* board){
+
+  copy_BackGroundBuffer();
+
+  for (int i = 0; i < 32; i++) {
+    if(board->pieces[i].id == id){
+      continue;
+    }
+    draw_piece(&board->pieces[i]);
+  }
+  return 0;
+}
+
 int draw_Clocks(){
 
   for(int i = 650 ; i < 800; i++){
@@ -60,8 +72,6 @@ int draw_Clocks(){
 }
 
 int draw_backBackGround(){
- 
-  erase_buffer();
   
   if(draw_board_without_Pieces() != 0)
     return 1;
@@ -70,6 +80,15 @@ int draw_backBackGround(){
 
   return 0;
 }
+
+int (draw_BackGround_Without_Erase)(){
+
+  if(draw_board_without_Pieces() != 0)
+    return 1;
+
+  return 0;
+}
+
 
 int (draw_pawn)(struct Piece* piece){
   int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
@@ -92,7 +111,6 @@ int (draw_rook)(struct Piece* piece){
   if(piece->isWhite){
     draw_white_piece(Chess_rlt45, initialX, initialY);
   }else{
-    printf("Drawing Black Rook\n");
     draw_black_piece(Chess_black_rlt45, initialX, initialY);
   }
 
@@ -153,15 +171,6 @@ int (draw_king)(struct Piece* piece){
 }
 
 int draw_piece(struct Piece* piece){
-  printf("Drawing Piece\n");
-  printf("Piece Type: %d\n", piece->type);
-  printf("Piece Position: %d %d\n", piece->position.x, piece->position.y);
-  printf("Piece isAlive: %d\n", piece->isAlive);
-  printf("Piece isWhite: %d\n", piece->isWhite);
-  printf("Piece canMove: %d\n", piece->canMove);
-  printf("Piece hasMoved: %d\n", piece->hasMoved);
-  printf("Piece isSelected: %d\n", piece->isSelected);
-
 
   switch (piece->type)
   {
@@ -190,7 +199,8 @@ int draw_piece(struct Piece* piece){
   return 0;
 }
 
-int return_to_initial_pos(struct Piece* piece, struct Position* initialPos) {
+int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , struct Board* board) {
+
     int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
     int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
 
@@ -208,7 +218,6 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos) {
     double b = currentY - m * currentX;
 
     while (currentX != initialX || currentY != initialY) {
-        printf("Current Position Before Move: %d %d\n", currentX, currentY);
 
         if (currentX != initialX) {
             if (currentX > initialX) {
@@ -228,14 +237,16 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos) {
             }
         }
 
-        printf("Current Position After Move: %d %d\n", currentX, currentY);
-
+        swap_BackgroundBuffer();
+        draw_board_except_one_piece(piece->id , board);
+        
         if (piece->isWhite) {
             draw_white_piece(Chess_plt45, currentX, currentY);
         } else {
             draw_black_piece(Chess_black_plt45, currentX, currentY);
         }
         swap_buffers();
+        erase_buffer();
     }
 
     piece->position.x = initialPos->x;
@@ -244,8 +255,8 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos) {
     return 0;
 }
 
-int (advance_piece)(struct Piece* piece , struct Position* initialPos){
-  int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
+int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct Board* board){
+    int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
     int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
 
     int currentX = piece->position.x * CELL_SIZE_WIDTH + 10;
@@ -256,13 +267,13 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos){
     }
 
     double m = 0;
+    
     if (currentX != initialX) {
         m = (double)(currentY - initialY) / (currentX - initialX);
     }
     double b = currentY - m * currentX;
 
     while (currentX != initialX || currentY != initialY) {
-        printf("Current Position Before Move: %d %d\n", currentX, currentY);
 
         if (currentX != initialX) {
             if (currentX > initialX) {
@@ -282,7 +293,9 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos){
             }
         }
 
-        printf("Current Position After Move: %d %d\n", currentX, currentY);
+        erase_buffer();
+        copy_BackGroundBuffer();
+        draw_board_except_one_piece(piece->id , board);
 
         if (piece->isWhite) {
             draw_white_piece(Chess_plt45, currentX, currentY);

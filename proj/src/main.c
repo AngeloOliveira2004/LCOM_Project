@@ -93,6 +93,9 @@ int (proj_main_loop)(int argc , char* argv[]){
     return 1;
   }
 
+  copy_BackGroundBuffer();
+  //swap_BackgroundBuffer();
+
   if(draw_board(board) != 0){
     return 1;
   }
@@ -104,7 +107,7 @@ int (proj_main_loop)(int argc , char* argv[]){
   board->pieces[0].position.y = 7;
 
 
-  if(return_to_initial_pos(&board->pieces[0] , &initalPos) != 0){
+  if(return_to_initial_pos(&board->pieces[0] , &initalPos , board) != 0){
     return 1;
   }
 

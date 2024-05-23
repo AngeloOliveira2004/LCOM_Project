@@ -41,28 +41,28 @@ void init_board(struct Board *board) {
 
     // Initialize white pawns
     for (int j = 0; j < 8; j++) {
-        struct Piece whitePawn = {PAWN, {j, 1}, true, true, true, false, false};
+        struct Piece whitePawn = {PAWN, {j, 1}, true, true, true, false, false , j+1};
         board->squares[j][1] = whitePawn;
         board->pieces[j] = whitePawn;
     }
 
     // Initialize black pawns
     for (int j = 0; j < 8; j++) {
-        struct Piece blackPawn = {PAWN, {j, 6}, true, false, true, false, false};
+        struct Piece blackPawn = {PAWN, {j, 6}, true, false, true, false, false , 9 + j};
         board->squares[j][6] = blackPawn;
         board->pieces[16 + j] = blackPawn;
     }
 
     // Initialize white pieces
     struct Piece whitePieces[] = {
-        {ROOK, {0, 0}, true, true, true, false, false},
-        {KNIGHT, {1, 0}, true, true, true, false, false},
-        {BISHOP, {2, 0}, true, true, true, false, false},
-        {QUEEN, {3, 0}, true, true, true, false, false},
-        {KING, {4, 0}, true, true, true, false, false},
-        {BISHOP, {5, 0}, true, true, true, false, false},
-        {KNIGHT, {6, 0}, true, true, true, false, false},
-        {ROOK, {7, 0}, true, true, true, false, false}
+        {ROOK, {0, 0}, true, true, true, false, false , 17},
+        {KNIGHT, {1, 0}, true, true, true, false, false , 18},
+        {BISHOP, {2, 0}, true, true, true, false, false , 19},
+        {QUEEN, {3, 0}, true, true, true, false, false , 20},
+        {KING, {4, 0}, true, true, true, false, false , 21},
+        {BISHOP, {5, 0}, true, true, true, false, false , 22},
+        {KNIGHT, {6, 0}, true, true, true, false, false , 23},
+        {ROOK, {7, 0}, true, true, true, false, false , 24}
     };
 
     for (int i = 0; i < 8; i++) {
@@ -72,14 +72,14 @@ void init_board(struct Board *board) {
 
     // Initialize black pieces
     struct Piece blackPieces[] = {
-        {ROOK, {0, 7}, true, false, true, false, false},
-        {KNIGHT, {1, 7}, true, false, true, false, false},
-        {BISHOP, {2, 7}, true, false, true, false, false},
-        {QUEEN, {3, 7}, true, false, true, false, false},
-        {KING, {4, 7}, true, false, true, false, false},
-        {BISHOP, {5, 7}, true, false, true, false, false},
-        {KNIGHT, {6, 7}, true, false, true, false, false},
-        {ROOK, {7, 7}, true, false, true, false, false}
+        {ROOK, {0, 7}, true, false, true, false, false , 25},
+        {KNIGHT, {1, 7}, true, false, true, false, false , 26},
+        {BISHOP, {2, 7}, true, false, true, false, false , 27},
+        {QUEEN, {3, 7}, true, false, true, false, false , 28},
+        {KING, {4, 7}, true, false, true, false, false , 29},
+        {BISHOP, {5, 7}, true, false, true, false, false , 30},
+        {KNIGHT, {6, 7}, true, false, true, false, false , 31},
+        {ROOK, {7, 7}, true, false, true, false, false , 32}
     };
 
     for (int i = 0; i < 8; i++) {
