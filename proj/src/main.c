@@ -159,7 +159,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
             }
           }
 
-          if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & irq_keyboard) {
+          if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & BIT(irq_keyboard)) {
             uint32_t status;
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {

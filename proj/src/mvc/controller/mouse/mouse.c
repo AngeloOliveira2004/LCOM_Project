@@ -103,6 +103,7 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
     *cnt = 0;
     cursor.position.x = pp->delta_x;
     cursor.position.y = pp->delta_y;
+    cursor.type = DEFAULT;
     draw_cursor(&cursor);
   }
 
