@@ -7,9 +7,6 @@
 # Ignore .clang-format file
 .clang-format
 
-# Ignore the /sprites directory
-sprites/
-
 # Ignore the .vscode directory
 .vscode/
 
@@ -17,5 +14,5 @@ sprites/
 Makefile
 
 # Trace.txt and Output.txt files
-trace.txt
-output.txt 
+~/trace.txt
+~/output.txt 
