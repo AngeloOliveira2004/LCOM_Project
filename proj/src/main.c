@@ -55,7 +55,7 @@ int setup(){
 
   uint16_t mode = VBE_800x600_DC;
 
-  if(initialize_graphics( &mode) != 0) return 1;
+  if(initialize_graphics(&mode) != 0) return 1;
 
   load_xpm(Chess_plt45 , PAWN , WHITE);
   load_xpm(Chess_black_plt45 , PAWN , BLACK);
@@ -116,7 +116,7 @@ int (proj_main_loop)(int argc , char* argv[]){
 
   struct Position initalPos = board->pieces[0].position;
   initalPos.y = 1;
-  initalPos.x = 6;
+  initalPos.x = 0;
   board->pieces[0].position.x = 4;
   board->pieces[0].position.y = 7;
 

@@ -245,7 +245,6 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
             draw_black_piece(currentX, currentY , piece->type);
         }
         swap_buffers();
-        sleep(1);
     }
 
     piece->position.x = initialPos->x;
