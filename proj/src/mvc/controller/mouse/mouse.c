@@ -3,10 +3,14 @@
 #include <stdio.h>
 #include "../kbc/i8042.h"
 #include "mouse.h"
+#include "../../model/board.h"
+#include "../../view/view.h"
 
 int hook_id_mouse = 2;
 
 struct packet mouse;
+
+struct cursor cursor;
 
 bool sync_v = false;
 
@@ -97,7 +101,9 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
 
   if(*cnt == 3){
     *cnt = 0;
-    mouse_print_packet(pp);
+    cursor.position.x = pp->delta_x;
+    cursor.position.y = pp->delta_y;
+    draw_cursor(&cursor);
   }
 
   return 0;

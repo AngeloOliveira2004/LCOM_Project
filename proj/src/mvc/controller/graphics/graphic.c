@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "../keyboard/keyboard.h"
 #include "../../../sprites/pieces.xpm"
+#include "../../../sprites/Cursor/cursors.xpm"
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
@@ -24,6 +25,9 @@ xpm_image_t whiteKingXPM;
 xpm_image_t blackKingXPM;
 xpm_image_t whiteRookXPM;
 xpm_image_t blackRookXPM;
+xpm_image_t defaultCursorXPM;
+xpm_image_t grabbingCursorXPM;
+xpm_image_t grabCursorXPM;
 
 uint32_t bufferSize;
 
@@ -171,6 +175,13 @@ int (load_xpm)(xpm_map_t img , enum PieceType pieceType , bool isWhite){
     return 1;
     break;
   }
+  return 0;
+}
+
+int(load_xpm_cursor)(){
+  xpm_load(cursor_default, XPM_8_8_8, &defaultCursorXPM);
+  xpm_load(cursor_grabbing, XPM_8_8_8, &grabbingCursorXPM);
+  xpm_load(cursor_grab, XPM_8_8_8, &grabCursorXPM);
   return 0;
 }
 
@@ -337,7 +348,42 @@ int (draw_black_piece)(uint16_t x, uint16_t y , enum PieceType pieceType){
 
   return 0;
 }
+int(draw_cursor_mouse)(uint16_t x, uint16_t y , enum CursorType cursorType){
+  xpm_image_t image;
 
+  switch (cursorType)
+  {
+  case DEFAULT:
+    image = defaultCursorXPM;
+    break;
+  case HOVERING:
+    image = grabCursorXPM;
+    break;
+  case SELECTED:
+    image = grabbingCursorXPM;
+    break;    
+  default:
+    break;
+  }
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+
+        uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+        uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+        uint32_t color = 0;
+        memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+        if (color != xpm_transparency_color(image.type)){
+          if (vg_draw_pixel(x + j, y + i, color)) {
+            return 1;
+          }
+        }
+    }
+  }
+
+  return 0;
+  
+}
 int (draw_white_piece)(uint16_t x, uint16_t y , enum PieceType pieceType){
 
   xpm_image_t image;

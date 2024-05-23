@@ -14,6 +14,12 @@ enum PieceType {
   EMPTY = 7
 };
 
+enum CursorType {
+  DEFAULT = 0,
+  HOVERING = 1,
+  SELECTED = 2
+};
+
 enum PieceColor {
   WHITE = 0,
   BLACK = 1
@@ -40,6 +46,12 @@ struct clock {
   uint8_t hours;
   uint8_t a_tenth_of_a_second;
 };
+
+struct cursor {
+  struct Position position;
+  enum CursorType type;
+};
+
 
 struct Piece
 {

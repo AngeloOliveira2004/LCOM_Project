@@ -8,6 +8,7 @@
 #include "mvc/model/menu.h"
 #include "mvc/view/view.h"
 #include "sprites/pieces.xpm"
+#include "sprites/Cursor/cursors.xpm"
 #include "mvc/controller/kbc/i8042.h"
 #include <lcom/lcf.h>
 #include <machine/int86.h>
@@ -73,6 +74,7 @@ int setup() {
   load_xpm(Chess_black_klt45, KING, BLACK);
   load_xpm(Chess_rlt45, ROOK, WHITE);
   load_xpm(Chess_black_rlt45, ROOK, BLACK);
+  load_xpm_cursor();
 
   return 0;
 }
@@ -157,7 +159,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
             }
           }
 
-          if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & BIT(irq_keyboard)) {
+          if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & irq_keyboard) {
             uint32_t status;
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {

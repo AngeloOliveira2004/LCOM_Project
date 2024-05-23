@@ -198,6 +198,14 @@ int draw_piece(struct Piece* piece){
   return 0;
 }
 
+int draw_cursor(struct cursor* cursor){
+  int initialX = cursor->position.x * CELL_SIZE_WIDTH + 10;
+  int initialY = cursor->position.y * CELL_SIZE_HEIGHT + 10;
+
+  draw_cursor_mouse(initialX, initialY , cursor->type);
+  return 0;
+}
+
 int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , struct Board* board) {
 
     int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
