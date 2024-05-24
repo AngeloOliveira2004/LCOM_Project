@@ -75,6 +75,7 @@ int setup() {
   load_xpm(Chess_rlt45, ROOK, WHITE);
   load_xpm(Chess_black_rlt45, ROOK, BLACK);
   load_xpm_cursor();
+  cursor_draw_start();
 
   return 0;
 }

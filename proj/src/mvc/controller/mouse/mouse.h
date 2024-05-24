@@ -16,6 +16,7 @@ int(disable_mouse_report)();
 int(enable_mouse_report)();
 void clean_packet(struct packet *mouse);
 int (in_game_mouse_movement)();
+int(cursor_draw_start)();
 
 enum InGameStates{
   INITIAL,

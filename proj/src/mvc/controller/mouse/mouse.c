@@ -5,6 +5,7 @@
 #include "mouse.h"
 #include "../../model/board.h"
 #include "../../view/view.h"
+#include "../../proj/src/sprites/Cursor/cursors.xpm"
 
 int hook_id_mouse = 2;
 
@@ -46,6 +47,14 @@ int(mouse_unsubscribe_int)(){
 int(reset_mouse_struct)(struct packet *mouse){
 
   return 0;
+}
+
+int(cursor_draw_start)(){
+  cursor.position.x = 0;
+  cursor.position.y = 0;
+  cursor.type = DEFAULT;
+  return 0;
+  
 }
 
 int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
@@ -101,9 +110,10 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
 
   if(*cnt == 3){
     *cnt = 0;
-    cursor.position.x = pp->delta_x;
-    cursor.position.y = pp->delta_y;
-    cursor.type = DEFAULT;
+    cursor.position.x += pp->delta_x;
+    cursor.position.y -= pp->delta_y;
+    printf("%d",cursor.position.x);
+    printf("%d",cursor.position.y);
     draw_cursor(&cursor);
   }
 

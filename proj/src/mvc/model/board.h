@@ -39,6 +39,11 @@ struct Position {
   uint8_t y;
 };
 
+struct mousePosition{
+  uint32_t x;
+  uint32_t y;
+};
+
 struct clock {
   uint8_t days;
   uint8_t seconds;
@@ -48,7 +53,7 @@ struct clock {
 };
 
 struct cursor {
-  struct Position position;
+  struct mousePosition position;
   enum CursorType type;
 };
 

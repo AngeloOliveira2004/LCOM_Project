@@ -1,5 +1,6 @@
 #include "../controller/graphics/graphic.h"
 #include "sprites/pieces.xpm"
+#include "sprites/Cursor/cursors.xpm"
 #include "view.h"
 
 int initialize_graphics(uint16_t* mode){
@@ -199,10 +200,7 @@ int draw_piece(struct Piece* piece){
 }
 
 int draw_cursor(struct cursor* cursor){
-  int initialX = cursor->position.x * CELL_SIZE_WIDTH + 10;
-  int initialY = cursor->position.y * CELL_SIZE_HEIGHT + 10;
-
-  draw_cursor_mouse(initialX, initialY , cursor->type);
+  draw_cursor_mouse(cursor->position.x, cursor->position.y , cursor->type);
   return 0;
 }
 

@@ -381,6 +381,7 @@ int(draw_cursor_mouse)(uint16_t x, uint16_t y , enum CursorType cursorType){
     }
   }
 
+  swap_buffers();
   return 0;
   
 }
