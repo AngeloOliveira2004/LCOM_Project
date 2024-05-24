@@ -111,5 +111,7 @@ bool is_check(struct Game *game);
 bool is_checkmate(struct Game *game);
 bool is_stalemate(struct Game *game);
 bool is_draw(struct Game *game);
+struct Piece* get_piece_from_click(int click_x, int click_y, int square_size, struct Board* board);
+void change_piece_position(struct Piece *piece,struct Position *init_pos, struct Position *final_pos, struct Board *board);
 
 void game_loop();

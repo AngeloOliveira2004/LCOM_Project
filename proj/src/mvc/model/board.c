@@ -138,7 +138,7 @@ bool is_piece_in_front(struct Board *board, struct Position* initalPos, struct P
 }
 
 bool is_square_occupied(struct Board *board, struct Position *pos){
-  return board->squares[pos->x][pos->y].type != EMPTY;
+  return board->squares[pos->x][pos->y].type == EMPTY;
 }
 
 bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Piece * piece, 
@@ -252,7 +252,37 @@ void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piec
   } 
 }
 
+struct Piece* get_piece_from_click(int click_x, int click_y, int square_size, struct Board* board) {
+  struct Position pos;
+  pos.x = click_x / square_size;
+  pos.y = click_y / square_size;
 
+  if (is_inside_board(&pos)) {
+    if (board->squares[pos.x][pos.y].type != EMPTY) {
+      printf("Piece type: %d\n", board->squares[pos.x][pos.y].type);
+      return &board->squares[pos.x][pos.y];
+    }
+  }
+
+  return NULL;
+}
+
+void change_piece_position(struct Piece *piece,
+struct Position *init_pos, struct Position *final_pos, struct Board *board){
+  if(is_movement_legal(board, piece->type, piece, init_pos, final_pos) && is_inside_board(final_pos)){
+  for(int i = 0; i < 32; i++){
+    if(board->pieces[i].position.x == init_pos->x && 
+     board->pieces[i].position.y == init_pos->y){
+    board->pieces[i].position.x = final_pos->x;
+    board->pieces[i].position.y = final_pos->y;
+    board->pieces[i].canMove = false;
+    break;
+    }
+  }
+  board->squares[final_pos->x][final_pos->y] = *piece;
+  board->squares[init_pos->x][init_pos->y].type = EMPTY;
+  } 
+}
 
 void game_loop(){
   struct Game game;

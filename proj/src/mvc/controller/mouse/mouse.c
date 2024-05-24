@@ -19,7 +19,15 @@ int counter_mouse = 0;
 
 extern int counter_packet_print;
 
+extern struct Board *board;
+
 enum InGameStates current_state;
+
+struct Position initial_pos;
+
+struct Position final_pos;
+
+struct Piece* piece_selected;
 
 void (mouse_ih)() {
   uint8_t data;
@@ -52,6 +60,8 @@ int(reset_mouse_struct)(struct packet *mouse){
 int(cursor_draw_start)(){
   cursor.position.x = 0;
   cursor.position.y = 0;
+  final_pos.x = 0;
+  final_pos.y = 0;
   cursor.type = DEFAULT;
   current_state = INITIAL;
   return 0;
@@ -113,20 +123,20 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
     cursor.position.x += pp->delta_x;
     cursor.position.y -= pp->delta_y;
 
-    if(cursor.position.x >= WIDTH-64 && cursor.position.x <= WIDTH){
+    if(cursor.position.x >= WIDTH-20 && cursor.position.x <= WIDTH){
       cursor.position.x = 5;
     }
 
-    if(cursor.position.y >= HEIGHT-64 && cursor.position.y <= HEIGHT){
+    if(cursor.position.y >= HEIGHT-20 && cursor.position.y <= HEIGHT){
       cursor.position.y = 5;
     }
 
-    if(cursor.position.x >= WIDTH-64){
-      cursor.position.x = WIDTH-69;
+    if(cursor.position.x >= WIDTH-20){
+      cursor.position.x = WIDTH-25;
     }
 
-    if(cursor.position.y >= HEIGHT-64){
-      cursor.position.y = HEIGHT-69;
+    if(cursor.position.y >= HEIGHT-20){
+      cursor.position.y = HEIGHT-25;
     }
     in_game_mouse_movement();
   }
@@ -201,14 +211,22 @@ int(enable_mouse_report)(){
   return 0;
 }
 
-int16_t total_x_movement = 0;
-int16_t total_y_movement = 0;
+struct mousePosition (get_position_cursor)(struct cursor *cursor){
+  return cursor->position;
+}
 
 int (in_game_mouse_movement)(){
   switch(current_state){
     case INITIAL:
       if(mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
-        current_state = PIECE_SELECTED;
+        piece_selected = get_piece_from_click(cursor.position.x,cursor.position.y,CELL_SIZE_HEIGHT,board);
+        if(piece_selected == NULL) {
+          current_state = INITIAL;
+        }else{
+          initial_pos.x = piece_selected->position.x;
+          initial_pos.y = piece_selected->position.y;
+          current_state = PIECE_SELECTED;
+        }
         printf("INITIAL\n");
       }
       break;
@@ -240,10 +258,17 @@ int (in_game_mouse_movement)(){
       printf("COMPLETE\n");
       cursor.type = DEFAULT;
       current_state = INITIAL;
+      printf("%d\n",cursor.position.x);
+      printf("%d\n",cursor.position.y);
+      final_pos.x = cursor.position.x / (CELL_SIZE_WIDTH);
+      final_pos.y = cursor.position.y / (CELL_SIZE_HEIGHT);
+      printf("%d\n",final_pos.x);
+      printf("%d\n",final_pos.y);
+      advance_piece(piece_selected,&final_pos,board);
+      change_piece_position(piece_selected,&initial_pos,&final_pos,board);
       break;
   }
   return 0;
 }
-
 
 

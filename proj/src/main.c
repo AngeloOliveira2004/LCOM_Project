@@ -32,6 +32,8 @@ extern int counter_mouse;
 
 extern struct cursor cursor;
 
+struct Board *board;
+
 int main(int argc, char *argv[]) {
 
   lcf_set_language("EN-US");
@@ -106,7 +108,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   message msg;
   uint8_t irq_timer, irq_keyboard, irq_mouse;
 
-  struct Board *board = create_board();
+  board = create_board();
 
   init_board(board);
 

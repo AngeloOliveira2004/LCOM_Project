@@ -298,8 +298,7 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct B
             }
         }
 
-        erase_buffer();
-        copy_BackGroundBuffer();
+        swap_BackgroundBuffer();
         draw_board_except_one_piece(piece->id , board);
 
         if (piece->isWhite) {
@@ -309,9 +308,6 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct B
         }
         swap_buffers();
     }
-
-    piece->position.x = initialPos->x;
-    piece->position.y = initialPos->y;
 
     return 0;
 }
