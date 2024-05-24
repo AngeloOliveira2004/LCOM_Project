@@ -138,7 +138,7 @@ bool is_piece_in_front(struct Board *board, struct Position* initalPos, struct P
 }
 
 bool is_square_occupied(struct Board *board, struct Position *pos){
-  return board->squares[pos->x][pos->y].type == EMPTY;
+  return board->squares[pos->x][pos->y].type != EMPTY;
 }
 
 bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Piece * piece, 
@@ -281,6 +281,8 @@ struct Position *init_pos, struct Position *final_pos, struct Board *board){
   }
   board->squares[final_pos->x][final_pos->y] = *piece;
   board->squares[init_pos->x][init_pos->y].type = EMPTY;
+  piece->position.x = final_pos->x;
+  piece->position.y = final_pos->y;
   } 
 }
 
