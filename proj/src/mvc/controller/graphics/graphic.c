@@ -11,6 +11,7 @@
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
+uint8_t *activeBuffer; //swap active e  back dps desenhas no back e das outro swap 
 uint8_t *backgroundBuffer; // The active buffer
 
 xpm_image_t whitePawnXPM;

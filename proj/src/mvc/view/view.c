@@ -42,8 +42,6 @@ int (draw_board)(struct Board* board){
 
 int draw_board_except_one_piece(int id , struct Board* board){
 
-  copy_BackGroundBuffer();
-
   for (int i = 0; i < 32; i++) {
     if(board->pieces[i].id == id){
       continue;
@@ -199,8 +197,11 @@ int draw_piece(struct Piece* piece){
   return 0;
 }
 
-int draw_cursor(struct cursor* cursor){
+int draw_cursor(struct cursor* cursor,struct Board *board){
+  swap_BackgroundBuffer();
+  draw_board(board);
   draw_cursor_mouse(cursor->position.x, cursor->position.y , cursor->type);
+  swap_buffers();
   return 0;
 }
 

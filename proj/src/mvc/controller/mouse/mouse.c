@@ -109,12 +109,17 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
   pp->bytes[*cnt-1] = data;
 
   if(*cnt == 3){
-    *cnt = 0;
     cursor.position.x += pp->delta_x;
     cursor.position.y -= pp->delta_y;
-    printf("%d",cursor.position.x);
-    printf("%d",cursor.position.y);
-    draw_cursor(&cursor);
+
+    if(cursor.position.x >= WIDTH-64){
+      cursor.position.x = WIDTH-69;
+    }
+
+    if(cursor.position.y >= HEIGHT-64){
+      cursor.position.y = HEIGHT-69;
+    }
+
   }
 
   return 0;

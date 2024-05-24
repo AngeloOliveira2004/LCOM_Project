@@ -1,5 +1,6 @@
 #include "mvc/controller/graphics/VBE.h"
 #include "mvc/controller/graphics/graphic.h"
+#include "mvc/controller/kbc/i8042.h"
 #include "mvc/controller/kbc/kbc.h"
 #include "mvc/controller/keyboard/keyboard.h"
 #include "mvc/controller/mouse/mouse.h"
@@ -7,9 +8,8 @@
 #include "mvc/model/board.h"
 #include "mvc/model/menu.h"
 #include "mvc/view/view.h"
-#include "sprites/pieces.xpm"
 #include "sprites/Cursor/cursors.xpm"
-#include "mvc/controller/kbc/i8042.h"
+#include "sprites/pieces.xpm"
 #include <lcom/lcf.h>
 #include <machine/int86.h>
 #include <stdio.h>
@@ -27,6 +27,10 @@ uint8_t keyboard_hook_id = 1;
 uint8_t mouse_hook_id = 2;
 
 int counter_packet_print = 0;
+
+extern int counter_mouse;
+
+extern struct cursor cursor;
 
 int main(int argc, char *argv[]) {
 
@@ -167,6 +171,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
               if (status & AUX_STATUS_REG) {
                 printf("mouse interrupt\n");
                 mouse_ih();
+                if (counter_mouse == 3) {
+                  counter_mouse = 0;
+                  draw_cursor(&cursor, board);
+                }
               }
               else {
                 printf("keyboard interrupt\n");
