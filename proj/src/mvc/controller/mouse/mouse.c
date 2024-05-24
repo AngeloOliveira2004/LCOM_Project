@@ -19,7 +19,7 @@ int counter_mouse = 0;
 
 extern int counter_packet_print;
 
-enum InGameStates current_state = INITIAL;
+enum InGameStates current_state;
 
 void (mouse_ih)() {
   uint8_t data;
@@ -53,6 +53,7 @@ int(cursor_draw_start)(){
   cursor.position.x = 0;
   cursor.position.y = 0;
   cursor.type = DEFAULT;
+  current_state = INITIAL;
   return 0;
   
 }
@@ -112,6 +113,14 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
     cursor.position.x += pp->delta_x;
     cursor.position.y -= pp->delta_y;
 
+    if(cursor.position.x >= WIDTH-64 && cursor.position.x <= WIDTH){
+      cursor.position.x = 5;
+    }
+
+    if(cursor.position.y >= HEIGHT-64 && cursor.position.y <= HEIGHT){
+      cursor.position.y = 5;
+    }
+
     if(cursor.position.x >= WIDTH-64){
       cursor.position.x = WIDTH-69;
     }
@@ -119,7 +128,7 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
     if(cursor.position.y >= HEIGHT-64){
       cursor.position.y = HEIGHT-69;
     }
-
+    in_game_mouse_movement();
   }
 
   return 0;
@@ -200,27 +209,37 @@ int (in_game_mouse_movement)(){
     case INITIAL:
       if(mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
         current_state = PIECE_SELECTED;
+        printf("INITIAL\n");
       }
       break;
     case PIECE_SELECTED:
+      printf("PIECE_SELECTED\n");
       if(mouse.lb != BUTTON_PRESSED){
         current_state = PIECE_CLICKED;
+        cursor.type = HOVERING;
       } else {
         current_state = PIECE_DRAGGED;
+        cursor.type = SELECTED;
       }
       break;
     case PIECE_CLICKED:
+      printf("PIECE_CLICKED\n");
       if(mouse.lb == BUTTON_PRESSED){
         current_state = COMPLETE;
+      }else if(mouse.rb == BUTTON_PRESSED){
+        current_state = INITIAL;
       }
       break;
     case PIECE_DRAGGED:
+      printf("PIECE_DRAGGED\n");
       if(mouse.lb != BUTTON_PRESSED){
         current_state = COMPLETE;
       }
       break;  
     case COMPLETE:
-
+      printf("COMPLETE\n");
+      cursor.type = DEFAULT;
+      current_state = INITIAL;
       break;
   }
   return 0;

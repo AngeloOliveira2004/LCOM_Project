@@ -169,7 +169,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {
               if (status & AUX_STATUS_REG) {
-                printf("mouse interrupt\n");
                 mouse_ih();
                 if (counter_mouse == 3) {
                   counter_mouse = 0;
@@ -177,7 +176,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
                 }
               }
               else {
-                printf("keyboard interrupt\n");
                 if (check_ESC() != 0)
                   isRunning = false;
               }
