@@ -7,6 +7,9 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
   "files.associations": {
+    "*.embeddedhtml": "html",
+    "*.cpp": "cpp",
+    "*.html": "html",
     "graphic.h": "c",
     "keyboard.h": "c",
     "timer.h": "c",
@@ -15,7 +18,8 @@
     "vbe.h": "c",
     "view.h": "c",
     "board.h": "c",
-    "*.xpm": "c"
+    "*.xpm": "c",
+    "int86.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }

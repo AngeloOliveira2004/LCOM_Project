@@ -6,16 +6,16 @@
 #include <machine/int86.h>
 
 static xpm_row_t *number32[] = {
-    number9_32,
-    number8_32,
-    number7_32,
-    number6_32,
-    number5_32,
-    number4_32,
-    number3_32,
-    number2_32,
-    number1_32,
     number0_32,
+    number1_32,
+    number2_32,
+    number3_32,
+    number4_32,
+    number5_32,
+    number6_32,
+    number7_32,
+    number8_32,
+    number9_32,
 };
 
 int initialize_graphics(uint16_t * mode);
@@ -25,11 +25,12 @@ int(draw_board)(struct Board *board);
 int draw_board_except_one_piece(int id, struct Board *board);
 int(draw_backBackGround)();
 int(draw_BackGround_Without_Erase)();
-int(draw_Clocks)();
+int(draw_Clocks)(struct Player *time);
+
 int draw_piece();
 int draw_initial_pos();
 
-int(return_to_initial_pos)(struct Piece *piece, struct Position *initialPos, struct Board *board);
+int(return_to_initial_pos)(struct Piece *piece, struct Position *initialPos, struct Board *board, struct Player *player);
 int(advance_piece)(struct Piece *piece, struct Position *initialPos, struct Board *board);
 
 int(draw_pawn)(struct Piece *piece);

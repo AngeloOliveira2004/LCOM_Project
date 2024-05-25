@@ -52,47 +52,64 @@ int draw_board_except_one_piece(int id, struct Board *board) {
   return 0;
 }
 
-int draw_Clocks() {
+int draw_Clocks(struct Player *player) {
+  while (player->clock.minutes >= 0 || player->clock.seconds >= 0)
 
- 
-  for (int min = 1; min >= 0; min++) {
-    for (int seconds = 59; seconds >= 0; seconds++) {
-      if (vg_draw_rectangle(8 * CELL_SIZE_WIDTH, 0, 800 - 8 * CELL_SIZE_WIDTH, 8 * CELL_SIZE_HEIGHT, 0x0000ff) != 0) {
-        return 1;
-      }
-      if (draw_xpm(number32[min/10], 8 * CELL_SIZE_WIDTH, 0) != 0) {
-        printf("Error1\n");
-        return 1;
-      }
-      if (draw_xpm(number32[min%10],(8 * CELL_SIZE_WIDTH)+10,0)!=0) {
-        printf("Error2\n");
-        return 1;
-      }
-      if (draw_xpm(two_points32,2*((8 * CELL_SIZE_WIDTH)+10),0)!=0) {
-        printf("Error3\n");
-        return 1;
-      }
-      if (draw_xpm(number32[seconds/10],3*((8 * CELL_SIZE_WIDTH)+10),0)!=0) {
-        printf("Error4\n");
-        return 1;
-      }
-      if (draw_xpm(number32[seconds%10],4*((8 * CELL_SIZE_WIDTH)+10),0)!=0) {
-        printf("Error5\n");
-        return 1;
-      }
-    }
-  }
-
-  for (int i = 0; i < 9; i++) {
+{
     if (vg_draw_rectangle(8 * CELL_SIZE_WIDTH, 0, 800 - 8 * CELL_SIZE_WIDTH, 8 * CELL_SIZE_HEIGHT, 0x0000ff) != 0) {
-      return 1;
+        printf("Failed to draw rectangle\n");
+        return 1;
     }
-    if (draw_xpm(number32[i], 8 * CELL_SIZE_WIDTH, 7 * CELL_SIZE_HEIGHT) != 0) {
+    printf("desenhei1\n");
+    if (draw_xpm(number32[player->clock.minutes / 10], 8 * CELL_SIZE_WIDTH, 0) != 0) {
+        printf("Failed to draw number\n");
+        return 1;
+    }
+    printf("desenhei2\n");
+    if (draw_xpm(number32[player->clock.minutes % 10], 8 * CELL_SIZE_WIDTH + 20, 0) != 0) {
+        printf("Failed to draw number\n");
+        return 1;
+    }
 
+    if (draw_xpm(two_points32,8 * CELL_SIZE_WIDTH + 40,0)!=0)
+    {
       return 1;
     }
-   
-  }
+
+    printf("desenhei3\n");
+    if (draw_xpm(number32[player->clock.seconds/10], 8 * CELL_SIZE_WIDTH + 60, 0) != 0) {
+        printf("Failed to draw number\n");
+        return 1;
+    }
+    printf("desenhei4\n");
+    if (draw_xpm(number32[player->clock.seconds % 10], 8 * CELL_SIZE_WIDTH + 80, 0) != 0) {
+        printf("Failed to draw number\n");
+        return 1;
+    }
+
+  
+    if (player->clock.minutes == 0 && player->clock.seconds == 0)
+    {
+      break;
+    }
+    
+    if (player->clock.seconds == 0)
+    {
+        printf("entrou\n");
+        player->clock.minutes--;
+        player->clock.seconds = 59;
+    }
+    else
+    {
+        printf("entrou2\n");
+        player->clock.seconds--;
+    }
+    sleep(1);
+
+    printf("minutes: %d\n", player->clock.minutes);
+    printf("seconds: %d\n", player->clock.seconds);
+}
+
 
   return 0;
 }
@@ -225,7 +242,7 @@ int draw_piece(struct Piece *piece) {
   return 0;
 }
 
-int return_to_initial_pos(struct Piece *piece, struct Position *initialPos, struct Board *board) {
+int return_to_initial_pos(struct Piece *piece, struct Position *initialPos, struct Board *board, struct Player *player) {
 
   int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
   int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
@@ -268,7 +285,10 @@ int return_to_initial_pos(struct Piece *piece, struct Position *initialPos, stru
 
     swap_BackgroundBuffer();
     draw_board_except_one_piece(piece->id, board);
-    draw_Clocks();
+     if (draw_Clocks(player) != 0) {
+        printf("Failed to draw clock\n");
+        return 1;
+    }
 
     if (piece->isWhite) {
       draw_white_piece(currentX, currentY, piece->type);

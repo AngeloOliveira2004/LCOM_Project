@@ -119,9 +119,13 @@ int (proj_main_loop)(int argc , char* argv[]){
   initalPos.x = 6;
   board->pieces[0].position.x = 4;
   board->pieces[0].position.y = 7;
+  struct Player player1;
+  player1.clock.minutes = 1;
+  player1.clock.seconds = 0;
+  
 
 
-  if(return_to_initial_pos(&board->pieces[0] , &initalPos , board) != 0){
+  if(return_to_initial_pos(&board->pieces[0] , &initalPos , board, &player1) != 0){
     return 1;
   }
 
