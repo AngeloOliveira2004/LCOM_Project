@@ -105,7 +105,7 @@ void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piec
 bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Piece * piece, 
                   struct Position *init_pos , struct Position *final_pos);
 
-bool is_square_occupied(struct Board *board, struct Position *pos);
+bool is_square_occupied(struct Board *board, struct Position *pos, struct Piece * piece);
 bool is_inside_board(struct Position *pos);
 bool is_check(struct Game *game);
 bool is_checkmate(struct Game *game);

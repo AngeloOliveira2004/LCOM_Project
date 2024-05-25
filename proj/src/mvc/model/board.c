@@ -137,8 +137,39 @@ bool is_piece_in_front(struct Board *board, struct Position* initalPos, struct P
   return false;
 }
 
-bool is_square_occupied(struct Board *board, struct Position *pos){
-  return board->squares[pos->x][pos->y].type != EMPTY;
+bool is_piece_in_diagonal(struct Board *board, struct Position* initalPos, struct Position *finalPos){
+  if(abs(initalPos->x - finalPos->x) == abs(initalPos->y - finalPos->y)){
+    if(initalPos->x < finalPos->x && initalPos->y < finalPos->y){
+      for(int i = initalPos->x, j = initalPos->y; i < finalPos->x && j < finalPos->y; i++, j++){
+        if(board->squares[i][j].type != EMPTY){
+          return true;
+        }
+      }
+    }else if(initalPos->x < finalPos->x && initalPos->y > finalPos->y){
+      for(int i = initalPos->x, j = initalPos->y; i < finalPos->x && j > finalPos->y; i++, j--){
+        if(board->squares[i][j].type != EMPTY){
+          return true;
+        }
+      }
+    }else if(initalPos->x > finalPos->x && initalPos->y < finalPos->y){
+      for(int i = initalPos->x, j = initalPos->y; i > finalPos->x && j < finalPos->y; i--, j++){
+        if(board->squares[i][j].type != EMPTY){
+          return true;
+        }
+      }
+    }else if(initalPos->x > finalPos->x && initalPos->y > finalPos->y){
+      for(int i = initalPos->x, j = initalPos->y; i > finalPos->x && j > finalPos->y; i--, j--){
+        if(board->squares[i][j].type != EMPTY){
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+
+bool is_square_occupied(struct Board *board, struct Position *pos, struct Piece * piece){
+  return (board->squares[pos->x][pos->y].type != EMPTY || board->squares[pos->x][pos->y].isWhite != piece->isWhite);
 }
 
 bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Piece * piece, 
@@ -147,7 +178,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
     {
     case PAWN:
     if (!piece->hasMoved) {
-        if (init_pos->x == final_pos->x && (init_pos->y - final_pos->y) == 2 && !is_square_occupied(board, final_pos)) {
+        if (init_pos->x == final_pos->x && (init_pos->y - final_pos->y) == 2 && !is_square_occupied(board, final_pos,piece)) {
             return true;
         }
         if (board->squares[final_pos->x][final_pos->y].type != EMPTY && 
@@ -168,7 +199,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
         }
 
         if (init_pos->x == final_pos->x && (init_pos->y - final_pos->y) == 2 && 
-            !is_square_occupied(board, final_pos) && !is_piece_in_front(board, init_pos, final_pos)) {
+            !is_square_occupied(board, final_pos,piece) && !is_piece_in_front(board, init_pos, final_pos)) {
             return false;
         }
     }
@@ -176,7 +207,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
 
     case ROOK:
     if (init_pos->x == final_pos->x || init_pos->y == final_pos->y) {
-        if (!is_square_occupied(board, final_pos) && !is_piece_in_front(board, init_pos, final_pos)) {
+        if (!is_square_occupied(board, final_pos,piece) && !is_piece_in_front(board, init_pos, final_pos)) {
             if (board->squares[final_pos->x][final_pos->y].type == EMPTY || 
                 board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite) {
                 return true;
@@ -210,7 +241,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
 case BISHOP:
       if(is_inside_board(final_pos)){
         if(abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)){
-          if(!is_square_occupied(board, final_pos) && !is_piece_in_front(board, init_pos, final_pos)){
+          if(!is_square_occupied(board, final_pos,piece) && !is_piece_in_diagonal(board, init_pos, final_pos)){
             if(board->squares[final_pos->x][final_pos->y].type == EMPTY || 
                board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite){
               return true;
@@ -223,15 +254,23 @@ case BISHOP:
       break;
     case QUEEN:
       if(is_inside_board(final_pos)){
-        if((init_pos->x == final_pos->x || init_pos->y == final_pos->y) ||
-           (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y))){
-          if(!is_square_occupied(board, final_pos) && !is_piece_in_front(board, init_pos, final_pos)){
-            if(board->squares[final_pos->x][final_pos->y].type == EMPTY || 
-               board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite){
-              return true;
-            }else{
-              return false;
-            }
+        if(init_pos->x == final_pos->x || init_pos->y == final_pos->y){
+          if(!is_square_occupied(board, final_pos,piece) && !is_piece_in_front(board, init_pos, final_pos)){
+        if(board->squares[final_pos->x][final_pos->y].type == EMPTY || 
+           board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite){
+          return true;
+        }else{
+          return false;
+        }
+          }
+        } else if(abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)){
+          if(!is_square_occupied(board, final_pos,piece) && !is_piece_in_diagonal(board, init_pos, final_pos)){
+        if(board->squares[final_pos->x][final_pos->y].type == EMPTY || 
+           board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite){
+          return true;
+        }else{
+          return false;
+        }
           }
         }
       }
