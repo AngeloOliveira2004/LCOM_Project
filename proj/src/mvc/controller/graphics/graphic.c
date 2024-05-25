@@ -8,6 +8,8 @@
 #include "../keyboard/keyboard.h"
 #include "../../../sprites/pieces.xpm"
 #include "../../../sprites/Cursor/cursors.xpm"
+#include "../../../sprites/Menus/mainmenu.xpm"
+
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
@@ -29,6 +31,7 @@ xpm_image_t blackRookXPM;
 xpm_image_t defaultCursorXPM;
 xpm_image_t grabbingCursorXPM;
 xpm_image_t grabCursorXPM;
+xpm_image_t menuXPM;
 
 uint32_t bufferSize;
 
@@ -188,13 +191,13 @@ int(load_xpm_cursor)(){
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color){
   
-  if(x > mode_info.XResolution || y > mode_info.YResolution) return 1;
+  if(x > mode_info.XResolution || y > mode_info.YResolution) return 0;
   
   bytesPerPixel = (mode_info.BitsPerPixel + 7) / 8;
   
   unsigned int index = (mode_info.XResolution * y + x) * bytesPerPixel;
 
-  if (memcpy(&backBuffer[index], &color, bytesPerPixel) == NULL) return 1;
+  if (memcpy(&backBuffer[index], &color, bytesPerPixel) == NULL) return 0;
   
   return 0;
 }
@@ -455,3 +458,33 @@ int (draw_board_without_Pieces)(){
   return 0;
 
 }
+
+int load_xpm_menu(){
+  xpm_load(mainmenu_xpm, XPM_8_8_8, &menuXPM);
+  return 0;
+}
+
+int (draw_menu)(uint16_t x, uint16_t y){
+
+  xpm_image_t image = menuXPM;
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(x + j, y + i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+
+  swap_buffers();
+
+  return 0;
+}
+

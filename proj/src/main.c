@@ -81,6 +81,7 @@ int setup() {
   load_xpm(Chess_rlt45, ROOK, WHITE);
   load_xpm(Chess_black_rlt45, ROOK, BLACK);
   load_xpm_cursor();
+  load_xpm_menu();
   cursor_draw_start();
 
   return 0;
@@ -143,6 +144,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
   board->pieces[0].position.y = 7;
 
   if (return_to_initial_pos(&board->pieces[0], &initalPos, board) != 0) {
+    return 1;
+  }
+
+  if(draw_menu(0,0) != 0){
     return 1;
   }
 

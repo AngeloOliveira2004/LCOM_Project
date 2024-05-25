@@ -20,6 +20,7 @@ int (set_frame_mode)(uint16_t* mode);
 int (set_text_mode)();
 int (load_xpm)(xpm_map_t img ,enum PieceType pieceType , bool isWhite);
 int(load_xpm_cursor)();
+int load_xpm_menu();
 
 int allocate_buffers();
 void swap_buffers();
@@ -38,6 +39,7 @@ int (draw_black_piece)(uint16_t x, uint16_t y , enum PieceType pieceType);
 int (draw_white_piece)(uint16_t x, uint16_t y , enum PieceType pieceType);
 int (draw_board_without_Pieces)();
 int(draw_cursor_mouse)(uint16_t x, uint16_t y , enum CursorType cursorType);
+int (draw_menu)(uint16_t x, uint16_t y);
 
 int (wait_for_ESC_)();
 
