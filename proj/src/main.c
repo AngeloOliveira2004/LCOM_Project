@@ -19,7 +19,7 @@ const int desiredFrameRate = 30;
 const double targetFrameTime = 1.0 / desiredFrameRate;
 
 bool isRunning = true;
-
+extern uint8_t scancode;
 uint8_t timer_hook_id = 0;
 uint8_t keyboard_hook_id = 1;
 uint8_t mouse_hook_id = 2;
@@ -125,7 +125,7 @@ int (proj_main_loop)(int argc , char* argv[]){
     return 1;
   }
 
-  while (isRunning)
+  while (isRunning || scancode != ESC_BREAK_CODE)
   {
     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
           printf("driver_receive failed with: %d", r);

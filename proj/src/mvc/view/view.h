@@ -14,7 +14,8 @@ static xpm_row_t *number32[] = {
     number4_32,
     number3_32,
     number2_32,
-    number1_32
+    number1_32,
+    number0_32,
 };
 
 int initialize_graphics(uint16_t * mode);
