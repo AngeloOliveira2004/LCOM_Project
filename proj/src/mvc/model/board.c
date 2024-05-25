@@ -203,18 +203,50 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
             }
         }
     }
-    break; // Make sure to include a break statement to avoid falling through
+    break;
 
     return false;
     break;
 case BISHOP:
-      /* code */
+      if(is_inside_board(final_pos)){
+        if(abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)){
+          if(!is_square_occupied(board, final_pos) && !is_piece_in_front(board, init_pos, final_pos)){
+            if(board->squares[final_pos->x][final_pos->y].type == EMPTY || 
+               board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite){
+              return true;
+            }else{
+              return false;
+            }
+          }
+        }
+      }
       break;
     case QUEEN:
-      /* code */
+      if(is_inside_board(final_pos)){
+        if((init_pos->x == final_pos->x || init_pos->y == final_pos->y) ||
+           (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y))){
+          if(!is_square_occupied(board, final_pos) && !is_piece_in_front(board, init_pos, final_pos)){
+            if(board->squares[final_pos->x][final_pos->y].type == EMPTY || 
+               board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite){
+              return true;
+            }else{
+              return false;
+            }
+          }
+        }
+      }
       break;
     case KING:
-      /* code */
+      if(is_inside_board(final_pos)){
+        if(abs(init_pos->x - final_pos->x) <= 1 && abs(init_pos->y - final_pos->y) <= 1){
+          if(board->squares[final_pos->x][final_pos->y].type == EMPTY || 
+             board->squares[final_pos->x][final_pos->y].isWhite != board->squares[init_pos->x][init_pos->y].isWhite){
+            return true;
+          }else{
+            return false;
+          }
+        }
+      }
       break;
     case CASTLE:
       /* code */
