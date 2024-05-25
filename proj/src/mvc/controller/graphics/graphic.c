@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include "../keyboard/keyboard.h"
 #include "../../../sprites/pieces.xpm"
+#include "../../view/view.h"
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
@@ -403,6 +404,11 @@ int (draw_board_without_Pieces)(){
       }
     }
   }
+  
+  if(draw_Clocks() != 0){
+    return 1;
+  }
+  swap_buffers();
 
   return 0;
 

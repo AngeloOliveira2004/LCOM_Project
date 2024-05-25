@@ -1,5 +1,6 @@
 #include "../controller/graphics/graphic.h"
 #include "sprites/pieces.xpm"
+
 #include "view.h"
 
 int initialize_graphics(uint16_t* mode){
@@ -54,20 +55,22 @@ int draw_board_except_one_piece(int id , struct Board* board){
 
 int draw_Clocks(){
 
-  for(int i = 650 ; i < 800; i++){
-    for(int j = 0; j < 100; j++){
-      if(vg_draw_pixel(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, 0xFFFFF) != 0){
-        continue;
-      }
-    }
-
-    for(int j = 600 ; j > 500; j--){
-      if(vg_draw_pixel(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, 0xFFFFFF) != 0){
-        continue;
-      }
-    }
+ 
+  for (int i = 0; i < 9; i++)
+  {
+     if (vg_draw_rectangle(8 * CELL_SIZE_WIDTH, 0,  800 - 8 * CELL_SIZE_WIDTH , 8 * CELL_SIZE_HEIGHT, 0x0000ff) != 0) {
+    return 1;
   }
+    if (draw_xpm(number32[i], 8 * CELL_SIZE_WIDTH, 0) != 0) {
+     
+      return 1;
+    }
+  }  
 
+
+
+
+  
   return 0;
 }
 
@@ -245,7 +248,7 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
             draw_black_piece(currentX, currentY , piece->type);
         }
         swap_buffers();
-        sleep(1);
+       
     }
 
     piece->position.x = initialPos->x;
