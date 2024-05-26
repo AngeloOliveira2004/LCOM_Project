@@ -29,6 +29,7 @@ enum GameStates{
   START,
   STALEMATE,
   CHECKMATE,
+  CHECK,
   DRAW,
   END,
   ONGOING
@@ -57,7 +58,6 @@ struct cursor {
   enum CursorType type;
 };
 
-
 struct Piece
 {
   enum PieceType type;
@@ -68,6 +68,12 @@ struct Piece
   bool hasMoved;
   bool isSelected;
   int id;
+};
+
+struct Move {
+  struct Piece *piece;
+  struct Position *init_pos;
+  struct Position *final_pos;
 };
 
 struct Board {
@@ -94,20 +100,27 @@ struct Game{
   struct Player White_player;
   enum GameStates state;  
   uint8_t piece_count;
+  bool isWhiteTurn;
 };
 
 struct Board* create_board();
+struct Game* create_game();
+void destroy_board(struct Board* board);
+void destroy_game(struct Game* game);
+
 void init_board(struct Board *board);
 void init_game(struct Game *game);
-void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piece,
-                struct Position *init_pos, struct Position *final_pos);
+
+
+struct Move* get_possible_moves(struct Game *game, struct Piece *piece);
 
 bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Piece * piece, 
                   struct Position *init_pos , struct Position *final_pos);
 
-bool is_square_occupied(struct Board *board, struct Position *pos, struct Piece * piece);
+bool is_square_occupied(struct Board *board, struct Position *pos);
+bool can_take(struct Board *board, struct Position *pos, struct Piece * piece);
 bool is_inside_board(struct Position *pos);
-bool is_check(struct Game *game);
+struct Piece* is_check(struct Game *game);
 bool is_checkmate(struct Game *game);
 bool is_stalemate(struct Game *game);
 bool is_draw(struct Game *game);

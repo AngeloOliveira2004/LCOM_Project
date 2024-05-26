@@ -5,6 +5,20 @@
 #include <lcom/lcf.h>
 #include "../kbc/i8042.h"
 
+enum ClickedKey{
+  NOKEY,
+  UP,
+  DOWN_ARROW,
+  LEFT_ARROW,
+  RIGHT_ARROW,
+  ENTER_ARROW,
+  ESC,
+  ONE,
+  TWO,
+  THREE,
+  FOUR,
+};
+
 struct scancode_info {
   uint8_t size_counter;
   bool make_code;

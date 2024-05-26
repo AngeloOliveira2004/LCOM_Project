@@ -16,7 +16,11 @@
     "view.h": "c",
     "board.h": "c",
     "*.xpm": "c",
-    "i8042.h": "c"
+    "i8042.h": "c",
+    "algorithm": "c",
+    "memory": "c",
+    "string": "c",
+    "type_traits": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }

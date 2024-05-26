@@ -9,6 +9,7 @@
 int hook_id = 1;
 uint8_t scancode;
 struct scancode_info scan_info;
+enum ClickedKey key_pressed = NOKEY;
 
 int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
@@ -37,7 +38,6 @@ int (read_status_register)(uint8_t *st){
 }
 
 int (read_out_buffer)(uint8_t *out){
-
 
   if(util_sys_inb(OUT_SCANCODES , out) != OK)
     return 1;
@@ -108,6 +108,7 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
   }
 
   if(!is_E0){
+    printf("its E0\n");
     clean_scan_info(scan_info);
   }
 
@@ -117,7 +118,6 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
     return false;
   }
 
-  printf("Scancode: 0x%02X\n",*scancode);
 }
 
 int(kbc_enable_interrupts)(){
@@ -173,10 +173,14 @@ int (check_ESC)(){
 
   if(!receive_keyboard_scan(&scan_info,&scancode)){
     printf("Pressed ESC\n");
-    
+    printf("Scancode: 0x%02X\n",&scancode);
     return 1;
+  }else{
+    for(int i = 0 ; i < scan_info.size_counter ; i++){
+      printf("0x%02X ",scan_info.bytes[i]);
+    }
+    clean_scan_info(&scan_info);
   }
-
 
   return 0;
 }

@@ -1,3 +1,18 @@
 front buffer size : 1440000
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
+its E0
 Pressed ESC
+Scancode: 0x841C64C
 Text mode setted
