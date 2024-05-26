@@ -75,6 +75,24 @@
 
 #define ESC_BREAK_CODE 0x81
 
+#define W 0x11
+
+#define S 0x1F
+
+#define A 0x1E
+
+#define D 0x20
+
+#define UP_ARROW 0x48
+
+#define DOWN_ARROW 0x50
+
+#define LEFT_ARROW 0x4B
+
+#define RIGHT_ARROW 0x4D
+
+#define _ENTER_ 0x1C
+
 #define PARITY_ERROR BIT(7) // Parity error ativa em 1 no bit 7
 
 #define TIMEOUT_ERROR BIT(6) // Timeout error ativa em 1 no bit 6

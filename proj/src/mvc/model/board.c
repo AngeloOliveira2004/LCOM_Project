@@ -829,7 +829,3 @@ struct Position *init_pos, struct Position *final_pos, struct Board *board){
   piece->position.y = final_pos->y;
   } 
 }
-
-void game_loop(){
-
-}

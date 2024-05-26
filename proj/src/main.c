@@ -10,6 +10,7 @@
 #include "mvc/view/view.h"
 #include "sprites/Cursor/cursors.xpm"
 #include "sprites/pieces.xpm"
+#include "mvc/controller/controller.h"
 #include <lcom/lcf.h>
 #include <machine/int86.h>
 #include <stdio.h>
@@ -31,6 +32,8 @@ int counter_packet_print = 0;
 extern int counter_mouse;
 
 extern struct cursor cursor;
+
+extern enum ClickedKey key_pressed;
 
 struct Board *board;
 
@@ -176,15 +179,14 @@ int(proj_main_loop)(int argc, char *argv[]) {
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {
               if (status & AUX_STATUS_REG) {
-                mouse_ih();
-                if (counter_mouse == 3) {
-                  counter_mouse = 0;
-                  draw_cursor(&cursor, board);
-                }
+                parse_mouse_input();
               }
               else {
-                if (check_ESC() != 0)
+                parse_keyboard_input();
+
+                if (key_pressed == ESC) {
                   isRunning = false;
+                }
               }
             }
           }

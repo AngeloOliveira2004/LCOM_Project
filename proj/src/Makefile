@@ -11,6 +11,8 @@ PROG=proj
 
 .PATH: ${.CURDIR}/mvc/controller/rtc
 
+.PATH: ${.CURDIR}/mvc/controller
+
 .PATH: ${.CURDIR}/mvc/controller/serial_port
 
 .PATH: ${.CURDIR}/mvc/controller/timer
@@ -27,7 +29,7 @@ PROG=proj
 
 
 # source code files to be compiled
-SRCS = main.c utils.c keyboard.c kbc.c mouse.c graphic.c view.c timer.c board.c menu.c
+SRCS = main.c utils.c keyboard.c kbc.c mouse.c graphic.c view.c timer.c board.c menu.c controller.c
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
 CFLAGS += -pedantic

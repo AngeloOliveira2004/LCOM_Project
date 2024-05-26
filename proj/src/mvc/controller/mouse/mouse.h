@@ -1,6 +1,8 @@
 #ifndef _MOUSE_H_
 #define _LCOM_I8254_H_
 
+#pragma once
+
 #include <lcom/lcf.h>
 #include <stdint.h>
 #include <stdio.h>
