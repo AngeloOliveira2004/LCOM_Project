@@ -34,7 +34,7 @@ int (draw_board)(struct Board* board){
     draw_piece(&board->pieces[i]);
   }
 
-  swap_buffers();
+  //swap_buffers();
 
   return 0;
 }
@@ -75,7 +75,7 @@ int draw_backBackGround(){
   if(draw_board_without_Pieces() != 0)
     return 1;
 
-  swap_buffers();
+//  swap_buffers();
 
   return 0;
 }

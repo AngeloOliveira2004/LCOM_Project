@@ -5,6 +5,7 @@ extern uint8_t scancode;
 extern struct scancode_info scan_info;
 
 enum ClickedKey key_pressed = NOKEY;
+enum FlowState current_state = MENU;
 extern int counter_mouse;
 
 extern struct cursor cursor;
@@ -54,8 +55,22 @@ void parse_keyboard_input(){
     case D:
       key_pressed = ARROW_RIGHT;
       break;
+    case _ONE:
+      key_pressed = ONE;
+      break;
+    case _TWO:
+      key_pressed = TWO;
+      break;
+    case _THREE:
+      key_pressed = THREE;
+      break;
+    case _FOUR:
+      key_pressed = FOUR;
+      break;
     case ESC_BREAK_CODE:
       key_pressed = ESC;
+      break;
+    default:
       break;
     }
   }
@@ -77,8 +92,15 @@ void parse_keyboard_input(){
     case _ENTER_:
       key_pressed = _ENTER_;
       break;
+    default:
+      break;
     }
   }
+
+  printf("Key pressed: %d\n",key_pressed);
+  printf("Menu state: %d\n",current_state);
+
+  router();
 }
 
 void parse_mouse_input(){
@@ -89,4 +111,44 @@ void parse_mouse_input(){
     draw_cursor(&cursor, board);
   }
 
+}
+
+void router(){
+  switch (current_state)
+  {
+  case MENU:
+    switch (key_pressed)
+    {
+    case ONE:
+      draw_backBackGround();
+      
+      copy_BackGroundBuffer();
+
+      draw_board(board);
+      
+      swap_buffers();
+      break;
+    case TWO:
+      /* code */
+      break;
+    case THREE:
+      /* code */
+      break;
+    case FOUR:
+      /* code */
+      break;
+    default:
+      break;
+    }
+    break;
+  case NEW_GAME:
+    //update_game();
+    break;
+  case LOAD_GAME:
+    break;
+  case INSTRUCTIONS:
+    break;
+  case EXIT:
+    break;
+  }
 }

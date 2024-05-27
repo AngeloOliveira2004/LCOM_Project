@@ -34,6 +34,7 @@ extern int counter_mouse;
 extern struct cursor cursor;
 
 extern enum ClickedKey key_pressed;
+extern enum FlowState current_state;
 
 struct Board *board;
 
@@ -128,13 +129,12 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
 
   setup();
-
+/*
   if (draw_backBackGround() != 0) {
     return 1;
   }
 
   copy_BackGroundBuffer();
-  // swap_BackgroundBuffer();
 
   if (draw_board(board) != 0) {
     return 1;
@@ -149,10 +149,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
   if (return_to_initial_pos(&board->pieces[0], &initalPos, board) != 0) {
     return 1;
   }
-
-  /*if(draw_menu(0,0) != 0){
+*/
+  if(draw_menu(0,0) != 0){
     return 1;
-  }*/
+  }
 
   while (isRunning) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {

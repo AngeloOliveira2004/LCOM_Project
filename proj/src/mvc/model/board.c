@@ -171,7 +171,7 @@ bool is_piece_in_diagonal(struct Board *board, struct Position* initalPos, struc
 }
 
 bool is_square_occupied(struct Board *board, struct Position *pos){
-  return board->squares[pos->x][pos->y].type != EMPTY ;
+  return board->squares[pos->x][pos->y].type != EMPTY;
 }
 
 struct Move* get_possible_moves(struct Game *game, struct Piece *piece){

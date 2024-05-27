@@ -83,6 +83,14 @@
 
 #define D 0x20
 
+#define _ONE 0x2
+
+#define _TWO 0x3
+
+#define _THREE 0x4
+
+#define _FOUR 0x5
+
 #define UP_ARROW 0x48
 
 #define DOWN_ARROW 0x50

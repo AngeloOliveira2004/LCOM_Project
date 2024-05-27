@@ -26,6 +26,14 @@ enum ClickedKey{
   SPACE,
 };
 
+enum FlowState{
+  MENU,
+  NEW_GAME,
+  LOAD_GAME,
+  INSTRUCTIONS,
+  EXIT,
+};
+
 
 void start_menu();
 void start_game();
@@ -35,6 +43,8 @@ void parse_mouse_input();
 
 void update_game();
 void update_menu();
+
+void router();
 
 void game_loop(struct Game * game);
 void controller_loop(struct Game * game, struct Menu * menu);
