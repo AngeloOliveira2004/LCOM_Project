@@ -9,6 +9,11 @@
 #include "../../../sprites/pieces.xpm"
 #include "../../../sprites/Cursor/cursors.xpm"
 #include "../../../sprites/Menus/mainmenu.xpm"
+#include "../../../sprites/GameElements/boad_500.xpm"
+#include "../../../sprites/GameElements/boad_450.xpm"
+#include "../../../sprites/GameElements/clock_100.xpm"
+#include "../../../sprites/GameElements/clock_200.xpm"
+#include "../../../sprites/GameElements/clock_150.xpm"
 
 
 uint8_t *frontBuffer; // The front buffer
@@ -460,7 +465,7 @@ int (draw_board_without_Pieces)(){
 }
 
 int load_xpm_menu(){
-  xpm_load(mainmenu_xpm, XPM_8_8_8, &menuXPM);
+  xpm_load(clockXPM150, XPM_8_8_8, &menuXPM);
   return 0;
 }
 
