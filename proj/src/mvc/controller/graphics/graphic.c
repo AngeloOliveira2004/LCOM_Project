@@ -405,7 +405,6 @@ int (draw_board_without_Pieces)(){
     }
   }
   
-
   swap_buffers();
 
   return 0;

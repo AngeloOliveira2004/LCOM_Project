@@ -60,12 +60,10 @@ int draw_Clocks(struct Player *player) {
         printf("Failed to draw rectangle\n");
         return 1;
     }
-    printf("desenhei1\n");
     if (draw_xpm(number32[player->clock.minutes / 10], 8 * CELL_SIZE_WIDTH, 0) != 0) {
         printf("Failed to draw number\n");
         return 1;
     }
-    printf("desenhei2\n");
     if (draw_xpm(number32[player->clock.minutes % 10], 8 * CELL_SIZE_WIDTH + 20, 0) != 0) {
         printf("Failed to draw number\n");
         return 1;
@@ -76,12 +74,10 @@ int draw_Clocks(struct Player *player) {
       return 1;
     }
 
-    printf("desenhei3\n");
     if (draw_xpm(number32[player->clock.seconds/10], 8 * CELL_SIZE_WIDTH + 60, 0) != 0) {
         printf("Failed to draw number\n");
         return 1;
     }
-    printf("desenhei4\n");
     if (draw_xpm(number32[player->clock.seconds % 10], 8 * CELL_SIZE_WIDTH + 80, 0) != 0) {
         printf("Failed to draw number\n");
         return 1;
@@ -95,19 +91,14 @@ int draw_Clocks(struct Player *player) {
     
     if (player->clock.seconds == 0)
     {
-        printf("entrou\n");
         player->clock.minutes--;
         player->clock.seconds = 59;
     }
     else
     {
-        printf("entrou2\n");
         player->clock.seconds--;
     }
     sleep(1);
-
-    printf("minutes: %d\n", player->clock.minutes);
-    printf("seconds: %d\n", player->clock.seconds);
 }
 
 
