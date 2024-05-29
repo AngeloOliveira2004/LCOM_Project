@@ -17,6 +17,9 @@ int draw_piece();
 int draw_initial_pos();
 int draw_cursor(struct cursor* cursor,struct Board *board);
 
+int actualYvalue(struct Piece* piece);
+
+
 int (return_to_initial_pos)(struct Piece* piece , struct Position* initialPos , struct Board * board);
 int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct Board* board);
 

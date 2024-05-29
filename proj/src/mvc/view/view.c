@@ -28,12 +28,11 @@ int (fill)(int x , int y , int width , int height , uint32_t color){
     return 0;
 }
 
+
+
 int (draw_board)(struct Board* board){
   init_board(board);
 
-  for(int i = 0 ; i < 32 ; i++){
-    printf("Piece %d\n", board->pieces[i].id);
-  }
   for (int i = 0; i < 32; i++) {
     draw_piece(&board->pieces[i]);
   }
@@ -94,13 +93,15 @@ int (draw_BackGround_Without_Erase)(){
 
 
 int (draw_pawn)(struct Piece* piece){
-  int initialX = piece->position.x * (400/8) + 25 + 175;
-  int initialY = piece->position.y * (400/8) + 25 + 175;
+  printf("initial x pos %d" , piece->position.x);
+  int initialX = piece->position.x * (400/8) + 175 + 25;
+  int initialY = 40 + 60 + 50 * piece->position.y;
 
 
   if(piece->isWhite){
     draw_white_piece(initialX, initialY , piece->type);
   }else{
+
     draw_black_piece(initialX, initialY , piece->type);
   }
 
@@ -108,8 +109,9 @@ int (draw_pawn)(struct Piece* piece){
 }
 
 int (draw_rook)(struct Piece* piece){
-  int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
-  int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+  int initialX = piece->position.x * (400/8) + 25 + 175;
+  int initialY = 42 + 60 + 50 * piece->position.y;
+
   if(piece->isWhite){
     draw_white_piece(initialX, initialY , piece->type);
   }else{
@@ -120,8 +122,8 @@ int (draw_rook)(struct Piece* piece){
 }
 
 int (draw_knight)(struct Piece* piece){
-  int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
-  int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+  int initialX = piece->position.x * (400/8) + 25 + 175;
+    int initialY = 42 + 60 + 50 * piece->position.y;
 
   if(piece->isWhite){
     draw_white_piece(initialX, initialY , piece->type);
@@ -133,8 +135,8 @@ int (draw_knight)(struct Piece* piece){
 }
 
 int (draw_bishop)(struct Piece* piece){
-  int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
-  int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+  int initialX = piece->position.x * (400/8) + 25 + 175;
+   int initialY = 42 + 60 + 50 * piece->position.y;
 
   if(piece->isWhite){
     draw_white_piece(initialX, initialY , piece->type);
@@ -147,8 +149,8 @@ int (draw_bishop)(struct Piece* piece){
 
 int (draw_queen)(struct Piece* piece){
   
-  int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
-  int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+  int initialX = piece->position.x * (400/8) + 25 + 175;
+  int initialY = 42 + 60 + 50 * piece->position.y;
 
   if(piece->isWhite){
     draw_white_piece(initialX, initialY , piece->type);
@@ -160,8 +162,8 @@ int (draw_queen)(struct Piece* piece){
 }
 
 int (draw_king)(struct Piece* piece){
-  int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
-  int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+  int initialX = piece->position.x * (400/8) + 25 + 175;
+   int initialY = 42 + 60 + 50 * piece->position.y;
 
   if(piece->isWhite){
     draw_white_piece(initialX, initialY , piece->type);
@@ -173,7 +175,6 @@ int (draw_king)(struct Piece* piece){
 }
 
 int draw_piece(struct Piece* piece){
-  printf("draw_piece\n %d\n %d\n", piece->id , piece->type);
   switch (piece->type)
   {
   case PAWN:
