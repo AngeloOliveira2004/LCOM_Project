@@ -11,9 +11,20 @@ extern int counter_mouse;
 extern struct cursor cursor;
 extern struct Board *board;
 
-
-void controller_loop(struct Game * game, struct Menu * menu){
-  
+void init_game(struct Game *game){
+  init_board(&game->board);
+  game->state = START;
+  game->piece_count = 32;
+  game->Black_player.isWhite = false;
+  game->Black_player.isWinner = false;
+  game->Black_player.isDraw = false;
+  game->Black_player.canLongCastle = true;
+  game->Black_player.canShortCastle = true;
+  game->White_player.isWhite = true;
+  game->White_player.isWinner = false;
+  game->White_player.isDraw = false;
+  game->White_player.canLongCastle = true;
+  game->White_player.canShortCastle = true;
 }
 
 void game_loop(struct Game * game){
@@ -120,11 +131,17 @@ void router(){
     switch (key_pressed)
     {
     case ONE:
+      
+      game = create_game();
+
+      init_game(game);
+
       draw_backBackGround();
       
       copy_BackGroundBuffer();
+      printf("drawn background\n");
 
-      draw_board(board);
+      draw_board(&game->board);
       
       swap_buffers();
       break;

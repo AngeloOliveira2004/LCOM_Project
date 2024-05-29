@@ -9,8 +9,6 @@
 #include "mouse/mouse.h"
 #include "graphics/graphic.h"
 
-#pragma once
-
 enum ClickedKey{
   NOKEY,
   ARROW_UP,
@@ -33,6 +31,9 @@ enum FlowState{
   INSTRUCTIONS,
   EXIT,
 };
+
+
+struct Game * game;
 
 
 void start_menu();

@@ -20,7 +20,8 @@
     "algorithm": "c",
     "memory": "c",
     "string": "c",
-    "type_traits": "c"
+    "type_traits": "c",
+    "game.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }
