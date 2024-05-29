@@ -29,7 +29,17 @@ int (fill)(int x , int y , int width , int height , uint32_t color){
 }
 
 int (draw_board)(struct Board* board){
-
+  printf("draw_board\n");
+  if(board == NULL){
+    printf("board is NULL\n");
+  }
+  printf("draw_board again\n");
+  if(draw_board_without_Pieces() != 0)
+    return 1;
+  
+  for(int i = 0 ; i < 32 ; i++){
+    printf("Piece %d\n", board->pieces[i].id);
+  }
   for (int i = 0; i < 32; i++) {
     draw_piece(&board->pieces[i]);
   }
@@ -90,8 +100,8 @@ int (draw_BackGround_Without_Erase)(){
 
 
 int (draw_pawn)(struct Piece* piece){
-  int initialX = piece->position.x * CELL_SIZE_WIDTH + 10;
-  int initialY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+  int initialX = piece->position.x * (400/8) + 25 + 175;
+  int initialY = piece->position.y * (400/8) + 25 + 175;
 
 
   if(piece->isWhite){
@@ -169,7 +179,7 @@ int (draw_king)(struct Piece* piece){
 }
 
 int draw_piece(struct Piece* piece){
-
+  printf("draw_piece\n %d\n %d\n", piece->id , piece->type);
   switch (piece->type)
   {
   case PAWN:

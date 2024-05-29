@@ -38,7 +38,7 @@ void destroy_game(struct Game* game){
 }
 
 void init_board(struct Board *board) {
-    // Initialize moves and movesIndex
+    
     board->movesIndex = 0;
     for (int i = 0; i < 1024; i++) {
         board->moves[i] = NULL;
