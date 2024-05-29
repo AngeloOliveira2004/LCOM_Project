@@ -6,6 +6,7 @@
 #include "../../model/board.h"
 #include "../../view/view.h"
 #include "../../proj/src/sprites/Cursor/cursors.xpm"
+#include "../../proj/src/mvc/model/game.h"
 
 int hook_id_mouse = 2;
 
@@ -225,6 +226,7 @@ int (in_game_mouse_movement)(){
         if(piece_selected == NULL) {
           current_state = INITIAL;
         }else{
+          printf("piece_select x: %d y: %d\n",piece_selected->position.x,piece_selected->position.y);
           initial_pos.x = piece_selected->position.x;
           initial_pos.y = piece_selected->position.y;
           current_state = PIECE_SELECTED;
@@ -260,14 +262,11 @@ int (in_game_mouse_movement)(){
       printf("COMPLETE\n");
       cursor.type = DEFAULT;
       current_state = INITIAL;
-      printf("%d\n",cursor.position.x);
-      printf("%d\n",cursor.position.y);
       final_pos.x = (cursor.position.x - 200) / CELL_SIZE_WIDTH;
       final_pos.y = (cursor.position.y - 100) / CELL_SIZE_HEIGHT;
-      printf("%d\n",final_pos.x);
-      printf("%d\n",final_pos.y);
       advance_piece(piece_selected,&final_pos,&game->board);
       change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board);
+      piece_selected = NULL;
       break;
   }
   return 0;
