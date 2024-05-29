@@ -111,4 +111,4 @@ bool can_take(struct Board *board, struct Position *pos, struct Piece * piece);
 bool is_inside_board(struct Position *pos);
 
 struct Piece* get_piece_from_click(int click_x, int click_y, int square_size, struct Board* board);
-void change_piece_position(struct Piece *piece,struct Position *init_pos, struct Position *final_pos, struct Board *board);
+bool change_piece_position(struct Piece *piece,struct Position *init_pos, struct Position *final_pos, struct Board *board);
