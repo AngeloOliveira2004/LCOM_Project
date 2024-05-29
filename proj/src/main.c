@@ -96,6 +96,7 @@ int setup() {
 
   load_xpm_cursor();
   load_xpm_menu();
+  load_xpm_game_background();
   load_xpm_clocks_board();
   load_numbers();
   cursor_draw_start();

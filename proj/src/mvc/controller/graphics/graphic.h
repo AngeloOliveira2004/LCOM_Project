@@ -58,6 +58,8 @@ int (draw_cursor_mouse)(uint16_t x, uint16_t y , enum CursorType cursorType);
 int (draw_menu)(uint16_t x, uint16_t y);
 int (draw_number)(uint16_t x , uint16_t y , int number);
 int (draw_two_points)(uint16_t x , uint16_t);
+int(draw_game_background)();
+int load_xpm_game_background();
 
 int (wait_for_ESC_)();
 

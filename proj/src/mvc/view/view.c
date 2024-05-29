@@ -90,6 +90,9 @@ int draw_clockValue(struct Player *player1,struct Player *player2){
 }
 
 int draw_backBackGround(struct Player * player1, struct Player * player2){
+
+  if(draw_game_background() != 0)
+    return 1;
   
   if(draw_board_without_Pieces() != 0)
     return 1;
