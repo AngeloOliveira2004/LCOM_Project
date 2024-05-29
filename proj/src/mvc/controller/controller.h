@@ -27,6 +27,7 @@ enum ClickedKey{
 
 enum FlowState{
   MENU,
+  GAME,
   NEW_GAME,
   LOAD_GAME,
   INSTRUCTIONS,

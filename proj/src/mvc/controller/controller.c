@@ -130,7 +130,8 @@ void router(){
     switch (key_pressed)
     {
     case ONE:
-      
+      current_state = GAME;
+
       game = create_game();
 
       init_game(game);
@@ -167,6 +168,8 @@ void router(){
   case LOAD_GAME:
     break;
   case INSTRUCTIONS:
+    break;
+  case GAME:
     break;
   case EXIT:
     break;

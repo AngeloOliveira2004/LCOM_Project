@@ -34,6 +34,10 @@ extern struct cursor cursor;
 extern enum ClickedKey key_pressed;
 extern enum FlowState current_state;
 
+extern struct Game *game;
+extern struct Menu *menu;
+extern enum FlowState current_state;
+
 int main(int argc, char *argv[]) {
 
   lcf_set_language("EN-US");
@@ -176,11 +180,12 @@ int(proj_main_loop)(int argc, char *argv[]) {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(irq_timer)) {
             timer_int_handler();
-            if (counter % 3) {
-
-              counter = 0;
-              decrease_player_timer();
-              
+            printf("counter: %d\n", counter);
+            if(current_state == GAME){
+              if (counter % 3) {
+                counter = 0;
+                decrease_player_timer();
+              }
             }
           }
 
