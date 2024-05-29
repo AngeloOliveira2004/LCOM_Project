@@ -29,14 +29,8 @@ int (fill)(int x , int y , int width , int height , uint32_t color){
 }
 
 int (draw_board)(struct Board* board){
-  printf("draw_board\n");
-  if(board == NULL){
-    printf("board is NULL\n");
-  }
-  printf("draw_board again\n");
-  if(draw_board_without_Pieces() != 0)
-    return 1;
-  
+  init_board(board);
+
   for(int i = 0 ; i < 32 ; i++){
     printf("Piece %d\n", board->pieces[i].id);
   }

@@ -2,7 +2,7 @@
 
 struct Game* create_game(){
 
-  struct Game* game (struct Game*) malloc(sizeof(struct Game));
+  struct Game* game = (struct Game*) malloc(sizeof(struct Game));
   if(game == NULL){
     return NULL;
   }

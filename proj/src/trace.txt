@@ -1,102 +1,6 @@
 @lcflib.a:2019, lcf_start
   proj_main_loop(argc, argv)
 > proj_main_loop(0, [NULL])
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 1"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 2"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 3"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 4"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 5"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 6"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 7"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 8"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 17"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 18"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 19"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 20"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 21"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 22"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 23"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 24"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 9"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 10"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 11"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 12"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 13"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 14"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 15"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 16"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 25"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 26"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 27"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 28"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 29"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 30"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 31"
-  @main.c:122, proj_main_loop
-    printf("Piece id: %d\n", board->pieces[i].id)
-    "Piece id: 32"
   @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
     sys_inb(port, &val)
   > sys_inb(0x64, addr: 0xeffff6d4)
@@ -156,7 +60,7 @@
   @/home/lcom/labs/g1/proj/src/mvc/controller/kbc/kbc.c:31, read_commands_kbc
     tickdelay(micros_to_ticks(DELAY_US))
   > tickdelay(1 [16.7 ms])
-  @main.c:129, proj_main_loop
+  @main.c:120, proj_main_loop
     timer_subscribe_int(&irq_timer)
   > timer_subscribe_int(addr: 0xeffff75f [8])
     @/home/lcom/labs/g1/proj/src/mvc/controller/timer/timer.c:60, timer_subscribe_int
@@ -172,7 +76,7 @@
     sys_irqsetpolicy(IRQ_MOUSE, IRQ_COMMAND_BYTE, &hook_id_mouse)
   > sys_irqsetpolicy(12, 3, addr: 0x83971d8 [2])
   < sys_irqsetpolicy(12, 3, addr: 0x83971d8 [12]) -> (ret: 0)
-  @main.c:67, setup
+  @main.c:66, setup
     timer_set_frequency(0, desiredFrameRate)
   > timer_set_frequency(0, 30)
     @/home/lcom/labs/g1/proj/src/mvc/controller/timer/timer.c:16, timer_set_frequency
@@ -206,8 +110,8 @@
   < timer_set_frequency(0, 30) -> (ret: 0)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:111, set_frame_mode
     vbe_get_mode_info(*mode, &mode_info)
-  > vbe_get_mode_info(0x115, addr: 0x83b3c4c)
-  < vbe_get_mode_info(0x115, addr: 0x83b3c4c [0xe0000000, 800x600, 8:8:8 (24) <1.37329 MiB>]) -> (ret: 0)
+  > vbe_get_mode_info(0x115, addr: 0x83b3c50)
+  < vbe_get_mode_info(0x115, addr: 0x83b3c50 [0xe0000000, 800x600, 8:8:8 (24) <1.37329 MiB>]) -> (ret: 0)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:126, set_frame_mode
     sys_privctl(SELF, SYS_PRIV_ADD_MEM, &physic_addresses)
   > sys_privctl(SELF, SYS_PRIV_ADD_MEM, addr: 0xeffff6d8 [0xe0000000 - 0xe015f900 <1.37329 MiB>])
@@ -224,271 +128,314 @@
   < sys_int86(addr: 0xeffff6b8 [AX: 004f, BX: 4115, CX: 0000, DX: 0000, ES: 0000, DI: 0000]) -> (ret: 0)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:156, load_xpm
     xpm_load(img, XPM_8_8_8, &blackPawnXPM)
-  > xpm_load(addr: 0x81bccb0, XPM_8_8_8, addr: 0x83b3e68)
-  < xpm_load(addr: 0x81bccb0, XPM_8_8_8, addr: 0x83b3e68 [45x45 : 6075 bytes]) -> (ret: 0x83bd000)
+  > xpm_load(addr: 0x81bcc90, XPM_8_8_8, addr: 0x83b3e6c)
+  < xpm_load(addr: 0x81bcc90, XPM_8_8_8, addr: 0x83b3e6c [45x45 : 6075 bytes]) -> (ret: 0x83bb000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:154, load_xpm
     xpm_load(img, XPM_8_8_8, &whitePawnXPM)
-  > xpm_load(addr: 0x81bcdbc, XPM_8_8_8, addr: 0x83b3dcc)
-  < xpm_load(addr: 0x81bcdbc, XPM_8_8_8, addr: 0x83b3dcc [45x45 : 6075 bytes]) -> (ret: 0x83bf000)
+  > xpm_load(addr: 0x81bcd9c, XPM_8_8_8, addr: 0x83b3dd0)
+  < xpm_load(addr: 0x81bcd9c, XPM_8_8_8, addr: 0x83b3dd0 [45x45 : 6075 bytes]) -> (ret: 0x83bd000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:162, load_xpm
     xpm_load(img, XPM_8_8_8, &blackBishopXPM)
-  > xpm_load(addr: 0x81bcf48, XPM_8_8_8, addr: 0x83b3dac)
-  < xpm_load(addr: 0x81bcf48, XPM_8_8_8, addr: 0x83b3dac [45x45 : 6075 bytes]) -> (ret: 0x83c1000)
+  > xpm_load(addr: 0x81bcf28, XPM_8_8_8, addr: 0x83b3db0)
+  < xpm_load(addr: 0x81bcf28, XPM_8_8_8, addr: 0x83b3db0 [45x45 : 6075 bytes]) -> (ret: 0x83bf000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:160, load_xpm
     xpm_load(img, XPM_8_8_8, &whiteBishopXPM)
-  > xpm_load(addr: 0x81bd06c, XPM_8_8_8, addr: 0x83b3e10)
-  < xpm_load(addr: 0x81bd06c, XPM_8_8_8, addr: 0x83b3e10 [45x45 : 6075 bytes]) -> (ret: 0x83c3000)
+  > xpm_load(addr: 0x81bd04c, XPM_8_8_8, addr: 0x83b3e14)
+  < xpm_load(addr: 0x81bd04c, XPM_8_8_8, addr: 0x83b3e14 [45x45 : 6075 bytes]) -> (ret: 0x83c1000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:168, load_xpm
     xpm_load(img, XPM_8_8_8, &blackKnightXPM)
-  > xpm_load(addr: 0x81bd2f0, XPM_8_8_8, addr: 0x83b3d88)
-  < xpm_load(addr: 0x81bd2f0, XPM_8_8_8, addr: 0x83b3d88 [45x45 : 6075 bytes]) -> (ret: 0x83c5000)
+  > xpm_load(addr: 0x81bd2d0, XPM_8_8_8, addr: 0x83b3d8c)
+  < xpm_load(addr: 0x81bd2d0, XPM_8_8_8, addr: 0x83b3d8c [45x45 : 6075 bytes]) -> (ret: 0x83c3000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:166, load_xpm
     xpm_load(img, XPM_8_8_8, &whiteKnightXPM)
-  > xpm_load(addr: 0x81bd424, XPM_8_8_8, addr: 0x83b3c3c)
-  < xpm_load(addr: 0x81bd424, XPM_8_8_8, addr: 0x83b3c3c [45x45 : 6075 bytes]) -> (ret: 0x83c8000)
+  > xpm_load(addr: 0x81bd404, XPM_8_8_8, addr: 0x83b3c40)
+  < xpm_load(addr: 0x81bd404, XPM_8_8_8, addr: 0x83b3c40 [45x45 : 6075 bytes]) -> (ret: 0x83c6000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:174, load_xpm
     xpm_load(img, XPM_8_8_8, &blackQueenXPM)
-  > xpm_load(addr: 0x81bd7c0, XPM_8_8_8, addr: 0x83b3e00)
-  < xpm_load(addr: 0x81bd7c0, XPM_8_8_8, addr: 0x83b3e00 [45x45 : 6075 bytes]) -> (ret: 0x83ca000)
+  > xpm_load(addr: 0x81bd7a0, XPM_8_8_8, addr: 0x83b3e04)
+  < xpm_load(addr: 0x81bd7a0, XPM_8_8_8, addr: 0x83b3e04 [45x45 : 6075 bytes]) -> (ret: 0x83c8000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:172, load_xpm
     xpm_load(img, XPM_8_8_8, &whiteQueenXPM)
-  > xpm_load(addr: 0x81bd8fc, XPM_8_8_8, addr: 0x83b3e30)
-  < xpm_load(addr: 0x81bd8fc, XPM_8_8_8, addr: 0x83b3e30 [45x45 : 6075 bytes]) -> (ret: 0x868d000)
+  > xpm_load(addr: 0x81bd8dc, XPM_8_8_8, addr: 0x83b3e34)
+  < xpm_load(addr: 0x81bd8dc, XPM_8_8_8, addr: 0x83b3e34 [45x45 : 6075 bytes]) -> (ret: 0x868b000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:180, load_xpm
     xpm_load(img, XPM_8_8_8, &blackKingXPM)
-  > xpm_load(addr: 0x81bdc50, XPM_8_8_8, addr: 0x83b3e54)
-  < xpm_load(addr: 0x81bdc50, XPM_8_8_8, addr: 0x83b3e54 [45x45 : 6075 bytes]) -> (ret: 0x868f000)
+  > xpm_load(addr: 0x81bdc30, XPM_8_8_8, addr: 0x83b3e58)
+  < xpm_load(addr: 0x81bdc30, XPM_8_8_8, addr: 0x83b3e58 [45x45 : 6075 bytes]) -> (ret: 0x868d000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:178, load_xpm
     xpm_load(img, XPM_8_8_8, &whiteKingXPM)
-  > xpm_load(addr: 0x81bdd84, XPM_8_8_8, addr: 0x83b3d98)
-  < xpm_load(addr: 0x81bdd84, XPM_8_8_8, addr: 0x83b3d98 [45x45 : 6075 bytes]) -> (ret: 0x8691000)
+  > xpm_load(addr: 0x81bdd64, XPM_8_8_8, addr: 0x83b3d9c)
+  < xpm_load(addr: 0x81bdd64, XPM_8_8_8, addr: 0x83b3d9c [45x45 : 6075 bytes]) -> (ret: 0x868f000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:186, load_xpm
     xpm_load(img, XPM_8_8_8, &blackRookXPM)
-  > xpm_load(addr: 0x81be0f8, XPM_8_8_8, addr: 0x83b3dbc)
-  < xpm_load(addr: 0x81be0f8, XPM_8_8_8, addr: 0x83b3dbc [45x45 : 6075 bytes]) -> (ret: 0x8693000)
+  > xpm_load(addr: 0x81be0d8, XPM_8_8_8, addr: 0x83b3dc0)
+  < xpm_load(addr: 0x81be0d8, XPM_8_8_8, addr: 0x83b3dc0 [45x45 : 6075 bytes]) -> (ret: 0x8691000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:184, load_xpm
     xpm_load(img, XPM_8_8_8, &whiteRookXPM)
-  > xpm_load(addr: 0x81be1f0, XPM_8_8_8, addr: 0x83b3df0)
-  < xpm_load(addr: 0x81be1f0, XPM_8_8_8, addr: 0x83b3df0 [45x45 : 6075 bytes]) -> (ret: 0x8695000)
+  > xpm_load(addr: 0x81be1d0, XPM_8_8_8, addr: 0x83b3df4)
+  < xpm_load(addr: 0x81be1d0, XPM_8_8_8, addr: 0x83b3df4 [45x45 : 6075 bytes]) -> (ret: 0x8693000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:203, load_xpm_cursor
     xpm_load(cursor_default, XPM_8_8_8, &defaultCursorXPM)
-  > xpm_load(addr: 0x81c8340, XPM_8_8_8, addr: 0x83b3d70)
-  < xpm_load(addr: 0x81c8340, XPM_8_8_8, addr: 0x83b3d70 [64x64 : 12288 bytes]) -> (ret: 0x8697000)
+  > xpm_load(addr: 0x81c8320, XPM_8_8_8, addr: 0x83b3d74)
+  < xpm_load(addr: 0x81c8320, XPM_8_8_8, addr: 0x83b3d74 [64x64 : 12288 bytes]) -> (ret: 0x8695000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:204, load_xpm_cursor
     xpm_load(cursor_grabbing, XPM_8_8_8, &grabbingCursorXPM)
-  > xpm_load(addr: 0x81c85d8, XPM_8_8_8, addr: 0x83b3e40)
-  < xpm_load(addr: 0x81c85d8, XPM_8_8_8, addr: 0x83b3e40 [64x64 : 12288 bytes]) -> (ret: 0x869a000)
+  > xpm_load(addr: 0x81c85b8, XPM_8_8_8, addr: 0x83b3e44)
+  < xpm_load(addr: 0x81c85b8, XPM_8_8_8, addr: 0x83b3e44 [64x64 : 12288 bytes]) -> (ret: 0x8698000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:205, load_xpm_cursor
     xpm_load(cursor_grab, XPM_8_8_8, &grabCursorXPM)
-  > xpm_load(addr: 0x81c888c, XPM_8_8_8, addr: 0x83b3e20)
-  < xpm_load(addr: 0x81c888c, XPM_8_8_8, addr: 0x83b3e20 [64x64 : 12288 bytes]) -> (ret: 0x869d000)
+  > xpm_load(addr: 0x81c886c, XPM_8_8_8, addr: 0x83b3e24)
+  < xpm_load(addr: 0x81c886c, XPM_8_8_8, addr: 0x83b3e24 [64x64 : 12288 bytes]) -> (ret: 0x869b000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:519, load_xpm_menu
     xpm_load(main_menu, XPM_8_8_8, &menuXPM)
-  > xpm_load(addr: 0x81c8b80, XPM_8_8_8, addr: 0x83b3d5c)
-  < xpm_load(addr: 0x81c8b80, XPM_8_8_8, addr: 0x83b3d5c [800x600 : 1440000 bytes]) -> (ret: 0x86a0000)
+  > xpm_load(addr: 0x81c8b60, XPM_8_8_8, addr: 0x83b3d60)
+  < xpm_load(addr: 0x81c8b60, XPM_8_8_8, addr: 0x83b3d60 [800x600 : 1440000 bytes]) -> (ret: 0x869e000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:196, load_xpm_clocks_board
     xpm_load(clockXPM150, XPM_8_8_8, &defaultClock)
-  > xpm_load(addr: 0x81c772c, XPM_8_8_8, addr: 0x83b3d4c)
-  < xpm_load(addr: 0x81c772c, XPM_8_8_8, addr: 0x83b3d4c [150x85 : 38250 bytes]) -> (ret: 0x8800000)
+  > xpm_load(addr: 0x81c770c, XPM_8_8_8, addr: 0x83b3d50)
+  < xpm_load(addr: 0x81c770c, XPM_8_8_8, addr: 0x83b3d50 [150x85 : 38250 bytes]) -> (ret: 0x87fe000)
   @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:197, load_xpm_clocks_board
     xpm_load(boad_450, XPM_8_8_8, &board)
-  > xpm_load(addr: 0x81c7934, XPM_8_8_8, addr: 0x83b3de0)
-  < xpm_load(addr: 0x81c7934, XPM_8_8_8, addr: 0x83b3de0 [450x450 : 607500 bytes]) -> (ret: 0x880a000)
-  @main.c:167, proj_main_loop
+  > xpm_load(addr: 0x81c7914, XPM_8_8_8, addr: 0x83b3de4)
+  < xpm_load(addr: 0x81c7914, XPM_8_8_8, addr: 0x83b3de4 [450x450 : 607500 bytes]) -> (ret: 0x8808000)
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
-  @main.c:167, proj_main_loop
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
     driver_receive(ANY, &msg, &ipc_status)
   > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
-  @main.c:175, proj_main_loop
+  @main.c:165, proj_main_loop
     timer_int_handler()
-  @main.c:188, proj_main_loop
+  @main.c:177, proj_main_loop
+    printf("keyboard Interrupt\n")
+    "keyboard Interrupt"
+  @main.c:179, proj_main_loop
     sys_inb(STATUS_BYTE, &status)
   > sys_inb(0x64, addr: 0xeffff758)
   < sys_inb(0x64, addr: 0xeffff758 [0x1d = 0b00011101])
-  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:36, parse_keyboard_input
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:47, parse_keyboard_input
     kbc_ih()
     @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
       sys_inb(port, &val)
@@ -501,15 +448,1381 @@
   @/home/lcom/labs/g1/proj/src/mvc/controller/keyboard/keyboard.c:94, receive_keyboard_scan
     printf("Scancode: 0x%x\n", *scancode)
     "Scancode: 0x2"
-  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:100, parse_keyboard_input
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:111, parse_keyboard_input
     printf("Key pressed: %d\n",key_pressed)
     "Key pressed: 7"
-  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:101, parse_keyboard_input
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:112, parse_keyboard_input
     printf("Menu state: %d\n",current_state)
     "Menu state: 0"
-  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:32, draw_board
-    printf("draw_board\n")
-    "draw_board"
-  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:36, draw_board
-    printf("draw_board again\n")
-    "draw_board again"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:142, router
+    printf("drawn background\n")
+    "drawn background"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 6"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 7"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 8"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 17"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 18"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 19"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 20"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 21"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 22"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 23"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 24"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 9"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 10"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 11"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 12"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 13"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 14"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 15"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 16"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 25"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 26"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 27"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 28"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 29"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 30"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 31"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 32"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 1
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 2
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 3
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 4
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 5
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 6
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 7
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 8
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 17
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 18
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 19
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 20
+ 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 21
+ 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 22
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 23
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 24
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 9
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 10
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 11
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 12
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 13
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 14
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 15
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 16
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 25
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 26
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 27
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 28
+ 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 29
+ 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 30
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 31
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 32
+ 1"
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:165, proj_main_loop
+    timer_int_handler()
+  @main.c:177, proj_main_loop
+    printf("keyboard Interrupt\n")
+    "keyboard Interrupt"
+  @main.c:179, proj_main_loop
+    sys_inb(STATUS_BYTE, &status)
+  > sys_inb(0x64, addr: 0xeffff758)
+  < sys_inb(0x64, addr: 0xeffff758 [0x1d = 0b00011101])
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:47, parse_keyboard_input
+    kbc_ih()
+    @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
+      sys_inb(port, &val)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
+      sys_inb(port, &val)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x82 = 0b10000010])
+  @/home/lcom/labs/g1/proj/src/mvc/controller/keyboard/keyboard.c:94, receive_keyboard_scan
+    printf("Scancode: 0x%x\n", *scancode)
+    "Scancode: 0x82"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:111, parse_keyboard_input
+    printf("Key pressed: %d\n",key_pressed)
+    "Key pressed: 7"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:112, parse_keyboard_input
+    printf("Menu state: %d\n",current_state)
+    "Menu state: 0"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:142, router
+    printf("drawn background\n")
+    "drawn background"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 6"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 7"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 8"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 17"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 18"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 19"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 20"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 21"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 22"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 23"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 24"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 9"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 10"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 11"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 12"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 13"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 14"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 15"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 16"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 25"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 26"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 27"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 28"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 29"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 30"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 31"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 32"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 1
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 2
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 3
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 4
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 5
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 6
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 7
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 8
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 17
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 18
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 19
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 20
+ 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 21
+ 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 22
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 23
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 24
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 9
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 10
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 11
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 12
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 13
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 14
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 15
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 16
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 25
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 26
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 27
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 28
+ 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 29
+ 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 30
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 31
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 32
+ 1"
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:165, proj_main_loop
+    timer_int_handler()
+  @main.c:177, proj_main_loop
+    printf("keyboard Interrupt\n")
+    "keyboard Interrupt"
+  @main.c:179, proj_main_loop
+    sys_inb(STATUS_BYTE, &status)
+  > sys_inb(0x64, addr: 0xeffff758)
+  < sys_inb(0x64, addr: 0xeffff758 [0x1d = 0b00011101])
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:47, parse_keyboard_input
+    kbc_ih()
+    @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
+      sys_inb(port, &val)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
+      sys_inb(port, &val)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x01 = 0b00000001])
+  @/home/lcom/labs/g1/proj/src/mvc/controller/keyboard/keyboard.c:94, receive_keyboard_scan
+    printf("Scancode: 0x%x\n", *scancode)
+    "Scancode: 0x1"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:111, parse_keyboard_input
+    printf("Key pressed: %d\n",key_pressed)
+    "Key pressed: 7"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:112, parse_keyboard_input
+    printf("Menu state: %d\n",current_state)
+    "Menu state: 0"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:142, router
+    printf("drawn background\n")
+    "drawn background"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 6"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 7"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 8"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 17"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 18"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 19"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 20"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 21"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 22"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 23"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 24"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 9"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 10"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 11"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 12"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 13"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 14"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 15"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 16"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 25"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 26"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 27"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 28"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 29"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 30"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 31"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:35, draw_board
+    printf("Piece %d\n", board->pieces[i].id)
+    "Piece 32"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 1
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 2
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 3
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 4
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 5
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 6
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 7
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 8
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 17
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 18
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 19
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 20
+ 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 21
+ 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 22
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 23
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 24
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 9
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 10
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 11
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 12
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 13
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 14
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 15
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 16
+ 0"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 25
+ 1"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 26
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 27
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 28
+ 4"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 29
+ 5"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 30
+ 3"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 31
+ 2"
+  @/home/lcom/labs/g1/proj/src/mvc/view/view.c:176, draw_piece
+    printf("draw_piece\n %d\n %d\n", piece->id , piece->type)
+    "draw_piece
+ 32
+ 1"
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000001]>)
+  @main.c:157, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:165, proj_main_loop
+    timer_int_handler()
+  @main.c:177, proj_main_loop
+    printf("keyboard Interrupt\n")
+    "keyboard Interrupt"
+  @main.c:179, proj_main_loop
+    sys_inb(STATUS_BYTE, &status)
+  > sys_inb(0x64, addr: 0xeffff758)
+  < sys_inb(0x64, addr: 0xeffff758 [0x1d = 0b00011101])
+  @/home/lcom/labs/g1/proj/src/mvc/controller/controller.c:47, parse_keyboard_input
+    kbc_ih()
+    @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
+      sys_inb(port, &val)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/g1/proj/src/utils/utils.c:25, util_sys_inb
+      sys_inb(port, &val)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x81 = 0b10000001])
+  @/home/lcom/labs/g1/proj/src/mvc/controller/keyboard/keyboard.c:88, receive_keyboard_scan
+    printf("Scancode: 0x%x\n", *scancode)
+    "Scancode: 0x81"
+  @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:99, set_text_mode
+    sys_int86(&reg86)
+  > sys_int86(addr: 0xeffff6f0 [AX: 0003, BX: 0000, CX: 0000, DX: 0000, ES: 0000, DI: 0000])
+  < sys_int86(addr: 0xeffff6f0 [AX: 0030, BX: 0000, CX: 0000, DX: 0000, ES: 0000, DI: 0000]) -> (ret: 0)
+  @/home/lcom/labs/g1/proj/src/mvc/controller/graphics/graphic.c:104, set_text_mode
+    printf("Text mode setted\n")
+    "Text mode setted"
+  @main.c:98, _exit_
+    timer_unsubscribe_int()
+    @/home/lcom/labs/g1/proj/src/mvc/controller/timer/timer.c:68, timer_unsubscribe_int
+      sys_irqrmpolicy(&__hook_id)
+    > sys_irqrmpolicy(addr: 0x8397e6c [10])
+    < sys_irqrmpolicy(addr: 0x8397e6c [10]) -> (ret: 0)
+  @/home/lcom/labs/g1/proj/src/mvc/controller/keyboard/keyboard.c:25, keyboard_unsubscribe_int
+    sys_irqrmpolicy(&hook_id)
+  > sys_irqrmpolicy(addr: 0x83971d4 [11])
+  < sys_irqrmpolicy(addr: 0x83971d4 [11]) -> (ret: 0)
+  @/home/lcom/labs/g1/proj/src/mvc/controller/mouse/mouse.c:49, mouse_unsubscribe_int
+    sys_irqrmpolicy(&hook_id_mouse)
+  > sys_irqrmpolicy(addr: 0x83971d8 [12])
+  < sys_irqrmpolicy(addr: 0x83971d8 [12]) -> (ret: 0)
+  @main.c:104, _exit_
+    vg_exit()
+  < vg_exit() -> (ret: 0)
+< proj_main_loop(0, [NULL]) -> (ret: 0)

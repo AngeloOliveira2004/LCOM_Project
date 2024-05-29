@@ -107,8 +107,6 @@ struct Game{
 struct Game* create_game();
 void destroy_game(struct Game* game);
 
-void init_game(struct Game *game);
-
 void changeState(struct Game *game, enum GameStates state);
 void changeTurn(struct Game *game);
 

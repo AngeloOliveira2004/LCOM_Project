@@ -7,6 +7,7 @@
 #include "mvc/controller/timer/timer.h"
 #include "mvc/model/board.h"
 #include "mvc/model/menu.h"
+#include "mvc/model/game.h"
 #include "mvc/view/view.h"
 #include "sprites/Cursor/cursors.xpm"
 #include "sprites/pieces.xpm"
@@ -35,8 +36,6 @@ extern struct cursor cursor;
 
 extern enum ClickedKey key_pressed;
 extern enum FlowState current_state;
-
-struct Board *board;
 
 int main(int argc, char *argv[]) {
 
@@ -114,14 +113,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
   message msg;
   uint8_t irq_timer, irq_keyboard, irq_mouse;
 
-  board = create_board();
-
-  init_board(board);
-
-  for(int i = 0 ; i < 32 ; i++){
-      printf("Piece id: %d\n", board->pieces[i].id);
-  }
-
   if (enable_mouse_report() != 0) {
     return 1;
   }
@@ -156,7 +147,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
   }
 */
 
-
   if(draw_menu(0,0) != 0){
     return 1;
   }
@@ -184,6 +174,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
           }
 
           if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & BIT(irq_keyboard)) {
+            printf("keyboard Interrupt\n");
             uint32_t status;
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {
