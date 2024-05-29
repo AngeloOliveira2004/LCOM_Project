@@ -8,7 +8,7 @@
 #include "../keyboard/keyboard.h"
 #include "../../../sprites/pieces.xpm"
 #include "../../../sprites/Cursor/cursors.xpm"
-#include "../../../sprites/Menus/mainmenu.xpm"
+#include "../../../sprites/Menus/main_menu.xpm"
 #include "../../../sprites/GameElements/boad_500.xpm"
 #include "../../../sprites/GameElements/boad_450.xpm"
 #include "../../../sprites/GameElements/clock_100.xpm"
