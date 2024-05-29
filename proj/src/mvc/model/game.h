@@ -1,39 +1,10 @@
 #include <lcom/lcf.h>
 #include <stdio.h>
 
+#include "board.h"
+#include "enum.h"
+
 #pragma once
-
-enum PieceType {
-  PAWN = 0,
-  ROOK = 1,
-  KNIGHT = 2,
-  BISHOP = 3,
-  QUEEN = 4,
-  KING = 5,
-  CASTLE = 6,
-  EMPTY = 7
-};
-
-enum CursorType {
-  DEFAULT = 0,
-  HOVERING = 1,
-  SELECTED = 2
-};
-
-enum PieceColor {
-  WHITE = 0,
-  BLACK = 1
-};
-
-enum GameStates{
-  START,
-  STALEMATE,
-  CHECKMATE,
-  CHECK,
-  DRAW,
-  END,
-  ONGOING
-};
 
 struct Position {
   uint8_t x;
@@ -119,3 +90,25 @@ void changeTurn(struct Game *game);
 void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piece,
                 struct Position *init_pos, struct Position *final_pos);
 
+
+
+struct Piece* is_check(struct Game *game);
+bool is_checkmate(struct Game *game);
+bool is_stalemate(struct Game *game);
+bool is_draw(struct Game *game);
+struct Move* get_possible_moves(struct Game *game, struct Piece *piece);
+
+
+struct Board* create_board();
+
+void init_board(struct Board *board);
+
+bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Piece * piece, 
+                  struct Position *init_pos , struct Position *final_pos);
+
+bool is_square_occupied(struct Board *board, struct Position *pos);
+bool can_take(struct Board *board, struct Position *pos, struct Piece * piece);
+bool is_inside_board(struct Position *pos);
+
+struct Piece* get_piece_from_click(int click_x, int click_y, int square_size, struct Board* board);
+void change_piece_position(struct Piece *piece,struct Position *init_pos, struct Position *final_pos, struct Board *board);

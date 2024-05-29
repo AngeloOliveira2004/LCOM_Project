@@ -4,7 +4,7 @@ static xpm_row_t two_points20[] = {
 /* columns rows colors chars-per-pixel */
 "20 32 2 1 ",
 "  c None",
-". c #0b0b0b",  
+". c #ffffff",  
 /* pixels */
 "       ....         ",
 "      ......        ",

@@ -5,8 +5,6 @@
 #include "mvc/controller/keyboard/keyboard.h"
 #include "mvc/controller/mouse/mouse.h"
 #include "mvc/controller/timer/timer.h"
-#include "mvc/model/board.h"
-#include "mvc/model/menu.h"
 #include "mvc/model/game.h"
 #include "sprites/Cursor/cursors.xpm"
 #include "sprites/pieces.xpm"

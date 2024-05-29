@@ -68,28 +68,28 @@ int draw_board_except_one_piece(int id , struct Board* board){
  
  }
 
-int draw_clockValue(struct Player *player){
+int draw_clockValue(struct Player *player1,struct Player *player2){
 
-  draw_number(670,2,player->clock.minutes/10);
-  draw_number(695,2,player->clock.minutes%10);
+  draw_number(670,2,player1->clock.minutes/10);
+  draw_number(695,2,player1->clock.minutes%10);
 
-  draw_two_points(720 , 2);
+  draw_two_points(720 , 4);
   
-  draw_number(745,2,player->clock.seconds/10);
-  draw_number(770,2,player->clock.seconds%10);
-  
-  draw_number(670 , 520, player->clock.minutes/10);
-  draw_number(695 , 520, player->clock.minutes&10);
+  draw_number(745,2,player1->clock.seconds/10);
+  draw_number(770,2,player1->clock.seconds%10);
+
+  draw_number(670 , 520, player2->clock.minutes/10);
+  draw_number(695 , 520, player2->clock.minutes%10);
   
   draw_two_points(720 , 520);
   
-  draw_number(745,520,player->clock.seconds/10);
-  draw_number(770,520,player->clock.seconds%10);
+  draw_number(745,520,player2->clock.seconds/10);
+  draw_number(770,520,player2->clock.seconds%10);
 
   return 0;
 }
 
-int draw_backBackGround(struct Player * player){
+int draw_backBackGround(struct Player * player1, struct Player * player2){
   
   if(draw_board_without_Pieces() != 0)
     return 1;
@@ -97,7 +97,7 @@ int draw_backBackGround(struct Player * player){
   if(draw_Clocks())
     return 1;
 
-  if(draw_clockValue(player) != 0){
+  if(draw_clockValue(player1,player2) != 0){
     return 1;
   }
 

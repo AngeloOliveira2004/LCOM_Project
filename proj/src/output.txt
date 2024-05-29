@@ -1,6 +1,12 @@
 front buffer size : 1440000
+Scancode: 0x2
+Key pressed: 7
+Menu state: 0
+Scancode: 0x82
+Key pressed: 7
+Menu state: 0
 Scancode: 0x1
-Key pressed: 0
+Key pressed: 7
 Menu state: 0
 Scancode: 0x81
 Text mode setted

@@ -135,8 +135,12 @@ void router(){
 
       init_game(game);
 
+      init_player(&game->Black_player, false, 1, 0);
+      init_player(&game->White_player, true, 1, 0);
+      
+
       erase_buffer();
-      draw_backBackGround(&game->White_player);
+      draw_backBackGround(&game->White_player,&game->Black_player);
       
       copy_BackGroundBuffer();
 

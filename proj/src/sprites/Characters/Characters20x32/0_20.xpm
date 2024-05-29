@@ -4,7 +4,7 @@
 static xpm_row_t number0_20[] = {
 /* columns rows colors chars-per-pixel */
 "20 32 2 1 ",
-"  c #000000",
+"  c #ffffff",
 ". c None",
 /* pixels */
 ".......      .......",

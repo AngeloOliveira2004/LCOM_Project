@@ -1,7 +1,8 @@
 #include <machine/int86.h>
 #include "lcom/lcf.h"
 #include "VBE.h"
-#include "../../model/board.h"
+#include "../../model/game.h"
+#include "../mouse/mouse.h"
 #include "sprites/GameElements/clock_150.xpm"
 #include "sprites/Characters/Characters20x32/0_20.xpm"
 #include "sprites/Characters/Characters20x32/1_20.xpm"
@@ -56,7 +57,7 @@ int (draw_board_without_Pieces)();
 int (draw_cursor_mouse)(uint16_t x, uint16_t y , enum CursorType cursorType);
 int (draw_menu)(uint16_t x, uint16_t y);
 int (draw_number)(uint16_t x , uint16_t y , int number);
-int (draw_two_points)(uint16_t x , uint16_t y);
+int (draw_two_points)(uint16_t x , uint16_t);
 
 int (wait_for_ESC_)();
 

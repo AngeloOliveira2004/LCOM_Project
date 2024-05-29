@@ -1,6 +1,7 @@
+#pragma once
+
 #include <lcom/lcf.h>
 #include <stdio.h>
-
 #include "../model/game.h"
 #include "../model/board.h"
 #include "../model/menu.h"
@@ -34,7 +35,6 @@ enum FlowState{
 
 
 struct Game * game;
-
 
 void start_menu();
 void start_game();
