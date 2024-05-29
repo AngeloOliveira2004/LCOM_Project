@@ -31,7 +31,7 @@ int (fill)(int x , int y , int width , int height , uint32_t color){
 
 
 int (draw_board)(struct Board* board){
-
+  printf("draw_board\n");
   for (int i = 0; i < 32; i++) {
     draw_piece(&board->pieces[i]);
   }
@@ -69,6 +69,9 @@ int draw_board_except_one_piece(int id , struct Board* board){
  }
 
 int draw_clockValue(struct Player *player1,struct Player *player2){
+
+  printf("player1->clock.minutes: %d\n",player1->clock.minutes);
+  printf("player1->clock.seconds: %d\n",player1->clock.seconds);
 
   draw_number(670,2,player1->clock.minutes/10);
   draw_number(695,2,player1->clock.minutes%10);

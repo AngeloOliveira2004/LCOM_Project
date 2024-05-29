@@ -30,7 +30,7 @@ void destroy_player(struct Player *player) {
   free(player);
 }
 
-void initClock(struct Clock *clock, uint8_t minutes, uint8_t seconds) {
+void initClock(struct Clock *clock, int minutes, int seconds) {
   clock->days = 0;
   clock->hours = 0;
   clock->a_tenth_of_a_second = 0;
@@ -38,7 +38,7 @@ void initClock(struct Clock *clock, uint8_t minutes, uint8_t seconds) {
   clock->seconds = seconds;
 }
 
-void init_player(struct Player *player, bool isWhite, uint8_t minutes, uint8_t seconds) {
+void init_player(struct Player *player, bool isWhite, int minutes, int seconds) {
   player->isWhite = isWhite;
   player->isWinner = false;
   player->isDraw = false;

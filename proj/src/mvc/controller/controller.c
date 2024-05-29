@@ -13,18 +13,11 @@ extern struct cursor cursor;
 void init_game(struct Game *game){
   //game->White_player = {};
   init_board(&game->board);
+  init_player(&game->Black_player, false, 1, 0);
+  init_player(&game->White_player, true, 1, 0);
   game->state = START;
   game->piece_count = 32;
-  game->Black_player.isWhite = false;
-  game->Black_player.isWinner = false;
-  game->Black_player.isDraw = false;
-  game->Black_player.canLongCastle = true;
-  game->Black_player.canShortCastle = true;
-  game->White_player.isWhite = true;
-  game->White_player.isWinner = false;
-  game->White_player.isDraw = false;
-  game->White_player.canLongCastle = true;
-  game->White_player.canShortCastle = true;
+  game->isWhiteTurn = true;
 }
 
 void game_loop(struct Game * game){
@@ -135,11 +128,7 @@ void router(){
       game = create_game();
 
       init_game(game);
-
-      init_player(&game->Black_player, false, 1, 0);
-      init_player(&game->White_player, true, 1, 0);
       
-
       erase_buffer();
       draw_backBackGround(&game->White_player,&game->Black_player);
       
@@ -177,6 +166,7 @@ void router(){
 }
 //min == 0 , segundos passa para a esquerda e os tenth_of_a_second passam pra direita
 void decrease_player_timer() {
+  
   if (game->isWhiteTurn) {
       game->White_player.clock.a_tenth_of_a_second--;
       /*
@@ -184,9 +174,10 @@ void decrease_player_timer() {
       30    00     00;
       29    59     10;
       00    59     9;
-      */  
+      */ 
+     
+      printf("game->White_player: %d\n",game->White_player.clock.a_tenth_of_a_second--); 
       if (game->White_player.clock.a_tenth_of_a_second < 0) {
-
           if(game->White_player.clock.seconds == 0 && game->White_player.clock.minutes == 0){
             game->White_player.clock.a_tenth_of_a_second = 0;
           }else{
@@ -224,7 +215,6 @@ void decrease_player_timer() {
           }
       }
   }
-
 
   erase_buffer();
 

@@ -174,14 +174,12 @@ int(proj_main_loop)(int argc, char *argv[]) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
     }
-
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
-          if (msg.m_notify.interrupts & BIT(irq_timer)) {
-            timer_int_handler();
-            printf("counter: %d\n", counter);
+          if (msg.m_notify.interrupts & irq_timer) {
             if(current_state == GAME){
+              timer_int_handler();
               if (counter % 3) {
                 counter = 0;
                 decrease_player_timer();
@@ -190,7 +188,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
           }
 
           if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & BIT(irq_keyboard)) {
-            
+      
             uint32_t status;
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {
