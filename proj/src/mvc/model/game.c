@@ -18,6 +18,37 @@ void changeState(struct Game *game, enum GameStates state){
   game->state = state;
 }
 
+struct Player* create_player(){
+
+  struct Player* player = (struct Player*) malloc(sizeof(struct Player));
+  if(player == NULL){
+    return NULL;
+  }
+  return player;
+
+}
+
+void destroy_player(struct Player* player){
+  free(player);
+}
+
+void initClock(struct Clock *clock , uint8_t minutes, uint8_t seconds){
+  clock->days = 0;
+  clock->hours = 0;
+  clock->a_tenth_of_a_second = 0;
+  clock->minutes = minutes;
+  clock->seconds = seconds;
+}
+
+void init_player(struct Player *player, bool isWhite ,uint8_t minutes, uint8_t seconds){
+  player->isWhite = isWhite;
+  player->isWinner = false;
+  player->isDraw = false;
+  player->canLongCastle = true;
+  player->canShortCastle = true;
+  initClock(&player->clock , minutes , seconds)
+}
+
 void changeTurn(struct Game *game){
   game->isWhiteTurn = !game->isWhiteTurn;
 }

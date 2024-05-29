@@ -45,7 +45,7 @@ struct mousePosition{
   uint32_t y;
 };
 
-struct clock {
+struct Clock {
   uint8_t days;
   uint8_t seconds;
   uint8_t minutes;
@@ -87,7 +87,7 @@ struct Board {
 struct Player
 {
   struct Piece pieces[16];
-  struct clock clock;
+  struct Clock clock;
   bool isWhite;
   bool isWinner;
   bool isDraw;
@@ -107,8 +107,15 @@ struct Game{
 struct Game* create_game();
 void destroy_game(struct Game* game);
 
+struct Player* create_player();
+void destroy_player(struct Player* player);
+void init_player(struct Player *player, bool isWhite , uint8_t minutes, uint8_t seconds);
+
+void initClock(struct Clock *clock , uint8_t minutes, uint8_t seconds);
+
 void changeState(struct Game *game, enum GameStates state);
 void changeTurn(struct Game *game);
 
 void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piece,
                 struct Position *init_pos, struct Position *final_pos);
+

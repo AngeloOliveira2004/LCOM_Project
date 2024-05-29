@@ -23,20 +23,6 @@ void destroy_board(struct Board* board){
   free(board);
 }
 
-struct Game* create_game(){
-
-  struct Game* game = (struct Game*) malloc(sizeof(struct Game));
-  if(game == NULL){
-    return NULL;
-  }
-  return game;
-
-}
-
-void destroy_game(struct Game* game){
-  free(game);
-}
-
 void init_board(struct Board *board) {
     
     board->movesIndex = 0;
