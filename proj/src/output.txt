@@ -20,3 +20,8 @@ Menu state: 0
 Scancode: 0x9d
 Key pressed: 0
 Menu state: 0
+Scancode: 0x1
+Key pressed: 0
+Menu state: 0
+Scancode: 0x81
+Text mode setted
