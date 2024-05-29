@@ -721,7 +721,10 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
         bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
         bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-        if ((init_pos->y - final_pos->y) <= 2 && (init_pos->y - final_pos->y) > 0) {
+        if (((init_pos->y - final_pos->y) <= 2 && 
+        (init_pos->y - final_pos->y) > 0 && (piece->isWhite == false))
+        || ((init_pos->y - final_pos->y) >= -2 && 
+        (init_pos->y - final_pos->y) < 0 && (piece->isWhite == true))) {
 
           if (!isSquareOccupied && !isPieceInFront && init_pos->x == final_pos->x) {
             piece->hasMoved = true;
@@ -730,6 +733,10 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
 
           if (can_take(board, final_pos, piece) && ((init_pos->x - final_pos->x) == 1 && (init_pos->y - final_pos->y) == 1)) {
             piece->hasMoved = true;
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece) && ((init_pos->x - final_pos->x) == -1 && (init_pos->y - final_pos->y) == -1) && piece->isWhite == false) {
             return true;
           }
 
@@ -740,13 +747,18 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
         bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
         bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-        if ((init_pos->y - final_pos->y) == 1) {
+        if (((init_pos->y - final_pos->y) == 1 && piece->isWhite == false)||
+        ((init_pos->y - final_pos->y) == -1 && piece->isWhite == true)){
 
           if (!isSquareOccupied && !isPieceInFront && init_pos->x == final_pos->x) {
             return true;
           }
 
-          if (can_take(board, final_pos, piece) && ((init_pos->x - final_pos->x) == 1 && (init_pos->y - final_pos->y) == 1)) {
+          if (can_take(board, final_pos, piece) && ((init_pos->x - final_pos->x) == 1 && (init_pos->y - final_pos->y) == 1) && piece->isWhite == true) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece) && ((init_pos->x - final_pos->x) == -1 && (init_pos->y - final_pos->y) == -1) && piece->isWhite == false) {
             return true;
           }
 
