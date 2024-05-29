@@ -8,13 +8,13 @@
 #include "../keyboard/keyboard.h"
 #include "../../../sprites/pieces.xpm"
 #include "../../../sprites/Cursor/cursors.xpm"
-#include "../../../sprites/Menus/mainmenu.xpm"
+#include "../../../sprites/Menus/main_menu.xpm"
 #include "../../../sprites/GameElements/boad_500.xpm"
 #include "../../../sprites/GameElements/boad_450.xpm"
 #include "../../../sprites/GameElements/clock_100.xpm"
 #include "../../../sprites/GameElements/clock_200.xpm"
 #include "../../../sprites/GameElements/clock_150.xpm"
-
+#include "../../../sprites/GameElements/blackClock_200.xpm"
 
 uint8_t *frontBuffer; // The front buffer
 uint8_t *backBuffer;  // The back buffer
@@ -37,6 +37,10 @@ xpm_image_t defaultCursorXPM;
 xpm_image_t grabbingCursorXPM;
 xpm_image_t grabCursorXPM;
 xpm_image_t menuXPM;
+xpm_image_t defaultClock;
+xpm_image_t board;
+
+
 
 uint32_t bufferSize;
 
@@ -142,6 +146,7 @@ int (get_v_res)(){
 }
 
 int (load_xpm)(xpm_map_t img , enum PieceType pieceType , bool isWhite){
+
   switch (pieceType)
   {
   case PAWN:
@@ -185,6 +190,13 @@ int (load_xpm)(xpm_map_t img , enum PieceType pieceType , bool isWhite){
     break;
   }
   return 0;
+}
+
+int (load_xpm_clocks_board)(){
+  xpm_load(clockXPM150, XPM_8_8_8, &defaultClock);
+  xpm_load(boad_450, XPM_8_8_8, &board);
+  return 0;
+
 }
 
 int(load_xpm_cursor)(){
@@ -443,19 +455,22 @@ int (draw_white_piece)(uint16_t x, uint16_t y , enum PieceType pieceType){
 
 int (draw_board_without_Pieces)(){
 
-  uint32_t bege = 0xf5f5dc;
-  uint32_t brown = 0x964B00;
+  xpm_image_t image = board;
 
-  for(int i = 0; i < 8; i++){
-    for(int j = 0; j < 8; j++){
-      if((i+j) % 2 == 0){
-        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, bege) != 0){
-          return 1;
-        }
-      }else{
-        if(vg_draw_rectangle(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, CELL_SIZE_WIDTH, CELL_SIZE_HEIGHT, brown) != 0){
-          return 1;
-        }
+  int x = 175;
+  int y = 75;
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+          if (vg_draw_pixel(x + j, y + i, color)) {
+            return 1;
+          }
       }
     }
   }
@@ -464,8 +479,44 @@ int (draw_board_without_Pieces)(){
 
 }
 
+int draw_both_clocks(){
+  xpm_image_t image = defaultClock;
+  int x = 650;
+  int y = 514;
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(j+x, i+y, color)) 
+          return 1;
+      }
+      }
+  } 
+  
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(j+x, i, color)) 
+          return 1;
+      }
+    }
+  }
+
+  return 0;
+}
+
 int load_xpm_menu(){
-  xpm_load(clockXPM150, XPM_8_8_8, &menuXPM);
+  xpm_load(main_menu, XPM_8_8_8, &menuXPM);
   return 0;
 }
 

@@ -86,6 +86,7 @@ int setup() {
   load_xpm(Chess_black_rlt45, ROOK, BLACK);
   load_xpm_cursor();
   load_xpm_menu();
+  load_xpm_clocks_board();
   cursor_draw_start();
 
   return 0;
@@ -116,6 +117,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
   board = create_board();
 
   init_board(board);
+
+  for(int i = 0 ; i < 32 ; i++){
+      printf("Piece id: %d\n", board->pieces[i].id);
+  }
 
   if (enable_mouse_report() != 0) {
     return 1;
@@ -150,9 +155,13 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 */
+
+
   if(draw_menu(0,0) != 0){
     return 1;
   }
+
+  swap_buffers();
 
   while (isRunning) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
