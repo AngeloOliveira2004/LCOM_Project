@@ -264,7 +264,6 @@ int (in_game_mouse_movement)(){
       current_state = INITIAL;
       final_pos.x = (cursor.position.x - 200) / CELL_SIZE_WIDTH;
       final_pos.y = (cursor.position.y - 100) / CELL_SIZE_HEIGHT;
-      advance_piece(piece_selected,&final_pos,&game->board);
       change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board);
       piece_selected = NULL;
       break;
