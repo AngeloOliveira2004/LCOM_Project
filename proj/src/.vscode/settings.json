@@ -21,7 +21,9 @@
     "memory": "c",
     "string": "c",
     "type_traits": "c",
-    "game.h": "c"
+    "game.h": "c",
+    "lcf.h": "c",
+    "menu.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }

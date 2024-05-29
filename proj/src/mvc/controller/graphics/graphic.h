@@ -2,6 +2,18 @@
 #include "lcom/lcf.h"
 #include "VBE.h"
 #include "../../model/board.h"
+#include "sprites/GameElements/clock_150.xpm"
+#include "sprites/Characters/Characters20x32/0_20.xpm"
+#include "sprites/Characters/Characters20x32/1_20.xpm"
+#include "sprites/Characters/Characters20x32/2_20.xpm"
+#include "sprites/Characters/Characters20x32/3_20.xpm"
+#include "sprites/Characters/Characters20x32/4_20.xpm"
+#include "sprites/Characters/Characters20x32/5_20.xpm"
+#include "sprites/Characters/Characters20x32/6_20.xpm"
+#include "sprites/Characters/Characters20x32/7_20.xpm"
+#include "sprites/Characters/Characters20x32/8_20.xpm"
+#include "sprites/Characters/Characters20x32/9_20.xpm"
+#include "sprites/Characters/Characters20x32/two_point.xpm"
 
 #pragma once
 
@@ -21,6 +33,7 @@ int (set_text_mode)();
 int (load_xpm)(xpm_map_t img ,enum PieceType pieceType , bool isWhite);
 int (load_xpm_cursor)();
 int load_xpm_menu();
+int (load_numbers)();
 int (load_xpm_clocks_board)();
 
 int allocate_buffers();
@@ -42,6 +55,8 @@ int draw_both_clocks();
 int (draw_board_without_Pieces)();
 int (draw_cursor_mouse)(uint16_t x, uint16_t y , enum CursorType cursorType);
 int (draw_menu)(uint16_t x, uint16_t y);
+int (draw_number)(uint16_t x , uint16_t y , int number);
+int (draw_two_points)(uint16_t x , uint16_t y);
 
 int (wait_for_ESC_)();
 

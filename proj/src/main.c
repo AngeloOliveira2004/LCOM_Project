@@ -8,7 +8,6 @@
 #include "mvc/model/board.h"
 #include "mvc/model/menu.h"
 #include "mvc/model/game.h"
-#include "mvc/view/view.h"
 #include "sprites/Cursor/cursors.xpm"
 #include "sprites/pieces.xpm"
 #include "mvc/controller/controller.h"
@@ -83,9 +82,24 @@ int setup() {
   load_xpm(Chess_black_klt45, KING, BLACK);
   load_xpm(Chess_rlt45, ROOK, WHITE);
   load_xpm(Chess_black_rlt45, ROOK, BLACK);
+  
+  load_xpm(Chess_plt45, PAWN, WHITE);
+  load_xpm(Chess_black_plt45, PAWN, BLACK);
+  load_xpm(Chess_blt45, BISHOP, WHITE);
+  load_xpm(Chess_black_blt45, BISHOP, BLACK);
+  load_xpm(Chess_nlt45, KNIGHT, WHITE);
+  load_xpm(Chess_black_nlt45, KNIGHT, BLACK);
+  load_xpm(Chess_qlt45, QUEEN, WHITE);
+  load_xpm(Chess_black_qlt45, QUEEN, BLACK);
+  load_xpm(Chess_klt45, KING, WHITE);
+  load_xpm(Chess_black_klt45, KING, BLACK);
+  load_xpm(Chess_rlt45, ROOK, WHITE);
+  load_xpm(Chess_black_rlt45, ROOK, BLACK);
+
   load_xpm_cursor();
   load_xpm_menu();
   load_xpm_clocks_board();
+  load_numbers();
   cursor_draw_start();
 
   return 0;
@@ -174,7 +188,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
           }
 
           if (msg.m_notify.interrupts & irq_mouse || msg.m_notify.interrupts & BIT(irq_keyboard)) {
-            printf("keyboard Interrupt\n");
+            
             uint32_t status;
             sys_inb(STATUS_BYTE, &status);
             if (status & OUT_BUFF_FULL) {

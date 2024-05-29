@@ -19,7 +19,7 @@ int counter_mouse = 0;
 
 extern int counter_packet_print;
 
-extern struct Board *board;
+extern struct Game * game;
 
 enum InGameStates current_state;
 
@@ -216,10 +216,12 @@ struct mousePosition (get_position_cursor)(struct cursor *cursor){
 }
 
 int (in_game_mouse_movement)(){
+  
   switch(current_state){
     case INITIAL:
+      
       if(mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
-        piece_selected = get_piece_from_click(cursor.position.x,cursor.position.y,CELL_SIZE_HEIGHT,board);
+        piece_selected = get_piece_from_click(cursor.position.x,cursor.position.y,CELL_SIZE_HEIGHT,&game->board);
         if(piece_selected == NULL) {
           current_state = INITIAL;
         }else{
@@ -260,12 +262,12 @@ int (in_game_mouse_movement)(){
       current_state = INITIAL;
       printf("%d\n",cursor.position.x);
       printf("%d\n",cursor.position.y);
-      final_pos.x = cursor.position.x / (CELL_SIZE_WIDTH);
-      final_pos.y = cursor.position.y / (CELL_SIZE_HEIGHT);
+      final_pos.x = (cursor.position.x - 200) / CELL_SIZE_WIDTH;
+      final_pos.y = (cursor.position.y - 100) / CELL_SIZE_HEIGHT;
       printf("%d\n",final_pos.x);
       printf("%d\n",final_pos.y);
-      advance_piece(piece_selected,&final_pos,board);
-      change_piece_position(piece_selected,&initial_pos,&final_pos,board);
+      advance_piece(piece_selected,&final_pos,&game->board);
+      change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board);
       break;
   }
   return 0;

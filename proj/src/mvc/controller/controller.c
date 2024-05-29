@@ -9,9 +9,9 @@ enum FlowState current_state = MENU;
 extern int counter_mouse;
 
 extern struct cursor cursor;
-extern struct Board *board;
 
 void init_game(struct Game *game){
+  //game->White_player = {};
   init_board(&game->board);
   game->state = START;
   game->piece_count = 32;
@@ -40,7 +40,6 @@ void game_loop(struct Game * game){
     game->state = DRAW;
   }
 }
-
 
 void parse_keyboard_input(){
   
@@ -119,7 +118,7 @@ void parse_mouse_input(){
 
   if (counter_mouse == 3) {
     counter_mouse = 0;
-    draw_cursor(&cursor, board);
+    draw_cursor(&cursor, &game->board);
   }
 
 }
@@ -136,10 +135,10 @@ void router(){
 
       init_game(game);
 
-      draw_backBackGround();
+      erase_buffer();
+      draw_backBackGround(&game->White_player);
       
       copy_BackGroundBuffer();
-      printf("drawn background\n");
 
       draw_board(&game->board);
       

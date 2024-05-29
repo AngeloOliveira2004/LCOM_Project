@@ -40,7 +40,17 @@ xpm_image_t menuXPM;
 xpm_image_t defaultClock;
 xpm_image_t board;
 
-
+xpm_image_t number0XPM;
+xpm_image_t number1XPM;
+xpm_image_t number2XPM;
+xpm_image_t number3XPM;
+xpm_image_t number4XPM;
+xpm_image_t number5XPM;
+xpm_image_t number6XPM;
+xpm_image_t number7XPM;
+xpm_image_t number8XPM;
+xpm_image_t number9XPM;
+xpm_image_t twoPointsXPM;
 
 uint32_t bufferSize;
 
@@ -143,6 +153,49 @@ int (get_h_res)(){
 }
 int (get_v_res)(){
   return mode_info.YResolution;
+}
+
+int load_numbers(){
+  for(int i = 0 ; i < 10 ; i++){
+    switch (i)
+    {
+    case 0:
+      xpm_load(number0_20, XPM_8_8_8, &number0XPM);
+      break;
+    case 1:
+      
+      xpm_load(number1_20, XPM_8_8_8, &number1XPM);
+      break;
+    case 2:
+      xpm_load(number2_20, XPM_8_8_8, &number2XPM);
+      break;
+    case 3:
+      xpm_load(number3_20, XPM_8_8_8, &number3XPM);
+      break;
+    case 4:
+      xpm_load(number4_20, XPM_8_8_8, &number4XPM);
+      break;
+    case 5:
+      xpm_load(number5_20, XPM_8_8_8, &number5XPM);
+      break;
+    case 6:
+      xpm_load(number6_20, XPM_8_8_8, &number6XPM);
+      break;
+    case 7:
+      xpm_load(number7_20, XPM_8_8_8, &number7XPM);
+      break;
+    case 8:
+      xpm_load(number8_20, XPM_8_8_8, &number8XPM);
+      break;
+    case 9:
+      xpm_load(number9_20, XPM_8_8_8, &number9XPM);
+      break;
+    default:
+      return 1;
+    }
+  }
+  xpm_load(two_points20 , XPM_8_8_8 , &twoPointsXPM);
+  return 0;
 }
 
 int (load_xpm)(xpm_map_t img , enum PieceType pieceType , bool isWhite){
@@ -313,9 +366,9 @@ int (draw_xpm) (xpm_map_t img, uint16_t x, uint16_t y) {
       uint32_t color = 0;
       memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
       if (color != xpm_transparency_color(image.type))
-      if (vg_draw_pixel(x + j, y + i, color)) {
-        return 1;
-      }
+        if (vg_draw_pixel(x + j, y + i, color)) {
+          return 1;
+        }
     }
   }
   swap_buffers();
@@ -544,3 +597,77 @@ int (draw_menu)(uint16_t x, uint16_t y){
   return 0;
 }
 
+int (draw_number)(uint16_t x , uint16_t y , int number){
+  xpm_image_t image;
+  switch (number)
+  {
+  case 0:
+    image = number0XPM;
+    break;
+  case 1:
+    image = number1XPM;
+    break;
+  case 2:
+    image = number2XPM;
+    break;
+  case 3:
+    image = number3XPM;
+    break;
+  case 4:
+    image = number4XPM;
+    break;
+  case 5:
+    image = number5XPM;
+    break;
+  case 6:
+    image = number6XPM;
+    break;
+  case 7:
+    image = number7XPM;
+    break;
+  case 8:
+    image = number8XPM;
+    break;
+  case 9:
+    image = number9XPM;
+    break;
+  default:
+    return 1;
+    break;
+  }
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(x + j, y + i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+  return 0;
+}
+
+int (draw_two_points)(uint16_t x , uint16_t y){
+  xpm_image_t image = twoPointsXPM;
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(x + j, y + i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+  return 0;
+}

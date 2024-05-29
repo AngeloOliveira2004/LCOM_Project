@@ -31,7 +31,6 @@ int (fill)(int x , int y , int width , int height , uint32_t color){
 
 
 int (draw_board)(struct Board* board){
-  init_board(board);
 
   for (int i = 0; i < 32; i++) {
     draw_piece(&board->pieces[i]);
@@ -54,31 +53,53 @@ int draw_board_except_one_piece(int id , struct Board* board){
   return 0;
 }
 
-int draw_Clocks(){
+ int draw_Clocks(){ 
 
-  for(int i = 650 ; i < 800; i++){
-    for(int j = 0; j < 100; j++){
-      if(vg_draw_pixel(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, 0xFFFFF) != 0){
-        continue;
-      }
-    }
+   if (draw_xpm(clockXPM150,650, 0)!=0)
+   {
+     return 1;
+   }
+   if (draw_xpm(clockXPM150,650, 514)!=0)
+   {
+     return 1;
+   }
 
-    for(int j = 600 ; j > 500; j--){
-      if(vg_draw_pixel(i*CELL_SIZE_WIDTH, j*CELL_SIZE_HEIGHT, 0xFFFFFF) != 0){
-        continue;
-      }
-    }
-  }
+   return 0;
+ 
+ }
+
+int draw_clockValue(struct Player *player){
+
+  draw_number(670,2,player->clock.minutes/10);
+  draw_number(695,2,player->clock.minutes%10);
+
+  draw_two_points(720 , 2);
+  
+  draw_number(745,2,player->clock.seconds/10);
+  draw_number(770,2,player->clock.seconds%10);
+  
+  draw_number(670 , 520, player->clock.minutes/10);
+  draw_number(695 , 520, player->clock.minutes&10);
+  
+  draw_two_points(720 , 520);
+  
+  draw_number(745,520,player->clock.seconds/10);
+  draw_number(770,520,player->clock.seconds%10);
 
   return 0;
 }
 
-int draw_backBackGround(){
+int draw_backBackGround(struct Player * player){
   
   if(draw_board_without_Pieces() != 0)
     return 1;
 
-//  swap_buffers();
+  if(draw_Clocks())
+    return 1;
+
+  if(draw_clockValue(player) != 0){
+    return 1;
+  }
 
   return 0;
 }
@@ -91,12 +112,10 @@ int (draw_BackGround_Without_Erase)(){
   return 0;
 }
 
-
 int (draw_pawn)(struct Piece* piece){
-  printf("initial x pos %d" , piece->position.x);
+
   int initialX = piece->position.x * (400/8) + 175 + 25;
   int initialY = 40 + 60 + 50 * piece->position.y;
-
 
   if(piece->isWhite){
     draw_white_piece(initialX, initialY , piece->type);
@@ -212,11 +231,12 @@ int draw_cursor(struct cursor* cursor,struct Board *board){
 
 int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , struct Board* board) {
 
-    int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
-    int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
 
-    int currentX = piece->position.x * CELL_SIZE_WIDTH + 10;
-    int currentY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+    int initialX = initialPos->x * (400/8) + 200;
+    int initialY = initialPos->y * CELL_SIZE_HEIGHT + 102;
+
+    int currentX = piece->position.x * (400/8) + 200;
+    int currentY = piece->position.y * CELL_SIZE_HEIGHT + 102;
 
     if (currentX == initialX && currentY == initialY) {
         return 0; 
@@ -266,11 +286,11 @@ int return_to_initial_pos(struct Piece* piece, struct Position* initialPos , str
 }
 
 int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct Board* board){
-    int initialX = initialPos->x * CELL_SIZE_WIDTH + 10;
-    int initialY = initialPos->y * CELL_SIZE_HEIGHT + 10;
+    int initialX = initialPos->x * (400/8) + 200;
+    int initialY = initialPos->y * CELL_SIZE_HEIGHT + 102;
 
-    int currentX = piece->position.x * CELL_SIZE_WIDTH + 10;
-    int currentY = piece->position.y * CELL_SIZE_HEIGHT + 10;
+    int currentX = piece->position.x * (400/8) + 200;
+    int currentY = piece->position.y * CELL_SIZE_HEIGHT + 102;
 
     if (currentX == initialX && currentY == initialY) {
         return 0; 

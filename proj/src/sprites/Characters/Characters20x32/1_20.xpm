@@ -1,4 +1,6 @@
 /* XPM */
+#pragma once
+
 static xpm_row_t number1_20[] = {
 /* columns rows colors chars-per-pixel */
 "20 32 42 1 ",
@@ -43,7 +45,7 @@ static xpm_row_t number1_20[] = {
 "a c #FCFCFC",
 "s c #FDFDFD",
 "d c #FEFEFE",
-"f c white",
+"f c #FFFFFF",
 /* pixels */
 "ssssssssss5.+.&qssss",
 "ssssssssss5+++&qssss",

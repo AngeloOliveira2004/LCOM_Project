@@ -14,22 +14,6 @@ void destroy_game(struct Game* game){
   free(game);
 }
 
-void init_game(struct Game *game){
-  init_board(&game->board);
-  game->state = START;
-  game->piece_count = 32;
-  game->Black_player.isWhite = false;
-  game->Black_player.isWinner = false;
-  game->Black_player.isDraw = false;
-  game->Black_player.canLongCastle = true;
-  game->Black_player.canShortCastle = true;
-  game->White_player.isWhite = true;
-  game->White_player.isWinner = false;
-  game->White_player.isDraw = false;
-  game->White_player.canLongCastle = true;
-  game->White_player.canShortCastle = true;
-}
-
 void changeState(struct Game *game, enum GameStates state){
   game->state = state;
 }

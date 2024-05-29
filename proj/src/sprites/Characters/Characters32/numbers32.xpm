@@ -1,5 +1,7 @@
 /* XPM */
-static xpm_row_t 0-32[] = {
+#pragma once
+
+static xpm_row_t number0_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c None",
@@ -40,7 +42,7 @@ static xpm_row_t 0-32[] = {
 };
 
 
-static xpm_row_t 1-32[] = {
+static xpm_row_t number1_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #FDFDFD",
@@ -80,7 +82,7 @@ static xpm_row_t 1-32[] = {
 "                 .......        "
 };
 /* XPM */
-static xpm_row_t 2-32[] = {
+static xpm_row_t number2_20[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #F7F7F7",
@@ -120,7 +122,7 @@ static xpm_row_t 2-32[] = {
 "     .......................    "
 };
 /* XPM */
-static xpm_row_t 3-32[] = {
+static xpm_row_t number3_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #F5F5F5",
@@ -160,7 +162,7 @@ static xpm_row_t 3-32[] = {
 "            ........            "
 };
 /* XPM */
-static xpm_row_t 4-32[] = {
+static xpm_row_t number4_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #F7F7F7",
@@ -200,7 +202,7 @@ static xpm_row_t 4-32[] = {
 "                 .......        "
 };
 /* XPM */
-static xpm_row_t 5-32[] = {
+static xpm_row_t number5_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #F4F4F4",
@@ -240,7 +242,7 @@ static xpm_row_t 5-32[] = {
 "            .........           "
 };
 /* XPM */
-static xpm_row_t 6-32[] = {
+static xpm_row_t number6_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #0B0B0B",
@@ -280,7 +282,7 @@ static xpm_row_t 6-32[] = {
 ".............        ..........."
 };
 /* XPM */
-static xpm_row_t 7-32[] = {
+static xpm_row_t number7_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #F9F9F9",
@@ -320,7 +322,7 @@ static xpm_row_t 7-32[] = {
 "         ........               "
 };
 /* XPM */
-static xpm_row_t 8-32[] = {
+static xpm_row_t number8_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #F5F5F5",
@@ -360,7 +362,7 @@ static xpm_row_t 8-32[] = {
 "             ........           "
 };
 /* XPM */
-static xpm_row_t 9-32[] = {
+static xpm_row_t number9_32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 2 1 ",
 "  c #F5F5F5",
