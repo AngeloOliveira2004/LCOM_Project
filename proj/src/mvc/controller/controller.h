@@ -33,7 +33,6 @@ enum FlowState{
   EXIT,
 };
 
-
 struct Game * game;
 
 void start_menu();
@@ -50,4 +49,6 @@ void router();
 void init_game(struct Game *game);
 void game_loop(struct Game * game);
 void controller_loop(struct Game * game, struct Menu * menu);
+void decrease_player_timer();
+
 

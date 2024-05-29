@@ -172,3 +172,64 @@ void router(){
     break;
   }
 }
+//min == 0 , segundos passa para a esquerda e os tenth_of_a_second passam pra direita
+void decrease_player_timer() {
+  if (game->isWhiteTurn) {
+      game->White_player.clock.a_tenth_of_a_second--;
+      /*
+      MIN , SEG , SEG/10
+      30    00     00;
+      29    59     10;
+      00    59     9;
+      */  
+      if (game->White_player.clock.a_tenth_of_a_second < 0) {
+
+          if(game->White_player.clock.seconds == 0 && game->White_player.clock.minutes == 0){
+            game->White_player.clock.a_tenth_of_a_second = 0;
+          }else{
+            game->White_player.clock.a_tenth_of_a_second = 9;
+            game->White_player.clock.seconds--;
+          }
+
+          if (game->White_player.clock.seconds < 0) {
+              game->White_player.clock.seconds = 59;
+              game->White_player.clock.minutes--;
+
+              if (game->White_player.clock.minutes < 0) {
+                  game->White_player.clock.minutes = 0;
+                  game->White_player.clock.seconds = 0;
+                  game->White_player.clock.a_tenth_of_a_second = 0;
+              }
+          }
+      }
+  } else {
+      game->Black_player.clock.a_tenth_of_a_second--;
+
+      if (game->Black_player.clock.a_tenth_of_a_second < 0) {
+          game->Black_player.clock.a_tenth_of_a_second = 9;
+          game->Black_player.clock.seconds--;
+
+          if (game->Black_player.clock.seconds < 0) {
+              game->Black_player.clock.seconds = 59;
+              game->Black_player.clock.minutes--;
+
+              if (game->Black_player.clock.minutes < 0) {
+                  game->Black_player.clock.minutes = 0;
+                  game->Black_player.clock.seconds = 0;
+                  game->Black_player.clock.a_tenth_of_a_second = 0;
+              }
+          }
+      }
+  }
+
+
+  erase_buffer();
+
+  swap_BackgroundBuffer();
+
+  draw_board(&game->board);
+
+  draw_clockValue(&game->White_player , &game->Black_player);
+
+  swap_buffers();
+}

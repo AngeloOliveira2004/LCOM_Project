@@ -13,6 +13,7 @@
 #include "sprites/Characters/Characters20x32/8_20.xpm"
 #include "sprites/Characters/Characters20x32/9_20.xpm"
 #include "sprites/Characters/Characters20x32/two_point.xpm"
+#include "../controller/controller.h"
 #include "../model/board.h"
 #include "../model/menu.h"
 

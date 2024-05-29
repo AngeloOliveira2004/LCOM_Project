@@ -176,13 +176,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
         case HARDWARE:
           if (msg.m_notify.interrupts & BIT(irq_timer)) {
             timer_int_handler();
-            if (counter % 30) {
-              elapsed_seconds += 1;
+            if (counter % 3) {
+
               counter = 0;
-              /*
-              if(draw() != 0){
-                printf("Error drawing\n");
-              }*/
+              decrease_player_timer();
+              
             }
           }
 
