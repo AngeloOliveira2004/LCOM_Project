@@ -3,10 +3,7 @@
 
 #include "game.h"
 
-
 struct Board* create_board();
-struct Game* create_game();
-void destroy_board(struct Board* board);
 void destroy_game(struct Game* game);
 
 void init_board(struct Board *board);

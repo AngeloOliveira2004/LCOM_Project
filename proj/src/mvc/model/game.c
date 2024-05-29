@@ -1,13 +1,11 @@
 #include "game.h"
 
 struct Game* create_game(){
-
   struct Game* game = (struct Game*) malloc(sizeof(struct Game));
   if(game == NULL){
     return NULL;
   }
   return game;
-
 }
 
 void destroy_game(struct Game* game){

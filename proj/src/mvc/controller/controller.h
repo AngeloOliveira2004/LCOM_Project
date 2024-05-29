@@ -1,8 +1,8 @@
 #include <lcom/lcf.h>
 #include <stdio.h>
 
-#include "../model/board.h"
 #include "../model/game.h"
+#include "../model/board.h"
 #include "../model/menu.h"
 #include "../view/view.h"
 #include "keyboard/keyboard.h"
