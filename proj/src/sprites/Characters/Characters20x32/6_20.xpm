@@ -3,8 +3,8 @@
 static xpm_row_t number6_20[] = {
 /* columns rows colors chars-per-pixel */
 "20 32 2 1 ",
-"  c None",
-". c #ffffff",
+"  c #ffffff",
+". c None",
 /* pixels */
 "........     .......",
 ".......        .....",

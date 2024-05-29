@@ -22,7 +22,7 @@ extern int counter_packet_print;
 
 extern struct Game * game;
 
-enum InGameStates current_state;
+enum InGameStates _current_state = INITIAL;
 
 struct Position initial_pos;
 
@@ -64,7 +64,7 @@ int(cursor_draw_start)(){
   final_pos.x = 0;
   final_pos.y = 0;
   cursor.type = DEFAULT;
-  current_state = INITIAL;
+  _current_state = INITIAL;
   return 0;
   
 }
@@ -218,18 +218,18 @@ struct mousePosition (get_position_cursor)(struct cursor *cursor){
 
 int (in_game_mouse_movement)(){
   
-  switch(current_state){
+  switch(_current_state){
     case INITIAL:
       
       if(mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
         piece_selected = get_piece_from_click(cursor.position.x,cursor.position.y,CELL_SIZE_HEIGHT,&game->board);
         if(piece_selected == NULL) {
-          current_state = INITIAL;
+          _current_state = INITIAL;
         }else{
           initial_pos.x = piece_selected->position.x;
           initial_pos.y = piece_selected->position.y;
           if(piece_selected->isWhite == game->isWhiteTurn){
-            current_state = PIECE_SELECTED;
+            _current_state = PIECE_SELECTED;
           }
         }
         printf("INITIAL\n");
@@ -238,31 +238,31 @@ int (in_game_mouse_movement)(){
     case PIECE_SELECTED:
       printf("PIECE_SELECTED\n");
       if(mouse.lb != BUTTON_PRESSED){
-        current_state = PIECE_CLICKED;
+        _current_state = PIECE_CLICKED;
         cursor.type = HOVERING;
       } else {
-        current_state = PIECE_DRAGGED;
+        _current_state = PIECE_DRAGGED;
         cursor.type = SELECTED;
       }
       break;
     case PIECE_CLICKED:
       printf("PIECE_CLICKED\n");
       if(mouse.lb == BUTTON_PRESSED){
-        current_state = COMPLETE;
+        _current_state = COMPLETE;
       }else if(mouse.rb == BUTTON_PRESSED){
-        current_state = INITIAL;
+        _current_state = INITIAL;
       }
       break;
     case PIECE_DRAGGED:
       printf("PIECE_DRAGGED\n");
       if(mouse.lb != BUTTON_PRESSED){
-        current_state = COMPLETE;
+        _current_state = COMPLETE;
       }
       break;  
     case COMPLETE:
       printf("COMPLETE\n");
       cursor.type = DEFAULT;
-      current_state = INITIAL;
+      _current_state = INITIAL;
       final_pos.x = (cursor.position.x - 200) / CELL_SIZE_WIDTH;
       final_pos.y = (cursor.position.y - 100) / CELL_SIZE_HEIGHT;
       if(change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board)){

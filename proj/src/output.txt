@@ -2,1712 +2,2939 @@ front buffer size : 1440000
 Scancode: 0x2
 Key pressed: 7
 Menu state: 0
-player1->clock.minutes: 1
-player1->clock.seconds: 0
 draw_board
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 59
-game->White_player: 8
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 59
 Scancode: 0x82
 Key pressed: 7
 Menu state: 1
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 59
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 59
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 59
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 59
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 59
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 59
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 59
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 59
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 59
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 58
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 58
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 58
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 58
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 58
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 58
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 58
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 58
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 58
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 57
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 57
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 57
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 57
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 57
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 57
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 57
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 57
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 57
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 56
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 56
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 56
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 56
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 56
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 56
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 56
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 56
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 56
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 55
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 55
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 55
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 55
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 55
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 55
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 55
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 55
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 55
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 54
-game->White_player: 8
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 54
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 54
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 54
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 54
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 54
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 54
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 54
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 54
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 53
-game->White_player: 8
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 53
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 53
-game->White_player: 4
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 53
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 53
-game->White_player: 0
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 53
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 53
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 53
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 53
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 52
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 52
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 52
-game->White_player: 4
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 52
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 52
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 52
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 52
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 52
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 52
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 51
-game->White_player: 8
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 51
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 51
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 51
-game->White_player: 2
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 51
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 51
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 51
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 51
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 51
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 50
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 50
-game->White_player: 6
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 50
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 50
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 50
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 50
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 50
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 50
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 50
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 49
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 49
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 49
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 49
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 49
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 49
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 49
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 49
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 49
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 48
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 48
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 48
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 48
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 48
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 48
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 48
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 48
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 48
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 47
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 47
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 47
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 47
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 47
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 47
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 47
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 47
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 47
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 46
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 46
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 46
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 46
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 46
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 46
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 46
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 46
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 46
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 45
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 45
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 45
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 45
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 45
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 45
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 45
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 45
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 45
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 44
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 44
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 44
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 44
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 44
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 44
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 44
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 44
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 44
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 43
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 43
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 43
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 43
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 43
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 43
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 43
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 43
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 43
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 42
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 42
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 42
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 42
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 42
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 42
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 42
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 42
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 42
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 41
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 41
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 41
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 41
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 41
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 41
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 41
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 41
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 41
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 40
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 40
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 40
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 40
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 40
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 40
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 40
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 40
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 40
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 39
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 39
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 39
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 39
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 39
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 39
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 39
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 39
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 39
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 38
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 38
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 38
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 38
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 38
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 38
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 38
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 38
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 38
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 37
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 37
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 37
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 37
-game->White_player: 2
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 37
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 37
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 37
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 37
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 37
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 36
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 36
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 36
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 36
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 36
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 36
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 36
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 36
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 36
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 35
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 35
-game->White_player: 6
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 35
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 35
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 35
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 35
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 35
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 35
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 35
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 34
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 34
-game->White_player: 6
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 34
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 34
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 34
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 34
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 34
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 34
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 34
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 33
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 33
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 33
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 33
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 33
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 33
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 33
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 33
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 33
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 32
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 32
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 32
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 32
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 32
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 32
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 32
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 32
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 32
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 31
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 31
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 31
-game->White_player: 4
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 31
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 31
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 31
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 31
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 31
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 31
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 30
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 30
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 30
-game->White_player: 4
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 30
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 30
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 30
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 30
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 30
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 30
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 29
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 29
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 29
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 29
-game->White_player: 2
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 29
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 29
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 29
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 29
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 29
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 28
-game->White_player: 8
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 28
-game->White_player: 6
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 28
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 28
-game->White_player: 2
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 28
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 28
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 28
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 28
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 28
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 27
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 27
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 27
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 27
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 27
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 27
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 27
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 27
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 27
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 26
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 26
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 26
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 26
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 26
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 26
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 26
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 26
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 26
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 25
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 25
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 25
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 25
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 25
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 25
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 25
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 25
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 25
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 24
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 24
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 24
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 24
-game->White_player: 2
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 24
-game->White_player: 0
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 24
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 24
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 24
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 24
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 23
-game->White_player: 8
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 23
-game->White_player: 6
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 23
-game->White_player: 4
+draw_board
+draw_board
+draw_board
+draw_board
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 23
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 23
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 23
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 23
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 23
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 23
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 22
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 22
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 22
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 22
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 22
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 22
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 22
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 22
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 22
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 21
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 21
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 21
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 21
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 21
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 21
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 21
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 21
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 21
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 20
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 20
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 20
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 20
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 20
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 20
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 20
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 20
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 20
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 19
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 19
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 19
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 19
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 19
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 19
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 19
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 19
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 19
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 18
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 18
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 18
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 18
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 18
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 18
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 18
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 18
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 18
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 17
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 17
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 17
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 17
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 17
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 17
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 17
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 17
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 17
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 16
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 16
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 16
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 16
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 16
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 16
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 16
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 16
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 16
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 15
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 15
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 15
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 15
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 15
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 15
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 15
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 15
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 15
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 14
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 14
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 14
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 14
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 14
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 14
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 14
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 14
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 14
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 13
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 13
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 13
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 13
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 13
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 13
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 13
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 13
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 13
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 12
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 12
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 12
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 12
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 12
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 12
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 12
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 12
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 12
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 11
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 11
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 11
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 11
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 11
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 11
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 11
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 11
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 11
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 10
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 10
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 10
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 10
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 10
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 10
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 10
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 10
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 10
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 9
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 9
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 9
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 9
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 9
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 9
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 9
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 9
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 9
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 8
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 8
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 8
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 8
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 8
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 8
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 8
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 8
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 7
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 7
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 7
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 7
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 7
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 7
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 7
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 7
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 7
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 6
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 6
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 6
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 6
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 6
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 6
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 6
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 6
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 5
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 5
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 5
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 5
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 5
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 5
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 5
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 5
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 5
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 4
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 4
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 4
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 4
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 4
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 4
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 4
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 4
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 3
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 3
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 3
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 3
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 3
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 3
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 3
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 3
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 3
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 2
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 2
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 2
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 2
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 2
-game->White_player: 0
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 2
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 2
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 2
+draw_board
+player1->clock.minutes: 0
+player1->clock.seconds: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 1
-game->White_player: 8
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 1
-game->White_player: 6
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 1
-game->White_player: 4
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 1
-game->White_player: 2
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 1
-game->White_player: 0
 draw_board
 player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: 8
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: 6
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: 4
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: 2
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: 0
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
+player1->clock.seconds: 1
 draw_board
 player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
+player1->clock.seconds: 1
 draw_board
 player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
-draw_board
-player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
+player1->clock.seconds: 1
 draw_board
 player1->clock.minutes: 0
-player1->clock.seconds: 0
-game->White_player: -1
+player1->clock.seconds: 1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
 Scancode: 0x1
 Key pressed: 7
 Menu state: 1
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0
-game->White_player: -1
 draw_board
 player1->clock.minutes: 0
 player1->clock.seconds: 0

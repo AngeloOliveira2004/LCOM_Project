@@ -13,6 +13,8 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   uint8_t st , msb , lsb;
   int finalFreq = TIMER_FREQ/freq;
 
+  printf("finalFreq: %d\n" , finalFreq);
+
   if(timer_get_conf(timer , &st) != OK)
     return 1;
 

@@ -32,7 +32,6 @@ extern int counter_mouse;
 extern struct cursor cursor;
 
 extern enum ClickedKey key_pressed;
-extern enum FlowState current_state;
 
 extern struct Game *game;
 extern struct Menu *menu;
@@ -63,9 +62,6 @@ int main(int argc, char *argv[]) {
 }
 
 int setup() {
-
-  if (timer_set_frequency(0, desiredFrameRate) != 0)
-    return 1;
 
   uint16_t mode = VBE_800x600_DC;
 
@@ -180,8 +176,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & irq_timer) {
             if(current_state == GAME){
               timer_int_handler();
-              if (counter % 3) {
-                counter = 0;
+              if (counter % 6 == 0) {
                 decrease_player_timer();
               }
             }

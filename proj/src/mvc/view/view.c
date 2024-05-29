@@ -100,13 +100,13 @@ int draw_backBackGround(struct Player * player1, struct Player * player2){
   if(draw_board_without_Pieces() != 0)
     return 1;
 
-  if(draw_Clocks())
-    return 1;
-
+  //if(draw_Clocks())
+    //return 1;
+/*
   if(draw_clockValue(player1,player2) != 0){
     return 1;
   }
-
+*/
   return 0;
 }
 
