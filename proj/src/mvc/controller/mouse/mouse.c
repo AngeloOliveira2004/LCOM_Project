@@ -222,17 +222,20 @@ int (in_game_mouse_movement)(){
     case INITIAL:
       
       if(mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
+        
         piece_selected = get_piece_from_click(cursor.position.x,cursor.position.y,CELL_SIZE_HEIGHT,&game->board);
         if(piece_selected == NULL) {
           _current_state = INITIAL;
         }else{
+          printf("piece_selected is not NULL\n");
+          printf("white turn %d\n",game->isWhiteTurn);
+          printf("piece selected is white %d\n",piece_selected->isWhite);
           initial_pos.x = piece_selected->position.x;
           initial_pos.y = piece_selected->position.y;
-          if(piece_selected->isWhite == game->isWhiteTurn){
-            _current_state = PIECE_SELECTED;
-          }
+            if(!piece_selected->isWhite == game->isWhiteTurn){
+              _current_state = PIECE_SELECTED;
+            }
         }
-        printf("INITIAL\n");
       }
       break;
     case PIECE_SELECTED:

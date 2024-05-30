@@ -13,6 +13,10 @@ extern struct cursor cursor;
 void init_game(struct Game *game) {
   // game->White_player = {};
   init_board(&game->board);
+  for(int i = 0 ; i < 32 ; i++){
+    printf("piece is white %d\n", game->board.pieces[i].isWhite);
+    printf("PiecePosition %d ' ' %d\n", game->board.pieces[i].position.x, game->board.pieces[i].position.y);
+  }
   init_player(&game->Black_player, false, 1, 0);
   init_player(&game->White_player, true, 1, 0);
   game->state = START;
@@ -21,6 +25,7 @@ void init_game(struct Game *game) {
 }
 
 void game_loop(struct Game *game) {
+  /*
   if(changes){
     if (is_check(game)) {
       if (is_checkmate(game)) {
@@ -44,7 +49,7 @@ void game_loop(struct Game *game) {
     draw_clockValue(&game->White_player, &game->Black_player);
 
     swap_buffers();
-  }
+  }*/
 }
 
 void parse_keyboard_input() {
@@ -122,7 +127,17 @@ void parse_mouse_input() {
 
   if (counter_mouse == 3) {
     counter_mouse = 0;
-    draw_cursor(&cursor, &game->board);
+    erase_buffer();
+
+    swap_BackgroundBuffer();
+
+    draw_board(&game->board);
+
+    draw_clockValue(&game->Black_player, &game->White_player);
+    
+    draw_cursor_mouse(cursor.position.x, cursor.position.y , cursor.type);
+
+    swap_buffers();
   }
 }
 
@@ -209,19 +224,32 @@ void decrease_player_timer() {
   }
   else {
     game->Black_player.clock.a_tenth_of_a_second--;
-
+   
+    /*
+    MIN , SEG , SEG/10
+    30    00     00;
+    29    59     10;
+    00    59     9;
+    */
+   
     if (game->Black_player.clock.a_tenth_of_a_second <= 0) {
-      game->Black_player.clock.a_tenth_of_a_second = 9;
-      game->Black_player.clock.seconds--;
-
-      if (game->Black_player.clock.seconds <= 0) {
-        game->Black_player.clock.seconds = 59;
-        game->Black_player.clock.minutes--;
-
-        if (game->Black_player.clock.minutes <= 0) {
-          game->Black_player.clock.minutes = 0;
-          game->Black_player.clock.seconds = 0;
-          game->Black_player.clock.a_tenth_of_a_second = 0;
+      if (game->Black_player.clock.seconds == 0 && game->Black_player.clock.minutes == 0) {
+          
+        game->Black_player.clock.a_tenth_of_a_second = 0;
+      }
+      else {
+        game->Black_player.clock.a_tenth_of_a_second = 9;
+        if (game->Black_player.clock.seconds == 0) {
+          if (game->Black_player.clock.minutes > 0) {
+            game->Black_player.clock.minutes--;
+            game->Black_player.clock.seconds = 59;
+          }
+          else {
+            game->Black_player.clock.seconds = 0;
+          }
+        }
+        else {
+          game->Black_player.clock.seconds--;
         }
       }
     }
@@ -233,7 +261,9 @@ void decrease_player_timer() {
 
   draw_board(&game->board);
 
-  draw_clockValue(&game->White_player, &game->Black_player);
+  draw_clockValue(&game->Black_player, &game->White_player);
+
+  draw_cursor_mouse(cursor.position.x, cursor.position.y , cursor.type);
 
   swap_buffers();
 }

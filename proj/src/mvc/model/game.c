@@ -892,15 +892,21 @@ struct Piece *get_piece_from_click(int click_x, int click_y, int square_size, st
   pos.x = (click_x - 200) / square_size;
   pos.y = (click_y - 100) / square_size;
 
+  printf("Click x: %d\n", pos.x);
+  printf("Click y: %d\n", pos.y);
+
   if (board == NULL) {
     printf("null board\n");
   }
 
   if (is_inside_board(&pos)) {
+    printf("Inside board\n");
     if (board->squares[pos.x][pos.y].type != EMPTY) {
       printf("Piece type: %d\n", board->squares[pos.x][pos.y].type);
       return &board->squares[pos.x][pos.y];
     }
+  }else{
+    printf("Outside board\n");
   }
 
   return NULL;
