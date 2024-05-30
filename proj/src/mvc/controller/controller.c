@@ -127,17 +127,19 @@ void parse_mouse_input() {
 
   if (counter_mouse == 3) {
     counter_mouse = 0;
-    erase_buffer();
+    if(current_state == GAME){
+      erase_buffer();
 
-    swap_BackgroundBuffer();
+      swap_BackgroundBuffer();
 
-    draw_board(&game->board);
+      draw_board(&game->board);
 
-    draw_clockValue(&game->Black_player, &game->White_player);
-    
-    draw_cursor_mouse(cursor.position.x, cursor.position.y , cursor.type);
+      draw_clockValue(&game->Black_player, &game->White_player);
 
-    swap_buffers();
+      draw_cursor_mouse(cursor.position.x, cursor.position.y , cursor.type);
+
+      swap_buffers();
+    }
   }
 }
 
