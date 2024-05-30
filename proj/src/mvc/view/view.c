@@ -97,7 +97,7 @@ int draw_menu_buttonss(struct Position * button_position){
 }
 
 
-int draw_backBackGround(struct Player * player1, struct Player * player2, struct Position * button_position){
+int draw_backBackGround(struct Player * player1, struct Player * player2){
   
 
   if(draw_game_background() != 0)

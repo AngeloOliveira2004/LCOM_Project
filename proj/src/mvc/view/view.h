@@ -24,7 +24,7 @@ int initialize_graphics(uint16_t* mode);
 int (fill)(int x , int y , int width , int height , uint32_t color);
 int (draw_board)(struct Board* board);
 int draw_board_except_one_piece(int id , struct Board* board);
-int draw_backBackGround(struct Player * player1, struct Player * player2, struct Position * button_position);
+int draw_backBackGround(struct Player * player1, struct Player * player2);
 int (draw_BackGround_Without_Erase)();
 int (draw_Clocks)();
 int draw_piece();
