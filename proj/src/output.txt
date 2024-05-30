@@ -8,3 +8,203 @@ Menu state: 2
 Scancode: 0x6
 Key pressed: 11
 Menu state: 2
+piece is white 1
+PiecePosition 0 ' ' 1
+piece is white 1
+PiecePosition 1 ' ' 1
+piece is white 1
+PiecePosition 2 ' ' 1
+piece is white 1
+PiecePosition 3 ' ' 1
+piece is white 1
+PiecePosition 4 ' ' 1
+piece is white 1
+PiecePosition 5 ' ' 1
+piece is white 1
+PiecePosition 6 ' ' 1
+piece is white 1
+PiecePosition 7 ' ' 1
+piece is white 1
+PiecePosition 0 ' ' 0
+piece is white 1
+PiecePosition 1 ' ' 0
+piece is white 1
+PiecePosition 2 ' ' 0
+piece is white 1
+PiecePosition 3 ' ' 0
+piece is white 1
+PiecePosition 4 ' ' 0
+piece is white 1
+PiecePosition 5 ' ' 0
+piece is white 1
+PiecePosition 6 ' ' 0
+piece is white 1
+PiecePosition 7 ' ' 0
+piece is white 0
+PiecePosition 0 ' ' 6
+piece is white 0
+PiecePosition 1 ' ' 6
+piece is white 0
+PiecePosition 2 ' ' 6
+piece is white 0
+PiecePosition 3 ' ' 6
+piece is white 0
+PiecePosition 4 ' ' 6
+piece is white 0
+PiecePosition 5 ' ' 6
+piece is white 0
+PiecePosition 6 ' ' 6
+piece is white 0
+PiecePosition 7 ' ' 6
+piece is white 0
+PiecePosition 0 ' ' 7
+piece is white 0
+PiecePosition 1 ' ' 7
+piece is white 0
+PiecePosition 2 ' ' 7
+piece is white 0
+PiecePosition 3 ' ' 7
+piece is white 0
+PiecePosition 4 ' ' 7
+piece is white 0
+PiecePosition 5 ' ' 7
+piece is white 0
+PiecePosition 6 ' ' 7
+piece is white 0
+PiecePosition 7 ' ' 7
+Scancode: 0x86
+Key pressed: 0
+Menu state: 1
+piece is white 1
+PiecePosition 0 ' ' 1
+piece is white 1
+PiecePosition 1 ' ' 1
+piece is white 1
+PiecePosition 2 ' ' 1
+piece is white 1
+PiecePosition 3 ' ' 1
+piece is white 1
+PiecePosition 4 ' ' 1
+piece is white 1
+PiecePosition 5 ' ' 1
+piece is white 1
+PiecePosition 6 ' ' 1
+piece is white 1
+PiecePosition 7 ' ' 1
+piece is white 1
+PiecePosition 0 ' ' 0
+piece is white 1
+PiecePosition 1 ' ' 0
+piece is white 1
+PiecePosition 2 ' ' 0
+piece is white 1
+PiecePosition 3 ' ' 0
+piece is white 1
+PiecePosition 4 ' ' 0
+piece is white 1
+PiecePosition 5 ' ' 0
+piece is white 1
+PiecePosition 6 ' ' 0
+piece is white 1
+PiecePosition 7 ' ' 0
+piece is white 0
+PiecePosition 0 ' ' 6
+piece is white 0
+PiecePosition 1 ' ' 6
+piece is white 0
+PiecePosition 2 ' ' 6
+piece is white 0
+PiecePosition 3 ' ' 6
+piece is white 0
+PiecePosition 4 ' ' 6
+piece is white 0
+PiecePosition 5 ' ' 6
+piece is white 0
+PiecePosition 6 ' ' 6
+piece is white 0
+PiecePosition 7 ' ' 6
+piece is white 0
+PiecePosition 0 ' ' 7
+piece is white 0
+PiecePosition 1 ' ' 7
+piece is white 0
+PiecePosition 2 ' ' 7
+piece is white 0
+PiecePosition 3 ' ' 7
+piece is white 0
+PiecePosition 4 ' ' 7
+piece is white 0
+PiecePosition 5 ' ' 7
+piece is white 0
+PiecePosition 6 ' ' 7
+piece is white 0
+PiecePosition 7 ' ' 7
+Scancode: 0x1
+Key pressed: 0
+Menu state: 1
+piece is white 1
+PiecePosition 0 ' ' 1
+piece is white 1
+PiecePosition 1 ' ' 1
+piece is white 1
+PiecePosition 2 ' ' 1
+piece is white 1
+PiecePosition 3 ' ' 1
+piece is white 1
+PiecePosition 4 ' ' 1
+piece is white 1
+PiecePosition 5 ' ' 1
+piece is white 1
+PiecePosition 6 ' ' 1
+piece is white 1
+PiecePosition 7 ' ' 1
+piece is white 1
+PiecePosition 0 ' ' 0
+piece is white 1
+PiecePosition 1 ' ' 0
+piece is white 1
+PiecePosition 2 ' ' 0
+piece is white 1
+PiecePosition 3 ' ' 0
+piece is white 1
+PiecePosition 4 ' ' 0
+piece is white 1
+PiecePosition 5 ' ' 0
+piece is white 1
+PiecePosition 6 ' ' 0
+piece is white 1
+PiecePosition 7 ' ' 0
+piece is white 0
+PiecePosition 0 ' ' 6
+piece is white 0
+PiecePosition 1 ' ' 6
+piece is white 0
+PiecePosition 2 ' ' 6
+piece is white 0
+PiecePosition 3 ' ' 6
+piece is white 0
+PiecePosition 4 ' ' 6
+piece is white 0
+PiecePosition 5 ' ' 6
+piece is white 0
+PiecePosition 6 ' ' 6
+piece is white 0
+PiecePosition 7 ' ' 6
+piece is white 0
+PiecePosition 0 ' ' 7
+piece is white 0
+PiecePosition 1 ' ' 7
+piece is white 0
+PiecePosition 2 ' ' 7
+piece is white 0
+PiecePosition 3 ' ' 7
+piece is white 0
+PiecePosition 4 ' ' 7
+piece is white 0
+PiecePosition 5 ' ' 7
+piece is white 0
+PiecePosition 6 ' ' 7
+piece is white 0
+PiecePosition 7 ' ' 7
+Scancode: 0x81
+Text mode setted

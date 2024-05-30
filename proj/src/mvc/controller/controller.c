@@ -176,7 +176,6 @@ void router() {
         default:
           break;
       }
-      break;
     case NEW_GAME:
     switch (key_pressed) {
       case ONE:
@@ -184,29 +183,35 @@ void router() {
         seconds = 0;
         key_pressed = NOKEY;
         current_state = GAME;
+        router();
         break;
       case TWO:
         minutes = 5;
         seconds = 0;
         key_pressed = NOKEY;
         current_state = GAME;
+        router();
         break;  
       case THREE:
         minutes = 10;
         seconds = 0;
         key_pressed = NOKEY;
         current_state = GAME;
+        router();
         break;  
       case FOUR:
         minutes = 30;
+        seconds = 0;
         key_pressed = NOKEY;
         current_state = GAME;
+        router();
         break; 
       case FIVE:
         minutes = 59;
         seconds = 58;
         key_pressed = NOKEY;
         current_state = GAME;
+        router();
         break;
       case SIX:
         key_pressed = NOKEY;
