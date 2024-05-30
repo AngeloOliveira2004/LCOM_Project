@@ -68,13 +68,13 @@ int draw_board_except_one_piece(int id , struct Board* board){
 
 int draw_clockValue(struct Player *player1,struct Player *player2){
 
-  draw_number(670,2,player1->clock.minutes/10);
-  draw_number(695,2,player1->clock.minutes%10);
+  draw_number(670,40,player1->clock.minutes/10);
+  draw_number(695,40,player1->clock.minutes%10);
 
-  draw_two_points(720 , 4);
+  draw_two_points(720 , 40);
   
-  draw_number(745,2,player1->clock.seconds/10);
-  draw_number(770,2,player1->clock.seconds%10);
+  draw_number(745,40,player1->clock.seconds/10);
+  draw_number(770,40,player1->clock.seconds%10);
 
   draw_number(670 , 520, player2->clock.minutes/10);
   draw_number(695 , 520, player2->clock.minutes%10);

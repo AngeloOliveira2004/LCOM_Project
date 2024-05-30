@@ -1,3 +1,4 @@
 //todo
 
-implementar xpm
+cliclar no esc jogo abrir o menu de pause
+acabar rtc e implementar load e save

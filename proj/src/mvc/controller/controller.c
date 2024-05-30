@@ -81,19 +81,19 @@ void game_loop(struct Game *game) {
   }
 
   if(game->White_player.clock.minutes == 0 && game->White_player.clock.seconds == 0 && game->White_player.clock.a_tenth_of_a_second == 0){
-    current_state = MENU;
+    current_state = WINNER_SCREEN;
     game_alredy_started = false;
     free(game);
     erase_buffer();
-    draw_menu(0,0);
+    draw_black_wins();
   }
 
   if(game->Black_player.clock.minutes == 0 && game->Black_player.clock.seconds == 0 && game->Black_player.clock.a_tenth_of_a_second == 0){
-    current_state = MENU;
+    current_state = WINNER_SCREEN;
     game_alredy_started = false;
     free(game);
     erase_buffer();
-    draw_menu(0,0);
+    draw_white_wins();
   }
 }
 
