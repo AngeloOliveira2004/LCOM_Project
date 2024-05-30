@@ -9,6 +9,7 @@
 #include "../../../sprites/pieces.xpm"
 #include "../../../sprites/Cursor/cursors.xpm"
 #include "../../../sprites/Menus/main_menu.xpm"
+#include "../../../sprites/Menus/instructions.xpm"
 #include "../../../sprites/Menus/background.xpm"
 #include "../../../sprites/GameElements/boad_500.xpm"
 #include "../../../sprites/GameElements/boad_450.xpm"
@@ -39,6 +40,7 @@ xpm_image_t grabbingCursorXPM;
 xpm_image_t grabCursorXPM;
 xpm_image_t menuXPM;
 xpm_image_t backgroundXPM;
+xpm_image_t instructionsXPM;
 xpm_image_t defaultClock;
 xpm_image_t board;
 
@@ -572,6 +574,7 @@ int draw_both_clocks(){
 
 int load_xpm_menu(){
   xpm_load(main_menu, XPM_8_8_8, &menuXPM);
+  xpm_load(instructions, XPM_8_8_8, &instructionsXPM);
   return 0;
 }
 
@@ -606,6 +609,30 @@ int (draw_menu)(uint16_t x, uint16_t y){
 
 int(draw_game_background)(){
   xpm_image_t image = backgroundXPM;
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(j,i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+
+  swap_buffers();
+
+  return 0;
+
+}
+
+int(draw_game_instructions)(){
+  xpm_image_t image = instructionsXPM;
 
   for (unsigned int i = 0; i < image.height; i++) {
     for (unsigned int j = 0; j < image.width; j++) {

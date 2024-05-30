@@ -148,40 +148,71 @@ void router() {
     case MENU:
       switch (key_pressed) {
         case ONE:
-          current_state = GAME;
-
-          game = create_game();
-
-          init_game(game);
-
-          erase_buffer();
-          draw_backBackGround(&game->White_player, &game->Black_player);
-
-          copy_BackGroundBuffer();
-
-          draw_board(&game->board);
-
-          swap_buffers();
+          current_state = NEW_GAME;
+          key_pressed = NOKEY;
           break;
         case TWO:
           /* code */
           break;
         case THREE:
-          /* code */
+          current_state = INSTRUCTIONS;
+          draw_game_instructions();
+          key_pressed = NOKEY;
           break;
         case FOUR:
-          /* code */
+          current_state = EXIT;
+          key_pressed = ESC;
           break;
         default:
           break;
       }
       break;
     case NEW_GAME:
-      // update_game();
-      break;
+    switch (key_pressed) {
+      case ONE:
+        current_state = GAME;
+
+        game = create_game();
+
+        init_game(game);
+
+        erase_buffer();
+        draw_backBackGround(&game->White_player, &game->Black_player);
+
+        copy_BackGroundBuffer();
+
+        draw_board(&game->board);
+
+        swap_buffers();
+        break;
+      default:
+        break;  
+      }
     case LOAD_GAME:
       break;
     case INSTRUCTIONS:
+      switch (key_pressed){
+      case ESC:
+        current_state = MENU;
+        key_pressed = NOKEY;
+
+        draw_menu(0,0);
+
+        swap_buffers();
+
+        break;
+      case ONE:
+        current_state = MENU;
+        key_pressed = NOKEY;
+
+        draw_menu(0,0);
+
+        swap_buffers();
+
+        break;  
+      default:
+        break;
+      }
       break;
     case GAME:
       break;
