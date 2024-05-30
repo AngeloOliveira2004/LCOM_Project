@@ -1,0 +1,167 @@
+front buffer size : 1440000
+Scancode: 0x2
+Key pressed: 7
+Menu state: 0
+Scancode: 0x82
+Key pressed: 0
+Menu state: 2
+Scancode: 0x2
+Key pressed: 7
+Menu state: 2
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Click x: 253
+Click y: 255
+Outside board
+Scancode: 0x3
+Key pressed: 8
+Menu state: 4
+Scancode: 0x83
+Key pressed: 0
+Menu state: 0
+Scancode: 0x2
+Key pressed: 7
+Menu state: 0
+Scancode: 0x82
+Key pressed: 0
+Menu state: 2
+Scancode: 0x2
+Key pressed: 7
+Menu state: 2
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x2
+Key pressed: 7
+Menu state: 4
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x2
+Key pressed: 7
+Menu state: 4
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x2
+Key pressed: 7
+Menu state: 4
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x2
+Key pressed: 7
+Menu state: 4
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x2
+Key pressed: 7
+Menu state: 4
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Scancode: 0x2
+Key pressed: 7
+Menu state: 0
+Scancode: 0x82
+Key pressed: 0
+Menu state: 2
+Scancode: 0x2
+Key pressed: 7
+Menu state: 2
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x3
+Key pressed: 8
+Menu state: 4
+Scancode: 0x83
+Key pressed: 0
+Menu state: 0
+Scancode: 0x3
+Key pressed: 8
+Menu state: 0
+Scancode: 0x83
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x3
+Key pressed: 8
+Menu state: 4
+Scancode: 0x83
+Key pressed: 0
+Menu state: 0
+Scancode: 0x3
+Key pressed: 8
+Menu state: 0
+Scancode: 0x83
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x3
+Key pressed: 8
+Menu state: 4
+Scancode: 0x83
+Key pressed: 0
+Menu state: 0
+Scancode: 0x3
+Key pressed: 8
+Menu state: 0
+Scancode: 0x83
+Key pressed: 0
+Menu state: 1
+Click x: 254
+Click y: 255
+Outside board
+Scancode: 0x2
+Key pressed: 7
+Menu state: 4
+Scancode: 0x82
+Key pressed: 0
+Menu state: 1
+Scancode: 0x2
+Key pressed: 7
+Menu state: 1
+Scancode: 0x82
+Key pressed: 7
+Menu state: 1
+Scancode: 0x2
+Key pressed: 7
+Menu state: 1
+Scancode: 0x82
+Key pressed: 7
+Menu state: 1
+Scancode: 0x2
+Key pressed: 7
+Menu state: 1
+Scancode: 0x82
+Key pressed: 7
+Menu state: 1
+Scancode: 0x5
+Key pressed: 10
+Menu state: 0
+Text mode setted

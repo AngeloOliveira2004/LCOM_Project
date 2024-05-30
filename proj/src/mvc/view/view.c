@@ -87,14 +87,6 @@ int draw_clockValue(struct Player *player1,struct Player *player2){
   return 0;
 }
 
-int draw_menu_buttonss(struct Position * button_position){
-  if(draw_xpm(Menu_5_30_2024,0,0) != 0)
-    return 1;
-  button_position->x = 0;
-  button_position->y = 0;
-  swap_buffers();
-  return 0;
-}
 
 
 int draw_backBackGround(struct Player * player1, struct Player * player2){

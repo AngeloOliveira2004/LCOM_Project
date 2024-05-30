@@ -20,12 +20,6 @@
 
 #define MAX_PIXELS 75
 
-struct Pixel {
-    int x;
-    int y;
-    uint32_t color;
-};
-
 //int (vg_exit)(); dado por LCF
 
 int (set_graphic_mode)(uint16_t* mode);

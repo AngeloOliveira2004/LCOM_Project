@@ -220,21 +220,18 @@ struct mousePosition(get_position_cursor)(struct cursor *cursor) {
   return cursor->position;
 }
 
+
 int(in_game_mouse_movement)() {
-  //struct mousePosition cursor_pos = get_position_cursor(&cursor);
   switch (_current_state) {
     case INITIAL:
 
       if (mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED) {
-        // if (cursor_pos.x == button_position.x && cursor_pos.y == button_position.y) {
-        //   printf("Botão do menu clicado!\n");
-
-        //   return 0;
-        // }
-        // else {
-
-          piece_selected = get_piece_from_click(cursor.position.x, cursor.position.y, CELL_SIZE_HEIGHT, &game->board);
+         piece_selected = get_piece_from_click(cursor.position.x, cursor.position.y, CELL_SIZE_HEIGHT, &game->board);
           if (piece_selected == NULL) {
+            if (cursor.position.x >= 20 && cursor.position.x <= 140 && cursor.position.y >= 20 && cursor.position.y <= 60) {
+              change_game_state_to_menu();
+            }
+            
             _current_state = INITIAL;
           }
           else {

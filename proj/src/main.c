@@ -1,5 +1,4 @@
 #include "mvc/controller/graphics/VBE.h"
-#include "mvc/controller/graphics/graphic.h"
 #include "mvc/controller/kbc/i8042.h"
 #include "mvc/controller/kbc/kbc.h"
 #include "mvc/controller/keyboard/keyboard.h"

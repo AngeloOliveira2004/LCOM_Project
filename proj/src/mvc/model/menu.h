@@ -9,7 +9,7 @@ enum MenuStates
     MAIN_MENU,
     GAME_MENU,
     SETTINGS_MENU,
-    PAUSE_MENU,
+    
     EXIT_MENU
 };
 

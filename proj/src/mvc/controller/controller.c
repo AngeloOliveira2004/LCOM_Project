@@ -384,6 +384,24 @@ void router() {
       
 
       break;
+    case PAUSE_MENU:
+      switch (key_pressed){
+      case ONE:
+        current_state = GAME;
+        key_pressed = NOKEY;
+        break;
+      case TWO:
+        current_state = MENU;
+        key_pressed = NOKEY;
+
+        draw_menu(0,0);
+
+        break;  
+      default:
+        break;
+      }
+      break;
+    break;
     case EXIT:
 
       printf("Exiting game...\n");
@@ -501,3 +519,9 @@ void decrease_player_timer() {
   }
 }
 
+int (change_game_state_to_menu)(){
+  current_state = PAUSE_MENU;
+  erase_buffer();
+  draw_pause_menu();
+  return 0;
+}

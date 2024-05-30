@@ -33,6 +33,7 @@ enum FlowState{
   GAME,
   NEW_GAME,
   LOAD_GAME,
+  PAUSE_MENU,
   INSTRUCTIONS,
   WINNER_SCREEN,
   EXIT,
@@ -58,6 +59,4 @@ void init_game(struct Game *game,int minutes, int seconds);
 void game_loop(struct Game * game);
 void controller_loop(struct Game * game, struct Menu * menu);
 void decrease_player_timer();
-
-
-
+int(change_game_state_to_menu)();

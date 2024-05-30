@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "../kbc/i8042.h"
+#include "../controller.h"
 #include "../kbc/kbc.h"
 
 
