@@ -47,6 +47,12 @@ struct Move {
   struct Position *final_pos;
 };
 
+struct Movelist {
+  struct Move *moves[1024];
+  int index;
+};
+
+
 struct Board {
   struct Piece pieces[32];
   struct Piece squares[8][8];
@@ -94,7 +100,7 @@ struct Piece* is_check(struct Game *game);
 bool is_checkmate(struct Game *game);
 bool is_stalemate(struct Game *game);
 bool is_draw(struct Game *game);
-struct Move* get_possible_moves(struct Game *game, struct Piece *piece);
+struct Movelist get_possible_moves(struct Game *game, struct Piece *piece);
 
 
 struct Board* create_board();
@@ -112,3 +118,5 @@ struct Piece* get_piece_from_click(int click_x, int click_y, int square_size, st
 bool change_piece_position(struct Piece *piece,struct Position *init_pos, struct Position *final_pos, struct Board *board);
 
 void remove_piece_from_board(struct Board *board, struct Position *pos);
+
+bool is_movement_legal_without_removing(struct Board *board, enum PieceType PieceType, struct Piece * piece, struct Position *init_pos , struct Position *final_pos);

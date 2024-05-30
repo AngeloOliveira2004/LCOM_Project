@@ -272,6 +272,9 @@ int (in_game_mouse_movement)(){
         changeTurn(game);
       }
 
+      if(is_checkmate(game)){
+        printf("Check\n");
+      }
       
       piece_selected = NULL;
       break;
