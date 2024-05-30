@@ -23,7 +23,8 @@
     "type_traits": "c",
     "game.h": "c",
     "lcf.h": "c",
-    "menu.h": "c"
+    "menu.h": "c",
+    "linked_list.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }
