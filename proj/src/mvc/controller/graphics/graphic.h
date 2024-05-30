@@ -62,6 +62,8 @@ int(draw_game_background)();
 int load_xpm_game_background();
 int(draw_game_instructions)();
 int(draw_game_mode_menu)();
+void erase_frontBuffer();
+void erase_backgroundBuffer();
 
 int (wait_for_ESC_)();
 

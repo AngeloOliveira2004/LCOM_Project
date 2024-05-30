@@ -282,10 +282,23 @@ int(in_game_mouse_movement)() {
       _current_state = INITIAL;
       final_pos.x = (cursor.position.x - 200) / CELL_SIZE_WIDTH;
       final_pos.y = (cursor.position.y - 100) / CELL_SIZE_HEIGHT;
-      if (change_piece_position(piece_selected, &initial_pos, &final_pos, &game->board)) {
+
+
+
+      if(change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board)){
+        printf("Piece moved\n");
+
         changeTurn(game);
+        index_++;
+        boardArray[index_] = &game->board;
+        max_index = index_;
+        printf("index %d\n",index_);
       }
 
+
+      if(is_check(game)){
+        printf("Check\n");
+      }
       piece_selected = NULL;
       break;
   }

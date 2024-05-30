@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#pragma once
+
+struct Board board;
+
 typedef struct Node {
-    int data;
+    struct Board board;
     struct Node* prev;
     struct Node* next;
 } Node;
@@ -13,13 +17,12 @@ typedef struct {
     int size;
 } DoublyLinkedList;
 
-DoublyLinkedList* create_doubly_linked_list();
-Node* createNode(int data);
+struct DoublyLinkedList* create_doubly_linked_list();
+Node* createNode(struct Board board);
 
 void initializeList(DoublyLinkedList* list);
-void insertAtBeginning(DoublyLinkedList* list, int data);
-void insertAtEnd(DoublyLinkedList* list, int data);
-void insertAtPosition(DoublyLinkedList* list, int data, int position);
+void insertAtBeginning(DoublyLinkedList* list, struct Board board);
+void insertAtEnd(DoublyLinkedList* list, struct Board board);
+void insertAtPosition(DoublyLinkedList* list, struct Board board, int position);
 
 void printList(DoublyLinkedList* list);
-

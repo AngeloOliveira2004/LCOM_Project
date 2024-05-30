@@ -1,6 +1,9 @@
 #include "game.h"
 #include "../view/view.h"
 
+extern enum FlowState current_state;
+
+
 struct Game *create_game() {
   struct Game *game = (struct Game *) malloc(sizeof(struct Game));
   if (game == NULL) {
@@ -66,75 +69,45 @@ void move_piece(struct Game *game, enum PieceType PieceType, struct Piece *piece
   }
 }
 
-struct Piece *is_check(struct Game *game) {
 
+bool is_check(struct Game *game) {
   struct Board *board = &game->board;
   struct Position king_pos;
-  bool isWhite = false;
+  bool isWhite = game->isWhiteTurn;
 
   for (int i = 0; i < 32; i++) {
     if (board->pieces[i].type == KING) {
-      if (board->pieces[i].isWhite == game->isWhiteTurn) {
+      if (board->pieces[i].isWhite != game->isWhiteTurn) {
         king_pos.x = board->pieces[i].position.x;
         king_pos.y = board->pieces[i].position.y;
-        isWhite = board->pieces[i].isWhite;
+        printf("King Found\n");
         break;
       }
     }
   }
 
   for (int i = 0; i < 32; i++) {
-    if (board->pieces[i].isWhite != isWhite) {
-      struct Move *possible_moves = get_possible_moves(game, &board->pieces[i]);
-      for (int j = 0; j < 32; j++) {
-        struct Move move = possible_moves[j];
-        struct Position *init_pos = move.init_pos;
-        struct Position *final_pos = move.final_pos;
-        if (is_movement_legal(board, board->pieces[i].type, &board->pieces[i], init_pos, final_pos)) {
-          if (final_pos->x == king_pos.x && final_pos->y == king_pos.y) {
-            return &board->pieces[i];
-          }
+    if (board->pieces[i].isWhite == isWhite && board->pieces[i].type != EMPTY && board->pieces[i].type != KING) {
+      struct Movelist possible_moves = get_possible_moves(game, &board->pieces[i]);
+      printf("Possible moves for piece %d\n", i);
+      for (int j = 0; j < possible_moves.index; j++) {
+        struct Move *move = possible_moves.moves[j];
+        struct Position *init_pos = move->init_pos;
+        struct Position *final_pos = move->final_pos;
+        printf("Iteration %d\n", j);
+        printf("Initial Position: (%d, %d)\n", init_pos->x, init_pos->y);
+        printf("Final Position: (%d, %d)\n", final_pos->x, final_pos->y);
+        if (king_pos.x == final_pos->x && king_pos.y == final_pos->y) {
+          printf("King is in danger\n");
+        }
+        if (is_movement_legal_without_removing(board, board->pieces[i].type, &board->pieces[i], init_pos, final_pos) && king_pos.x == final_pos->x && king_pos.y == final_pos->y) {
+          return true;
         }
       }
+      free(possible_moves.moves);
+      possible_moves.index = 0;
     }
   }
-
-  return NULL;
-}
-
-bool is_checkmate(struct Game *game) {
-  if (is_check(game)) {
-    struct Board *board = &game->board;
-    struct Position king_pos;
-    bool isWhite = false;
-
-    for (int i = 0; i < 32; i++) {
-      if (board->pieces[i].type == KING) {
-        if (board->pieces[i].isWhite == game->isWhiteTurn) {
-          king_pos.x = board->pieces[i].position.x;
-          king_pos.y = board->pieces[i].position.y;
-          isWhite = board->pieces[i].isWhite;
-          break;
-        }
-      }
-    }
-
-    for (int i = 0; i < 32; i++) {
-      if (board->pieces[i].isWhite == isWhite) {
-        struct Move *possible_moves = get_possible_moves(game, &board->pieces[i]);
-        for (int j = 0; j < 32; j++) {
-          struct Move move = possible_moves[j];
-          struct Position *init_pos = move.init_pos;
-          struct Position *final_pos = move.final_pos;
-          if (is_movement_legal(board, board->pieces[i].type, &board->pieces[i], init_pos, final_pos)) {
-            return false;
-          }
-        }
-      }
-    }
-    return true;
-  }
-
   return false;
 }
 
@@ -239,318 +212,32 @@ bool is_draw(struct Game *game) {
   return true;
 }
 
-struct Move *get_possible_moves(struct Game *game, struct Piece *piece) {
-  struct Move *possible_moves = (struct Move *) malloc(32 * sizeof(struct Move));
-  if (possible_moves == NULL) {
-    return NULL;
-  }
-  int index = 0;
+struct Movelist get_possible_moves(struct Game *game, struct Piece *piece) {
+  struct Movelist possible_moves;
+  possible_moves.index = 0;
   struct Position pos;
-  pos.x = piece->position.x;
-  pos.y = piece->position.y;
 
-  uint8_t x = pos.x;
-  uint8_t y = pos.y;
+  for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+      pos.x = i;
+      pos.y = j;
 
-  switch (piece->type) {
-    case EMPTY:
-      break;
-    case CASTLE:
-      break;
-    case PAWN:
-      if (piece->isWhite) {
-        if (!piece->hasMoved) {
-          pos.y += 2;
-          if (!is_square_occupied(&game->board, &pos)) {
-            index += sizeof(struct Move);
-            if (is_inside_board(&pos)) {
-              struct Move move = {piece, &piece->position, &pos};
-              possible_moves[index] = move;
-            }
-          }
-        }
-        else {
-          pos.y += 1;
-          if (!is_square_occupied(&game->board, &pos)) {
-            index += sizeof(struct Move);
-            if (is_inside_board(&pos)) {
-              struct Move move = {piece, &piece->position, &pos};
-              possible_moves[index] = move;
-            }
-          }
-        }
+      if (is_movement_legal_without_removing(&game->board, piece->type, piece, &piece->position, &pos)) {
+        struct Move *move = malloc(sizeof(struct Move));
+        move->init_pos = malloc(sizeof(struct Position));
+        move->final_pos = malloc(sizeof(struct Position));
+        move->piece = malloc(sizeof(struct Piece));
+
+        move->piece = piece;
+        move->init_pos->x = piece->position.x;
+        move->init_pos->y = piece->position.y;
+        move->final_pos->x = i;
+        move->final_pos->y = j;
+        
+        possible_moves.moves[possible_moves.index] = move;
+        possible_moves.index++;
       }
-      break;
-    case ROOK:
-
-      for (int i = 0; i < 8; i++) {
-        if (i != piece->position.y) {
-          pos.y = i;
-          if (is_inside_board(&pos)) {
-            index += sizeof(struct Move);
-            struct Move move = {piece, &piece->position, &pos};
-            possible_moves[index] = move;
-          }
-        }
-      }
-      pos.x = x;
-      pos.y = y;
-      for (int i = 0; i < 8; i++) {
-        if (i != piece->position.x) {
-          pos.x = i;
-          if (is_inside_board(&pos)) {
-            index += sizeof(struct Move);
-            struct Move move = {piece, &piece->position, &pos};
-            possible_moves[index] = move;
-          }
-        }
-      }
-      break;
-    case KNIGHT:
-      pos.x = piece->position.x + 2;
-      pos.y = piece->position.y + 1;
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x + 2;
-      pos.y = piece->position.y - 1;
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x - 2;
-      pos.y = piece->position.y + 1;
-      if (is_inside_board(&pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x - 2;
-      pos.y = piece->position.y - 1;
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x + 1;
-      pos.y = piece->position.y + 2;
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x + 1;
-      pos.y = piece->position.y - 2;
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x - 1;
-      pos.y = piece->position.y + 2;
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x - 1;
-      pos.y = piece->position.y - 2;
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-      break;
-    case BISHOP:
-      for (int i = 0; i < 8; i++) {
-        if (i != piece->position.x && i != piece->position.y) {
-          pos.x = i;
-          pos.y = i;
-          if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-            index += sizeof(struct Move);
-            struct Move move = {piece, &piece->position, &pos};
-            possible_moves[index] = move;
-          }
-        }
-      }
-      break;
-    case QUEEN:
-      for (int i = 0; i < 8; i++) {
-        if (i != piece->position.y) {
-          pos.y = i;
-          if (is_inside_board(&pos)) {
-            index += sizeof(struct Move);
-            struct Move move = {piece, &piece->position, &pos};
-            possible_moves[index] = move;
-          }
-        }
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      for (int i = 0; i < 8; i++) {
-        if (i != piece->position.x) {
-          pos.x = i;
-          if (is_inside_board(&pos)) {
-            index += sizeof(struct Move);
-            struct Move move = {piece, &piece->position, &pos};
-            possible_moves[index] = move;
-          }
-        }
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      for (int i = 0; i < 8; i++) {
-        if (i != piece->position.x && i != piece->position.y) {
-          pos.x = i;
-          pos.y = i;
-          if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-            index += sizeof(struct Move);
-            struct Move move = {piece, &piece->position, &pos};
-            possible_moves[index] = move;
-          }
-        }
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      for (int i = 0; i < 8; i++) {
-        if (i != piece->position.x && i != piece->position.y) {
-          pos.x = i;
-          pos.y = 7 - i;
-          if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-            index += sizeof(struct Move);
-            struct Move move = {piece, &piece->position, &pos};
-            possible_moves[index] = move;
-          }
-        }
-      }
-
-      break;
-
-    case KING:
-      pos.x = piece->position.x + 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-
-      pos.x = piece->position.x - 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-
-      pos.y = piece->position.y + 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.y = y;
-
-      pos.y = piece->position.y - 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.y = y;
-
-      pos.x = piece->position.x + 1;
-
-      pos.y = piece->position.y + 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x - 1;
-      pos.y = piece->position.y - 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x + 1;
-      pos.y = piece->position.y - 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      pos.x = x;
-      pos.y = y;
-
-      pos.x = piece->position.x - 1;
-      pos.y = piece->position.y + 1;
-
-      if (is_inside_board(&pos) && !is_square_occupied(&game->board, &pos)) {
-        index += sizeof(struct Move);
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves[index] = move;
-      }
-
-      break;
+    }
   }
 
   return possible_moves;
@@ -721,10 +408,10 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
         bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
         bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-        if (((init_pos->y - final_pos->y) <= 2 && 
-        (init_pos->y - final_pos->y) > 0 && (piece->isWhite == false))
-        || ((init_pos->y - final_pos->y) >= -2 && 
-        (init_pos->y - final_pos->y) < 0 && (piece->isWhite == true))) {
+        if (((init_pos->y - final_pos->y) <= 2 &&
+             (init_pos->y - final_pos->y) > 0 && (piece->isWhite == false)) ||
+            ((init_pos->y - final_pos->y) >= -2 &&
+             (init_pos->y - final_pos->y) < 0 && (piece->isWhite == true))) {
 
           if (!isSquareOccupied && !isPieceInFront && init_pos->x == final_pos->x) {
             piece->hasMoved = true;
@@ -747,8 +434,8 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
         bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
         bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-        if (((init_pos->y - final_pos->y) == 1 && piece->isWhite == false)||
-        ((init_pos->y - final_pos->y) == -1 && piece->isWhite == true)){
+        if (((init_pos->y - final_pos->y) == 1 && piece->isWhite == false) ||
+            ((init_pos->y - final_pos->y) == -1 && piece->isWhite == true)) {
 
           if (!isSquareOccupied && !isPieceInFront && init_pos->x == final_pos->x) {
             return true;
@@ -845,18 +532,19 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
             piece->hasMoved = true;
             return true;
           }
-        }else if (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)) {
-            bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
-            bool isSquareOccupied = is_square_occupied(board, final_pos);
+        }
+        else if (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)) {
+          bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
+          bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-            if (isSquareOccupied && can_take(board, final_pos, piece)) {
-              remove_piece_from_board(board, final_pos);
-              return true;
-            }
+          if (isSquareOccupied && can_take(board, final_pos, piece)) {
+            remove_piece_from_board(board, final_pos);
+            return true;
+          }
 
-            if (!isSquareOccupied && !isPieceInDiagonal) {
-              return true;
-            }
+          if (!isSquareOccupied && !isPieceInDiagonal) {
+            return true;
+          }
         }
         return false;
       }
@@ -866,11 +554,11 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
         if (abs(init_pos->x - final_pos->x) <= 1 && abs(init_pos->y - final_pos->y) <= 1) {
           bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-          if(!isSquareOccupied){
+          if (!isSquareOccupied) {
             return true;
           }
 
-          if(can_take(board, final_pos, piece)){
+          if (can_take(board, final_pos, piece)) {
             remove_piece_from_board(board, final_pos);
             return true;
           }
@@ -913,7 +601,8 @@ struct Piece *get_piece_from_click(int click_x, int click_y, int square_size, st
       printf("Piece type: %d\n", board->squares[pos.x][pos.y].type);
       return &board->squares[pos.x][pos.y];
     }
-  }else{
+  }
+  else {
     printf("Outside board\n");
   }
 
@@ -953,9 +642,11 @@ bool change_piece_position(struct Piece *piece,
 void remove_piece_from_board(struct Board *board, struct Position *pos) {
   for (int i = 0; i < 32; i++) {
     if (board->pieces[i].position.x == pos->x && board->pieces[i].position.y == pos->y) {
+      
       board->squares[pos->x][pos->y].type = EMPTY;
       board->squares[pos->x][pos->y].isWhite = false;
       board->squares[pos->x][pos->y].hasMoved = false;
+      board->pieces[i].type = EMPTY;
       board->pieces[i].position.x = -1;
       board->pieces[i].position.y = -1;
       break;
@@ -963,3 +654,163 @@ void remove_piece_from_board(struct Board *board, struct Position *pos) {
   }
 }
 
+bool is_movement_legal_without_removing(struct Board *board, enum PieceType PieceType, struct Piece *piece,
+                                        struct Position *init_pos, struct Position *final_pos) {
+  switch (PieceType) {
+    case PAWN:
+      if (!piece->hasMoved) {
+        bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
+        bool isSquareOccupied = is_square_occupied(board, final_pos);
+
+        if (((init_pos->y - final_pos->y) <= 2 &&
+             (init_pos->y - final_pos->y) > 0 && (piece->isWhite == false)) ||
+            ((init_pos->y - final_pos->y) >= -2 &&
+             (init_pos->y - final_pos->y) < 0 && (piece->isWhite == true))) {
+
+          if (!isSquareOccupied && !isPieceInFront && init_pos->x == final_pos->x) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece) && (abs(init_pos->x - final_pos->x) == 1 && (init_pos->y - final_pos->y) == -1) && piece->isWhite == true) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece) && (abs(init_pos->x - final_pos->x) == 1 && (init_pos->y - final_pos->y) == 1) && piece->isWhite == false) {
+            return true;
+          }
+
+          return false;
+        }
+      }
+      else {
+        bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
+        bool isSquareOccupied = is_square_occupied(board, final_pos);
+
+        if (((init_pos->y - final_pos->y) == 1 && piece->isWhite == false) ||
+            ((init_pos->y - final_pos->y) == -1 && piece->isWhite == true)) {
+
+          if (!isSquareOccupied && !isPieceInFront && init_pos->x == final_pos->x) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece) && (abs(init_pos->x - final_pos->x) == 1 && (init_pos->y - final_pos->y) == -1) && piece->isWhite == true) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece) && (abs(init_pos->x - final_pos->x) == 1 && (init_pos->y - final_pos->y) == 1) && piece->isWhite == false) {
+            return true;
+          }
+
+          return false;
+        }
+      }
+      break;
+
+    case ROOK:
+      if (init_pos->x == final_pos->x || init_pos->y == final_pos->y) {
+        bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
+        bool isSquareOccupied = is_square_occupied(board, final_pos);
+
+        if (!isSquareOccupied && !isPieceInFront) {
+          return true;
+        }
+
+        if (can_take(board, final_pos, piece) && (init_pos->x == final_pos->x || init_pos->y == final_pos->y)) {
+          return true;
+        }
+      }
+      return false;
+      break;
+
+    case KNIGHT:
+      if (is_inside_board(final_pos)) {
+        int x_diff = init_pos->x - final_pos->x;
+        int y_diff = init_pos->y - final_pos->y;
+        bool isSquareOccupied = is_square_occupied(board, final_pos);
+        if ((abs(x_diff) == 2 && abs(y_diff) == 1) || (abs(x_diff) == 1 && abs(y_diff) == 2)) {
+          if (!isSquareOccupied) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece)) {
+            return true;
+          }
+        }
+      }
+      break;
+
+      return false;
+      break;
+    case BISHOP:
+      if (is_inside_board(final_pos)) {
+        if (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)) {
+          if (!is_square_occupied(board, final_pos) && !is_piece_in_diagonal(board, init_pos, final_pos)) {
+            bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
+            bool isSquareOccupied = is_square_occupied(board, final_pos);
+
+            if (isSquareOccupied && can_take(board, final_pos, piece)) {
+              return true;
+            }
+
+            if (!isSquareOccupied && !isPieceInDiagonal) {
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+      break;
+    case QUEEN:
+      if (is_inside_board(final_pos)) {
+        if (init_pos->x == final_pos->x || init_pos->y == final_pos->y) {
+          bool isPieceInFront = is_piece_in_front(board, init_pos, final_pos);
+          bool isSquareOccupied = is_square_occupied(board, final_pos);
+
+          if (!isSquareOccupied && !isPieceInFront) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece) && (init_pos->x == final_pos->x || init_pos->y == final_pos->y)) {
+            return true;
+          }
+        }
+        else if (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)) {
+          bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
+          bool isSquareOccupied = is_square_occupied(board, final_pos);
+
+          if (isSquareOccupied && can_take(board, final_pos, piece)) {
+            return true;
+          }
+
+          if (!isSquareOccupied && !isPieceInDiagonal) {
+            return true;
+          }
+        }
+        return false;
+      }
+      break;
+    case KING:
+      if (is_inside_board(final_pos)) {
+        if (abs(init_pos->x - final_pos->x) <= 1 && abs(init_pos->y - final_pos->y) <= 1) {
+          bool isSquareOccupied = is_square_occupied(board, final_pos);
+
+          if (!isSquareOccupied) {
+            return true;
+          }
+
+          if (can_take(board, final_pos, piece)) {
+            return true;
+          }
+        }
+      }
+      return false;
+      break;
+    case CASTLE:
+      /* code */
+      break;
+    default:
+      break;
+  }
+
+  return false;
+}

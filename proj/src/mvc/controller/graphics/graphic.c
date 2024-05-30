@@ -327,6 +327,14 @@ void erase_buffer() {
     memset(backBuffer, 0, bufferSize);
 }
 
+void erase_frontBuffer() {
+    memset(frontBuffer, 0, bufferSize);
+}
+
+void erase_backgroundBuffer() {
+    memset(backgroundBuffer, 0, bufferSize);
+}
+
 void swap_buffers() {
     bufferSize = mode_info.XResolution * mode_info.YResolution * bytesPerPixel;
     memcpy(frontBuffer, backBuffer, bufferSize);

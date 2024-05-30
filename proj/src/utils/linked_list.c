@@ -1,10 +1,9 @@
-#include "linked_list.h"
-
+#include "../mvc/controller/controller.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 // Function to create a new doubly linked list
-DoublyLinkedList* create_doubly_linked_list() {
+struct DoublyLinkedList* create_doubly_linked_list() {
     DoublyLinkedList* newList = (DoublyLinkedList*)malloc(sizeof(DoublyLinkedList));
     if (newList == NULL) {
         printf("Memory allocation failed\n");
@@ -17,26 +16,25 @@ DoublyLinkedList* create_doubly_linked_list() {
 }
 
 
-Node* createNode(int data) {
+Node* createNode(struct Board board) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     if (newNode == NULL) {
         printf("Memory allocation failed\n");
         exit(1);
     }
-    newNode->data = data;
+    newNode->board = board;
     newNode->prev = NULL;
     newNode->next = NULL;
     return newNode;
 }
-
 void initializeList(DoublyLinkedList* list) {
     list->head = NULL;
     list->tail = NULL;
     list->size = 0;
 }
 
-void insertAtBeginning(DoublyLinkedList* list, int data) {
-    Node* newNode = createNode(data);
+void insertAtBeginning(DoublyLinkedList* list, struct Board board) {
+    Node* newNode = createNode(board);
     if (list->head == NULL) {
         list->head = newNode;
         list->tail = newNode;
@@ -48,8 +46,8 @@ void insertAtBeginning(DoublyLinkedList* list, int data) {
     list->size++;
 }
 
-void insertAtEnd(DoublyLinkedList* list, int data) {
-    Node* newNode = createNode(data);
+void insertAtEnd(DoublyLinkedList* list, struct Board board) {
+    Node* newNode = createNode(board);
     if (list->head == NULL) {
         list->head = newNode;
         list->tail = newNode;
@@ -61,17 +59,17 @@ void insertAtEnd(DoublyLinkedList* list, int data) {
     list->size++;
 }
 
-void insertAtPosition(DoublyLinkedList* list, int data, int position) {
+void insertAtPosition(DoublyLinkedList* list, struct Board board, int position) {
     if (position < 0 || position > list->size) {
         printf("Invalid position\n");
         return;
     }
     if (position == 0) {
-        insertAtBeginning(list, data);
+        insertAtBeginning(list, board);
     } else if (position == list->size) {
-        insertAtEnd(list, data);
+        insertAtEnd(list, board);
     } else {
-        Node* newNode = createNode(data);
+        Node* newNode = createNode(board);
         Node* current = list->head;
         for (int i = 0; i < position - 1; i++) {
             current = current->next;
@@ -84,11 +82,11 @@ void insertAtPosition(DoublyLinkedList* list, int data, int position) {
     }
 }
 
-
 void printList(DoublyLinkedList* list) {
     Node* current = list->head;
     while (current != NULL) {
-        printf("%d ", current->data);
+        
+        printf("Board: \n");
         current = current->next;
     }
     printf("\n");

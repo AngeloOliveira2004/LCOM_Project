@@ -11,47 +11,57 @@ extern int counter_mouse;
 extern struct cursor cursor;
 extern struct Position *button_position;
 
+bool can_draw_this = true;
+
 void init_game(struct Game *game,int minutes, int seconds) {
   // game->White_player = {};
   init_board(&game->board);
-  for(int i = 0 ; i < 32 ; i++){
-    printf("piece is white %d\n", game->board.pieces[i].isWhite);
-    printf("PiecePosition %d ' ' %d\n", game->board.pieces[i].position.x, game->board.pieces[i].position.y);
-  }
   init_player(&game->Black_player, false, minutes, seconds);
   init_player(&game->White_player, true, minutes, seconds);
   game->state = START;
   game->piece_count = 32;
   game->isWhiteTurn = true;
+
+  index_ = 0;
+  for (int i = 0; i < 1024; i++) {
+    boardArray[i] = malloc(sizeof(struct Board));
+    if (boardArray[i] == NULL) {        
+        fprintf(stderr, "Memory allocation failed for board %d\n", i);
+        exit(EXIT_FAILURE);
+    }
+  }
 }
 
+
 void game_loop(struct Game *game) {
-  /*
-  if(changes){
-    if (is_check(game)) {
-      if (is_checkmate(game)) {
-        game->state = CHECKMATE;
-      }
-    }else if (is_stalemate(game)) {
-      game->state = STALEMATE;
-    }
-    else if (is_draw(game)) {
-      game->state = DRAW;
+  int king_count = 0;
+
+  for(int i = 0 ; i < 32 ; i++){
+    if(game->board.pieces[i].type == KING){
+      king_count++;
     }
   }
 
-  if(game->state == START){
+  if(king_count != 2){
+    current_state = MENU;
+    free(game);
     erase_buffer();
+    draw_menu(0,0);
+  }
 
-    swap_BackgroundBuffer();
+  if(game->White_player.clock.minutes == 0 && game->White_player.clock.seconds == 0 && game->White_player.clock.a_tenth_of_a_second == 0){
+    current_state = MENU;
+    free(game);
+    erase_buffer();
+    draw_menu(0,0);
+  }
 
-    draw_board(&game->board);
-
-    draw_clockValue(&game->White_player, &game->Black_player);
-
-    swap_buffers();
-  }*/
-  draw_menu_buttonss(button_position);
+  if(game->Black_player.clock.minutes == 0 && game->Black_player.clock.seconds == 0 && game->Black_player.clock.a_tenth_of_a_second == 0){
+    current_state = MENU;
+    free(game);
+    erase_buffer();
+    draw_menu(0,0);
+  }
 }
 
 void parse_keyboard_input() {
@@ -158,6 +168,7 @@ int minutes = 0;
 int seconds = 0;
 
 void router() {
+  struct Board * tempBoard = NULL;
   switch (current_state) {
     case MENU:
       switch (key_pressed) {
@@ -182,6 +193,7 @@ void router() {
           break;
       }
     case NEW_GAME:
+    
     switch (key_pressed) {
       case ONE:
         minutes = 1;
@@ -223,6 +235,37 @@ void router() {
         current_state = MENU;
         draw_menu(0,0);
         break;
+      case ARROW_LEFT:
+        key_pressed = NOKEY;
+        index_--;
+        if(index_ <= 0){
+          index_ = 0;
+        }
+        tempBoard = boardArray[index_];
+        draw_board(tempBoard);
+        break;
+      case ARROW_RIGHT:
+        key_pressed = NOKEY;
+        index_++;
+        if(index_ >= max_index){
+          index_ = max_index;
+        }
+         tempBoard = boardArray[index_];
+        
+        draw_board(tempBoard);
+        break;
+      case ARROW_DOWN:
+        key_pressed = NOKEY;
+        index_ = 0;
+         tempBoard = boardArray[index_];
+        draw_board(tempBoard);
+        break;
+      case ARROW_UP:
+        key_pressed = NOKEY;
+        index_ = max_index;
+         tempBoard = boardArray[index_];
+        draw_board(tempBoard);
+        break;
       default:
         break;  
       }
@@ -251,21 +294,113 @@ void router() {
       break;
     case GAME:
 
-      game = create_game();
+      printf("Key pressed hereeeeeeeeeeeeeeeeeeeee %d\n", key_pressed);
+      switch (key_pressed)
+      {
+      case NOKEY:
+          game = create_game();
 
-      init_game(game, minutes,seconds);
+          init_game(game, minutes,seconds);
+
+          erase_buffer();
+
+          draw_backBackGround(&game->White_player, &game->Black_player);
+
+          copy_BackGroundBuffer();
+
+          draw_board(&game->board);
+
+          swap_buffers();
+
+          can_draw_this = true;
+          break;
+      case ARROW_LEFT:
+        printf("arrow left\n");
+        index_--;
+        if(index_ <= 0){
+          index_ = 0;
+        }
+
+        printf("index %d\n",index_);
+
+        tempBoard = boardArray[index_];
+
+        erase_buffer();
+
+        swap_BackgroundBuffer();
+
+        draw_board(tempBoard);
+
+        swap_buffers();
+
+        can_draw_this = false;
+        break;
+      case ARROW_RIGHT:
+        
+        index_++;
+        printf("index after increment  %d\n",index_);
+        if(index_ >= max_index){
+          index_ = max_index;
+        }
+         tempBoard = boardArray[index_];
+         erase_buffer();
+
+        swap_BackgroundBuffer();
+
+        draw_board(tempBoard);
+
+        swap_buffers();
+        can_draw_this = false;
+        break;
+      case ARROW_DOWN:
+        
+        index_ = 0;
+         tempBoard = boardArray[index_];
+
+         erase_buffer();
+
+        swap_BackgroundBuffer();
+
+        draw_board(tempBoard);
+
+        swap_buffers();
+        can_draw_this = false;
+
+        break;
+      case ARROW_UP:
+        key_pressed = NOKEY;
+        index_ = max_index;
+        can_draw_this = true;
+        router();
+        break;
+      
+      default:
+        break;
+      }
+      
+
+      break;
+    case EXIT:
+
+      printf("Exiting game...\n");
+
+      current_state = MENU;
 
       erase_buffer();
 
+<<<<<<< HEAD
       draw_backBackGround(&game->White_player, &game->Black_player, button_position);
 
       copy_BackGroundBuffer();
 
       draw_board(&game->board);
+=======
+      draw_menu(0,0);
+>>>>>>> refs/remotes/origin/Projeto
 
       swap_buffers();
-      break;
-    case EXIT:
+
+      router();
       break;
   }
 }
@@ -283,7 +418,6 @@ void decrease_player_timer() {
    
     if (game->White_player.clock.a_tenth_of_a_second <= 0) {
       if (game->White_player.clock.seconds == 0 && game->White_player.clock.minutes == 0) {
-          
         game->White_player.clock.a_tenth_of_a_second = 0;
       }
       else {
@@ -337,6 +471,8 @@ void decrease_player_timer() {
     }
   }
 
+  if(can_draw_this){
+
   erase_buffer();
 
   swap_BackgroundBuffer();
@@ -348,4 +484,6 @@ void decrease_player_timer() {
   draw_cursor_mouse(cursor.position.x, cursor.position.y , cursor.type);
 
   swap_buffers();
+  }
 }
+
