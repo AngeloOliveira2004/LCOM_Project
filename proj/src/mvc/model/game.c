@@ -846,7 +846,6 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
             return true;
           }
         }else if (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)) {
-          if (!is_square_occupied(board, final_pos) && !is_piece_in_diagonal(board, init_pos, final_pos)) {
             bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
             bool isSquareOccupied = is_square_occupied(board, final_pos);
 
@@ -858,7 +857,6 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
             if (!isSquareOccupied && !isPieceInDiagonal) {
               return true;
             }
-          }
         }
         return false;
       }
