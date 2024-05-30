@@ -272,7 +272,7 @@ int (in_game_mouse_movement)(){
         changeTurn(game);
       }
 
-      if(is_checkmate(game)){
+      if(is_check(game)){
         printf("Check\n");
       }
       

@@ -66,43 +66,8 @@ void move_piece(struct Game *game, enum PieceType PieceType, struct Piece *piece
   }
 }
 
-struct Piece *is_check(struct Game *game) {
 
-  struct Board *board = &game->board;
-  struct Position king_pos;
-  bool isWhite = false;
-
-  for (int i = 0; i < 32; i++) {
-    if (board->pieces[i].type == KING) {
-      if (board->pieces[i].isWhite == game->isWhiteTurn) {
-        king_pos.x = board->pieces[i].position.x;
-        king_pos.y = board->pieces[i].position.y;
-        isWhite = board->pieces[i].isWhite;
-        break;
-      }
-    }
-  }
-
-  for (int i = 0; i < 32; i++) {
-    if (board->pieces[i].isWhite != isWhite && board->pieces[i].type != EMPTY && board->pieces[i].type != KING) {
-      struct Movelist possible_moves = get_possible_moves(game, &board->pieces[i]);
-      for (int j = 0; j < 32; j++) {
-        struct Move move = *possible_moves.moves[j];
-        struct Position *init_pos = move.init_pos;
-        struct Position *final_pos = move.final_pos;
-        if (is_movement_legal(board, board->pieces[i].type, &board->pieces[i], init_pos, final_pos)) {
-          if (final_pos->x == king_pos.x && final_pos->y == king_pos.y) {
-            return &board->pieces[i];
-          }
-        }
-      }
-    }
-  }
-
-  return NULL;
-}
-
-bool is_checkmate(struct Game *game) {
+bool is_check(struct Game *game) {
   struct Board *board = &game->board;
   struct Position king_pos;
   bool isWhite = game->isWhiteTurn;
@@ -255,18 +220,23 @@ struct Movelist get_possible_moves(struct Game *game, struct Piece *piece) {
       pos.y = j;
 
       if (is_movement_legal_without_removing(&game->board, piece->type, piece, &piece->position, &pos)) {
-        struct Move move = {piece, &piece->position, &pos};
-        possible_moves.moves[possible_moves.index] = &move;
+        struct Move *move = malloc(sizeof(struct Move));
+        move->init_pos = malloc(sizeof(struct Position));
+        move->final_pos = malloc(sizeof(struct Position));
+        move->piece = malloc(sizeof(struct Piece));
+
+        move->piece = piece;
+        move->init_pos->x = piece->position.x;
+        move->init_pos->y = piece->position.y;
+        move->final_pos->x = i;
+        move->final_pos->y = j;
+        
+        possible_moves.moves[possible_moves.index] = move;
         possible_moves.index++;
       }
     }
   }
-  for (int i = 0; i < possible_moves.index; i++) {
-    if (possible_moves.moves[i]->piece->type == QUEEN) {
-      printf("Initial Position Queen: (%d, %d)\n", possible_moves.moves[i]->init_pos->x, possible_moves.moves[i]->init_pos->y);
-      // printf("Final Position Queen: (%d, %d)\n", possible_moves.moves[i]->final_pos->x, possible_moves.moves[i]->final_pos->y);
-    }
-  }
+
   return possible_moves;
 }
 

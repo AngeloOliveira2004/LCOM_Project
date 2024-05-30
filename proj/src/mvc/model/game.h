@@ -96,8 +96,6 @@ void changeTurn(struct Game *game);
 void move_piece(struct Game *game, enum PieceType PieceType, struct Piece * piece,
                 struct Position *init_pos, struct Position *final_pos);
 
-struct Piece* is_check(struct Game *game);
-bool is_checkmate(struct Game *game);
 bool is_stalemate(struct Game *game);
 bool is_draw(struct Game *game);
 struct Movelist get_possible_moves(struct Game *game, struct Piece *piece);
@@ -120,3 +118,5 @@ bool change_piece_position(struct Piece *piece,struct Position *init_pos, struct
 void remove_piece_from_board(struct Board *board, struct Position *pos);
 
 bool is_movement_legal_without_removing(struct Board *board, enum PieceType PieceType, struct Piece * piece, struct Position *init_pos , struct Position *final_pos);
+
+bool is_check(struct Game *game);
