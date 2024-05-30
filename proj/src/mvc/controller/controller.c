@@ -17,8 +17,8 @@ void init_game(struct Game *game,int minutes, int seconds) {
     printf("piece is white %d\n", game->board.pieces[i].isWhite);
     printf("PiecePosition %d ' ' %d\n", game->board.pieces[i].position.x, game->board.pieces[i].position.y);
   }
-  init_player(&game->Black_player, false, 1, 0);
-  init_player(&game->White_player, true, 1, 0);
+  init_player(&game->Black_player, false, minutes, seconds);
+  init_player(&game->White_player, true, minutes, seconds);
   game->state = START;
   game->piece_count = 32;
   game->isWhiteTurn = true;
@@ -149,9 +149,10 @@ void parse_mouse_input() {
   }
 }
 
+int minutes = 0;
+int seconds = 0;
+
 void router() {
-  int minutes = 0;
-  int seconds = 0;
   switch (current_state) {
     case MENU:
       switch (key_pressed) {
@@ -180,43 +181,39 @@ void router() {
       case ONE:
         minutes = 1;
         seconds = 0;
+        key_pressed = NOKEY;
+        current_state = GAME;
         break;
       case TWO:
         minutes = 5;
         seconds = 0;
+        key_pressed = NOKEY;
+        current_state = GAME;
         break;  
       case THREE:
         minutes = 10;
         seconds = 0;
+        key_pressed = NOKEY;
+        current_state = GAME;
         break;  
       case FOUR:
         minutes = 30;
         seconds = 0;
+        key_pressed = NOKEY;
+        current_state = GAME;
         break; 
       case FIVE:
-        minutes = 60;
-        seconds = 0;
+        minutes = 59;
+        seconds = 58;
+        key_pressed = NOKEY;
+        current_state = GAME;
         break;
       case SIX:
-
+        key_pressed = NOKEY;
+        current_state = MENU;
       default:
         break;  
       }
-      current_state = GAME;
-
-      game = create_game();
-
-      init_game(game, minutes,seconds);
-
-      erase_buffer();
-
-      draw_backBackGround(&game->White_player, &game->Black_player);
-
-      copy_BackGroundBuffer();
-
-      draw_board(&game->board);
-
-      swap_buffers();
 
     case LOAD_GAME:
       break;
@@ -241,6 +238,20 @@ void router() {
       }
       break;
     case GAME:
+
+      game = create_game();
+
+      init_game(game, minutes,seconds);
+
+      erase_buffer();
+
+      draw_backBackGround(&game->White_player, &game->Black_player);
+
+      copy_BackGroundBuffer();
+
+      draw_board(&game->board);
+
+      swap_buffers();
       break;
     case EXIT:
       break;
