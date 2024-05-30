@@ -11,6 +11,10 @@ extern int counter_mouse;
 extern struct cursor cursor;
 
 bool can_draw_this = true;
+bool game_alredy_started = false;
+
+struct Board tempBoard;
+
 
 void init_game(struct Game *game,int minutes, int seconds) {
   // game->White_player = {};
@@ -22,17 +26,36 @@ void init_game(struct Game *game,int minutes, int seconds) {
   game->isWhiteTurn = true;
 
   index_ = 0;
-  for (int i = 0; i < 1024; i++) {
-    boardArray[i] = malloc(sizeof(struct Board));
-    if (boardArray[i] == NULL) {        
-        fprintf(stderr, "Memory allocation failed for board %d\n", i);
-        exit(EXIT_FAILURE);
-    }
-  }
 }
 
 
 void game_loop(struct Game *game) {
+
+  bool boardChanged = false;
+
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            if (tempBoard.squares[i][j].type != game->board.squares[i][j].type) {
+                boardChanged = true;
+                break;
+            }
+        }
+        if (boardChanged) {
+            break;
+        }
+    }
+
+    if (boardChanged) {
+        tempBoard = game->board;
+
+        if (index_ < 1024) {
+            boardArray[index_] = game->board;
+            index_++;
+            max_index = index_;
+        } else {
+            printf("Board array is full\n");
+        }
+    }
   int king_count = 0;
 
   for(int i = 0 ; i < 32 ; i++){
@@ -43,6 +66,7 @@ void game_loop(struct Game *game) {
 
   if(king_count != 2){
     current_state = MENU;
+    game_alredy_started = false;
     free(game);
     erase_buffer();
     draw_menu(0,0);
@@ -50,6 +74,7 @@ void game_loop(struct Game *game) {
 
   if(game->White_player.clock.minutes == 0 && game->White_player.clock.seconds == 0 && game->White_player.clock.a_tenth_of_a_second == 0){
     current_state = MENU;
+    game_alredy_started = false;
     free(game);
     erase_buffer();
     draw_menu(0,0);
@@ -57,6 +82,7 @@ void game_loop(struct Game *game) {
 
   if(game->Black_player.clock.minutes == 0 && game->Black_player.clock.seconds == 0 && game->Black_player.clock.a_tenth_of_a_second == 0){
     current_state = MENU;
+    game_alredy_started = false;
     free(game);
     erase_buffer();
     draw_menu(0,0);
@@ -164,7 +190,7 @@ int minutes = 0;
 int seconds = 0;
 
 void router() {
-  struct Board * tempBoard = NULL;
+  struct Board tempBoard ;
   switch (current_state) {
     case MENU:
       switch (key_pressed) {
@@ -231,39 +257,8 @@ void router() {
         current_state = MENU;
         draw_menu(0,0);
         break;
-      case ARROW_LEFT:
-        key_pressed = NOKEY;
-        index_--;
-        if(index_ <= 0){
-          index_ = 0;
-        }
-        tempBoard = boardArray[index_];
-        draw_board(tempBoard);
-        break;
-      case ARROW_RIGHT:
-        key_pressed = NOKEY;
-        index_++;
-        if(index_ >= max_index){
-          index_ = max_index;
-        }
-         tempBoard = boardArray[index_];
-        
-        draw_board(tempBoard);
-        break;
-      case ARROW_DOWN:
-        key_pressed = NOKEY;
-        index_ = 0;
-         tempBoard = boardArray[index_];
-        draw_board(tempBoard);
-        break;
-      case ARROW_UP:
-        key_pressed = NOKEY;
-        index_ = max_index;
-         tempBoard = boardArray[index_];
-        draw_board(tempBoard);
-        break;
       default:
-        break;  
+        break;
       }
 
     case LOAD_GAME:
@@ -290,14 +285,16 @@ void router() {
       break;
     case GAME:
 
-      printf("Key pressed hereeeeeeeeeeeeeeeeeeeee %d\n", key_pressed);
       switch (key_pressed)
       {
       case NOKEY:
+        if(game_alredy_started == false){
           game = create_game();
 
           init_game(game, minutes,seconds);
-
+          game_alredy_started = true;
+        }
+          tempBoard = game->board;
           erase_buffer();
 
           draw_backBackGround(&game->White_player, &game->Black_player);
@@ -325,7 +322,7 @@ void router() {
 
         swap_BackgroundBuffer();
 
-        draw_board(tempBoard);
+        draw_board(&tempBoard);
 
         swap_buffers();
 
@@ -343,7 +340,7 @@ void router() {
 
         swap_BackgroundBuffer();
 
-        draw_board(tempBoard);
+        draw_board(&tempBoard);
 
         swap_buffers();
         can_draw_this = false;
@@ -357,7 +354,7 @@ void router() {
 
         swap_BackgroundBuffer();
 
-        draw_board(tempBoard);
+        draw_board(&tempBoard);
 
         swap_buffers();
         can_draw_this = false;

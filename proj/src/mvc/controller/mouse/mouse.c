@@ -272,10 +272,6 @@ int (in_game_mouse_movement)(){
       if(change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board)){
         printf("Piece moved\n");
         changeTurn(game);
-        index_++;
-        boardArray[index_] = &game->board;
-        max_index = index_;
-        printf("index %d\n",index_);
       }
 
       if(is_check(game)){
