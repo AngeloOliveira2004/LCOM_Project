@@ -115,7 +115,7 @@ void parse_keyboard_input() {
         key_pressed = ARROW_RIGHT;
         break;
       case _ENTER_:
-        key_pressed = _ENTER_;
+        key_pressed = ENTER;
         break;
       default:
         break;
@@ -158,6 +158,7 @@ void router() {
       switch (key_pressed) {
         case ONE:
           current_state = NEW_GAME;
+          draw_game_mode_menu();
           key_pressed = NOKEY;
           break;
         case TWO:
@@ -198,7 +199,6 @@ void router() {
         break;  
       case FOUR:
         minutes = 30;
-        seconds = 0;
         key_pressed = NOKEY;
         current_state = GAME;
         break; 
@@ -211,6 +211,8 @@ void router() {
       case SIX:
         key_pressed = NOKEY;
         current_state = MENU;
+        draw_menu(0,0);
+        break;
       default:
         break;  
       }

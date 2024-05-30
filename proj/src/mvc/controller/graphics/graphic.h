@@ -61,6 +61,7 @@ int (draw_two_points)(uint16_t x , uint16_t);
 int(draw_game_background)();
 int load_xpm_game_background();
 int(draw_game_instructions)();
+int(draw_game_mode_menu)();
 
 int (wait_for_ESC_)();
 
