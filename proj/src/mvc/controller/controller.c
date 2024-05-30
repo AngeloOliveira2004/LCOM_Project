@@ -343,8 +343,8 @@ void router() {
         
         index_++;
         printf("index after increment  %d\n",index_);
-        if(index_ >= max_index){
-          index_ = max_index;
+        if((index_-1) >= max_index){
+          index_ = max_index-1;
         }
          tempBoard = boardArray[index_];
          erase_buffer();
