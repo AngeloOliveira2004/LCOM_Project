@@ -9,9 +9,7 @@
 #include "../kbc/i8042.h"
 #include "../kbc/kbc.h"
 
-extern struct Board * boardArray[1024];
-extern int index_;
-extern int max_index;
+
 
 int(mouse_subscribe_int)(uint8_t *bit_no);
 int(mouse_unsubscribe_int)();
