@@ -34,6 +34,7 @@ enum FlowState{
   NEW_GAME,
   LOAD_GAME,
   INSTRUCTIONS,
+  WINNER_SCREEN,
   EXIT,
 };
 

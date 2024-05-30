@@ -12,6 +12,9 @@
 #include "../../../sprites/Menus/instructions.xpm"
 #include "../../../sprites/Menus/game_type_choice.xpm"
 #include "../../../sprites/Menus/background.xpm"
+#include "../../../sprites/Menus/black_wins.xpm"
+#include "../../../sprites/Menus/white_wins.xpm"
+#include "../../../sprites/Menus/pause_menu.xpm"
 #include "../../../sprites/GameElements/boad_500.xpm"
 #include "../../../sprites/GameElements/boad_450.xpm"
 #include "../../../sprites/GameElements/clock_100.xpm"
@@ -44,6 +47,9 @@ xpm_image_t backgroundXPM;
 xpm_image_t instructionsXPM;
 xpm_image_t gameTypeChoiceXPM;
 xpm_image_t defaultClock;
+xpm_image_t blackWinsXPM;
+xpm_image_t whiteWinsXPM;
+xpm_image_t pauseMenuXPM;
 xpm_image_t board;
 
 xpm_image_t number0XPM;
@@ -586,6 +592,9 @@ int load_xpm_menu(){
   xpm_load(main_menu, XPM_8_8_8, &menuXPM);
   xpm_load(instructions, XPM_8_8_8, &instructionsXPM);
   xpm_load(game_type_choice,XPM_8_8_8,&gameTypeChoiceXPM);
+  xpm_load(black_wins, XPM_8_8_8, &blackWinsXPM);
+  xpm_load(white_wins, XPM_8_8_8, &whiteWinsXPM);
+  xpm_load(pause_menu, XPM_8_8_8, &pauseMenuXPM);
   return 0;
 }
 
@@ -668,6 +677,77 @@ int(draw_game_instructions)(){
 
 int(draw_game_mode_menu)(){
   xpm_image_t image = gameTypeChoiceXPM;
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(j,i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+
+  swap_buffers();
+
+  return 0;
+}
+
+int(draw_black_wins)(){
+  xpm_image_t image = blackWinsXPM;
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(j,i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+
+  swap_buffers();
+
+  return 0;
+
+}
+
+int(draw_white_wins)(){
+  xpm_image_t image = whiteWinsXPM;
+
+  for (unsigned int i = 0; i < image.height; i++) {
+    for (unsigned int j = 0; j < image.width; j++) {
+    
+      uint16_t bytes_p_pixel = (mode_info.BitsPerPixel + 7) / 8;
+      uint32_t byte_index = (image.width * i + j) * bytes_p_pixel;
+      uint32_t color = 0;
+      memcpy(&color, image.bytes + byte_index, bytes_p_pixel);
+      if (color != xpm_transparency_color(image.type)){
+        if (vg_draw_pixel(j,i, color)) {
+          return 1;
+        }
+      } 
+    }
+  }
+
+  swap_buffers();
+
+  return 0;
+
+}
+
+int(draw_pause_menu)(){
+  xpm_image_t image = pauseMenuXPM;
 
   for (unsigned int i = 0; i < image.height; i++) {
     for (unsigned int j = 0; j < image.width; j++) {
