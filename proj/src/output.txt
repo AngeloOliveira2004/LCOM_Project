@@ -5,167 +5,14 @@ Menu state: 0
 Scancode: 0x82
 Key pressed: 0
 Menu state: 2
-Scancode: 0x4
-Key pressed: 9
+Scancode: 0x6
+Key pressed: 11
 Menu state: 2
-piece is white 1
-PiecePosition 0 ' ' 1
-piece is white 1
-PiecePosition 1 ' ' 1
-piece is white 1
-PiecePosition 2 ' ' 1
-piece is white 1
-PiecePosition 3 ' ' 1
-piece is white 1
-PiecePosition 4 ' ' 1
-piece is white 1
-PiecePosition 5 ' ' 1
-piece is white 1
-PiecePosition 6 ' ' 1
-piece is white 1
-PiecePosition 7 ' ' 1
-piece is white 1
-PiecePosition 0 ' ' 0
-piece is white 1
-PiecePosition 1 ' ' 0
-piece is white 1
-PiecePosition 2 ' ' 0
-piece is white 1
-PiecePosition 3 ' ' 0
-piece is white 1
-PiecePosition 4 ' ' 0
-piece is white 1
-PiecePosition 5 ' ' 0
-piece is white 1
-PiecePosition 6 ' ' 0
-piece is white 1
-PiecePosition 7 ' ' 0
-piece is white 0
-PiecePosition 0 ' ' 6
-piece is white 0
-PiecePosition 1 ' ' 6
-piece is white 0
-PiecePosition 2 ' ' 6
-piece is white 0
-PiecePosition 3 ' ' 6
-piece is white 0
-PiecePosition 4 ' ' 6
-piece is white 0
-PiecePosition 5 ' ' 6
-piece is white 0
-PiecePosition 6 ' ' 6
-piece is white 0
-PiecePosition 7 ' ' 6
-piece is white 0
-PiecePosition 0 ' ' 7
-piece is white 0
-PiecePosition 1 ' ' 7
-piece is white 0
-PiecePosition 2 ' ' 7
-piece is white 0
-PiecePosition 3 ' ' 7
-piece is white 0
-PiecePosition 4 ' ' 7
-piece is white 0
-PiecePosition 5 ' ' 7
-piece is white 0
-PiecePosition 6 ' ' 7
-piece is white 0
-PiecePosition 7 ' ' 7
-Scancode: 0x84
+Key pressed hereeeeeeeeeeeeeeeeeeeee 0
+Scancode: 0x86
 Key pressed: 0
 Menu state: 1
-piece is white 1
-PiecePosition 0 ' ' 1
-piece is white 1
-PiecePosition 1 ' ' 1
-piece is white 1
-PiecePosition 2 ' ' 1
-piece is white 1
-PiecePosition 3 ' ' 1
-piece is white 1
-PiecePosition 4 ' ' 1
-piece is white 1
-PiecePosition 5 ' ' 1
-piece is white 1
-PiecePosition 6 ' ' 1
-piece is white 1
-PiecePosition 7 ' ' 1
-piece is white 1
-PiecePosition 0 ' ' 0
-piece is white 1
-PiecePosition 1 ' ' 0
-piece is white 1
-PiecePosition 2 ' ' 0
-piece is white 1
-PiecePosition 3 ' ' 0
-piece is white 1
-PiecePosition 4 ' ' 0
-piece is white 1
-PiecePosition 5 ' ' 0
-piece is white 1
-PiecePosition 6 ' ' 0
-piece is white 1
-PiecePosition 7 ' ' 0
-piece is white 0
-PiecePosition 0 ' ' 6
-piece is white 0
-PiecePosition 1 ' ' 6
-piece is white 0
-PiecePosition 2 ' ' 6
-piece is white 0
-PiecePosition 3 ' ' 6
-piece is white 0
-PiecePosition 4 ' ' 6
-piece is white 0
-PiecePosition 5 ' ' 6
-piece is white 0
-PiecePosition 6 ' ' 6
-piece is white 0
-PiecePosition 7 ' ' 6
-piece is white 0
-PiecePosition 0 ' ' 7
-piece is white 0
-PiecePosition 1 ' ' 7
-piece is white 0
-PiecePosition 2 ' ' 7
-piece is white 0
-PiecePosition 3 ' ' 7
-piece is white 0
-PiecePosition 4 ' ' 7
-piece is white 0
-PiecePosition 5 ' ' 7
-piece is white 0
-PiecePosition 6 ' ' 7
-piece is white 0
-PiecePosition 7 ' ' 7
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
+Key pressed hereeeeeeeeeeeeeeeeeeeee 0
 Click x: 4
 Click y: 6
 Inside board
@@ -173,13 +20,11 @@ Piece type: 0
 piece_selected is not NULL
 white turn 1
 piece selected is white 0
-king count 2
 PIECE_SELECTED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -190,16 +35,6 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -210,7 +45,7 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
+PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 COMPLETE
@@ -218,6 +53,7 @@ InitPosX 4
 InitPosY 6
 FinalPosX 4
 FinalPosY 4
+Piece moved
 index 1
 King Found
 Possible moves for piece 16
@@ -350,205 +186,59 @@ Piece type: 0
 piece_selected is not NULL
 white turn 0
 piece selected is white 0
-king count 2
-king count 2
-king count 2
-king count 2
+Scancode: 0xe0
+Key pressed: 0
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 0
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
 Click x: 4
-Click y: 1
-Inside board
-Piece type: 0
-piece_selected is not NULL
-white turn 0
-piece selected is white 1
-king count 2
-PIECE_SELECTED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-king count 2
-king count 2
-COMPLETE
-InitPosX 4
-InitPosY 1
-FinalPosX 4
-FinalPosY 3
-index 2
-King Found
-Possible moves for piece 0
-Iteration 0
-Initial Position: (0, 1)
-Final Position: (0, 2)
-Iteration 1
-Initial Position: (0, 1)
-Final Position: (0, 3)
-Possible moves for piece 1
-Iteration 0
-Initial Position: (1, 1)
-Final Position: (1, 2)
-Iteration 1
-Initial Position: (1, 1)
-Final Position: (1, 3)
-Possible moves for piece 2
-Iteration 0
-Initial Position: (2, 1)
-Final Position: (2, 2)
-Iteration 1
-Initial Position: (2, 1)
-Final Position: (2, 3)
-Possible moves for piece 3
-Iteration 0
-Initial Position: (3, 1)
-Final Position: (3, 2)
-Iteration 1
-Initial Position: (3, 1)
-Final Position: (3, 3)
-Possible moves for piece 4
-Possible moves for piece 5
-Iteration 0
-Initial Position: (5, 1)
-Final Position: (5, 2)
-Iteration 1
-Initial Position: (5, 1)
-Final Position: (5, 3)
-Possible moves for piece 6
-Iteration 0
-Initial Position: (6, 1)
-Final Position: (6, 2)
-Iteration 1
-Initial Position: (6, 1)
-Final Position: (6, 3)
-Possible moves for piece 7
-Iteration 0
-Initial Position: (7, 1)
-Final Position: (7, 2)
-Iteration 1
-Initial Position: (7, 1)
-Final Position: (7, 3)
-Possible moves for piece 8
-Iteration 0
-Initial Position: (0, 0)
-Final Position: (0, 6)
-Iteration 1
-Initial Position: (0, 0)
-Final Position: (0, 7)
-Possible moves for piece 9
-Iteration 0
-Initial Position: (1, 0)
-Final Position: (0, 2)
-Iteration 1
-Initial Position: (1, 0)
-Final Position: (2, 2)
-Possible moves for piece 10
-Possible moves for piece 11
-Iteration 0
-Initial Position: (3, 0)
-Final Position: (3, 6)
-Iteration 1
-Initial Position: (3, 0)
-Final Position: (3, 7)
-Iteration 2
-Initial Position: (3, 0)
-Final Position: (4, 1)
-Iteration 3
-Initial Position: (3, 0)
-Final Position: (5, 2)
-Iteration 4
-Initial Position: (3, 0)
-Final Position: (6, 3)
-Iteration 5
-Initial Position: (3, 0)
-Final Position: (7, 4)
-Possible moves for piece 13
-Iteration 0
-Initial Position: (5, 0)
-Final Position: (0, 5)
-Iteration 1
-Initial Position: (5, 0)
-Final Position: (1, 4)
-Iteration 2
-Initial Position: (5, 0)
-Final Position: (2, 3)
-Iteration 3
-Initial Position: (5, 0)
-Final Position: (3, 2)
-Iteration 4
-Initial Position: (5, 0)
-Final Position: (4, 1)
-Possible moves for piece 14
-Iteration 0
-Initial Position: (6, 0)
-Final Position: (4, 1)
-Iteration 1
-Initial Position: (6, 0)
-Final Position: (5, 2)
-Iteration 2
-Initial Position: (6, 0)
-Final Position: (7, 2)
-Possible moves for piece 15
-Iteration 0
-Initial Position: (7, 0)
-Final Position: (7, 6)
-Iteration 1
-Initial Position: (7, 0)
-Final Position: (7, 7)
-Click x: 4
-Click y: 3
-Inside board
-Piece type: 0
-piece_selected is not NULL
-white turn 1
-piece selected is white 1
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-Click x: 5
 Click y: 6
 Inside board
 Piece type: 0
 piece_selected is not NULL
 white turn 1
 piece selected is white 0
-king count 2
-king count 2
 PIECE_SELECTED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -556,7 +246,6 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -566,222 +255,32 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
-king count 2
-king count 2
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
 COMPLETE
-InitPosX 5
+InitPosX 4
 InitPosY 6
-FinalPosX 5
-FinalPosY 3
-King Found
-Possible moves for piece 0
-Iteration 0
-Initial Position: (0, 1)
-Final Position: (0, 2)
-Iteration 1
-Initial Position: (0, 1)
-Final Position: (0, 3)
-Possible moves for piece 1
-Iteration 0
-Initial Position: (1, 1)
-Final Position: (1, 2)
-Iteration 1
-Initial Position: (1, 1)
-Final Position: (1, 3)
-Possible moves for piece 2
-Iteration 0
-Initial Position: (2, 1)
-Final Position: (2, 2)
-Iteration 1
-Initial Position: (2, 1)
-Final Position: (2, 3)
-Possible moves for piece 3
-Iteration 0
-Initial Position: (3, 1)
-Final Position: (3, 2)
-Iteration 1
-Initial Position: (3, 1)
-Final Position: (3, 3)
-Possible moves for piece 4
-Possible moves for piece 5
-Iteration 0
-Initial Position: (5, 1)
-Final Position: (5, 2)
-Iteration 1
-Initial Position: (5, 1)
-Final Position: (5, 3)
-Possible moves for piece 6
-Iteration 0
-Initial Position: (6, 1)
-Final Position: (6, 2)
-Iteration 1
-Initial Position: (6, 1)
-Final Position: (6, 3)
-Possible moves for piece 7
-Iteration 0
-Initial Position: (7, 1)
-Final Position: (7, 2)
-Iteration 1
-Initial Position: (7, 1)
-Final Position: (7, 3)
-Possible moves for piece 8
-Iteration 0
-Initial Position: (0, 0)
-Final Position: (0, 6)
-Iteration 1
-Initial Position: (0, 0)
-Final Position: (0, 7)
-Possible moves for piece 9
-Iteration 0
-Initial Position: (1, 0)
-Final Position: (0, 2)
-Iteration 1
-Initial Position: (1, 0)
-Final Position: (2, 2)
-Possible moves for piece 10
-Possible moves for piece 11
-Iteration 0
-Initial Position: (3, 0)
-Final Position: (3, 6)
-Iteration 1
-Initial Position: (3, 0)
-Final Position: (3, 7)
-Iteration 2
-Initial Position: (3, 0)
-Final Position: (4, 1)
-Iteration 3
-Initial Position: (3, 0)
-Final Position: (5, 2)
-Iteration 4
-Initial Position: (3, 0)
-Final Position: (6, 3)
-Iteration 5
-Initial Position: (3, 0)
-Final Position: (7, 4)
-Possible moves for piece 13
-Iteration 0
-Initial Position: (5, 0)
-Final Position: (0, 5)
-Iteration 1
-Initial Position: (5, 0)
-Final Position: (1, 4)
-Iteration 2
-Initial Position: (5, 0)
-Final Position: (2, 3)
-Iteration 3
-Initial Position: (5, 0)
-Final Position: (3, 2)
-Iteration 4
-Initial Position: (5, 0)
-Final Position: (4, 1)
-Possible moves for piece 14
-Iteration 0
-Initial Position: (6, 0)
-Final Position: (4, 1)
-Iteration 1
-Initial Position: (6, 0)
-Final Position: (5, 2)
-Iteration 2
-Initial Position: (6, 0)
-Final Position: (7, 2)
-Possible moves for piece 15
-Iteration 0
-Initial Position: (7, 0)
-Final Position: (7, 6)
-Iteration 1
-Initial Position: (7, 0)
-Final Position: (7, 7)
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-Click x: 3
-Click y: 7
-Inside board
-Piece type: 4
-piece_selected is not NULL
-white turn 1
-piece selected is white 0
-king count 2
-king count 2
-PIECE_SELECTED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-COMPLETE
-InitPosX 3
-InitPosY 7
-FinalPosX 7
-FinalPosY 3
-index 3
+FinalPosX 4
+FinalPosY 4
+Piece moved
+index 1
 King Found
 Possible moves for piece 16
 Iteration 0
@@ -812,6 +311,12 @@ Iteration 1
 Initial Position: (3, 6)
 Final Position: (3, 5)
 Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
 Possible moves for piece 21
 Iteration 0
 Initial Position: (5, 6)
@@ -850,38 +355,206 @@ Final Position: (2, 5)
 Possible moves for piece 26
 Possible moves for piece 27
 Iteration 0
-Initial Position: (7, 3)
-Final Position: (3, 7)
+Initial Position: (3, 7)
+Final Position: (3, 0)
 Iteration 1
-Initial Position: (7, 3)
-Final Position: (4, 0)
-King is in danger
-Check
-king count 2
-Click x: 7
-Click y: 3
+Initial Position: (3, 7)
+Final Position: (3, 1)
+Iteration 2
+Initial Position: (3, 7)
+Final Position: (4, 6)
+Iteration 3
+Initial Position: (3, 7)
+Final Position: (5, 5)
+Iteration 4
+Initial Position: (3, 7)
+Final Position: (6, 4)
+Iteration 5
+Initial Position: (3, 7)
+Final Position: (7, 3)
+Possible moves for piece 29
+Iteration 0
+Initial Position: (5, 7)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (5, 7)
+Final Position: (1, 3)
+Iteration 2
+Initial Position: (5, 7)
+Final Position: (2, 4)
+Iteration 3
+Initial Position: (5, 7)
+Final Position: (3, 5)
+Iteration 4
+Initial Position: (5, 7)
+Final Position: (4, 6)
+Possible moves for piece 30
+Iteration 0
+Initial Position: (6, 7)
+Final Position: (4, 6)
+Iteration 1
+Initial Position: (6, 7)
+Final Position: (5, 5)
+Iteration 2
+Initial Position: (6, 7)
+Final Position: (7, 5)
+Possible moves for piece 31
+Iteration 0
+Initial Position: (7, 7)
+Final Position: (7, 0)
+Iteration 1
+Initial Position: (7, 7)
+Final Position: (7, 1)
+Click x: 4
+Click y: 4
 Inside board
-Piece type: 4
+Piece type: 0
 piece_selected is not NULL
 white turn 0
 piece selected is white 0
-king count 2
-king count 2
-king count 2
-king count 2
-Click x: 5
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 4
 Click y: 1
 Inside board
 Piece type: 0
 piece_selected is not NULL
 white turn 0
 piece selected is white 1
-king count 2
 PIECE_SELECTED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -892,7 +565,6 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -903,21 +575,19 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
-king count 2
-king count 2
+PIECE_DRAGGED
 COMPLETE
-InitPosX 5
+InitPosX 4
 InitPosY 1
-FinalPosX 5
+FinalPosX 4
 FinalPosY 3
-index 4
+Piece moved
+index 1
 King Found
 Possible moves for piece 0
 Iteration 0
@@ -950,14 +620,11 @@ Final Position: (3, 3)
 Possible moves for piece 4
 Possible moves for piece 5
 Iteration 0
-Initial Position: (5, 3)
-Final Position: (4, 4)
+Initial Position: (5, 1)
+Final Position: (5, 2)
 Iteration 1
-Initial Position: (5, 3)
-Final Position: (5, 4)
-Iteration 2
-Initial Position: (5, 3)
-Final Position: (5, 5)
+Initial Position: (5, 1)
+Final Position: (5, 3)
 Possible moves for piece 6
 Iteration 0
 Initial Position: (6, 1)
@@ -969,6 +636,9 @@ Possible moves for piece 7
 Iteration 0
 Initial Position: (7, 1)
 Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
 Possible moves for piece 8
 Iteration 0
 Initial Position: (0, 0)
@@ -990,14 +660,17 @@ Initial Position: (3, 0)
 Final Position: (3, 6)
 Iteration 1
 Initial Position: (3, 0)
-Final Position: (4, 1)
+Final Position: (3, 7)
 Iteration 2
 Initial Position: (3, 0)
-Final Position: (5, 2)
+Final Position: (4, 1)
 Iteration 3
 Initial Position: (3, 0)
-Final Position: (6, 3)
+Final Position: (5, 2)
 Iteration 4
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 5
 Initial Position: (3, 0)
 Final Position: (7, 4)
 Possible moves for piece 13
@@ -1029,27 +702,17 @@ Final Position: (7, 2)
 Possible moves for piece 15
 Iteration 0
 Initial Position: (7, 0)
-Final Position: (7, 3)
+Final Position: (7, 6)
 Iteration 1
 Initial Position: (7, 0)
-Final Position: (7, 6)
-Iteration 2
-Initial Position: (7, 0)
 Final Position: (7, 7)
-king count 2
-king count 2
-king count 2
-king count 2
-king count 2
-Click x: 7
-Click y: 3
+Click x: 5
+Click y: 6
 Inside board
-Piece type: 4
+Piece type: 0
 piece_selected is not NULL
 white turn 1
 piece selected is white 0
-king count 2
-king count 2
 PIECE_SELECTED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -1057,7 +720,6 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -1068,7 +730,6 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -1077,44 +738,17 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-king count 2
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 COMPLETE
-InitPosX 7
-InitPosY 3
-FinalPosX 4
-FinalPosY 0
-index 5
+InitPosX 5
+InitPosY 6
+FinalPosX 5
+FinalPosY 4
+Piece moved
+index 2
+King Found
 Possible moves for piece 16
 Iteration 0
 Initial Position: (0, 6)
@@ -1144,16 +778,16 @@ Iteration 1
 Initial Position: (3, 6)
 Final Position: (3, 5)
 Possible moves for piece 20
-Iteration 0
-Initial Position: (4, 4)
-Final Position: (5, 3)
 Possible moves for piece 21
 Iteration 0
-Initial Position: (5, 6)
-Final Position: (5, 4)
+Initial Position: (5, 4)
+Final Position: (4, 3)
 Iteration 1
-Initial Position: (5, 6)
-Final Position: (5, 5)
+Initial Position: (5, 4)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (5, 4)
+Final Position: (5, 3)
 Possible moves for piece 22
 Iteration 0
 Initial Position: (6, 6)
@@ -1172,30 +806,935 @@ Possible moves for piece 24
 Iteration 0
 Initial Position: (0, 7)
 Final Position: (0, 0)
-King is in danger
-Check
-king count 1
-Click x: 4
-Click y: 0
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Possible moves for piece 26
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 1)
+Iteration 2
+Initial Position: (3, 7)
+Final Position: (4, 6)
+Iteration 3
+Initial Position: (3, 7)
+Final Position: (5, 5)
+Iteration 4
+Initial Position: (3, 7)
+Final Position: (6, 4)
+Iteration 5
+Initial Position: (3, 7)
+Final Position: (7, 3)
+Possible moves for piece 29
+Iteration 0
+Initial Position: (5, 7)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (5, 7)
+Final Position: (1, 3)
+Iteration 2
+Initial Position: (5, 7)
+Final Position: (2, 4)
+Iteration 3
+Initial Position: (5, 7)
+Final Position: (3, 5)
+Iteration 4
+Initial Position: (5, 7)
+Final Position: (4, 6)
+Possible moves for piece 30
+Iteration 0
+Initial Position: (6, 7)
+Final Position: (4, 6)
+Iteration 1
+Initial Position: (6, 7)
+Final Position: (5, 5)
+Iteration 2
+Initial Position: (6, 7)
+Final Position: (7, 5)
+Possible moves for piece 31
+Iteration 0
+Initial Position: (7, 7)
+Final Position: (7, 0)
+Iteration 1
+Initial Position: (7, 7)
+Final Position: (7, 1)
+Click x: 3
+Click y: 6
 Inside board
-Piece type: 4
+Piece type: 0
 piece_selected is not NULL
 white turn 0
 piece selected is white 0
-Scancode: 0x4
-Key pressed: 9
-Menu state: 0
-Scancode: 0x84
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 5
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 4
+InitPosY 3
+FinalPosX 4
+FinalPosY 3
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (3, 6)
+Final Position: (3, 4)
+Iteration 1
+Initial Position: (3, 6)
+Final Position: (3, 5)
+Possible moves for piece 20
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 4)
+Final Position: (4, 3)
+Iteration 1
+Initial Position: (5, 4)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (5, 4)
+Final Position: (5, 3)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Possible moves for piece 26
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 1)
+Iteration 2
+Initial Position: (3, 7)
+Final Position: (4, 6)
+Iteration 3
+Initial Position: (3, 7)
+Final Position: (5, 5)
+Iteration 4
+Initial Position: (3, 7)
+Final Position: (6, 4)
+Iteration 5
+Initial Position: (3, 7)
+Final Position: (7, 3)
+Possible moves for piece 29
+Iteration 0
+Initial Position: (5, 7)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (5, 7)
+Final Position: (1, 3)
+Iteration 2
+Initial Position: (5, 7)
+Final Position: (2, 4)
+Iteration 3
+Initial Position: (5, 7)
+Final Position: (3, 5)
+Iteration 4
+Initial Position: (5, 7)
+Final Position: (4, 6)
+Possible moves for piece 30
+Iteration 0
+Initial Position: (6, 7)
+Final Position: (4, 6)
+Iteration 1
+Initial Position: (6, 7)
+Final Position: (5, 5)
+Iteration 2
+Initial Position: (6, 7)
+Final Position: (7, 5)
+Possible moves for piece 31
+Iteration 0
+Initial Position: (7, 7)
+Final Position: (7, 0)
+Iteration 1
+Initial Position: (7, 7)
+Final Position: (7, 1)
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Click x: 5
+Click y: 3
+Inside board
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 1
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0x4d
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xcd
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 1
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0x4d
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xcd
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 1
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0x4d
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xcd
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 1
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0x4d
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xcd
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0xe0
+Key pressed: 4
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 4
+Scancode: 0x4b
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 1
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xcb
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0xe0
+Key pressed: 3
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 3
+arrow left
+index 0
+Scancode: 0x50
+Key pressed: 2
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 2
+Scancode: 0xe0
+Key pressed: 2
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 2
+Scancode: 0xd0
+Key pressed: 2
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 2
+Scancode: 0xe0
+Key pressed: 2
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 2
+Scancode: 0x48
+Key pressed: 1
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 0
+Scancode: 0xe0
+Key pressed: 1
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 0
+Scancode: 0xc8
 Key pressed: 0
-Menu state: 4
-Scancode: 0x2
-Key pressed: 7
-Menu state: 4
-Scancode: 0x82
-Key pressed: 0
-Menu state: 0
-Scancode: 0x1
-Key pressed: 0
-Menu state: 0
-Scancode: 0x81
-Text mode setted
+Menu state: 1
+Key pressed hereeeeeeeeeeeeeeeeeeeee 0

@@ -270,6 +270,7 @@ int (in_game_mouse_movement)(){
       final_pos.y = (cursor.position.y - 100) / CELL_SIZE_HEIGHT;
 
       if(change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board)){
+        printf("Piece moved\n");
         changeTurn(game);
         index_++;
         boardArray[index_] = &game->board;

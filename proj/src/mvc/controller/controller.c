@@ -10,13 +10,11 @@ extern int counter_mouse;
 
 extern struct cursor cursor;
 
+bool can_draw_this = true;
+
 void init_game(struct Game *game,int minutes, int seconds) {
   // game->White_player = {};
   init_board(&game->board);
-  for(int i = 0 ; i < 32 ; i++){
-    printf("piece is white %d\n", game->board.pieces[i].isWhite);
-    printf("PiecePosition %d ' ' %d\n", game->board.pieces[i].position.x, game->board.pieces[i].position.y);
-  }
   init_player(&game->Black_player, false, minutes, seconds);
   init_player(&game->White_player, true, minutes, seconds);
   game->state = START;
@@ -42,7 +40,6 @@ void game_loop(struct Game *game) {
       king_count++;
     }
   }
-  printf("king count %d\n",king_count);
 
   if(king_count != 2){
     current_state = MENU;
@@ -250,6 +247,7 @@ void router() {
           index_ = max_index;
         }
          tempBoard = boardArray[index_];
+        
         draw_board(tempBoard);
         break;
       case ARROW_DOWN:
@@ -292,19 +290,91 @@ void router() {
       break;
     case GAME:
 
-      game = create_game();
+      printf("Key pressed hereeeeeeeeeeeeeeeeeeeee %d\n", key_pressed);
+      switch (key_pressed)
+      {
+      case NOKEY:
+          game = create_game();
 
-      init_game(game, minutes,seconds);
+          init_game(game, minutes,seconds);
 
-      erase_buffer();
+          erase_buffer();
 
-      draw_backBackGround(&game->White_player, &game->Black_player);
+          draw_backBackGround(&game->White_player, &game->Black_player);
 
-      copy_BackGroundBuffer();
+          copy_BackGroundBuffer();
 
-      draw_board(&game->board);
+          draw_board(&game->board);
 
-      swap_buffers();
+          swap_buffers();
+
+          can_draw_this = true;
+          break;
+      case ARROW_LEFT:
+        printf("arrow left\n");
+        index_--;
+        if(index_ <= 0){
+          index_ = 0;
+        }
+
+        printf("index %d\n",index_);
+
+        tempBoard = boardArray[index_];
+
+        erase_buffer();
+
+        swap_BackgroundBuffer();
+
+        draw_board(tempBoard);
+
+        swap_buffers();
+
+        can_draw_this = false;
+        break;
+      case ARROW_RIGHT:
+        
+        index_++;
+        printf("index after increment  %d\n",index_);
+        if(index_ >= max_index){
+          index_ = max_index;
+        }
+         tempBoard = boardArray[index_];
+         erase_buffer();
+
+        swap_BackgroundBuffer();
+
+        draw_board(tempBoard);
+
+        swap_buffers();
+        can_draw_this = false;
+        break;
+      case ARROW_DOWN:
+        
+        index_ = 0;
+         tempBoard = boardArray[index_];
+
+         erase_buffer();
+
+        swap_BackgroundBuffer();
+
+        draw_board(tempBoard);
+
+        swap_buffers();
+        can_draw_this = false;
+
+        break;
+      case ARROW_UP:
+        key_pressed = NOKEY;
+        index_ = max_index;
+        can_draw_this = true;
+        router();
+        break;
+      
+      default:
+        break;
+      }
+      
+
       break;
     case EXIT:
 
@@ -389,6 +459,8 @@ void decrease_player_timer() {
     }
   }
 
+  if(can_draw_this){
+
   erase_buffer();
 
   swap_BackgroundBuffer();
@@ -400,5 +472,6 @@ void decrease_player_timer() {
   draw_cursor_mouse(cursor.position.x, cursor.position.y , cursor.type);
 
   swap_buffers();
+  }
 }
 
