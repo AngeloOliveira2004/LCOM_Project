@@ -35,31 +35,35 @@ void init_game(struct Game *game,int minutes, int seconds) {
 
 
 void game_loop(struct Game *game) {
-  /*
-  if(changes){
-    if (is_check(game)) {
-      if (is_checkmate(game)) {
-        game->state = CHECKMATE;
-      }
-    }else if (is_stalemate(game)) {
-      game->state = STALEMATE;
-    }
-    else if (is_draw(game)) {
-      game->state = DRAW;
+  int king_count = 0;
+
+  for(int i = 0 ; i < 32 ; i++){
+    if(game->board.pieces[i].type == KING){
+      king_count++;
     }
   }
+  printf("king count %d\n",king_count);
 
-  if(game->state == START){
+  if(king_count != 2){
+    current_state = MENU;
+    free(game);
     erase_buffer();
+    draw_menu(0,0);
+  }
 
-    swap_BackgroundBuffer();
+  if(game->White_player.clock.minutes == 0 && game->White_player.clock.seconds == 0 && game->White_player.clock.a_tenth_of_a_second == 0){
+    current_state = MENU;
+    free(game);
+    erase_buffer();
+    draw_menu(0,0);
+  }
 
-    draw_board(&game->board);
-
-    draw_clockValue(&game->White_player, &game->Black_player);
-
-    swap_buffers();
-  }*/
+  if(game->Black_player.clock.minutes == 0 && game->Black_player.clock.seconds == 0 && game->Black_player.clock.a_tenth_of_a_second == 0){
+    current_state = MENU;
+    free(game);
+    erase_buffer();
+    draw_menu(0,0);
+  }
 }
 
 void parse_keyboard_input() {
@@ -303,10 +307,18 @@ void router() {
       swap_buffers();
       break;
     case EXIT:
+
+      printf("Exiting game...\n");
+
       current_state = MENU;
+
+      erase_buffer();
 
       draw_menu(0,0);
 
+      swap_buffers();
+
+      router();
       break;
   }
 }
@@ -324,7 +336,6 @@ void decrease_player_timer() {
    
     if (game->White_player.clock.a_tenth_of_a_second <= 0) {
       if (game->White_player.clock.seconds == 0 && game->White_player.clock.minutes == 0) {
-          
         game->White_player.clock.a_tenth_of_a_second = 0;
       }
       else {

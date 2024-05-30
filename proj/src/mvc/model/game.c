@@ -642,14 +642,11 @@ bool change_piece_position(struct Piece *piece,
 void remove_piece_from_board(struct Board *board, struct Position *pos) {
   for (int i = 0; i < 32; i++) {
     if (board->pieces[i].position.x == pos->x && board->pieces[i].position.y == pos->y) {
-      if(board->pieces[i].type == KING){
-        current_state = EXIT;
-        router();
-        break;
-      }
+      
       board->squares[pos->x][pos->y].type = EMPTY;
       board->squares[pos->x][pos->y].isWhite = false;
       board->squares[pos->x][pos->y].hasMoved = false;
+      board->pieces[i].type = EMPTY;
       board->pieces[i].position.x = -1;
       board->pieces[i].position.y = -1;
       break;

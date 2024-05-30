@@ -178,6 +178,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
               timer_int_handler();
               if (counter % 6 == 0) {
                 decrease_player_timer();
+                game_loop(game);
               }
             }
           }
@@ -205,6 +206,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
           break;
       }
     }
+
+    
   }
 
   _exit_();
