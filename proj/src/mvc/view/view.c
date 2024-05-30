@@ -36,8 +36,6 @@ int (draw_board)(struct Board* board){
     draw_piece(&board->pieces[i]);
   }
 
-  //swap_buffers();
-
   return 0;
 }
 

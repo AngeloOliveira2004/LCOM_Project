@@ -303,6 +303,10 @@ void router() {
       swap_buffers();
       break;
     case EXIT:
+      current_state = MENU;
+
+      draw_menu(0,0);
+
       break;
   }
 }
