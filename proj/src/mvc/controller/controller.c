@@ -10,7 +10,7 @@ extern int counter_mouse;
 
 extern struct cursor cursor;
 
-void init_game(struct Game *game) {
+void init_game(struct Game *game,int minutes, int seconds) {
   // game->White_player = {};
   init_board(&game->board);
   for(int i = 0 ; i < 32 ; i++){
@@ -87,6 +87,12 @@ void parse_keyboard_input() {
       case _FOUR:
         key_pressed = FOUR;
         break;
+      case _FIVE:
+        key_pressed = FIVE;
+        break;  
+      case _SIX:
+        key_pressed = SIX;
+        break;  
       case ESC_BREAK_CODE:
         key_pressed = ESC;
         break;
@@ -144,6 +150,8 @@ void parse_mouse_input() {
 }
 
 void router() {
+  int minutes = 0;
+  int seconds = 0;
   switch (current_state) {
     case MENU:
       switch (key_pressed) {
@@ -170,24 +178,46 @@ void router() {
     case NEW_GAME:
     switch (key_pressed) {
       case ONE:
-        current_state = GAME;
-
-        game = create_game();
-
-        init_game(game);
-
-        erase_buffer();
-        draw_backBackGround(&game->White_player, &game->Black_player);
-
-        copy_BackGroundBuffer();
-
-        draw_board(&game->board);
-
-        swap_buffers();
+        minutes = 1;
+        seconds = 0;
         break;
+      case TWO:
+        minutes = 5;
+        seconds = 0;
+        break;  
+      case THREE:
+        minutes = 10;
+        seconds = 0;
+        break;  
+      case FOUR:
+        minutes = 30;
+        seconds = 0;
+        break; 
+      case FIVE:
+        minutes = 60;
+        seconds = 0;
+        break;
+      case SIX:
+
       default:
         break;  
       }
+      current_state = GAME;
+
+      game = create_game();
+
+      init_game(game, minutes,seconds);
+
+      erase_buffer();
+
+      draw_backBackGround(&game->White_player, &game->Black_player);
+
+      copy_BackGroundBuffer();
+
+      draw_board(&game->board);
+
+      swap_buffers();
+
     case LOAD_GAME:
       break;
     case INSTRUCTIONS:
@@ -198,16 +228,12 @@ void router() {
 
         draw_menu(0,0);
 
-        swap_buffers();
-
         break;
       case ONE:
         current_state = MENU;
         key_pressed = NOKEY;
 
         draw_menu(0,0);
-
-        swap_buffers();
 
         break;  
       default:
