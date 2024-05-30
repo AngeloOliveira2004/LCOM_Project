@@ -89,7 +89,15 @@ int draw_clockValue(struct Player *player1,struct Player *player2){
   return 0;
 }
 
-int draw_backBackGround(struct Player * player1, struct Player * player2){
+int draw_menu_buttonss(struct Position * button_position){
+  if(draw_xpm(Menu_5_30_2024,0,0) != 0)
+    return 1;
+  button_position->x = 0;
+  button_position->y = 0;
+  return 0;
+}
+
+int draw_backBackGround(struct Player * player1, struct Player * player2, struct Position * button_position){
 
   if(draw_game_background() != 0)
     return 1;
@@ -97,6 +105,11 @@ int draw_backBackGround(struct Player * player1, struct Player * player2){
   if(draw_board_without_Pieces() != 0)
     return 1;
 
+  // if (draw_menu_buttonss(button_position) != 0){
+  //   return 1;
+  // }
+
+  
   //if(draw_Clocks())
     //return 1;
 /*
@@ -339,3 +352,4 @@ int (advance_piece)(struct Piece* piece , struct Position* initialPos , struct B
 
     return 0;
 }
+

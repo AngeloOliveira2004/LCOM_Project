@@ -10,6 +10,8 @@ extern int counter_mouse;
 
 extern struct cursor cursor;
 
+extern struct Position *button_position;
+
 void init_game(struct Game *game,int minutes, int seconds) {
   // game->White_player = {};
   init_board(&game->board);
@@ -252,7 +254,7 @@ void router() {
 
       erase_buffer();
 
-      draw_backBackGround(&game->White_player, &game->Black_player);
+      draw_backBackGround(&game->White_player, &game->Black_player, button_position);
 
       copy_BackGroundBuffer();
 

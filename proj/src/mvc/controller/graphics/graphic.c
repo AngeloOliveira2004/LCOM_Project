@@ -46,6 +46,7 @@ xpm_image_t gameTypeChoiceXPM;
 xpm_image_t defaultClock;
 xpm_image_t board;
 
+
 xpm_image_t number0XPM;
 xpm_image_t number1XPM;
 xpm_image_t number2XPM;
@@ -58,6 +59,8 @@ xpm_image_t number8XPM;
 xpm_image_t number9XPM;
 xpm_image_t twoPointsXPM;
 
+
+xpm_image_t Menuss;
 uint32_t bufferSize;
 
 unsigned bytesPerPixel = -1;
@@ -261,7 +264,6 @@ int (load_xpm_clocks_board)(){
 int(load_xpm_cursor)(){
   xpm_load(cursor_default, XPM_8_8_8, &defaultCursorXPM);
   xpm_load(cursor_grabbing, XPM_8_8_8, &grabbingCursorXPM);
-  xpm_load(cursor_grab, XPM_8_8_8, &grabCursorXPM);
   return 0;
 }
 
@@ -756,3 +758,5 @@ int (draw_two_points)(uint16_t x , uint16_t y){
   }
   return 0;
 }
+
+

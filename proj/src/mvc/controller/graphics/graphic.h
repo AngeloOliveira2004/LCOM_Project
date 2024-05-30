@@ -14,6 +14,7 @@
 #include "sprites/Characters/Characters20x32/7_20.xpm"
 #include "sprites/Characters/Characters20x32/8_20.xpm"
 #include "sprites/Characters/Characters20x32/9_20.xpm"
+#include "sprites/Menus/go_to_menu.xpm"
 #include "sprites/Characters/Characters20x32/two_point.xpm"
 
 #pragma once
@@ -62,7 +63,8 @@ int(draw_game_background)();
 int load_xpm_game_background();
 int(draw_game_instructions)();
 int(draw_game_mode_menu)();
-
+int (draw_menu_button)();
 int (wait_for_ESC_)();
-
+int (load_menu)();
+int (draw_menu_button)(int x , int y);
 

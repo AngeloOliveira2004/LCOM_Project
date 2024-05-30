@@ -914,6 +914,7 @@ struct Piece *get_piece_from_click(int click_x, int click_y, int square_size, st
       return &board->squares[pos.x][pos.y];
     }
   }else{
+    
     printf("Outside board\n");
   }
 

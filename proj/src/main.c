@@ -94,6 +94,8 @@ int setup() {
   load_xpm(Chess_rlt45, ROOK, WHITE);
   load_xpm(Chess_black_rlt45, ROOK, BLACK);
 
+
+
   load_xpm_cursor();
   load_xpm_menu();
   load_xpm_game_background();
