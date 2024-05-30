@@ -37,15 +37,23 @@ void game_loop(struct Game *game) {
 
   for(int i = 0 ; i < 32 ; i++){
     if(game->board.pieces[i].type == KING){
-      king_count++;
+      if(game->board.pieces[i].isWhite)
+        king_count--;
+      else
+        king_count++;
     }
   }
 
-  if(king_count != 2){
-    current_state = MENU;
+  if(king_count == 1){
+    current_state = WINNER_SCREEN;
     free(game);
     erase_buffer();
-    draw_menu(0,0);
+    draw_white_wins();
+  }else if(king_count == -1){
+    current_state = WINNER_SCREEN;
+    free(game);
+    erase_buffer();
+    draw_black_wins();
   }
 
   if(game->White_player.clock.minutes == 0 && game->White_player.clock.seconds == 0 && game->White_player.clock.a_tenth_of_a_second == 0){
@@ -390,6 +398,24 @@ void router() {
 
       router();
       break;
+    case WINNER_SCREEN:
+      switch (key_pressed){
+      case ONE:
+        current_state = MENU;
+
+        erase_buffer();
+
+        draw_menu(0,0);
+
+        swap_buffers();
+
+        key_pressed = NOKEY;
+
+        break;
+      default:
+        break;
+      }
+      break;  
   }
 }
 // min == 0 , segundos passa para a esquerda e os tenth_of_a_second passam pra direita

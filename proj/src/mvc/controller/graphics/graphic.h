@@ -64,6 +64,9 @@ int(draw_game_instructions)();
 int(draw_game_mode_menu)();
 void erase_frontBuffer();
 void erase_backgroundBuffer();
+int draw_black_wins();
+int draw_white_wins();
+int draw_pause_menu();
 
 int (wait_for_ESC_)();
 
