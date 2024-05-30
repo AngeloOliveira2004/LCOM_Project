@@ -1,12 +1,12 @@
+#include "mouse.h"
+#include "../../model/board.h"
+#include "../../proj/src/mvc/model/game.h"
+#include "../../proj/src/sprites/Cursor/cursors.xpm"
+#include "../../view/view.h"
+#include "../kbc/i8042.h"
 #include <lcom/lcf.h>
 #include <stdint.h>
 #include <stdio.h>
-#include "../kbc/i8042.h"
-#include "mouse.h"
-#include "../../model/board.h"
-#include "../../view/view.h"
-#include "../../proj/src/sprites/Cursor/cursors.xpm"
-#include "../../proj/src/mvc/model/game.h"
 
 int hook_id_mouse = 2;
 
@@ -20,7 +20,7 @@ int counter_mouse = 0;
 
 extern int counter_packet_print;
 
-extern struct Game * game;
+extern struct Game *game;
 
 enum InGameStates _current_state = INITIAL;
 
@@ -28,37 +28,40 @@ struct Position initial_pos;
 
 struct Position final_pos;
 
-struct Piece* piece_selected;
+struct Piece *piece_selected;
 
-void (mouse_ih)() {
+struct Position button_position;
+
+
+void(mouse_ih)() {
   uint8_t data;
   read_commands_kbc(&data);
-  parse_values(data,&counter_mouse,&mouse);
+  parse_values(data, &counter_mouse, &mouse);
 }
 
-int(mouse_subscribe_int)(uint8_t *bit_no){
+int(mouse_subscribe_int)(uint8_t *bit_no) {
 
   *bit_no = hook_id_mouse;
 
-  if(sys_irqsetpolicy(IRQ_MOUSE,IRQ_COMMAND_BYTE,&hook_id_mouse) != 0){
+  if (sys_irqsetpolicy(IRQ_MOUSE, IRQ_COMMAND_BYTE, &hook_id_mouse) != 0) {
     return 1;
   }
   return 0;
 }
 
-int(mouse_unsubscribe_int)(){
-  if(sys_irqrmpolicy(&hook_id_mouse) != 0){
+int(mouse_unsubscribe_int)() {
+  if (sys_irqrmpolicy(&hook_id_mouse) != 0) {
     return 1;
   }
   return 0;
 }
 
-int(reset_mouse_struct)(struct packet *mouse){
+int(reset_mouse_struct)(struct packet *mouse) {
 
   return 0;
 }
 
-int(cursor_draw_start)(){
+int(cursor_draw_start)() {
   cursor.position.x = 0;
   cursor.position.y = 0;
   final_pos.x = 0;
@@ -66,78 +69,79 @@ int(cursor_draw_start)(){
   cursor.type = DEFAULT;
   _current_state = INITIAL;
   return 0;
-  
 }
 
-int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
-  if(*cnt == 0){
+int(parse_values)(uint8_t data, int *cnt, struct packet *pp) {
+  if (*cnt == 0) {
     clean_packet(pp);
   }
   *cnt += 1;
-  if(*cnt == 1){
-    if((!sync_v) && ((data & SYNC) == 1)){
+  if (*cnt == 1) {
+    if ((!sync_v) && ((data & SYNC) == 1)) {
       sync_v = true;
       *cnt = 0;
       return 0;
     }
   }
 
-  switch (*cnt){
-  case 1:{
-    pp->lb = (data & LB);
-    pp->rb = ((data & RB) >> 1);
-    pp->mb = ((data & MB) >> 2);
-    pp->delta_x = ((data & MSB_X_DELTA) << 4);
-    pp->delta_y = ((data & MSB_Y_DELTA) << 3);
-    pp->x_ov = ((data & X_OVFL) >> 6);
-    pp->y_ov = ((data & Y_OVFL) >> 7);
+  switch (*cnt) {
+    case 1: {
+      pp->lb = (data & LB);
+      pp->rb = ((data & RB) >> 1);
+      pp->mb = ((data & MB) >> 2);
+      pp->delta_x = ((data & MSB_X_DELTA) << 4);
+      pp->delta_y = ((data & MSB_Y_DELTA) << 3);
+      pp->x_ov = ((data & X_OVFL) >> 6);
+      pp->y_ov = ((data & Y_OVFL) >> 7);
 
-    break;
-  }
-  case 2:{
-    pp->delta_x |= data;
-
-    if((pp->delta_x >> 8) == 1){
-      pp->delta_x |= 0xFF00;
-    }else{
-      pp->delta_x &= 0x00FF;
+      break;
     }
-    break;
-  }
+    case 2: {
+      pp->delta_x |= data;
 
-  case 3:{
-    pp->delta_y |= data;
-
-    if((pp->delta_y >> 8) == 1){
-      pp->delta_y |= 0xFF00;
-    }else{
-      pp->delta_y &= 0x00FF;
+      if ((pp->delta_x >> 8) == 1) {
+        pp->delta_x |= 0xFF00;
+      }
+      else {
+        pp->delta_x &= 0x00FF;
+      }
+      break;
     }
 
-    break;
-  }
+    case 3: {
+      pp->delta_y |= data;
+
+      if ((pp->delta_y >> 8) == 1) {
+        pp->delta_y |= 0xFF00;
+      }
+      else {
+        pp->delta_y &= 0x00FF;
+      }
+
+      break;
+    }
   }
   counter_packet_print++;
-  pp->bytes[*cnt-1] = data;
+  pp->bytes[*cnt - 1] = data;
 
-  if(*cnt == 3){
+  if (*cnt == 3) {
     cursor.position.x += pp->delta_x;
     cursor.position.y -= pp->delta_y;
 
-    if(cursor.position.x >= WIDTH-20 && cursor.position.x <= WIDTH){
+    if (cursor.position.x >= WIDTH - 20 && cursor.position.x <= WIDTH) {
       cursor.position.x = 5;
     }
 
-    if(cursor.position.y >= HEIGHT-20 && cursor.position.y <= HEIGHT){
+    if (cursor.position.y >= HEIGHT - 20 && cursor.position.y <= HEIGHT) {
       cursor.position.y = 5;
     }
 
-    if(cursor.position.x >= WIDTH-20){
-      cursor.position.x = WIDTH-25;
+    if (cursor.position.x >= WIDTH - 20) {
+      cursor.position.x = WIDTH - 25;
     }
 
-    if(cursor.position.y >= HEIGHT-20){
-      cursor.position.y = HEIGHT-25;
+    if (cursor.position.y >= HEIGHT - 20) {
+      cursor.position.y = HEIGHT - 25;
     }
     in_game_mouse_movement();
   }
@@ -145,8 +149,8 @@ int(parse_values)(uint8_t data,int *cnt,struct packet *pp){
   return 0;
 }
 
-void clean_packet(struct packet *mouse){
-  memset(mouse->bytes,0,sizeof(*mouse->bytes));
+void clean_packet(struct packet *mouse) {
+  memset(mouse->bytes, 0, sizeof(*mouse->bytes));
   mouse->delta_x = 0x0000;
   mouse->delta_y = 0x0000;
   mouse->lb = 0;
@@ -156,127 +160,134 @@ void clean_packet(struct packet *mouse){
   mouse->y_ov = 0;
 }
 
-int(disable_mouse_report)(){
+int(disable_mouse_report)() {
 
-  if(send_commands_kbc(WRITE_BYTE_TO_MOUSE,KBC_IN_CMD) != 0){
+  if (send_commands_kbc(WRITE_BYTE_TO_MOUSE, KBC_IN_CMD) != 0) {
     return 1;
   }
 
-  if(send_commands_kbc(DISABLE_DATA_REPORTING,KBC_OUT_CMD) != 0){
-    return 1;
-  }
-
-  uint8_t error;
-  read_commands_kbc(&error);
-  switch (error){
-  case ACK:
-    return 0;
-    break;
-  case NACK:
-    printf("Invalid byte due to serial communication error");
-    return 1;
-    break;  
-  case ERROR:
-    printf("Second consecutive invalid byte");
-    return 1;
-    break;  
-  }
-  return 0;
-}
-
-int(enable_mouse_report)(){
-
-  if(send_commands_kbc(WRITE_BYTE_TO_MOUSE,KBC_IN_CMD) != 0){
-    return 1;
-  }
-
-  if(send_commands_kbc(ENABLE_DATA_REPORTING,KBC_OUT_CMD) != 0){
+  if (send_commands_kbc(DISABLE_DATA_REPORTING, KBC_OUT_CMD) != 0) {
     return 1;
   }
 
   uint8_t error;
   read_commands_kbc(&error);
-  switch (error){
-  case ACK:
-    return 0;
-    break;
-  case NACK:
-    printf("Invalid byte due to serial communication error");
-    return 1;
-    break;  
-  case ERROR:
-    printf("Second consecutive invalid byte");
-    return 1;
-    break;  
+  switch (error) {
+    case ACK:
+      return 0;
+      break;
+    case NACK:
+      printf("Invalid byte due to serial communication error");
+      return 1;
+      break;
+    case ERROR:
+      printf("Second consecutive invalid byte");
+      return 1;
+      break;
   }
   return 0;
 }
 
-struct mousePosition (get_position_cursor)(struct cursor *cursor){
+int(enable_mouse_report)() {
+
+  if (send_commands_kbc(WRITE_BYTE_TO_MOUSE, KBC_IN_CMD) != 0) {
+    return 1;
+  }
+
+  if (send_commands_kbc(ENABLE_DATA_REPORTING, KBC_OUT_CMD) != 0) {
+    return 1;
+  }
+
+  uint8_t error;
+  read_commands_kbc(&error);
+  switch (error) {
+    case ACK:
+      return 0;
+      break;
+    case NACK:
+      printf("Invalid byte due to serial communication error");
+      return 1;
+      break;
+    case ERROR:
+      printf("Second consecutive invalid byte");
+      return 1;
+      break;
+  }
+  return 0;
+}
+
+struct mousePosition(get_position_cursor)(struct cursor *cursor) {
   return cursor->position;
 }
 
-int (in_game_mouse_movement)(){
-  
-  switch(_current_state){
+int(in_game_mouse_movement)() {
+  //struct mousePosition cursor_pos = get_position_cursor(&cursor);
+  switch (_current_state) {
     case INITIAL:
-      
-      if(mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED){
-        
-        piece_selected = get_piece_from_click(cursor.position.x,cursor.position.y,CELL_SIZE_HEIGHT,&game->board);
-        if(piece_selected == NULL) {
-          _current_state = INITIAL;
-        }else{
-          printf("piece_selected is not NULL\n");
-          printf("white turn %d\n",game->isWhiteTurn);
-          printf("piece selected is white %d\n",piece_selected->isWhite);
-          initial_pos.x = piece_selected->position.x;
-          initial_pos.y = piece_selected->position.y;
-            if(!piece_selected->isWhite == game->isWhiteTurn){
+
+      if (mouse.lb == BUTTON_PRESSED && mouse.rb != BUTTON_PRESSED && mouse.mb != BUTTON_PRESSED) {
+        // if (cursor_pos.x == button_position.x && cursor_pos.y == button_position.y) {
+        //   printf("Botão do menu clicado!\n");
+
+        //   return 0;
+        // }
+        // else {
+
+          piece_selected = get_piece_from_click(cursor.position.x, cursor.position.y, CELL_SIZE_HEIGHT, &game->board);
+          if (piece_selected == NULL) {
+            _current_state = INITIAL;
+          }
+          else {
+            printf("piece_selected is not NULL\n");
+            printf("white turn %d\n", game->isWhiteTurn);
+            printf("piece selected is white %d\n", piece_selected->isWhite);
+            initial_pos.x = piece_selected->position.x;
+            initial_pos.y = piece_selected->position.y;
+            if (!piece_selected->isWhite == game->isWhiteTurn) {
               _current_state = PIECE_SELECTED;
             }
+          //}
         }
       }
       break;
     case PIECE_SELECTED:
       printf("PIECE_SELECTED\n");
-      if(mouse.lb != BUTTON_PRESSED){
+      if (mouse.lb != BUTTON_PRESSED) {
         _current_state = PIECE_CLICKED;
         cursor.type = HOVERING;
-      } else {
+      }
+      else {
         _current_state = PIECE_DRAGGED;
         cursor.type = SELECTED;
       }
       break;
     case PIECE_CLICKED:
       printf("PIECE_CLICKED\n");
-      if(mouse.lb == BUTTON_PRESSED){
+      if (mouse.lb == BUTTON_PRESSED) {
         _current_state = COMPLETE;
-      }else if(mouse.rb == BUTTON_PRESSED){
+      }
+      else if (mouse.rb == BUTTON_PRESSED) {
         _current_state = INITIAL;
       }
       break;
     case PIECE_DRAGGED:
       printf("PIECE_DRAGGED\n");
-      if(mouse.lb != BUTTON_PRESSED){
+      if (mouse.lb != BUTTON_PRESSED) {
         _current_state = COMPLETE;
       }
-      break;  
+      break;
     case COMPLETE:
       printf("COMPLETE\n");
       cursor.type = DEFAULT;
       _current_state = INITIAL;
       final_pos.x = (cursor.position.x - 200) / CELL_SIZE_WIDTH;
       final_pos.y = (cursor.position.y - 100) / CELL_SIZE_HEIGHT;
-      if(change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board)){
+      if (change_piece_position(piece_selected, &initial_pos, &final_pos, &game->board)) {
         changeTurn(game);
       }
 
-      
       piece_selected = NULL;
       break;
   }
   return 0;
 }
-
-

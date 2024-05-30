@@ -9,6 +9,7 @@ enum FlowState current_state = MENU;
 extern int counter_mouse;
 
 extern struct cursor cursor;
+extern struct Position *button_position;
 
 void init_game(struct Game *game,int minutes, int seconds) {
   // game->White_player = {};
@@ -50,6 +51,7 @@ void game_loop(struct Game *game) {
 
     swap_buffers();
   }*/
+  draw_menu_buttonss(button_position);
 }
 
 void parse_keyboard_input() {
@@ -142,8 +144,11 @@ void parse_mouse_input() {
 
       draw_clockValue(&game->Black_player, &game->White_player);
 
+
+
       draw_cursor_mouse(cursor.position.x, cursor.position.y , cursor.type);
 
+      
       swap_buffers();
     }
   }
@@ -252,7 +257,7 @@ void router() {
 
       erase_buffer();
 
-      draw_backBackGround(&game->White_player, &game->Black_player);
+      draw_backBackGround(&game->White_player, &game->Black_player, button_position);
 
       copy_BackGroundBuffer();
 
