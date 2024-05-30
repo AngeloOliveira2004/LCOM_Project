@@ -7,6 +7,7 @@
 #include "../model/menu.h"
 #include "../view/view.h"
 #include "keyboard/keyboard.h"
+
 #include "mouse/mouse.h"
 #include "graphics/graphic.h"
 
@@ -37,6 +38,9 @@ enum FlowState{
 };
 
 struct Game * game;
+struct Board * boardArray[1024]; 
+int index_;
+int max_index;
 
 void start_menu();
 void start_game();
@@ -53,5 +57,6 @@ void init_game(struct Game *game,int minutes, int seconds);
 void game_loop(struct Game * game);
 void controller_loop(struct Game * game, struct Menu * menu);
 void decrease_player_timer();
+
 
 

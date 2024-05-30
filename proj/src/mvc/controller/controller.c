@@ -22,7 +22,17 @@ void init_game(struct Game *game,int minutes, int seconds) {
   game->state = START;
   game->piece_count = 32;
   game->isWhiteTurn = true;
+
+  index_ = 0;
+  for (int i = 0; i < 1024; i++) {
+    boardArray[i] = malloc(sizeof(struct Board));
+    if (boardArray[i] == NULL) {        
+        fprintf(stderr, "Memory allocation failed for board %d\n", i);
+        exit(EXIT_FAILURE);
+    }
+  }
 }
+
 
 void game_loop(struct Game *game) {
   /*
@@ -153,6 +163,7 @@ int minutes = 0;
 int seconds = 0;
 
 void router() {
+  struct Board * tempBoard = NULL;
   switch (current_state) {
     case MENU:
       switch (key_pressed) {
@@ -178,6 +189,7 @@ void router() {
       }
       break;
     case NEW_GAME:
+    
     switch (key_pressed) {
       case ONE:
         minutes = 1;
@@ -217,6 +229,36 @@ void router() {
         key_pressed = NOKEY;
         current_state = MENU;
         draw_menu(0,0);
+        break;
+      case ARROW_LEFT:
+        key_pressed = NOKEY;
+        index_--;
+        if(index_ <= 0){
+          index_ = 0;
+        }
+        tempBoard = boardArray[index_];
+        draw_board(tempBoard);
+        break;
+      case ARROW_RIGHT:
+        key_pressed = NOKEY;
+        index_++;
+        if(index_ >= max_index){
+          index_ = max_index;
+        }
+         tempBoard = boardArray[index_];
+        draw_board(tempBoard);
+        break;
+      case ARROW_DOWN:
+        key_pressed = NOKEY;
+        index_ = 0;
+         tempBoard = boardArray[index_];
+        draw_board(tempBoard);
+        break;
+      case ARROW_UP:
+        key_pressed = NOKEY;
+        index_ = max_index;
+         tempBoard = boardArray[index_];
+        draw_board(tempBoard);
         break;
       default:
         break;  
@@ -344,3 +386,4 @@ void decrease_player_timer() {
 
   swap_buffers();
 }
+

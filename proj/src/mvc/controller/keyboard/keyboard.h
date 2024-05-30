@@ -5,6 +5,9 @@
 #include <lcom/lcf.h>
 #include "../kbc/i8042.h"
 
+extern struct Board * boardArray[1024];
+extern int index_;
+
 struct scancode_info {
   uint8_t size_counter;
   bool make_code;
