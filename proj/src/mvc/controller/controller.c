@@ -385,15 +385,7 @@ void router() {
 
       erase_buffer();
 
-<<<<<<< HEAD
-      draw_backBackGround(&game->White_player, &game->Black_player, button_position);
-
-      copy_BackGroundBuffer();
-
-      draw_board(&game->board);
-=======
       draw_menu(0,0);
->>>>>>> refs/remotes/origin/Projeto
 
       swap_buffers();
 
