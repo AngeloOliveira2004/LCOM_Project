@@ -289,10 +289,6 @@ int(in_game_mouse_movement)() {
         printf("Piece moved\n");
 
         changeTurn(game);
-        index_++;
-        boardArray[index_] = &game->board;
-        max_index = index_;
-        printf("index %d\n",index_);
       }
 
 

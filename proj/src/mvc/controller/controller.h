@@ -38,7 +38,7 @@ enum FlowState{
 };
 
 struct Game * game;
-struct Board * boardArray[1024]; 
+struct Board boardArray[1024]; 
 int index_;
 int max_index;
 
