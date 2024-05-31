@@ -1,3 +1,10 @@
+/**
+ * @file controller.c
+ * @brief This file contains the implementation of the controller
+ * 
+ * This file contains the implementation of the controller
+ */
+
 #include "controller.h"
 #include "keyboard/keyboard.h"
 #include "../controller/rtc/rtc.h"
@@ -20,6 +27,16 @@ struct Board tempBoard;
 current_date dt = {0,0,0,0,0,0,0};
 bool isWhiteTurn = true;
 
+
+/**
+ * @brief Initializes a new game with the specified time limit for each player.
+ * 
+ * This function initializes a new game with the given time limit for each player. It sets up the game board, initializes the players' clocks, and sets the initial game state.
+ * 
+ * @param game Pointer to the Game structure.
+ * @param minutes The number of minutes for each player.
+ * @param seconds The number of seconds for each player.
+ */
 void init_game(struct Game *game,int minutes, int seconds) {
   // game->White_player = {};
   init_board(&game->board);
@@ -32,7 +49,13 @@ void init_game(struct Game *game,int minutes, int seconds) {
   index_ = 0;
 }
 
-
+/**
+ * @brief Main game loop that updates the game state and checks for game-ending conditions.
+ * 
+ * This function represents the main game loop. It updates the game state, checks for game-ending conditions such as checkmate or timeout, and handles the transition to the winner screen if necessary.
+ * 
+ * @param game Pointer to the Game structure representing the current game state.
+ */
 void game_loop(struct Game *game) {
 
   bool boardChanged = false;
@@ -128,6 +151,11 @@ void game_loop(struct Game *game) {
   }
 }
 
+/**
+ * @brief Parses keyboard input and updates the current key pressed.
+ * 
+ * This function reads keyboard input, interprets the scan code received, and updates the current key pressed accordingly. It then calls the router function to handle the input.
+ */
 void parse_keyboard_input() {
 
   kbc_ih();
@@ -201,6 +229,11 @@ void parse_keyboard_input() {
   router();
 }
 
+/**
+ * @brief Parses mouse input and updates the display accordingly.
+ * 
+ * This function handles mouse input, updates the display, and redraws the board and clock values if the current state is the game. It also draws the mouse cursor.
+ */
 void parse_mouse_input() {
   mouse_ih();
 
@@ -228,6 +261,11 @@ void parse_mouse_input() {
 int minutes = 0;
 int seconds = 0;
 
+/**
+ * @brief Routes the program flow based on the current state and user input.
+ * 
+ * This function manages the program flow, including transitions between different states (such as MENU, NEW_GAME, INSTRUCTIONS, etc.) and handling user input.
+ */
 void router() {
   struct Board tempBoard ;
   switch (current_state) {
@@ -573,6 +611,12 @@ void router() {
       break;  
   }
 }
+
+/**
+ * @brief Decreases the timer of the current player and updates the display if necessary.
+ * 
+ * This function decreases the timer of the current player (either White or Black) by one tenth of a second. If the timer reaches zero, it decrements the minutes and seconds accordingly. It also updates the display if `can_draw_this` is true.
+ */
 // min == 0 , segundos passa para a esquerda e os tenth_of_a_second passam pra direita
 void decrease_player_timer() {
 
@@ -656,6 +700,14 @@ void decrease_player_timer() {
   }
 }
 
+
+/**
+ * @brief Changes the game state to the pause menu.
+ *
+ * This function changes the current state of the game to the pause menu state. It erases the buffer and draws the pause menu on the screen.
+ *
+ * @return 0 upon successful state change.
+ */
 int (change_game_state_to_menu)(){
   current_state = PAUSE_MENU;
   erase_buffer();
