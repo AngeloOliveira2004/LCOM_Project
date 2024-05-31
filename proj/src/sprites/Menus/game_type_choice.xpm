@@ -1,3 +1,8 @@
+/**
+ * @file game_type_choice.xpm
+ * @brief contains the xpm for the type of game choice
+ */
+
 /* XPM */
 static xpm_row_t game_type_choice[] = {
 /* columns rows colors chars-per-pixel */

@@ -1,3 +1,8 @@
+/**
+ * @file main_menu.xpm
+ * @brief Contains the main menu image.
+*/
+
 /* XPM */
 static xpm_row_t main_menu[] = {
 /* columns rows colors chars-per-pixel */

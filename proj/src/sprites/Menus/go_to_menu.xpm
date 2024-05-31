@@ -1,3 +1,9 @@
+/**
+ * @file go_to_menu.xpm
+ * @brief Contains the menu letters for the go to menu
+ */
+
+
 /* XPM */
 #pragma once
 static xpm_row_t Menu_5_30_2024[] = {

@@ -1,3 +1,9 @@
+/**
+ * @file black_wins.xpm
+ * @brief Contains the implementation of the class that represents the screen  when the black wins.
+ */
+
+
 /* XPM */
 static xpm_row_t black_wins[] = {
 /* columns rows colors chars-per-pixel */

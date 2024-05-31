@@ -1,3 +1,9 @@
+/**
+ * @file pieces.h
+ * @brief XPM file for the pieces
+ */
+
+
 /* XPM */
 static xpm_row_t Chess_blt45[] = {
 /* columns rows colors chars-per-pixel */

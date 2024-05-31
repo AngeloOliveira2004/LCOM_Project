@@ -1,3 +1,8 @@
+/**
+ * @file timer.h
+ * @brief File containing the constants and functions to interact with the Timer
+*/
+
 #ifndef __TIMER_H
 #define __TIMER_H
 

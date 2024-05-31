@@ -1,3 +1,7 @@
+/**
+ * @file i8254.h
+ * @brief File containing the constants to interact with the i8254 Timer
+*/
 #ifndef _LCOM_I8254_H_
 #define _LCOM_I8254_H_
 
@@ -49,7 +53,7 @@
 
 /* READ-BACK COMMAND FORMAT */
 
-#define TIMER_RB_COUNT_  BIT(5)
+#define TIMER_RB_COUNT_  BIT(5) 
 #define TIMER_RB_STATUS_ BIT(4)
 #define TIMER_RB_SEL(n)  BIT((n) + 1)
 

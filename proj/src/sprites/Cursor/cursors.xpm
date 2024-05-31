@@ -1,3 +1,9 @@
+/**
+ * @file cursors.xpm
+ * @brief XPM data for the cursors
+ */
+
+
 /* XPM */
 static xpm_row_t cursor_default[] = {
 /* columns rows colors chars-per-pixel */

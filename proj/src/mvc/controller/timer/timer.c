@@ -1,3 +1,7 @@
+/**
+ * @file timer.c
+ * @brief File containing the implementation of the functions to interact with the Timer
+ */
 #include <lcom/lcf.h>
 #include "timer.h"
 
@@ -8,6 +12,16 @@
 uint32_t counter = 0;
 int32_t __hook_id = 0;
 
+/**
+ * @brief Sets the frequency of the timer
+ * 
+ * This function sets the frequency of the timer
+ * 
+ * @param timer Timer to be set
+ * @param freq Frequency to be set
+ * 
+ * @return int 0 upon success, 1 otherwise
+ */
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
 
   uint8_t st , msb , lsb;
@@ -56,6 +70,15 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   return 0;
 }
 
+/**
+ * @brief Subscribes Timer interrupts
+ * 
+ * This function subscribes Timer interrupts
+ * 
+ * @param bit_no Address of memory to be initialized with the bit number to be set in the mask returned upon an interrupt
+ * 
+ * @return int 0 upon success, 1 otherwise
+ */
 int (timer_subscribe_int)(uint8_t *bit_no) {
   *bit_no = BIT(__hook_id);
 
@@ -65,6 +88,13 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
   return 0;
 }
 
+/**
+ * @brief Unsubscribes Timer interrupts
+ * 
+ * This function unsubscribes Timer interrupts
+ * 
+ * @return int 0 upon success, 1 otherwise
+ */
 int (timer_unsubscribe_int)() {
   
   if(sys_irqrmpolicy(&__hook_id) != OK)
@@ -73,10 +103,25 @@ int (timer_unsubscribe_int)() {
   return 0;
 }
 
+/**
+ * @brief Timer interrupt handler
+ * 
+ * This function handles Timer interrupts
+ */
 void (timer_int_handler)() {
   counter++;
 }
 
+/**
+ * @brief Timer get configuration
+ * 
+ * This function gets the configuration of the Timer
+ * 
+ * @param timer Timer to get the configuration
+ * @param st Address of memory to be initialized with the configuration
+ * 
+ * @return int 0 upon success, 1 otherwise
+ */
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
   int port;
@@ -97,6 +142,17 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   return 0;
 }
 
+/**
+ * @brief Timer display configuration
+ * 
+ * This function displays the configuration of the Timer
+ * 
+ * @param timer Timer to display the configuration
+ * @param st Configuration to display
+ * @param field Field to display
+ * 
+ * @return int 0 upon success, 1 otherwise
+ */
 int (timer_display_conf)(uint8_t timer, uint8_t st,enum timer_status_field field) {
   
   union timer_status_field_val val;

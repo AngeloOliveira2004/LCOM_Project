@@ -1,3 +1,9 @@
+/**
+ * @file white_wins.xpm
+ * @brief Contains the white_wins image in XPM format.
+ */
+
+
 /* XPM */
 static xpm_row_t white_wins[] = {
 /* columns rows colors chars-per-pixel */

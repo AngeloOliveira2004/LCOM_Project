@@ -1,3 +1,8 @@
+/**
+ * @file VBE.h
+ * @brief File containing the constants and functions to interact with the VBE
+*/
+
 #ifndef _VBE_H_
 #define _VBE_H_
 

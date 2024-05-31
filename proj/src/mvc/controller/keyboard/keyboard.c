@@ -1,3 +1,8 @@
+/**
+ * @file keyboard.c
+ * @brief File containing the implementation of the functions to interact with the keyboard
+*/
+
 #include "lcom/lcf.h"
 #include <stdbool.h>
 #include <stdint.h>
@@ -10,6 +15,15 @@ int hook_id = 1;
 uint8_t scancode;
 struct scancode_info scan_info;
 
+/**
+ * @brief Subscribes and enables keyboard interrupts
+ * 
+ * This function subscribes interrupts of the keyboard.
+ * 
+ * @param bit_no Address of memory to be initialized with the bit number to be set in the mask returned upon an interrupt
+ * 
+ * @return int 0 upon success, 1 otherwise
+*/
 int (keyboard_subscribe_int)(uint8_t *bit_no) {
 
   *bit_no = BIT(hook_id);
@@ -20,6 +34,14 @@ int (keyboard_subscribe_int)(uint8_t *bit_no) {
   return 0;
 }
 
+
+/**
+ * @brief Unsubscribes keyboard interrupts
+ * 
+ * This function unsubscribes keyboard interrupts.
+ * 
+ * @return int 0 upon success, 1 otherwise
+*/
 int (keyboard_unsubscribe_int)() {
 
   if(sys_irqrmpolicy(&hook_id) != OK)
@@ -28,6 +50,16 @@ int (keyboard_unsubscribe_int)() {
   return 0;
 }
 
+/**
+ * @brief Reads a register from the keyboard
+ * 
+ * This function reads a register from the keyboard.
+ * 
+ * @param reg Register to be read
+ * @param st Address of memory to be initialized with the value read from the register
+ * 
+ * @return int 0 upon success, 1 otherwise
+*/
 int (read_status_register)(uint8_t *st){
   
   if(util_sys_inb(STATUS_BYTE , st) != OK)
@@ -36,6 +68,16 @@ int (read_status_register)(uint8_t *st){
   return 0;
 }
 
+/**
+ * @brief Reads the outputbuffer from the keyboard
+ * 
+ * This function reads a register from the keyboard.
+ * 
+ * @param reg Register to be read
+ * @param st Address of memory to be initialized with the value read from the register
+ * 
+ * @return int 0 upon success, 1 otherwise
+*/
 int (read_out_buffer)(uint8_t *out){
 
   if(util_sys_inb(OUT_SCANCODES , out) != OK)
@@ -44,6 +86,12 @@ int (read_out_buffer)(uint8_t *out){
   return 0;
 }
 
+/**
+ * @brief interrupts handler of the keyboard
+ * 
+ * This function handles interrupts the keyboard.
+ * 
+ */
 void (kbc_ih)() {
 
   uint8_t st;
@@ -59,6 +107,16 @@ void (kbc_ih)() {
   }
 }
 
+
+/**
+ * @brief tests if the status polling is valid
+ * 
+ * This function tests if the status polling is valid.
+ * 
+ * @param st status to be tested
+ * 
+ * @return true if the status polling is valid, false otherwise
+ */
 bool(test_status_polling)(uint8_t st){
   if((st & AUX_STATUS_REG) == 0 && (st & OUT_BUFF_FULL)){
     return true;
@@ -72,6 +130,14 @@ struct scancode_info {
   bool make_code;
   uint8_t bytes[2];
 ;*/
+
+/**
+ * @brief cleans the scan info
+ * 
+ * This function cleans the scan info.
+ * 
+ * @param scan scan info to be cleaned
+ */
 void(clean_scan_info)(struct scancode_info *scan){
   for(int i = 0 ; i < scan->size_counter ; i++){
     scan->bytes[i] = 0;
@@ -80,6 +146,17 @@ void(clean_scan_info)(struct scancode_info *scan){
   scan->make_code = false;
 }
 
+
+/**
+ * @brief receives the keyboard scan
+ * 
+ * This function receives the keyboard scan.
+ * 
+ * @param scan_info scan info to be filled
+ * @param scancode scancode to be filled
+ * 
+ * @return true if the scan is valid, false otherwise
+ */
 bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
   bool is_E0 = false;
   bool valid = true;
@@ -123,6 +200,14 @@ bool(receive_keyboard_scan)(struct scancode_info *scan_info, uint8_t *scancode){
 
 }
 
+
+/**
+ * @brief enables the interrupts of the keyboard
+ * 
+ * This function enables the interrupts of the keyboard.
+ * 
+ * @return int 0 upon success, 1 otherwise
+ */
 int(kbc_enable_interrupts)(){
   
   uint8_t command_byte;
@@ -148,6 +233,15 @@ int(kbc_enable_interrupts)(){
   return 0;
 }
 
+/**
+ * @brief tries to read the out buffer
+ * 
+ * This function tries to read the out buffer.
+ * 
+ * @param out out buffer to be filled
+ * 
+ * @return int 0 upon success, 1 otherwise
+ */
 int try_read_out_buffer(uint8_t *out){
   uint8_t st , temp_out;
 
@@ -170,6 +264,13 @@ int try_read_out_buffer(uint8_t *out){
 }
 
 
+/**
+ * @brief checks if the ESC key was pressed
+ * 
+ * This function checks if the ESC key was pressed.
+ * 
+ * @return 1 if the ESC key was pressed, 0 otherwise
+ */
 int (check_ESC)(){
 
   kbc_ih(); 
@@ -186,6 +287,13 @@ int (check_ESC)(){
 }
 
 
+/**
+ * @brief breaks from the cycles
+ * 
+ * This function breaks from the cycles.
+ * 
+ * @return 0 upon success, 1 otherwise
+ */
 int (break_from_cycles)(){
   int ipc_status,r;
   message msg;
