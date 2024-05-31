@@ -3,7 +3,7 @@
 <area shape="rect" id="node2" title=" " alt="" coords="443,481,528,508"/>
 <area shape="rect" id="node3" title=" " alt="" coords="574,392,645,419"/>
 <area shape="rect" id="node4" title=" " alt="" coords="3756,481,3823,508"/>
-<area shape="rect" id="node5" href="$i8042_8h_source.html" title=" " alt="" coords="93,392,203,419"/>
+<area shape="rect" id="node5" href="$i8042_8h.html" title=" " alt="" coords="93,392,203,419"/>
 <area shape="rect" id="node6" href="$controller_8h.html" title="This file contains the declaration of the functions that will be used to control the game...." alt="" coords="748,139,855,165"/>
 <area shape="rect" id="node30" href="$kbc_8h.html" title="File containing the constants and functions to interact with the KBC." alt="" coords="97,295,193,322"/>
 <area shape="rect" id="node7" href="$game_8h.html" title="Header file containing declarations for the game logic and data structures." alt="" coords="3624,392,3752,419"/>

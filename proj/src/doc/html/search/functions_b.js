@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['parse_5fkeyboard_5finput_441',['parse_keyboard_input',['../controller_8c.html#a3785128f2a9492f2254ab7db8af81fef',1,'parse_keyboard_input():&#160;controller.c'],['../controller_8h.html#a3785128f2a9492f2254ab7db8af81fef',1,'parse_keyboard_input():&#160;controller.c']]],
-  ['parse_5fmouse_5finput_442',['parse_mouse_input',['../controller_8c.html#a36011516c792514a2664ca1340b1c573',1,'parse_mouse_input():&#160;controller.c'],['../controller_8h.html#a36011516c792514a2664ca1340b1c573',1,'parse_mouse_input():&#160;controller.c']]],
-  ['parse_5fvalues_443',['parse_values',['../mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354',1,'parse_values(uint8_t data, int *cnt, struct packet *pp):&#160;mouse.c'],['../mouse_8h.html#a7c35b8ea4b294430bfbb2d6c0dd98354',1,'parse_values(uint8_t data, int *cnt, struct packet *pp):&#160;mouse.c']]],
-  ['print_5fdate_444',['print_date',['../rtc_8c.html#a9605e0efe751fa7e84f886046a1fea26',1,'print_date(current_date *date):&#160;rtc.c'],['../rtc_8h.html#a8c260e2e835f7472f0adacd3aacf9a0a',1,'print_date(current_date *dt):&#160;rtc.c']]],
-  ['print_5ftime_445',['print_time',['../rtc_8c.html#abe2c923ffb69f289d545ad6cc067f925',1,'print_time(current_date *date):&#160;rtc.c'],['../rtc_8h.html#a2fc2815b95771bb08344fdb9757687b3',1,'print_time(current_date *dt):&#160;rtc.c']]],
-  ['promote_5fpawn_5fto_5fqueen_446',['promote_pawn_to_queen',['../game_8c.html#a1ee684593d96bcf0e28b86235f212506',1,'promote_pawn_to_queen(struct Board *board, struct Piece *pawn):&#160;game.c'],['../game_8h.html#a1ee684593d96bcf0e28b86235f212506',1,'promote_pawn_to_queen(struct Board *board, struct Piece *pawn):&#160;game.c']]]
+  ['main_658',['main',['../main_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.c']]],
+  ['mouse_5fih_659',['mouse_ih',['../mouse_8c.html#a210374b50462acdedab00df64d5cea3c',1,'mouse.c']]],
+  ['mouse_5fsubscribe_5fint_660',['mouse_subscribe_int',['../mouse_8c.html#a20285aed4b3ef45812cd967532dd09db',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;mouse.c'],['../mouse_8h.html#a20285aed4b3ef45812cd967532dd09db',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;mouse.c']]],
+  ['mouse_5funsubscribe_5fint_661',['mouse_unsubscribe_int',['../mouse_8c.html#a3ecf823d80520009ae5e0d76ae40a3c3',1,'mouse_unsubscribe_int():&#160;mouse.c'],['../mouse_8h.html#a3ecf823d80520009ae5e0d76ae40a3c3',1,'mouse_unsubscribe_int():&#160;mouse.c']]],
+  ['move_5fpiece_662',['move_piece',['../game_8c.html#a94a80510f34ef6a90c807b05256b26d5',1,'move_piece(struct Game *game, enum PieceType PieceType, struct Piece *piece, struct Position *init_pos, struct Position *final_pos):&#160;game.c'],['../game_8h.html#a94a80510f34ef6a90c807b05256b26d5',1,'move_piece(struct Game *game, enum PieceType PieceType, struct Piece *piece, struct Position *init_pos, struct Position *final_pos):&#160;game.c']]]
 ];

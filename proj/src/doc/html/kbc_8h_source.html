@@ -76,7 +76,7 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;minix/sysutil.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;lcom/lcf.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;i8042.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="i8042_8h.html">i8042.h</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;int(<a class="code" href="kbc_8h.html#a720fef46ec6987a346760be3a6ce4e8f">kbc_write_command_args</a>)(uint8_t *command_byte);</div>
@@ -93,6 +93,7 @@ $(function() {
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ai8042_8h_html"><div class="ttname"><a href="i8042_8h.html">i8042.h</a></div></div>
 <div class="ttc" id="akbc_8h_html_a6ac0bdf5df1c2fd3b92a16034e743ffd"><div class="ttname"><a href="kbc_8h.html#a6ac0bdf5df1c2fd3b92a16034e743ffd">kbc_enable_interrupts</a></div><div class="ttdeci">int() kbc_enable_interrupts()</div><div class="ttdoc">enables the KBC interrupts</div><div class="ttdef"><b>Definition:</b> keyboard.c:211</div></div>
 <div class="ttc" id="akbc_8h_html_a6f3460dc0973086f6bd0a5047e3c3981"><div class="ttname"><a href="kbc_8h.html#a6f3460dc0973086f6bd0a5047e3c3981">send_commands_kbc</a></div><div class="ttdeci">int() send_commands_kbc(uint8_t command, int port)</div><div class="ttdoc">sends commands to the KBC</div><div class="ttdef"><b>Definition:</b> kbc.c:60</div></div>
 <div class="ttc" id="akbc_8h_html_a720fef46ec6987a346760be3a6ce4e8f"><div class="ttname"><a href="kbc_8h.html#a720fef46ec6987a346760be3a6ce4e8f">kbc_write_command_args</a></div><div class="ttdeci">int() kbc_write_command_args(uint8_t *command_byte)</div><div class="ttdoc">writes a command arguments to the KBC</div><div class="ttdef"><b>Definition:</b> kbc.c:89</div></div>

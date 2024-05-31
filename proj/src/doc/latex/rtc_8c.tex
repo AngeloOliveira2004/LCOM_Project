@@ -6,8 +6,7 @@ File containing the implementation of the functions to interact with the RTC.
 
 
 {\ttfamily \#include \char`\"{}rtc.\+h\char`\"{}}\newline
-Include dependency graph for rtc.\+c\+:
-\nopagebreak
+Include dependency graph for rtc.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -40,8 +39,7 @@ void() \mbox{\hyperlink{rtc_8c_abe2c923ffb69f289d545ad6cc067f925}{print\+\_\+tim
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{rtc_8c_a6023ec3c67518e3b7785d5f75bbbc8dc}\label{rtc_8c_a6023ec3c67518e3b7785d5f75bbbc8dc}} 
-int {\bfseries \+\_\+\+\_\+hook\+\_\+id\+\_\+rtc} = 8
+int \mbox{\hyperlink{rtc_8c_a6023ec3c67518e3b7785d5f75bbbc8dc}{\+\_\+\+\_\+hook\+\_\+id\+\_\+rtc}} = 8
 \end{DoxyCompactItemize}
 
 
@@ -70,6 +68,21 @@ This function adjusts the values of a date.
 {\em date} & Address of memory to be initialized with the adjusted date \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_aeddfb25263642f0b777eff500cf78256_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_aeddfb25263642f0b777eff500cf78256_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8c_af7c9a4150429a1fa7a71d5dac8fbc849}\label{rtc_8c_af7c9a4150429a1fa7a71d5dac8fbc849}} 
 \index{rtc.c@{rtc.c}!convert\_bcd\_to\_decimal@{convert\_bcd\_to\_decimal}}
 \index{convert\_bcd\_to\_decimal@{convert\_bcd\_to\_decimal}!rtc.c@{rtc.c}}
@@ -87,6 +100,14 @@ This function converts a BCD value to decimal.
 {\em value} & Address of memory to be initialized with the decimal value \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_af7c9a4150429a1fa7a71d5dac8fbc849_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8c_a3a5893e77a58e9e6bd63fbf68c737975}\label{rtc_8c_a3a5893e77a58e9e6bd63fbf68c737975}} 
 \index{rtc.c@{rtc.c}!convert\_decimal\_to\_bcd@{convert\_decimal\_to\_bcd}}
 \index{convert\_decimal\_to\_bcd@{convert\_decimal\_to\_bcd}!rtc.c@{rtc.c}}
@@ -138,6 +159,14 @@ This function prints the time.
 {\em date} & Address of memory with the time to be printed \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_abe2c923ffb69f289d545ad6cc067f925_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8c_a67b735a7406ec94e19258b318f939b2f}\label{rtc_8c_a67b735a7406ec94e19258b318f939b2f}} 
 \index{rtc.c@{rtc.c}!read\_register@{read\_register}}
 \index{read\_register@{read\_register}!rtc.c@{rtc.c}}
@@ -160,6 +189,22 @@ This function reads a register from the RTC.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, -\/1 otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{rtc_8c_a67b735a7406ec94e19258b318f939b2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a67b735a7406ec94e19258b318f939b2f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8c_ae25620ae8cbe29e1f673cf5cfa545ecf}\label{rtc_8c_ae25620ae8cbe29e1f673cf5cfa545ecf}} 
 \index{rtc.c@{rtc.c}!rtc\_get\_current\_date@{rtc\_get\_current\_date}}
 \index{rtc\_get\_current\_date@{rtc\_get\_current\_date}!rtc.c@{rtc.c}}
@@ -182,6 +227,22 @@ This function gets the current date.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, -\/1 otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_ae25620ae8cbe29e1f673cf5cfa545ecf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_ae25620ae8cbe29e1f673cf5cfa545ecf_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8c_a6bbe679f115cec90d36d50eb2aac1b89}\label{rtc_8c_a6bbe679f115cec90d36d50eb2aac1b89}} 
 \index{rtc.c@{rtc.c}!rtc\_subscribe\_int@{rtc\_subscribe\_int}}
 \index{rtc\_subscribe\_int@{rtc\_subscribe\_int}!rtc.c@{rtc.c}}
@@ -204,6 +265,14 @@ This function subscribes and enables interrupts from the RTC.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, -\/1 otherwise 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{rtc_8c_a6bbe679f115cec90d36d50eb2aac1b89_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8c_a9d4850bb2a488644672d43287f160622}\label{rtc_8c_a9d4850bb2a488644672d43287f160622}} 
 \index{rtc.c@{rtc.c}!rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}}
 \index{rtc\_unsubscribe\_int@{rtc\_unsubscribe\_int}!rtc.c@{rtc.c}}
@@ -219,6 +288,14 @@ This function unsubscribes RTC interrupts.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, -\/1 otherwise 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_a9d4850bb2a488644672d43287f160622_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8c_aa4afce5d408aa1d0f995d3897d8e5b89}\label{rtc_8c_aa4afce5d408aa1d0f995d3897d8e5b89}} 
 \index{rtc.c@{rtc.c}!update\_in\_progress@{update\_in\_progress}}
 \index{update\_in\_progress@{update\_in\_progress}!rtc.c@{rtc.c}}
@@ -234,3 +311,28 @@ This function checks if an update is in progress.
 \begin{DoxyReturn}{Returns}
 1 if an update is in progress, 0 otherwise, -\/1 upon failure 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_aa4afce5d408aa1d0f995d3897d8e5b89_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8c_aa4afce5d408aa1d0f995d3897d8e5b89_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{rtc_8c_a6023ec3c67518e3b7785d5f75bbbc8dc}\label{rtc_8c_a6023ec3c67518e3b7785d5f75bbbc8dc}} 
+\index{rtc.c@{rtc.c}!\_\_hook\_id\_rtc@{\_\_hook\_id\_rtc}}
+\index{\_\_hook\_id\_rtc@{\_\_hook\_id\_rtc}!rtc.c@{rtc.c}}
+\doxysubsubsection{\texorpdfstring{\_\_hook\_id\_rtc}{\_\_hook\_id\_rtc}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+hook\+\_\+id\+\_\+rtc = 8}
+

@@ -40,7 +40,7 @@ int \mbox{\hyperlink{keyboard_8h_ac4d625586bbed9a409aca94111f27305}{read\+\_\+st
 \begin{DoxyCompactList}\small\item\em Reads a register from the keyboard. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{keyboard_8h_ab9cc7424b64d31a408f6c1317f35babf}{read\+\_\+out\+\_\+buffer}} (uint8\+\_\+t $\ast$out)
 \begin{DoxyCompactList}\small\item\em Reads the output buffer. \end{DoxyCompactList}\item 
-bool() \mbox{\hyperlink{keyboard_8h_aafd4a17c8dbc26ddeb0f405c9d993d92}{receive\+\_\+keyboard\+\_\+scan}} (struct \mbox{\hyperlink{structscancode__info}{scancode\+\_\+info}} $\ast$scan\+\_\+info, uint8\+\_\+t $\ast$scancode)
+bool() \mbox{\hyperlink{keyboard_8h_aafd4a17c8dbc26ddeb0f405c9d993d92}{receive\+\_\+keyboard\+\_\+scan}} (struct \mbox{\hyperlink{structscancode__info}{scancode\+\_\+info}} $\ast$\mbox{\hyperlink{keyboard_8c_a9c41448501b37ddc79dbc1f0e5a37636}{scan\+\_\+info}}, uint8\+\_\+t $\ast$\mbox{\hyperlink{keyboard_8c_aa1de7a5557e9d96b83cf03f73c92163f}{scancode}})
 \begin{DoxyCompactList}\small\item\em Receives the scancode from the keyboard. \end{DoxyCompactList}\item 
 void() \mbox{\hyperlink{keyboard_8h_a36aef6e0db295f00cbc0db17796a3b5a}{clean\+\_\+scan\+\_\+info}} (struct \mbox{\hyperlink{structscancode__info}{scancode\+\_\+info}} $\ast$scan)
 \begin{DoxyCompactList}\small\item\em Cleans the scancode information. \end{DoxyCompactList}\item 
@@ -82,6 +82,14 @@ This function breaks from the cycles.
 \begin{DoxyReturn}{Returns}
 0 upon success, 1 otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a23cd4ccfc95bca48e72307ca8b416f18_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{keyboard_8h_a95f165b5a576577a6c2fff2013f71d5b}\label{keyboard_8h_a95f165b5a576577a6c2fff2013f71d5b}} 
 \index{keyboard.h@{keyboard.h}!check\_ESC@{check\_ESC}}
 \index{check\_ESC@{check\_ESC}!keyboard.h@{keyboard.h}}
@@ -102,6 +110,14 @@ This function checks if the ESC key was pressed.
 \begin{DoxyReturn}{Returns}
 1 if the ESC key was pressed, 0 otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a95f165b5a576577a6c2fff2013f71d5b_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{keyboard_8h_a36aef6e0db295f00cbc0db17796a3b5a}\label{keyboard_8h_a36aef6e0db295f00cbc0db17796a3b5a}} 
 \index{keyboard.h@{keyboard.h}!clean\_scan\_info@{clean\_scan\_info}}
 \index{clean\_scan\_info@{clean\_scan\_info}!keyboard.h@{keyboard.h}}
@@ -126,6 +142,14 @@ This function cleans the scan info.
 {\em scan} & scan info to be cleaned \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a36aef6e0db295f00cbc0db17796a3b5a_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{keyboard_8h_a6ac0bdf5df1c2fd3b92a16034e743ffd}\label{keyboard_8h_a6ac0bdf5df1c2fd3b92a16034e743ffd}} 
 \index{keyboard.h@{keyboard.h}!kbc\_enable\_interrupts@{kbc\_enable\_interrupts}}
 \index{kbc\_enable\_interrupts@{kbc\_enable\_interrupts}!keyboard.h@{keyboard.h}}
@@ -178,6 +202,14 @@ This function subscribes interrupts of the keyboard.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, 1 otherwise 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a8eee4d0a15beada731a514481b5ad4bf_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{keyboard_8h_ac95aea27a5e91b363b876fed881f368f}\label{keyboard_8h_ac95aea27a5e91b363b876fed881f368f}} 
 \index{keyboard.h@{keyboard.h}!keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}}
 \index{keyboard\_unsubscribe\_int@{keyboard\_unsubscribe\_int}!keyboard.h@{keyboard.h}}
@@ -196,6 +228,14 @@ This function unsubscribes keyboard interrupts.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, 1 otherwise 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_ac95aea27a5e91b363b876fed881f368f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{keyboard_8h_ab9cc7424b64d31a408f6c1317f35babf}\label{keyboard_8h_ab9cc7424b64d31a408f6c1317f35babf}} 
 \index{keyboard.h@{keyboard.h}!read\_out\_buffer@{read\_out\_buffer}}
 \index{read\_out\_buffer@{read\_out\_buffer}!keyboard.h@{keyboard.h}}
@@ -228,6 +268,22 @@ This function reads a register from the keyboard.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, 1 otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{keyboard_8h_ab9cc7424b64d31a408f6c1317f35babf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_ab9cc7424b64d31a408f6c1317f35babf_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{keyboard_8h_ac4d625586bbed9a409aca94111f27305}\label{keyboard_8h_ac4d625586bbed9a409aca94111f27305}} 
 \index{keyboard.h@{keyboard.h}!read\_status\_register@{read\_status\_register}}
 \index{read\_status\_register@{read\_status\_register}!keyboard.h@{keyboard.h}}
@@ -294,6 +350,22 @@ This function receives the keyboard scan.
 \begin{DoxyReturn}{Returns}
 true if the scan is valid, false otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{keyboard_8h_aafd4a17c8dbc26ddeb0f405c9d993d92_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_aafd4a17c8dbc26ddeb0f405c9d993d92_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{keyboard_8h_a9d5130e52e1ba8088eb5c9563feb17db}\label{keyboard_8h_a9d5130e52e1ba8088eb5c9563feb17db}} 
 \index{keyboard.h@{keyboard.h}!test\_status\_polling@{test\_status\_polling}}
 \index{test\_status\_polling@{test\_status\_polling}!keyboard.h@{keyboard.h}}
@@ -348,3 +420,19 @@ This function tries to read the out buffer.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, 1 otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a7c5f611b9e6ee9f0f11a224c8a196b23_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{keyboard_8h_a7c5f611b9e6ee9f0f11a224c8a196b23_icgraph}
+\end{center}
+\end{figure}

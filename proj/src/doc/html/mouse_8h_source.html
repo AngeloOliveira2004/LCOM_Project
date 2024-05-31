@@ -72,7 +72,7 @@ $(function() {
 <div class="contents">
 <a href="mouse_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _MOUSE_H_</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _LCOM_I8254_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="mouse_8h.html#aea79813c3b702146f5d6a54f8b248bca">    6</a></span>&#160;<span class="preprocessor">#define _LCOM_I8254_H_</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
@@ -91,16 +91,16 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;int (<a class="code" href="mouse_8h.html#ab72fb7a6e78f00cc63adbfbc3276d1eb">read_status_register</a>)(uint8_t *st);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;int(<a class="code" href="mouse_8h.html#a1d0d211f4db5439b6cc36482e4529e67">reset_mouse_struct</a>)(<span class="keyword">struct </span>packet *mouse);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;int(<a class="code" href="mouse_8h.html#a1d0d211f4db5439b6cc36482e4529e67">reset_mouse_struct</a>)(<span class="keyword">struct </span>packet *<a class="code" href="mouse_8c.html#af00020a78ba3e30cf695a339bff66a51">mouse</a>);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;int(<a class="code" href="mouse_8h.html#a7c35b8ea4b294430bfbb2d6c0dd98354">parse_values</a>)(uint8_t data,<span class="keywordtype">int</span> *cnt,<span class="keyword">struct </span>packet *pp);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;int(<a class="code" href="mouse_8h.html#a7c35b8ea4b294430bfbb2d6c0dd98354">parse_values</a>)(uint8_t data,<span class="keywordtype">int</span> *<a class="code" href="utils_8c.html#a884497f3269a8ae82bcd0a4814997702">cnt</a>,<span class="keyword">struct </span>packet *pp);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;int(<a class="code" href="mouse_8h.html#a18f94800c87c2b1f3c1dbaedf861347b">disable_mouse_report</a>)();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;int(<a class="code" href="mouse_8h.html#a96f453d50b145b9a6de548552a8c5a2e">enable_mouse_report</a>)();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mouse_8h.html#aa47896867b3c275546bf08dde63449b1">clean_packet</a>(<span class="keyword">struct</span> packet *mouse);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">void</span> <a class="code" href="mouse_8h.html#aa47896867b3c275546bf08dde63449b1">clean_packet</a>(<span class="keyword">struct</span> packet *<a class="code" href="mouse_8c.html#af00020a78ba3e30cf695a339bff66a51">mouse</a>);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;int (<a class="code" href="mouse_8h.html#a6fa632a85f47c9d846c55b975d118df9">in_game_mouse_movement</a>)();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
@@ -108,17 +108,18 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="mouse_8h.html#a8301a430841cc07d03e165218263666d">   98</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="mouse_8h.html#a8301a430841cc07d03e165218263666d">InGameStates</a>{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  INITIAL,</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  PIECE_SELECTED,</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  PIECE_CLICKED,</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  PIECE_DRAGGED,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  COMPLETE,</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="mouse_8h.html#a8301a430841cc07d03e165218263666da7116db6906963fd0720c4a85be250cf4">   99</a></span>&#160;  <a class="code" href="mouse_8h.html#a8301a430841cc07d03e165218263666da7116db6906963fd0720c4a85be250cf4">INITIAL</a>,</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="mouse_8h.html#a8301a430841cc07d03e165218263666daa9411464c5039e41160e69f5d4ade79e">  100</a></span>&#160;  <a class="code" href="mouse_8h.html#a8301a430841cc07d03e165218263666daa9411464c5039e41160e69f5d4ade79e">PIECE_SELECTED</a>,</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="mouse_8h.html#a8301a430841cc07d03e165218263666da7fa008b99ce7c38666868d23ea595145">  101</a></span>&#160;  <a class="code" href="mouse_8h.html#a8301a430841cc07d03e165218263666da7fa008b99ce7c38666868d23ea595145">PIECE_CLICKED</a>,</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="mouse_8h.html#a8301a430841cc07d03e165218263666da38dd8d8576d49da3036d6cd03389602c">  102</a></span>&#160;  <a class="code" href="mouse_8h.html#a8301a430841cc07d03e165218263666da38dd8d8576d49da3036d6cd03389602c">PIECE_DRAGGED</a>,</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="mouse_8h.html#a8301a430841cc07d03e165218263666da00a900c9df90c74f75004b3dc04f173d">  103</a></span>&#160;  <a class="code" href="mouse_8h.html#a8301a430841cc07d03e165218263666da00a900c9df90c74f75004b3dc04f173d">COMPLETE</a>,</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="ttc" id="amouse_8c_html_af00020a78ba3e30cf695a339bff66a51"><div class="ttname"><a href="mouse_8c.html#af00020a78ba3e30cf695a339bff66a51">mouse</a></div><div class="ttdeci">struct packet mouse</div><div class="ttdef"><b>Definition:</b> mouse.c:17</div></div>
 <div class="ttc" id="amouse_8h_html_a18f94800c87c2b1f3c1dbaedf861347b"><div class="ttname"><a href="mouse_8h.html#a18f94800c87c2b1f3c1dbaedf861347b">disable_mouse_report</a></div><div class="ttdeci">int() disable_mouse_report()</div><div class="ttdoc">this function disables the mouse report</div><div class="ttdef"><b>Definition:</b> mouse.c:232</div></div>
 <div class="ttc" id="amouse_8h_html_a1d0d211f4db5439b6cc36482e4529e67"><div class="ttname"><a href="mouse_8h.html#a1d0d211f4db5439b6cc36482e4529e67">reset_mouse_struct</a></div><div class="ttdeci">int() reset_mouse_struct(struct packet *mouse)</div><div class="ttdoc">this function resets the mouse struct</div><div class="ttdef"><b>Definition:</b> mouse.c:94</div></div>
 <div class="ttc" id="amouse_8h_html_a20285aed4b3ef45812cd967532dd09db"><div class="ttname"><a href="mouse_8h.html#a20285aed4b3ef45812cd967532dd09db">mouse_subscribe_int</a></div><div class="ttdeci">int() mouse_subscribe_int(uint8_t *bit_no)</div><div class="ttdoc">this function subscribes mouse interrupts</div><div class="ttdef"><b>Definition:</b> mouse.c:63</div></div>
@@ -126,10 +127,16 @@ $(function() {
 <div class="ttc" id="amouse_8h_html_a6fa632a85f47c9d846c55b975d118df9"><div class="ttname"><a href="mouse_8h.html#a6fa632a85f47c9d846c55b975d118df9">in_game_mouse_movement</a></div><div class="ttdeci">int() in_game_mouse_movement()</div><div class="ttdoc">this function handles mouse movement during the game.</div><div class="ttdef"><b>Definition:</b> mouse.c:315</div></div>
 <div class="ttc" id="amouse_8h_html_a7c35b8ea4b294430bfbb2d6c0dd98354"><div class="ttname"><a href="mouse_8h.html#a7c35b8ea4b294430bfbb2d6c0dd98354">parse_values</a></div><div class="ttdeci">int() parse_values(uint8_t data, int *cnt, struct packet *pp)</div><div class="ttdoc">parses the values of the mouse</div><div class="ttdef"><b>Definition:</b> mouse.c:127</div></div>
 <div class="ttc" id="amouse_8h_html_a8301a430841cc07d03e165218263666d"><div class="ttname"><a href="mouse_8h.html#a8301a430841cc07d03e165218263666d">InGameStates</a></div><div class="ttdeci">InGameStates</div><div class="ttdoc">enum to represent the different states of the game</div><div class="ttdef"><b>Definition:</b> mouse.h:98</div></div>
+<div class="ttc" id="amouse_8h_html_a8301a430841cc07d03e165218263666da00a900c9df90c74f75004b3dc04f173d"><div class="ttname"><a href="mouse_8h.html#a8301a430841cc07d03e165218263666da00a900c9df90c74f75004b3dc04f173d">COMPLETE</a></div><div class="ttdeci">@ COMPLETE</div><div class="ttdef"><b>Definition:</b> mouse.h:103</div></div>
+<div class="ttc" id="amouse_8h_html_a8301a430841cc07d03e165218263666da38dd8d8576d49da3036d6cd03389602c"><div class="ttname"><a href="mouse_8h.html#a8301a430841cc07d03e165218263666da38dd8d8576d49da3036d6cd03389602c">PIECE_DRAGGED</a></div><div class="ttdeci">@ PIECE_DRAGGED</div><div class="ttdef"><b>Definition:</b> mouse.h:102</div></div>
+<div class="ttc" id="amouse_8h_html_a8301a430841cc07d03e165218263666da7116db6906963fd0720c4a85be250cf4"><div class="ttname"><a href="mouse_8h.html#a8301a430841cc07d03e165218263666da7116db6906963fd0720c4a85be250cf4">INITIAL</a></div><div class="ttdeci">@ INITIAL</div><div class="ttdef"><b>Definition:</b> mouse.h:99</div></div>
+<div class="ttc" id="amouse_8h_html_a8301a430841cc07d03e165218263666da7fa008b99ce7c38666868d23ea595145"><div class="ttname"><a href="mouse_8h.html#a8301a430841cc07d03e165218263666da7fa008b99ce7c38666868d23ea595145">PIECE_CLICKED</a></div><div class="ttdeci">@ PIECE_CLICKED</div><div class="ttdef"><b>Definition:</b> mouse.h:101</div></div>
+<div class="ttc" id="amouse_8h_html_a8301a430841cc07d03e165218263666daa9411464c5039e41160e69f5d4ade79e"><div class="ttname"><a href="mouse_8h.html#a8301a430841cc07d03e165218263666daa9411464c5039e41160e69f5d4ade79e">PIECE_SELECTED</a></div><div class="ttdeci">@ PIECE_SELECTED</div><div class="ttdef"><b>Definition:</b> mouse.h:100</div></div>
 <div class="ttc" id="amouse_8h_html_a96f453d50b145b9a6de548552a8c5a2e"><div class="ttname"><a href="mouse_8h.html#a96f453d50b145b9a6de548552a8c5a2e">enable_mouse_report</a></div><div class="ttdeci">int() enable_mouse_report()</div><div class="ttdoc">this function enables the mouse report</div><div class="ttdef"><b>Definition:</b> mouse.c:267</div></div>
 <div class="ttc" id="amouse_8h_html_aa47896867b3c275546bf08dde63449b1"><div class="ttname"><a href="mouse_8h.html#aa47896867b3c275546bf08dde63449b1">clean_packet</a></div><div class="ttdeci">void clean_packet(struct packet *mouse)</div><div class="ttdoc">this cleans the packet</div><div class="ttdef"><b>Definition:</b> mouse.c:214</div></div>
 <div class="ttc" id="amouse_8h_html_ab72fb7a6e78f00cc63adbfbc3276d1eb"><div class="ttname"><a href="mouse_8h.html#ab72fb7a6e78f00cc63adbfbc3276d1eb">read_status_register</a></div><div class="ttdeci">int() read_status_register(uint8_t *st)</div><div class="ttdoc">this function reads the status register</div><div class="ttdef"><b>Definition:</b> keyboard.c:63</div></div>
 <div class="ttc" id="amouse_8h_html_af77e8e5565a99914b46599038682f453"><div class="ttname"><a href="mouse_8h.html#af77e8e5565a99914b46599038682f453">cursor_draw_start</a></div><div class="ttdeci">int() cursor_draw_start()</div><div class="ttdoc">this function draws the cursor at the start of the game</div><div class="ttdef"><b>Definition:</b> mouse.c:106</div></div>
+<div class="ttc" id="autils_8c_html_a884497f3269a8ae82bcd0a4814997702"><div class="ttname"><a href="utils_8c.html#a884497f3269a8ae82bcd0a4814997702">cnt</a></div><div class="ttdeci">uint32_t cnt</div><div class="ttdef"><b>Definition:</b> utils.c:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

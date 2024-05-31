@@ -79,29 +79,29 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define INP_REG 0x70</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define OUT_REG 0x71 </span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define UPDATE_REG 0x0A</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a340bf4caee6c5c3b9fd29ea2efd02f1a">   14</a></span>&#160;<span class="preprocessor">#define INP_REG 0x70</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#ad26b371026f8a5e0073cca0123a0991f">   15</a></span>&#160;<span class="preprocessor">#define OUT_REG 0x71 </span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a86af996124075502edaa4c8cf60f5d61">   16</a></span>&#160;<span class="preprocessor">#define UPDATE_REG 0x0A</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define UPDATE_IN_PROGRESS BIT(7)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#ae26aecb4307bcf6576d8533f1df0423d">   18</a></span>&#160;<span class="preprocessor">#define UPDATE_IN_PROGRESS BIT(7)</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define RTC_IRQ 8</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a4e22feb6ffbc1cda32fadff5c740dc51">   20</a></span>&#160;<span class="preprocessor">#define RTC_IRQ 8</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define SEC                    0x00</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define SECONDS_ALARM          0x01</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define MINUTES                0x02</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define RTC_MINUTES_ALARM      0x03</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define HOURS                  0x04</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define RTC_HOURS_ALARM        0x05</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define DAY_OF_WEEK            0x06</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define DAY_OF_MONTH           0x07</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define MONTH                  0x08</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define YEAR                   0x09</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a8bc5e463885769f21393880576c25f6b">   22</a></span>&#160;<span class="preprocessor">#define SEC                    0x00</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a59d336dbc295731898ece988d0ebbb8e">   23</a></span>&#160;<span class="preprocessor">#define SECONDS_ALARM          0x01</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a84be9dcfa5a172ee83121620d15c8e29">   24</a></span>&#160;<span class="preprocessor">#define MINUTES                0x02</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a3354ceb0b3dc74b2ff1123ecd0b7c043">   25</a></span>&#160;<span class="preprocessor">#define RTC_MINUTES_ALARM      0x03</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a212d0f839f6f7ca43ccde311f93d5892">   26</a></span>&#160;<span class="preprocessor">#define HOURS                  0x04</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a736eabe8fe923b38d85437697f37ba35">   27</a></span>&#160;<span class="preprocessor">#define RTC_HOURS_ALARM        0x05</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#adc9f6e77f710440b588e7cc49d0ddf48">   28</a></span>&#160;<span class="preprocessor">#define DAY_OF_WEEK            0x06</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#ad13d305475e1f0163d4f86bfc80cbd85">   29</a></span>&#160;<span class="preprocessor">#define DAY_OF_MONTH           0x07</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a3729d06495d9713592f79f3122c9e677">   30</a></span>&#160;<span class="preprocessor">#define MONTH                  0x08</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a5871356500f559add06ea81d60331b1b">   31</a></span>&#160;<span class="preprocessor">#define YEAR                   0x09</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;              </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define REG_A                  0x0A</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define REG_B                  0x0B</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define REG_C                  0x0C</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define REG_D                  0x0D</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#aa0e40d1cb9fea79e800aa79b8ca291f7">   33</a></span>&#160;<span class="preprocessor">#define REG_A                  0x0A</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a28ed75c6727784e56c2bb8d828c876c9">   34</a></span>&#160;<span class="preprocessor">#define REG_B                  0x0B</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a088e580de0961d5f30eb3366f97b324c">   35</a></span>&#160;<span class="preprocessor">#define REG_C                  0x0C</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="I__RTC_8h.html#a8f2a2da8b96e20112d3f225636392424">   36</a></span>&#160;<span class="preprocessor">#define REG_D                  0x0D</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->

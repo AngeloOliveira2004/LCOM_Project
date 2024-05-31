@@ -79,9 +79,9 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../kbc/i8042.h&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structscancode__info.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structscancode__info.html">scancode_info</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  uint8_t size_counter;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">bool</span> make_code;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  uint8_t bytes[2];</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structscancode__info.html#a1c41605707eb1e9cee8ff15e2b2b10d5">   17</a></span>&#160;  uint8_t <a class="code" href="structscancode__info.html#a1c41605707eb1e9cee8ff15e2b2b10d5">size_counter</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structscancode__info.html#adb322ea3a36d66a131588a0a4b89df7e">   18</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="structscancode__info.html#adb322ea3a36d66a131588a0a4b89df7e">make_code</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structscancode__info.html#af02bf094802c5a97e41911b4154b98a2">   19</a></span>&#160;  uint8_t <a class="code" href="structscancode__info.html#af02bf094802c5a97e41911b4154b98a2">bytes</a>[2];</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">int</span> <a class="code" href="keyboard_8h.html#ab9cc7424b64d31a408f6c1317f35babf">read_out_buffer</a>(uint8_t *out);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;bool(<a class="code" href="keyboard_8h.html#aafd4a17c8dbc26ddeb0f405c9d993d92">receive_keyboard_scan</a>)(<span class="keyword">struct </span><a class="code" href="structscancode__info.html">scancode_info</a> *scan_info, uint8_t *scancode);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;bool(<a class="code" href="keyboard_8h.html#aafd4a17c8dbc26ddeb0f405c9d993d92">receive_keyboard_scan</a>)(<span class="keyword">struct </span><a class="code" href="structscancode__info.html">scancode_info</a> *<a class="code" href="controller_8c.html#a9c41448501b37ddc79dbc1f0e5a37636">scan_info</a>, uint8_t *<a class="code" href="controller_8c.html#aa1de7a5557e9d96b83cf03f73c92163f">scancode</a>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;void(<a class="code" href="keyboard_8h.html#a36aef6e0db295f00cbc0db17796a3b5a">clean_scan_info</a>)(<span class="keyword">struct </span><a class="code" href="structscancode__info.html">scancode_info</a> *scan);</div>
@@ -117,6 +117,8 @@ $(function() {
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;int (<a class="code" href="keyboard_8h.html#a23cd4ccfc95bca48e72307ca8b416f18">break_from_cycles</a>)();</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* KEYBOARD_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="acontroller_8c_html_a9c41448501b37ddc79dbc1f0e5a37636"><div class="ttname"><a href="controller_8c.html#a9c41448501b37ddc79dbc1f0e5a37636">scan_info</a></div><div class="ttdeci">struct scancode_info scan_info</div><div class="ttdef"><b>Definition:</b> keyboard.c:16</div></div>
+<div class="ttc" id="acontroller_8c_html_aa1de7a5557e9d96b83cf03f73c92163f"><div class="ttname"><a href="controller_8c.html#aa1de7a5557e9d96b83cf03f73c92163f">scancode</a></div><div class="ttdeci">uint8_t scancode</div><div class="ttdef"><b>Definition:</b> keyboard.c:15</div></div>
 <div class="ttc" id="akeyboard_8h_html_a23cd4ccfc95bca48e72307ca8b416f18"><div class="ttname"><a href="keyboard_8h.html#a23cd4ccfc95bca48e72307ca8b416f18">break_from_cycles</a></div><div class="ttdeci">int() break_from_cycles()</div><div class="ttdoc">Breaks from the cycles.</div><div class="ttdef"><b>Definition:</b> keyboard.c:297</div></div>
 <div class="ttc" id="akeyboard_8h_html_a36aef6e0db295f00cbc0db17796a3b5a"><div class="ttname"><a href="keyboard_8h.html#a36aef6e0db295f00cbc0db17796a3b5a">clean_scan_info</a></div><div class="ttdeci">void() clean_scan_info(struct scancode_info *scan)</div><div class="ttdoc">Cleans the scancode information.</div><div class="ttdef"><b>Definition:</b> keyboard.c:141</div></div>
 <div class="ttc" id="akeyboard_8h_html_a6ac0bdf5df1c2fd3b92a16034e743ffd"><div class="ttname"><a href="keyboard_8h.html#a6ac0bdf5df1c2fd3b92a16034e743ffd">kbc_enable_interrupts</a></div><div class="ttdeci">int() kbc_enable_interrupts()</div><div class="ttdoc">Enables the keyboard interrupts.</div><div class="ttdef"><b>Definition:</b> keyboard.c:211</div></div>
@@ -129,6 +131,9 @@ $(function() {
 <div class="ttc" id="akeyboard_8h_html_ac4d625586bbed9a409aca94111f27305"><div class="ttname"><a href="keyboard_8h.html#ac4d625586bbed9a409aca94111f27305">read_status_register</a></div><div class="ttdeci">int read_status_register(uint8_t *st)</div><div class="ttdoc">Reads a register from the keyboard.</div><div class="ttdef"><b>Definition:</b> keyboard.c:63</div></div>
 <div class="ttc" id="akeyboard_8h_html_ac95aea27a5e91b363b876fed881f368f"><div class="ttname"><a href="keyboard_8h.html#ac95aea27a5e91b363b876fed881f368f">keyboard_unsubscribe_int</a></div><div class="ttdeci">int keyboard_unsubscribe_int()</div><div class="ttdoc">Unsubscribes keyboard interrupts.</div><div class="ttdef"><b>Definition:</b> keyboard.c:45</div></div>
 <div class="ttc" id="astructscancode__info_html"><div class="ttname"><a href="structscancode__info.html">scancode_info</a></div><div class="ttdoc">Struct to represent the scancode information.</div><div class="ttdef"><b>Definition:</b> keyboard.h:16</div></div>
+<div class="ttc" id="astructscancode__info_html_a1c41605707eb1e9cee8ff15e2b2b10d5"><div class="ttname"><a href="structscancode__info.html#a1c41605707eb1e9cee8ff15e2b2b10d5">scancode_info::size_counter</a></div><div class="ttdeci">uint8_t size_counter</div><div class="ttdef"><b>Definition:</b> keyboard.h:17</div></div>
+<div class="ttc" id="astructscancode__info_html_adb322ea3a36d66a131588a0a4b89df7e"><div class="ttname"><a href="structscancode__info.html#adb322ea3a36d66a131588a0a4b89df7e">scancode_info::make_code</a></div><div class="ttdeci">bool make_code</div><div class="ttdef"><b>Definition:</b> keyboard.h:18</div></div>
+<div class="ttc" id="astructscancode__info_html_af02bf094802c5a97e41911b4154b98a2"><div class="ttname"><a href="structscancode__info.html#af02bf094802c5a97e41911b4154b98a2">scancode_info::bytes</a></div><div class="ttdeci">uint8_t bytes[2]</div><div class="ttdef"><b>Definition:</b> keyboard.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['mouse_5fih_437',['mouse_ih',['../mouse_8c.html#a210374b50462acdedab00df64d5cea3c',1,'mouse.c']]],
-  ['mouse_5fsubscribe_5fint_438',['mouse_subscribe_int',['../mouse_8c.html#a20285aed4b3ef45812cd967532dd09db',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;mouse.c'],['../mouse_8h.html#a20285aed4b3ef45812cd967532dd09db',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;mouse.c']]],
-  ['mouse_5funsubscribe_5fint_439',['mouse_unsubscribe_int',['../mouse_8c.html#a3ecf823d80520009ae5e0d76ae40a3c3',1,'mouse_unsubscribe_int():&#160;mouse.c'],['../mouse_8h.html#a3ecf823d80520009ae5e0d76ae40a3c3',1,'mouse_unsubscribe_int():&#160;mouse.c']]],
-  ['move_5fpiece_440',['move_piece',['../game_8c.html#a94a80510f34ef6a90c807b05256b26d5',1,'move_piece(struct Game *game, enum PieceType PieceType, struct Piece *piece, struct Position *init_pos, struct Position *final_pos):&#160;game.c'],['../game_8h.html#a94a80510f34ef6a90c807b05256b26d5',1,'move_piece(struct Game *game, enum PieceType PieceType, struct Piece *piece, struct Position *init_pos, struct Position *final_pos):&#160;game.c']]]
+  ['load_5fnumbers_652',['load_numbers',['../graphic_8c.html#a64c934962c9c5b0bddc517f9678ddfee',1,'load_numbers():&#160;graphic.c'],['../graphic_8h.html#ad8b6297b2011f89271f23879309fda93',1,'load_numbers():&#160;graphic.c']]],
+  ['load_5fxpm_653',['load_xpm',['../graphic_8c.html#a67f86e0b7cb832cdc53f3d578b83afb7',1,'load_xpm(xpm_map_t img, enum PieceType pieceType, bool isWhite):&#160;graphic.c'],['../graphic_8h.html#a67f86e0b7cb832cdc53f3d578b83afb7',1,'load_xpm(xpm_map_t img, enum PieceType pieceType, bool isWhite):&#160;graphic.c']]],
+  ['load_5fxpm_5fclocks_5fboard_654',['load_xpm_clocks_board',['../graphic_8c.html#a6399456ceeeb8df04f6ea6c55fee505c',1,'load_xpm_clocks_board():&#160;graphic.c'],['../graphic_8h.html#a6399456ceeeb8df04f6ea6c55fee505c',1,'load_xpm_clocks_board():&#160;graphic.c']]],
+  ['load_5fxpm_5fcursor_655',['load_xpm_cursor',['../graphic_8c.html#a96f078d5229cccb86c289af5e7310399',1,'load_xpm_cursor():&#160;graphic.c'],['../graphic_8h.html#a96f078d5229cccb86c289af5e7310399',1,'load_xpm_cursor():&#160;graphic.c']]],
+  ['load_5fxpm_5fgame_5fbackground_656',['load_xpm_game_background',['../graphic_8c.html#a6b2bbc22fb8d3bbd05195bbf6cdfe296',1,'load_xpm_game_background():&#160;graphic.c'],['../graphic_8h.html#a6b2bbc22fb8d3bbd05195bbf6cdfe296',1,'load_xpm_game_background():&#160;graphic.c']]],
+  ['load_5fxpm_5fmenu_657',['load_xpm_menu',['../graphic_8c.html#aba8fbf35f49c528a721402130a55a4fa',1,'load_xpm_menu():&#160;graphic.c'],['../graphic_8h.html#aba8fbf35f49c528a721402130a55a4fa',1,'load_xpm_menu():&#160;graphic.c']]]
 ];

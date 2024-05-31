@@ -45,9 +45,9 @@ int \mbox{\hyperlink{view_8h_a596a5c86bb771a1db7af41386c94eaad}{initialize\+\_\+
 \begin{DoxyCompactList}\small\item\em Initializes the graphics mode. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{view_8h_a033e2ab573217307392c7d22622597a5}{fill}} (int x, int y, int width, int height, uint32\+\_\+t color)
 \begin{DoxyCompactList}\small\item\em Fills a rectangular area with a specified color. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{view_8h_a09f1805ea169031bcafa2f3330384fef}{draw\+\_\+board}} (struct \mbox{\hyperlink{structBoard}{Board}} $\ast$board)
+int() \mbox{\hyperlink{view_8h_a09f1805ea169031bcafa2f3330384fef}{draw\+\_\+board}} (struct \mbox{\hyperlink{structBoard}{Board}} $\ast$\mbox{\hyperlink{linked__list_8h_a97fcb05889b8d9f05df35376e04a314f}{board}})
 \begin{DoxyCompactList}\small\item\em Draws the chess board. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{view_8h_a2e2fd33564e9da4e2d0bf84880e5f4d7}{draw\+\_\+board\+\_\+except\+\_\+one\+\_\+piece}} (int id, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$board)
+int \mbox{\hyperlink{view_8h_a2e2fd33564e9da4e2d0bf84880e5f4d7}{draw\+\_\+board\+\_\+except\+\_\+one\+\_\+piece}} (int id, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$\mbox{\hyperlink{linked__list_8h_a97fcb05889b8d9f05df35376e04a314f}{board}})
 \begin{DoxyCompactList}\small\item\em Draws the chess board except for one piece. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{view_8h_a23f011c6586ff8bfe952ac518d8d07d7}{draw\+\_\+back\+Back\+Ground}} ()
 \begin{DoxyCompactList}\small\item\em Draws Back\+Ground. \end{DoxyCompactList}\item 
@@ -59,13 +59,13 @@ int \mbox{\hyperlink{view_8h_a7a54f7eaf6397f7f428f5a50a10903e3}{draw\+\_\+piece}
 \begin{DoxyCompactList}\small\item\em Draws \mbox{\hyperlink{structPiece}{Piece}}. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{view_8h_acb41e8e231e830dca0d57ec4de8fe4b6}{draw\+\_\+initial\+\_\+pos}} ()
 \begin{DoxyCompactList}\small\item\em Draws Initial \mbox{\hyperlink{structPosition}{Position}}. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{view_8h_a0c697bef52486fe9045091ca868896ee}{draw\+\_\+cursor}} (struct \mbox{\hyperlink{structcursor}{cursor}} $\ast$\mbox{\hyperlink{structcursor}{cursor}}, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$board)
+int \mbox{\hyperlink{view_8h_a0c697bef52486fe9045091ca868896ee}{draw\+\_\+cursor}} (struct \mbox{\hyperlink{structcursor}{cursor}} $\ast$\mbox{\hyperlink{structcursor}{cursor}}, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$\mbox{\hyperlink{linked__list_8h_a97fcb05889b8d9f05df35376e04a314f}{board}})
 \begin{DoxyCompactList}\small\item\em Draws Cursor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{view_8h_ad522bff1c2913ef030078b2127a5cc52}{draw\+\_\+clock\+Value}} (struct \mbox{\hyperlink{structPlayer}{Player}} $\ast$player1, struct \mbox{\hyperlink{structPlayer}{Player}} $\ast$player2)
 \begin{DoxyCompactList}\small\item\em Draws the clock value. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{view_8h_acc07b9de3740549633bd0be0e9cd4713}{return\+\_\+to\+\_\+initial\+\_\+pos}} (struct \mbox{\hyperlink{structPiece}{Piece}} $\ast$piece, struct \mbox{\hyperlink{structPosition}{Position}} $\ast$initial\+Pos, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$board)
+int() \mbox{\hyperlink{view_8h_acc07b9de3740549633bd0be0e9cd4713}{return\+\_\+to\+\_\+initial\+\_\+pos}} (struct \mbox{\hyperlink{structPiece}{Piece}} $\ast$piece, struct \mbox{\hyperlink{structPosition}{Position}} $\ast$initial\+Pos, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$\mbox{\hyperlink{linked__list_8h_a97fcb05889b8d9f05df35376e04a314f}{board}})
 \begin{DoxyCompactList}\small\item\em Returns the piece to its initial position. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{view_8h_abda224a2136d1683aefd16a605263d33}{advance\+\_\+piece}} (struct \mbox{\hyperlink{structPiece}{Piece}} $\ast$piece, struct \mbox{\hyperlink{structPosition}{Position}} $\ast$initial\+Pos, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$board)
+int() \mbox{\hyperlink{view_8h_abda224a2136d1683aefd16a605263d33}{advance\+\_\+piece}} (struct \mbox{\hyperlink{structPiece}{Piece}} $\ast$piece, struct \mbox{\hyperlink{structPosition}{Position}} $\ast$initial\+Pos, struct \mbox{\hyperlink{structBoard}{Board}} $\ast$\mbox{\hyperlink{linked__list_8h_a97fcb05889b8d9f05df35376e04a314f}{board}})
 \begin{DoxyCompactList}\small\item\em Advances the piece to the next position. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{view_8h_ad7d6b1e676da779cfdce637886a566e9}{draw\+\_\+pawn}} (struct \mbox{\hyperlink{structPiece}{Piece}} $\ast$piece)
 \begin{DoxyCompactList}\small\item\em Draws Pawn. \end{DoxyCompactList}\item 
@@ -127,6 +127,22 @@ This function animates the movement of a piece to a new position on the game boa
 \begin{DoxyReturn}{Returns}
 0 upon success, 1 otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_abda224a2136d1683aefd16a605263d33_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_abda224a2136d1683aefd16a605263d33_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_a23f011c6586ff8bfe952ac518d8d07d7}\label{view_8h_a23f011c6586ff8bfe952ac518d8d07d7}} 
 \index{view.h@{view.h}!draw\_backBackGround@{draw\_backBackGround}}
 \index{draw\_backBackGround@{draw\_backBackGround}!view.h@{view.h}}
@@ -147,6 +163,22 @@ This function draws the background of the game, including the game background it
 \begin{DoxyReturn}{Returns}
 0 upon success, 1 otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a23f011c6586ff8bfe952ac518d8d07d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a23f011c6586ff8bfe952ac518d8d07d7_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_a629ac1df60646dd7cda462e23cfdb301}\label{view_8h_a629ac1df60646dd7cda462e23cfdb301}} 
 \index{view.h@{view.h}!draw\_BackGround\_Without\_Erase@{draw\_BackGround\_Without\_Erase}}
 \index{draw\_BackGround\_Without\_Erase@{draw\_BackGround\_Without\_Erase}!view.h@{view.h}}
@@ -167,6 +199,14 @@ This function draws the background of the game without erasing existing elements
 \begin{DoxyReturn}{Returns}
 0 upon success, 1 otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a629ac1df60646dd7cda462e23cfdb301_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_adcab50a67b3ce67a2f8fa401ec4f5e24}\label{view_8h_adcab50a67b3ce67a2f8fa401ec4f5e24}} 
 \index{view.h@{view.h}!draw\_bishop@{draw\_bishop}}
 \index{draw\_bishop@{draw\_bishop}!view.h@{view.h}}
@@ -208,6 +248,22 @@ This function draws the chess board on the screen.
 \begin{DoxyReturn}{Returns}
 Return 0 upon success, non-\/zero otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a09f1805ea169031bcafa2f3330384fef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a09f1805ea169031bcafa2f3330384fef_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_a2e2fd33564e9da4e2d0bf84880e5f4d7}\label{view_8h_a2e2fd33564e9da4e2d0bf84880e5f4d7}} 
 \index{view.h@{view.h}!draw\_board\_except\_one\_piece@{draw\_board\_except\_one\_piece}}
 \index{draw\_board\_except\_one\_piece@{draw\_board\_except\_one\_piece}!view.h@{view.h}}
@@ -240,6 +296,22 @@ This function draws the chess board on the screen except for the piece with the 
 \begin{DoxyReturn}{Returns}
 Return 0 upon success, non-\/zero otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a2e2fd33564e9da4e2d0bf84880e5f4d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a2e2fd33564e9da4e2d0bf84880e5f4d7_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_a03f3cffff76e087daa54b8faa0665a33}\label{view_8h_a03f3cffff76e087daa54b8faa0665a33}} 
 \index{view.h@{view.h}!draw\_Clocks@{draw\_Clocks}}
 \index{draw\_Clocks@{draw\_Clocks}!view.h@{view.h}}
@@ -258,6 +330,14 @@ This function draws the clocks on the screen.
 \begin{DoxyReturn}{Returns}
 Return 0 upon success, non-\/zero otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a03f3cffff76e087daa54b8faa0665a33_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_ad522bff1c2913ef030078b2127a5cc52}\label{view_8h_ad522bff1c2913ef030078b2127a5cc52}} 
 \index{view.h@{view.h}!draw\_clockValue@{draw\_clockValue}}
 \index{draw\_clockValue@{draw\_clockValue}!view.h@{view.h}}
@@ -292,6 +372,22 @@ This function draws the clocks values on the screen.
 \begin{DoxyReturn}{Returns}
 Return 0 upon success, 1 otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_ad522bff1c2913ef030078b2127a5cc52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_ad522bff1c2913ef030078b2127a5cc52_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_a0c697bef52486fe9045091ca868896ee}\label{view_8h_a0c697bef52486fe9045091ca868896ee}} 
 \index{view.h@{view.h}!draw\_cursor@{draw\_cursor}}
 \index{draw\_cursor@{draw\_cursor}!view.h@{view.h}}
@@ -319,6 +415,14 @@ This function draws the cursor (mouse pointer) on the game board at the specifie
 \begin{DoxyReturn}{Returns}
 0 upon success, 1 otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a0c697bef52486fe9045091ca868896ee_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_acb41e8e231e830dca0d57ec4de8fe4b6}\label{view_8h_acb41e8e231e830dca0d57ec4de8fe4b6}} 
 \index{view.h@{view.h}!draw\_initial\_pos@{draw\_initial\_pos}}
 \index{draw\_initial\_pos@{draw\_initial\_pos}!view.h@{view.h}}
@@ -401,6 +505,22 @@ This function draws a pawn piece on the game board at the specified position.
 \begin{DoxyReturn}{Returns}
 0 upon success, 1 otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_ad7d6b1e676da779cfdce637886a566e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_ad7d6b1e676da779cfdce637886a566e9_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_a7a54f7eaf6397f7f428f5a50a10903e3}\label{view_8h_a7a54f7eaf6397f7f428f5a50a10903e3}} 
 \index{view.h@{view.h}!draw\_piece@{draw\_piece}}
 \index{draw\_piece@{draw\_piece}!view.h@{view.h}}
@@ -489,6 +609,13 @@ This function fills a rectangular area defined by the coordinates (x, y) and the
 \begin{DoxyReturn}{Returns}
 Return 0 upon success, non-\/zero otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a033e2ab573217307392c7d22622597a5_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_a596a5c86bb771a1db7af41386c94eaad}\label{view_8h_a596a5c86bb771a1db7af41386c94eaad}} 
 \index{view.h@{view.h}!initialize\_graphics@{initialize\_graphics}}
 \index{initialize\_graphics@{initialize\_graphics}!view.h@{view.h}}
@@ -517,6 +644,21 @@ This function initializes the graphics mode with the specified mode.
 \begin{DoxyReturn}{Returns}
 Return 0 upon success, non-\/zero otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{view_8h_a596a5c86bb771a1db7af41386c94eaad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_a596a5c86bb771a1db7af41386c94eaad_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{view_8h_acc07b9de3740549633bd0be0e9cd4713}\label{view_8h_acc07b9de3740549633bd0be0e9cd4713}} 
 \index{view.h@{view.h}!return\_to\_initial\_pos@{return\_to\_initial\_pos}}
 \index{return\_to\_initial\_pos@{return\_to\_initial\_pos}!view.h@{view.h}}
@@ -555,3 +697,11 @@ This function animates the movement of a piece back to its initial position on t
 \begin{DoxyReturn}{Returns}
 0 upon success, 1 otherwise. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{view_8h_acc07b9de3740549633bd0be0e9cd4713_cgraph}
+\end{center}
+\end{figure}

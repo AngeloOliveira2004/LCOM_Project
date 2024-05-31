@@ -13,6 +13,10 @@
 #include <machine/int86.h>
 #include <stdio.h>
 
+/**
+ * @file main.c
+ * @brief File containing the main loop of the program
+ */
 //extern int counter;
 int elapsed_seconds = true;
 
@@ -79,6 +83,11 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
+/**
+ * @brief Initializes the program
+ * 
+ * @return int 0 upon success, 1 otherwise
+*/
 int setup() {
 
   uint16_t mode = VBE_800x600_DC;
@@ -122,6 +131,11 @@ int setup() {
   return 0;
 }
 
+/**
+ * @brief Exits the program
+ * 
+ * @return int 0 upon success, 1 otherwise
+*/
 int _exit_() {
 
   if (set_text_mode() != 0)
@@ -141,6 +155,14 @@ int _exit_() {
   return 0;
 }
 
+/**
+ * @brief Main loop of the program
+ * 
+ * @param argc number of arguments
+ * @param argv arguments
+ * 
+ * @return int 0 upon success, 1 otherwise
+*/
 int(proj_main_loop)(int argc, char *argv[]) {
 
   int ipc_status, r;

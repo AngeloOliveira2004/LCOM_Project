@@ -95,16 +95,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="game_8h__dep__incl.png" border="0" usemap="#a_2home_2bruno_2Desktop_2FEUP_22o_01ano_22o_01semetre_2lcom_2MINIX-LCOM_2shared_2g1_2proj_2src_2mvc_2model_2game_8hdep" alt=""/></div>
 <map name="a_2home_2bruno_2Desktop_2FEUP_22o_01ano_22o_01semetre_2lcom_2MINIX-LCOM_2shared_2g1_2proj_2src_2mvc_2model_2game_8hdep" id="a_2home_2bruno_2Desktop_2FEUP_22o_01ano_22o_01semetre_2lcom_2MINIX-LCOM_2shared_2g1_2proj_2src_2mvc_2model_2game_8hdep">
-<area shape="rect" title="Header file containing declarations for the game logic and data structures." alt="" coords="273,5,497,76"/>
-<area shape="rect" href="controller_8h.html" title="This file contains the declaration of the functions that will be used to control the game...." alt="" coords="289,124,481,209"/>
-<area shape="rect" href="graphic_8h.html" title="File containing the constants and functions to interact with the graphic card." alt="" coords="85,391,277,476"/>
-<area shape="rect" href="game_8c.html" title="Implementation of the chess game logic." alt="" coords="603,665,826,735"/>
-<area shape="rect" href="controller_8c.html" title="This file contains the implementation of the controller." alt="" coords="508,257,700,343"/>
-<area shape="rect" href="mouse_8h.html" title="File containing the constants and functions to interact with the mouse." alt="" coords="217,257,409,343"/>
-<area shape="rect" href="view_8h.html" title="This file contains the declaration of the functions that will be used to draw the game on the screen." alt="" coords="355,531,562,602"/>
-<area shape="rect" href="mouse_8c.html" title="File containing the implementation of the functions to interact with the mouse." alt="" coords="363,657,555,743"/>
-<area shape="rect" href="graphic_8c.html" title="File containing the implementation of the functions to interact with the graphic card." alt="" coords="5,524,197,609"/>
-<area shape="rect" href="view_8c.html" title="This file contains the implementation of the functions that will be used to draw the game on the scre..." alt="" coords="131,665,338,735"/>
+<area shape="rect" title="Header file containing declarations for the game logic and data structures." alt="" coords="697,5,921,76"/>
+<area shape="rect" href="main_8c.html" title="File containing the main loop of the program." alt="" coords="947,398,1137,469"/>
+<area shape="rect" href="controller_8h.html" title="This file contains the declaration of the functions that will be used to control the game...." alt="" coords="397,124,589,209"/>
+<area shape="rect" href="graphic_8h.html" title="File containing the constants and functions to interact with the graphic card." alt="" coords="106,391,298,476"/>
+<area shape="rect" href="game_8c.html" title="Implementation of the chess game logic." alt="" coords="839,665,1061,735"/>
+<area shape="rect" href="controller_8c.html" title="This file contains the implementation of the controller." alt="" coords="845,257,1037,343"/>
+<area shape="rect" href="mouse_8h.html" title="File containing the constants and functions to interact with the mouse." alt="" coords="397,257,589,343"/>
+<area shape="rect" href="view_8h.html" title="This file contains the declaration of the functions that will be used to draw the game on the screen." alt="" coords="248,531,455,602"/>
+<area shape="rect" href="linked__list_8c.html" title=" " alt="" coords="613,265,820,335"/>
+<area shape="rect" href="mouse_8c.html" title="File containing the implementation of the functions to interact with the mouse." alt="" coords="326,657,518,743"/>
+<area shape="rect" href="graphic_8c.html" title="File containing the implementation of the functions to interact with the graphic card." alt="" coords="31,524,223,609"/>
+<area shape="rect" href="view_8c.html" title="This file contains the implementation of the functions that will be used to draw the game on the scre..." alt="" coords="28,665,235,735"/>
 </map>
 </div>
 </div>
@@ -157,10 +159,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a8b9df359ab00f838315c330f5250879d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a8b9df359ab00f838315c330f5250879d">destroy_player</a> (struct <a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
 <tr class="memdesc:a8b9df359ab00f838315c330f5250879d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a player.  <a href="game_8h.html#a8b9df359ab00f838315c330f5250879d">More...</a><br /></td></tr>
 <tr class="separator:a8b9df359ab00f838315c330f5250879d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f27307c4c9a231c9a309e4921203a98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a8f27307c4c9a231c9a309e4921203a98">init_player</a> (struct <a class="el" href="structPlayer.html">Player</a> *player, bool isWhite, int minutes, int seconds)</td></tr>
+<tr class="memitem:a8f27307c4c9a231c9a309e4921203a98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a8f27307c4c9a231c9a309e4921203a98">init_player</a> (struct <a class="el" href="structPlayer.html">Player</a> *player, bool isWhite, int <a class="el" href="controller_8c.html#ab693b677bdc9ded12b06daf49778101c">minutes</a>, int <a class="el" href="controller_8c.html#a77bd4f876bdc3afed5acdd936f775d34">seconds</a>)</td></tr>
 <tr class="memdesc:a8f27307c4c9a231c9a309e4921203a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a player.  <a href="game_8h.html#a8f27307c4c9a231c9a309e4921203a98">More...</a><br /></td></tr>
 <tr class="separator:a8f27307c4c9a231c9a309e4921203a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addee263d25ca6e5b1b80b3a28babce3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#addee263d25ca6e5b1b80b3a28babce3c">initClock</a> (struct <a class="el" href="structClock.html">Clock</a> *clock, int minutes, int seconds)</td></tr>
+<tr class="memitem:addee263d25ca6e5b1b80b3a28babce3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#addee263d25ca6e5b1b80b3a28babce3c">initClock</a> (struct <a class="el" href="structClock.html">Clock</a> *clock, int <a class="el" href="controller_8c.html#ab693b677bdc9ded12b06daf49778101c">minutes</a>, int <a class="el" href="controller_8c.html#a77bd4f876bdc3afed5acdd936f775d34">seconds</a>)</td></tr>
 <tr class="memdesc:addee263d25ca6e5b1b80b3a28babce3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a clock.  <a href="game_8h.html#addee263d25ca6e5b1b80b3a28babce3c">More...</a><br /></td></tr>
 <tr class="separator:addee263d25ca6e5b1b80b3a28babce3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c98c41350e4eb93c515e1c3524a6795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a4c98c41350e4eb93c515e1c3524a6795">changeState</a> (struct <a class="el" href="structGame.html">Game</a> *<a class="el" href="mouse_8c.html#abcd66f5a5ff960ad9b26a34a702d408d">game</a>, enum <a class="el" href="enum_8h.html#ae3a29b920db0912c06cb59c2a21688ad">GameStates</a> state)</td></tr>
@@ -169,7 +171,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a0cce8bce2f6778db2f4d1e979665ac00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a0cce8bce2f6778db2f4d1e979665ac00">changeTurn</a> (struct <a class="el" href="structGame.html">Game</a> *<a class="el" href="mouse_8c.html#abcd66f5a5ff960ad9b26a34a702d408d">game</a>)</td></tr>
 <tr class="memdesc:a0cce8bce2f6778db2f4d1e979665ac00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the turn of the game.  <a href="game_8h.html#a0cce8bce2f6778db2f4d1e979665ac00">More...</a><br /></td></tr>
 <tr class="separator:a0cce8bce2f6778db2f4d1e979665ac00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a80510f34ef6a90c807b05256b26d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a94a80510f34ef6a90c807b05256b26d5">move_piece</a> (struct <a class="el" href="structGame.html">Game</a> *<a class="el" href="mouse_8c.html#abcd66f5a5ff960ad9b26a34a702d408d">game</a>, enum <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a> <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a>, struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *final_pos)</td></tr>
+<tr class="memitem:a94a80510f34ef6a90c807b05256b26d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a94a80510f34ef6a90c807b05256b26d5">move_piece</a> (struct <a class="el" href="structGame.html">Game</a> *<a class="el" href="mouse_8c.html#abcd66f5a5ff960ad9b26a34a702d408d">game</a>, enum <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a> <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a>, struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *<a class="el" href="mouse_8c.html#a5f83da1aabf136b74d2fc1d5549891a3">final_pos</a>)</td></tr>
 <tr class="memdesc:a94a80510f34ef6a90c807b05256b26d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a chess piece on the board.  <a href="game_8h.html#a94a80510f34ef6a90c807b05256b26d5">More...</a><br /></td></tr>
 <tr class="separator:a94a80510f34ef6a90c807b05256b26d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade169791146ac7d5daf9707a78cbff7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ade169791146ac7d5daf9707a78cbff7b">is_stalemate</a> (struct <a class="el" href="structGame.html">Game</a> *<a class="el" href="mouse_8c.html#abcd66f5a5ff960ad9b26a34a702d408d">game</a>)</td></tr>
@@ -184,37 +186,37 @@ Functions</h2></td></tr>
 <tr class="memitem:ab79f72dd3b2fba1136d699ca194f5be7"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structBoard.html">Board</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ab79f72dd3b2fba1136d699ca194f5be7">create_board</a> ()</td></tr>
 <tr class="memdesc:ab79f72dd3b2fba1136d699ca194f5be7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and initializes a new game board.  <a href="game_8h.html#ab79f72dd3b2fba1136d699ca194f5be7">More...</a><br /></td></tr>
 <tr class="separator:ab79f72dd3b2fba1136d699ca194f5be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b50ad929b824d4209271a22ecf64c42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a3b50ad929b824d4209271a22ecf64c42">init_board</a> (struct <a class="el" href="structBoard.html">Board</a> *board)</td></tr>
+<tr class="memitem:a3b50ad929b824d4209271a22ecf64c42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a3b50ad929b824d4209271a22ecf64c42">init_board</a> (struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>)</td></tr>
 <tr class="memdesc:a3b50ad929b824d4209271a22ecf64c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a game board.  <a href="game_8h.html#a3b50ad929b824d4209271a22ecf64c42">More...</a><br /></td></tr>
 <tr class="separator:a3b50ad929b824d4209271a22ecf64c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd49d26334fbdf53701754ce3b58f9a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#abd49d26334fbdf53701754ce3b58f9a3">is_movement_legal</a> (struct <a class="el" href="structBoard.html">Board</a> *board, enum <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a> <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a>, struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *final_pos)</td></tr>
+<tr class="memitem:abd49d26334fbdf53701754ce3b58f9a3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#abd49d26334fbdf53701754ce3b58f9a3">is_movement_legal</a> (struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>, enum <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a> <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a>, struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *<a class="el" href="mouse_8c.html#a5f83da1aabf136b74d2fc1d5549891a3">final_pos</a>)</td></tr>
 <tr class="memdesc:abd49d26334fbdf53701754ce3b58f9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a movement of a specific piece type is legal from an initial position to a final position on the board.  <a href="game_8h.html#abd49d26334fbdf53701754ce3b58f9a3">More...</a><br /></td></tr>
 <tr class="separator:abd49d26334fbdf53701754ce3b58f9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a860165381000e46c104b2e4631df2510"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a860165381000e46c104b2e4631df2510">is_square_occupied</a> (struct <a class="el" href="structBoard.html">Board</a> *board, struct <a class="el" href="structPosition.html">Position</a> *pos)</td></tr>
+<tr class="memitem:a860165381000e46c104b2e4631df2510"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a860165381000e46c104b2e4631df2510">is_square_occupied</a> (struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>, struct <a class="el" href="structPosition.html">Position</a> *pos)</td></tr>
 <tr class="memdesc:a860165381000e46c104b2e4631df2510"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a square on the board is occupied.  <a href="game_8h.html#a860165381000e46c104b2e4631df2510">More...</a><br /></td></tr>
 <tr class="separator:a860165381000e46c104b2e4631df2510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afec517f7ade95b1b05f45a87450c092c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#afec517f7ade95b1b05f45a87450c092c">can_take</a> (struct <a class="el" href="structBoard.html">Board</a> *board, struct <a class="el" href="structPosition.html">Position</a> *pos, struct <a class="el" href="structPiece.html">Piece</a> *piece)</td></tr>
+<tr class="memitem:afec517f7ade95b1b05f45a87450c092c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#afec517f7ade95b1b05f45a87450c092c">can_take</a> (struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>, struct <a class="el" href="structPosition.html">Position</a> *pos, struct <a class="el" href="structPiece.html">Piece</a> *piece)</td></tr>
 <tr class="memdesc:afec517f7ade95b1b05f45a87450c092c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a piece can take another piece on a specific position on the board.  <a href="game_8h.html#afec517f7ade95b1b05f45a87450c092c">More...</a><br /></td></tr>
 <tr class="separator:afec517f7ade95b1b05f45a87450c092c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a751a2c812e963953ca039bb200f84a4a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a751a2c812e963953ca039bb200f84a4a">is_inside_board</a> (struct <a class="el" href="structPosition.html">Position</a> *pos)</td></tr>
 <tr class="memdesc:a751a2c812e963953ca039bb200f84a4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a position is inside the boundaries of the board.  <a href="game_8h.html#a751a2c812e963953ca039bb200f84a4a">More...</a><br /></td></tr>
 <tr class="separator:a751a2c812e963953ca039bb200f84a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2e06862d428b5fbdab97e4146150cd"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structPiece.html">Piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#abf2e06862d428b5fbdab97e4146150cd">get_piece_from_click</a> (int click_x, int click_y, int square_size, struct <a class="el" href="structBoard.html">Board</a> *board)</td></tr>
+<tr class="memitem:abf2e06862d428b5fbdab97e4146150cd"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structPiece.html">Piece</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#abf2e06862d428b5fbdab97e4146150cd">get_piece_from_click</a> (int click_x, int click_y, int square_size, struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>)</td></tr>
 <tr class="memdesc:abf2e06862d428b5fbdab97e4146150cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the piece located at the given click coordinates on the board.  <a href="game_8h.html#abf2e06862d428b5fbdab97e4146150cd">More...</a><br /></td></tr>
 <tr class="separator:abf2e06862d428b5fbdab97e4146150cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d5cf7f4919fd953e240529e8a92863b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a5d5cf7f4919fd953e240529e8a92863b">change_piece_position</a> (struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *final_pos, struct <a class="el" href="structBoard.html">Board</a> *board)</td></tr>
+<tr class="memitem:a5d5cf7f4919fd953e240529e8a92863b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a5d5cf7f4919fd953e240529e8a92863b">change_piece_position</a> (struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *<a class="el" href="mouse_8c.html#a5f83da1aabf136b74d2fc1d5549891a3">final_pos</a>, struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>)</td></tr>
 <tr class="memdesc:a5d5cf7f4919fd953e240529e8a92863b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes the position of a piece on the board from an initial position to a final position.  <a href="game_8h.html#a5d5cf7f4919fd953e240529e8a92863b">More...</a><br /></td></tr>
 <tr class="separator:a5d5cf7f4919fd953e240529e8a92863b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a72467f38fa34620b572504d2e9115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#aa8a72467f38fa34620b572504d2e9115">remove_piece_from_board</a> (struct <a class="el" href="structBoard.html">Board</a> *board, struct <a class="el" href="structPosition.html">Position</a> *pos)</td></tr>
+<tr class="memitem:aa8a72467f38fa34620b572504d2e9115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#aa8a72467f38fa34620b572504d2e9115">remove_piece_from_board</a> (struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>, struct <a class="el" href="structPosition.html">Position</a> *pos)</td></tr>
 <tr class="memdesc:aa8a72467f38fa34620b572504d2e9115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a piece from the board at the specified position.  <a href="game_8h.html#aa8a72467f38fa34620b572504d2e9115">More...</a><br /></td></tr>
 <tr class="separator:aa8a72467f38fa34620b572504d2e9115"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1e37be6be745b53831b01f615d6d110"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ae1e37be6be745b53831b01f615d6d110">is_movement_legal_without_removing</a> (struct <a class="el" href="structBoard.html">Board</a> *board, enum <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a> <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a>, struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *final_pos)</td></tr>
+<tr class="memitem:ae1e37be6be745b53831b01f615d6d110"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ae1e37be6be745b53831b01f615d6d110">is_movement_legal_without_removing</a> (struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>, enum <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a> <a class="el" href="enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021">PieceType</a>, struct <a class="el" href="structPiece.html">Piece</a> *piece, struct <a class="el" href="structPosition.html">Position</a> *init_pos, struct <a class="el" href="structPosition.html">Position</a> *<a class="el" href="mouse_8c.html#a5f83da1aabf136b74d2fc1d5549891a3">final_pos</a>)</td></tr>
 <tr class="memdesc:ae1e37be6be745b53831b01f615d6d110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a movement of a specific piece type is legal without actually removing the piece from the board.  <a href="game_8h.html#ae1e37be6be745b53831b01f615d6d110">More...</a><br /></td></tr>
 <tr class="separator:ae1e37be6be745b53831b01f615d6d110"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3424831142ea48ac62e2f5cb3e18baf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ab3424831142ea48ac62e2f5cb3e18baf">is_check</a> (struct <a class="el" href="structGame.html">Game</a> *<a class="el" href="mouse_8c.html#abcd66f5a5ff960ad9b26a34a702d408d">game</a>)</td></tr>
 <tr class="memdesc:ab3424831142ea48ac62e2f5cb3e18baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the current player is in check.  <a href="game_8h.html#ab3424831142ea48ac62e2f5cb3e18baf">More...</a><br /></td></tr>
 <tr class="separator:ab3424831142ea48ac62e2f5cb3e18baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ee684593d96bcf0e28b86235f212506"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a1ee684593d96bcf0e28b86235f212506">promote_pawn_to_queen</a> (struct <a class="el" href="structBoard.html">Board</a> *board, struct <a class="el" href="structPiece.html">Piece</a> *pawn)</td></tr>
+<tr class="memitem:a1ee684593d96bcf0e28b86235f212506"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a1ee684593d96bcf0e28b86235f212506">promote_pawn_to_queen</a> (struct <a class="el" href="structBoard.html">Board</a> *<a class="el" href="linked__list_8h.html#a97fcb05889b8d9f05df35376e04a314f">board</a>, struct <a class="el" href="structPiece.html">Piece</a> *pawn)</td></tr>
 <tr class="memdesc:a1ee684593d96bcf0e28b86235f212506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Promotes a pawn to a queen on the board.  <a href="game_8h.html#a1ee684593d96bcf0e28b86235f212506">More...</a><br /></td></tr>
 <tr class="separator:a1ee684593d96bcf0e28b86235f212506"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -275,6 +277,24 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the piece can take the opponent's piece at the specified position, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_afec517f7ade95b1b05f45a87450c092c_icgraph.png" border="0" usemap="#agame_8h_afec517f7ade95b1b05f45a87450c092c_icgraph" alt=""/></div>
+<map name="agame_8h_afec517f7ade95b1b05f45a87450c092c_icgraph" id="agame_8h_afec517f7ade95b1b05f45a87450c092c_icgraph">
+<area shape="rect" title="Checks if a piece can take another piece on a specific position on the board." alt="" coords="1391,77,1471,104"/>
+<area shape="rect" href="game_8c.html#abd49d26334fbdf53701754ce3b58f9a3" title="Checks if a movement of a piece on the board is legal." alt="" coords="1164,48,1315,75"/>
+<area shape="rect" href="game_8c.html#ae1e37be6be745b53831b01f615d6d110" title="Checks if a piece&#39;s movement from an initial position to a final position is legal without removing t..." alt="" coords="1136,99,1343,141"/>
+<area shape="rect" href="game_8c.html#a5d5cf7f4919fd953e240529e8a92863b" title="Changes the position of a piece on the board if the move is legal." alt="" coords="917,5,1088,32"/>
+<area shape="rect" href="game_8c.html#a94a80510f34ef6a90c807b05256b26d5" title="Moves a piece on the board if the move is legal." alt="" coords="952,56,1053,83"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,56,869,83"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,56,615,83"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,56,459,83"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,56,325,83"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,56,128,83"/>
+<area shape="rect" href="game_8c.html#ab3424831142ea48ac62e2f5cb3e18baf" title="Checks if the current player&#39;s king is in check." alt="" coords="963,107,1042,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -340,6 +360,48 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the piece's position was successfully changed, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a5d5cf7f4919fd953e240529e8a92863b_cgraph.png" border="0" usemap="#agame_8h_a5d5cf7f4919fd953e240529e8a92863b_cgraph" alt=""/></div>
+<map name="agame_8h_a5d5cf7f4919fd953e240529e8a92863b_cgraph" id="agame_8h_a5d5cf7f4919fd953e240529e8a92863b_cgraph">
+<area shape="rect" title="Changes the position of a piece on the board from an initial position to a final position." alt="" coords="5,382,176,409"/>
+<area shape="rect" href="view_8c.html#abda224a2136d1683aefd16a605263d33" title="Advances a piece to a new position on the game board." alt="" coords="240,197,359,223"/>
+<area shape="rect" href="game_8c.html#a751a2c812e963953ca039bb200f84a4a" title="Checks if a given position is within the boundaries of the board." alt="" coords="459,382,582,409"/>
+<area shape="rect" href="game_8c.html#abd49d26334fbdf53701754ce3b58f9a3" title="Checks if a movement of a piece on the board is legal." alt="" coords="224,483,375,510"/>
+<area shape="rect" href="graphic_8c.html#add642ffbd7541851a3b8afeb2b477331" title="Draws the Black Piece." alt="" coords="963,179,1101,206"/>
+<area shape="rect" href="view_8c.html#a2e2fd33564e9da4e2d0bf84880e5f4d7" title="Draws the chess board except for one piece." alt="" coords="431,219,611,260"/>
+<area shape="rect" href="graphic_8c.html#a5bc9007966db542e8991431c3ccd7c48" title="Draws the White Piece." alt="" coords="963,129,1101,155"/>
+<area shape="rect" href="graphic_8c.html#a0af812a9bbb79b79e6a18b0c5a32c7f2" title="Swaps the background buffer." alt="" coords="431,117,610,143"/>
+<area shape="rect" href="graphic_8c.html#a0d157d997329169f936545f9985e334b" title="Swaps the buffers." alt="" coords="467,167,575,194"/>
+<area shape="rect" href="graphic_8c.html#a08c498ffeb0a3962e3b7711b57397741" title="Draws the pixel." alt="" coords="1149,154,1264,181"/>
+<area shape="rect" href="view_8c.html#a9f6516b9d6eba0460b880cfbcc2ffec9" title="Draws a piece on the game board based on its type." alt="" coords="667,179,763,206"/>
+<area shape="rect" href="view_8c.html#a53f0b5b34609223c0a533f2849cefb5a" title="Draws a bishop piece on the game board." alt="" coords="811,281,915,307"/>
+<area shape="rect" href="view_8c.html#aef66694baa8e4666f767a620d280dde9" title="Draws a king piece on the game board." alt="" coords="818,27,907,54"/>
+<area shape="rect" href="view_8c.html#a6ceaf37e6d9cbc86262c90c8ad3e93af" title="Draws a knight piece on the game board." alt="" coords="811,78,914,105"/>
+<area shape="rect" href="view_8c.html#ad7d6b1e676da779cfdce637886a566e9" title="Draws a pawn piece on the game board." alt="" coords="815,129,911,155"/>
+<area shape="rect" href="view_8c.html#a432e60ce009b513f1b5a1c04df97950d" title="Draws a queen piece on the game board." alt="" coords="812,179,913,206"/>
+<area shape="rect" href="view_8c.html#aa4230432f295a4afc9c536ce8ce58f26" title="Draws a rook piece on the game board." alt="" coords="817,230,908,257"/>
+<area shape="rect" href="game_8c.html#afec517f7ade95b1b05f45a87450c092c" title="Checks if a piece can take another piece at a given position." alt="" coords="481,585,561,611"/>
+<area shape="rect" href="game_8c.html#a193a818b9f61c0b72d19f2389ff42253" title="Checks if there is any piece in the diagonal path between two positions." alt="" coords="442,635,599,662"/>
+<area shape="rect" href="game_8c.html#adb617cd595b97ecd4f8bf3628d141580" title="Checks if there is any piece in front of a given position on the board." alt="" coords="455,433,587,459"/>
+<area shape="rect" href="game_8c.html#a860165381000e46c104b2e4631df2510" title="Checks if a square on the board is occupied by a piece." alt="" coords="446,483,595,510"/>
+<area shape="rect" href="game_8c.html#aa8a72467f38fa34620b572504d2e9115" title="Removes a piece from the board at the specified position." alt="" coords="423,534,619,561"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a5d5cf7f4919fd953e240529e8a92863b_icgraph.png" border="0" usemap="#agame_8h_a5d5cf7f4919fd953e240529e8a92863b_icgraph" alt=""/></div>
+<map name="agame_8h_a5d5cf7f4919fd953e240529e8a92863b_icgraph" id="agame_8h_a5d5cf7f4919fd953e240529e8a92863b_icgraph">
+<area shape="rect" title="Changes the position of a piece on the board from an initial position to a final position." alt="" coords="917,5,1088,32"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -419,6 +481,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a0cce8bce2f6778db2f4d1e979665ac00_icgraph.png" border="0" usemap="#agame_8h_a0cce8bce2f6778db2f4d1e979665ac00_icgraph" alt=""/></div>
+<map name="agame_8h_a0cce8bce2f6778db2f4d1e979665ac00_icgraph" id="agame_8h_a0cce8bce2f6778db2f4d1e979665ac00_icgraph">
+<area shape="rect" title="Changes the turn of the game." alt="" coords="917,5,1013,32"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -467,6 +542,17 @@ Whether the game was created</dd></dl>
 <p>Creates a new game.</p>
 <p>This function Creates a new game by allocating memory for a new game instance and initializes it.</p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the newly created <a class="el" href="structGame.html" title="Structure representing the game.">Game</a> structure, or NULL if memory allocation fails. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a01b298d02836b9f0b60e7187048627fe_icgraph.png" border="0" usemap="#agame_8h_a01b298d02836b9f0b60e7187048627fe_icgraph" alt=""/></div>
+<map name="agame_8h_a01b298d02836b9f0b60e7187048627fe_icgraph" id="agame_8h_a01b298d02836b9f0b60e7187048627fe_icgraph">
+<area shape="rect" title="Creates a new game." alt="" coords="499,5,605,32"/>
+<area shape="rect" href="controller_8c.html#ab0957bc720f28c7bbfc56f57309dffcb" title="Routes the program flow based on the current state and user input." alt="" coords="389,5,451,32"/>
+<area shape="rect" href="controller_8c.html#a3785128f2a9492f2254ab7db8af81fef" title="Parses keyboard input and updates the current key pressed." alt="" coords="176,5,341,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -628,6 +714,28 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the <a class="el" href="structPiece.html" title="Structure representing a piece on the chessboard.">Piece</a> structure located at the click position, or NULL if no piece is present or the position is invalid. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_abf2e06862d428b5fbdab97e4146150cd_cgraph.png" border="0" usemap="#agame_8h_abf2e06862d428b5fbdab97e4146150cd_cgraph" alt=""/></div>
+<map name="agame_8h_abf2e06862d428b5fbdab97e4146150cd_cgraph" id="agame_8h_abf2e06862d428b5fbdab97e4146150cd_cgraph">
+<area shape="rect" title="Retrieves the piece located at the given click coordinates on the board." alt="" coords="5,5,165,32"/>
+<area shape="rect" href="game_8c.html#a751a2c812e963953ca039bb200f84a4a" title="Checks if a given position is within the boundaries of the board." alt="" coords="213,5,336,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_abf2e06862d428b5fbdab97e4146150cd_icgraph.png" border="0" usemap="#agame_8h_abf2e06862d428b5fbdab97e4146150cd_icgraph" alt=""/></div>
+<map name="agame_8h_abf2e06862d428b5fbdab97e4146150cd_icgraph" id="agame_8h_abf2e06862d428b5fbdab97e4146150cd_icgraph">
+<area shape="rect" title="Retrieves the piece located at the given click coordinates on the board." alt="" coords="917,5,1077,32"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -676,6 +784,20 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structMovelist.html" title="Structure representing a list of moves.">Movelist</a> structure containing an array of <a class="el" href="structMove.html" title="Structure representing a move made by a player.">Move</a> structures representing the possible moves for the piece. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a8c3db4739ecad8f8c9f150821b0c753c_icgraph.png" border="0" usemap="#agame_8h_a8c3db4739ecad8f8c9f150821b0c753c_icgraph" alt=""/></div>
+<map name="agame_8h_a8c3db4739ecad8f8c9f150821b0c753c_icgraph" id="agame_8h_a8c3db4739ecad8f8c9f150821b0c753c_icgraph">
+<area shape="rect" title="Retrieves all possible moves for a given piece in the current game state." alt="" coords="1044,5,1199,32"/>
+<area shape="rect" href="game_8c.html#ab3424831142ea48ac62e2f5cb3e18baf" title="Checks if the current player&#39;s king is in check." alt="" coords="917,5,996,32"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -710,6 +832,18 @@ Whether the game was created</dd></dl>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a3b50ad929b824d4209271a22ecf64c42_icgraph.png" border="0" usemap="#agame_8h_a3b50ad929b824d4209271a22ecf64c42_icgraph" alt=""/></div>
+<map name="agame_8h_a3b50ad929b824d4209271a22ecf64c42_icgraph" id="agame_8h_a3b50ad929b824d4209271a22ecf64c42_icgraph">
+<area shape="rect" title="Initializes a game board." alt="" coords="633,5,720,32"/>
+<area shape="rect" href="controller_8c.html#a466fdd853b121ea8bca59f3d3a53f1db" title="Initializes a new game with the specified time limit for each player." alt="" coords="499,5,585,32"/>
+<area shape="rect" href="controller_8c.html#ab0957bc720f28c7bbfc56f57309dffcb" title="Routes the program flow based on the current state and user input." alt="" coords="389,5,451,32"/>
+<area shape="rect" href="controller_8c.html#a3785128f2a9492f2254ab7db8af81fef" title="Parses keyboard input and updates the current key pressed." alt="" coords="176,5,341,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -772,6 +906,27 @@ Whether the game was created</dd></dl>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a8f27307c4c9a231c9a309e4921203a98_cgraph.png" border="0" usemap="#agame_8h_a8f27307c4c9a231c9a309e4921203a98_cgraph" alt=""/></div>
+<map name="agame_8h_a8f27307c4c9a231c9a309e4921203a98_cgraph" id="agame_8h_a8f27307c4c9a231c9a309e4921203a98_cgraph">
+<area shape="rect" title="Initializes a player." alt="" coords="5,5,96,32"/>
+<area shape="rect" href="game_8c.html#addee263d25ca6e5b1b80b3a28babce3c" title="Initializes a clock with the specified minutes and seconds." alt="" coords="144,5,223,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a8f27307c4c9a231c9a309e4921203a98_icgraph.png" border="0" usemap="#agame_8h_a8f27307c4c9a231c9a309e4921203a98_icgraph" alt=""/></div>
+<map name="agame_8h_a8f27307c4c9a231c9a309e4921203a98_icgraph" id="agame_8h_a8f27307c4c9a231c9a309e4921203a98_icgraph">
+<area shape="rect" title="Initializes a player." alt="" coords="633,5,724,32"/>
+<area shape="rect" href="controller_8c.html#a466fdd853b121ea8bca59f3d3a53f1db" title="Initializes a new game with the specified time limit for each player." alt="" coords="499,5,585,32"/>
+<area shape="rect" href="controller_8c.html#ab0957bc720f28c7bbfc56f57309dffcb" title="Routes the program flow based on the current state and user input." alt="" coords="389,5,451,32"/>
+<area shape="rect" href="controller_8c.html#a3785128f2a9492f2254ab7db8af81fef" title="Parses keyboard input and updates the current key pressed." alt="" coords="176,5,341,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -826,6 +981,19 @@ Whether the game was created</dd></dl>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_addee263d25ca6e5b1b80b3a28babce3c_icgraph.png" border="0" usemap="#agame_8h_addee263d25ca6e5b1b80b3a28babce3c_icgraph" alt=""/></div>
+<map name="agame_8h_addee263d25ca6e5b1b80b3a28babce3c_icgraph" id="agame_8h_addee263d25ca6e5b1b80b3a28babce3c_icgraph">
+<area shape="rect" title="Initializes a clock." alt="" coords="772,5,851,32"/>
+<area shape="rect" href="game_8c.html#a8f27307c4c9a231c9a309e4921203a98" title="Initializes a player with the specified parameters." alt="" coords="633,5,724,32"/>
+<area shape="rect" href="controller_8c.html#a466fdd853b121ea8bca59f3d3a53f1db" title="Initializes a new game with the specified time limit for each player." alt="" coords="499,5,585,32"/>
+<area shape="rect" href="controller_8c.html#ab0957bc720f28c7bbfc56f57309dffcb" title="Routes the program flow based on the current state and user input." alt="" coords="389,5,451,32"/>
+<area shape="rect" href="controller_8c.html#a3785128f2a9492f2254ab7db8af81fef" title="Parses keyboard input and updates the current key pressed." alt="" coords="176,5,341,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -862,6 +1030,34 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the current player's king is in check, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_ab3424831142ea48ac62e2f5cb3e18baf_cgraph.png" border="0" usemap="#agame_8h_ab3424831142ea48ac62e2f5cb3e18baf_cgraph" alt=""/></div>
+<map name="agame_8h_ab3424831142ea48ac62e2f5cb3e18baf_cgraph" id="agame_8h_ab3424831142ea48ac62e2f5cb3e18baf_cgraph">
+<area shape="rect" title="Checks if the current player is in check." alt="" coords="5,77,84,104"/>
+<area shape="rect" href="game_8c.html#a8c3db4739ecad8f8c9f150821b0c753c" title="Gets the possible legal moves for a given piece on the board." alt="" coords="158,48,313,75"/>
+<area shape="rect" href="game_8c.html#ae1e37be6be745b53831b01f615d6d110" title="Checks if a piece&#39;s movement from an initial position to a final position is legal without removing t..." alt="" coords="132,99,339,141"/>
+<area shape="rect" href="game_8c.html#afec517f7ade95b1b05f45a87450c092c" title="Checks if a piece can take another piece at a given position." alt="" coords="425,5,505,32"/>
+<area shape="rect" href="game_8c.html#a751a2c812e963953ca039bb200f84a4a" title="Checks if a given position is within the boundaries of the board." alt="" coords="404,56,527,83"/>
+<area shape="rect" href="game_8c.html#a193a818b9f61c0b72d19f2389ff42253" title="Checks if there is any piece in the diagonal path between two positions." alt="" coords="387,107,544,133"/>
+<area shape="rect" href="game_8c.html#adb617cd595b97ecd4f8bf3628d141580" title="Checks if there is any piece in front of a given position on the board." alt="" coords="399,157,531,184"/>
+<area shape="rect" href="game_8c.html#a860165381000e46c104b2e4631df2510" title="Checks if a square on the board is occupied by a piece." alt="" coords="391,208,540,235"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_ab3424831142ea48ac62e2f5cb3e18baf_icgraph.png" border="0" usemap="#agame_8h_ab3424831142ea48ac62e2f5cb3e18baf_icgraph" alt=""/></div>
+<map name="agame_8h_ab3424831142ea48ac62e2f5cb3e18baf_icgraph" id="agame_8h_ab3424831142ea48ac62e2f5cb3e18baf_icgraph">
+<area shape="rect" title="Checks if the current player is in check." alt="" coords="917,5,996,32"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -934,6 +1130,25 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the position is inside the board boundaries, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a751a2c812e963953ca039bb200f84a4a_icgraph.png" border="0" usemap="#agame_8h_a751a2c812e963953ca039bb200f84a4a_icgraph" alt=""/></div>
+<map name="agame_8h_a751a2c812e963953ca039bb200f84a4a_icgraph" id="agame_8h_a751a2c812e963953ca039bb200f84a4a_icgraph">
+<area shape="rect" title="Checks if a position is inside the boundaries of the board." alt="" coords="1391,122,1513,149"/>
+<area shape="rect" href="game_8c.html#a5d5cf7f4919fd953e240529e8a92863b" title="Changes the position of a piece on the board if the move is legal." alt="" coords="917,78,1088,105"/>
+<area shape="rect" href="game_8c.html#abf2e06862d428b5fbdab97e4146150cd" title="Retrieves a piece from the board based on a click position." alt="" coords="1159,223,1319,250"/>
+<area shape="rect" href="game_8c.html#abd49d26334fbdf53701754ce3b58f9a3" title="Checks if a movement of a piece on the board is legal." alt="" coords="1164,122,1315,149"/>
+<area shape="rect" href="game_8c.html#a94a80510f34ef6a90c807b05256b26d5" title="Moves a piece on the board if the move is legal." alt="" coords="952,135,1053,162"/>
+<area shape="rect" href="game_8c.html#ae1e37be6be745b53831b01f615d6d110" title="Checks if a piece&#39;s movement from an initial position to a final position is legal without removing t..." alt="" coords="1136,5,1343,47"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,78,869,105"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,78,615,105"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,78,459,105"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,78,325,105"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,78,128,105"/>
+<area shape="rect" href="game_8c.html#ab3424831142ea48ac62e2f5cb3e18baf" title="Checks if the current player&#39;s king is in check." alt="" coords="963,21,1042,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1006,6 +1221,35 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the movement is legal and false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_abd49d26334fbdf53701754ce3b58f9a3_cgraph.png" border="0" usemap="#agame_8h_abd49d26334fbdf53701754ce3b58f9a3_cgraph" alt=""/></div>
+<map name="agame_8h_abd49d26334fbdf53701754ce3b58f9a3_cgraph" id="agame_8h_abd49d26334fbdf53701754ce3b58f9a3_cgraph">
+<area shape="rect" title="Checks if a movement of a specific piece type is legal from an initial position to a final position o..." alt="" coords="5,132,156,159"/>
+<area shape="rect" href="game_8c.html#afec517f7ade95b1b05f45a87450c092c" title="Checks if a piece can take another piece at a given position." alt="" coords="262,5,342,32"/>
+<area shape="rect" href="game_8c.html#a751a2c812e963953ca039bb200f84a4a" title="Checks if a given position is within the boundaries of the board." alt="" coords="241,56,363,83"/>
+<area shape="rect" href="game_8c.html#a193a818b9f61c0b72d19f2389ff42253" title="Checks if there is any piece in the diagonal path between two positions." alt="" coords="223,107,381,133"/>
+<area shape="rect" href="game_8c.html#adb617cd595b97ecd4f8bf3628d141580" title="Checks if there is any piece in front of a given position on the board." alt="" coords="236,157,368,184"/>
+<area shape="rect" href="game_8c.html#a860165381000e46c104b2e4631df2510" title="Checks if a square on the board is occupied by a piece." alt="" coords="227,208,377,235"/>
+<area shape="rect" href="game_8c.html#aa8a72467f38fa34620b572504d2e9115" title="Removes a piece from the board at the specified position." alt="" coords="204,259,400,285"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_abd49d26334fbdf53701754ce3b58f9a3_icgraph.png" border="0" usemap="#agame_8h_abd49d26334fbdf53701754ce3b58f9a3_icgraph" alt=""/></div>
+<map name="agame_8h_abd49d26334fbdf53701754ce3b58f9a3_icgraph" id="agame_8h_abd49d26334fbdf53701754ce3b58f9a3_icgraph">
+<area shape="rect" title="Checks if a movement of a specific piece type is legal from an initial position to a final position o..." alt="" coords="1136,31,1287,57"/>
+<area shape="rect" href="game_8c.html#a5d5cf7f4919fd953e240529e8a92863b" title="Changes the position of a piece on the board if the move is legal." alt="" coords="917,5,1088,32"/>
+<area shape="rect" href="game_8c.html#a94a80510f34ef6a90c807b05256b26d5" title="Moves a piece on the board if the move is legal." alt="" coords="952,56,1053,83"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1078,6 +1322,33 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the movement is legal, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_ae1e37be6be745b53831b01f615d6d110_cgraph.png" border="0" usemap="#agame_8h_ae1e37be6be745b53831b01f615d6d110_cgraph" alt=""/></div>
+<map name="agame_8h_ae1e37be6be745b53831b01f615d6d110_cgraph" id="agame_8h_ae1e37be6be745b53831b01f615d6d110_cgraph">
+<area shape="rect" title="Checks if a movement of a specific piece type is legal without actually removing the piece from the b..." alt="" coords="5,99,212,141"/>
+<area shape="rect" href="game_8c.html#afec517f7ade95b1b05f45a87450c092c" title="Checks if a piece can take another piece at a given position." alt="" coords="299,5,379,32"/>
+<area shape="rect" href="game_8c.html#a751a2c812e963953ca039bb200f84a4a" title="Checks if a given position is within the boundaries of the board." alt="" coords="277,56,400,83"/>
+<area shape="rect" href="game_8c.html#a193a818b9f61c0b72d19f2389ff42253" title="Checks if there is any piece in the diagonal path between two positions." alt="" coords="260,107,417,133"/>
+<area shape="rect" href="game_8c.html#adb617cd595b97ecd4f8bf3628d141580" title="Checks if there is any piece in front of a given position on the board." alt="" coords="273,157,405,184"/>
+<area shape="rect" href="game_8c.html#a860165381000e46c104b2e4631df2510" title="Checks if a square on the board is occupied by a piece." alt="" coords="264,208,413,235"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_ae1e37be6be745b53831b01f615d6d110_icgraph.png" border="0" usemap="#agame_8h_ae1e37be6be745b53831b01f615d6d110_icgraph" alt=""/></div>
+<map name="agame_8h_ae1e37be6be745b53831b01f615d6d110_icgraph" id="agame_8h_ae1e37be6be745b53831b01f615d6d110_icgraph">
+<area shape="rect" title="Checks if a movement of a specific piece type is legal without actually removing the piece from the b..." alt="" coords="1044,5,1251,47"/>
+<area shape="rect" href="game_8c.html#ab3424831142ea48ac62e2f5cb3e18baf" title="Checks if the current player&#39;s king is in check." alt="" coords="917,13,996,39"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,13,869,39"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,13,615,39"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,13,459,39"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,13,325,39"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,13,128,39"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1126,6 +1397,24 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the square at the specified position is occupied by a piece, false otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a860165381000e46c104b2e4631df2510_icgraph.png" border="0" usemap="#agame_8h_a860165381000e46c104b2e4631df2510_icgraph" alt=""/></div>
+<map name="agame_8h_a860165381000e46c104b2e4631df2510_icgraph" id="agame_8h_a860165381000e46c104b2e4631df2510_icgraph">
+<area shape="rect" title="Checks if a square on the board is occupied." alt="" coords="1391,77,1540,104"/>
+<area shape="rect" href="game_8c.html#abd49d26334fbdf53701754ce3b58f9a3" title="Checks if a movement of a piece on the board is legal." alt="" coords="1164,48,1315,75"/>
+<area shape="rect" href="game_8c.html#ae1e37be6be745b53831b01f615d6d110" title="Checks if a piece&#39;s movement from an initial position to a final position is legal without removing t..." alt="" coords="1136,99,1343,141"/>
+<area shape="rect" href="game_8c.html#a5d5cf7f4919fd953e240529e8a92863b" title="Changes the position of a piece on the board if the move is legal." alt="" coords="917,5,1088,32"/>
+<area shape="rect" href="game_8c.html#a94a80510f34ef6a90c807b05256b26d5" title="Moves a piece on the board if the move is legal." alt="" coords="952,56,1053,83"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,56,869,83"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,56,615,83"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,56,459,83"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,56,325,83"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,56,128,83"/>
+<area shape="rect" href="game_8c.html#ab3424831142ea48ac62e2f5cb3e18baf" title="Checks if the current player&#39;s king is in check." alt="" coords="963,107,1042,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1232,6 +1521,21 @@ Whether the game was created</dd></dl>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a94a80510f34ef6a90c807b05256b26d5_cgraph.png" border="0" usemap="#agame_8h_a94a80510f34ef6a90c807b05256b26d5_cgraph" alt=""/></div>
+<map name="agame_8h_a94a80510f34ef6a90c807b05256b26d5_cgraph" id="agame_8h_a94a80510f34ef6a90c807b05256b26d5_cgraph">
+<area shape="rect" title="Moves a chess piece on the board." alt="" coords="5,81,107,108"/>
+<area shape="rect" href="game_8c.html#a751a2c812e963953ca039bb200f84a4a" title="Checks if a given position is within the boundaries of the board." alt="" coords="390,5,513,32"/>
+<area shape="rect" href="game_8c.html#abd49d26334fbdf53701754ce3b58f9a3" title="Checks if a movement of a piece on the board is legal." alt="" coords="155,107,305,133"/>
+<area shape="rect" href="game_8c.html#afec517f7ade95b1b05f45a87450c092c" title="Checks if a piece can take another piece at a given position." alt="" coords="411,56,491,83"/>
+<area shape="rect" href="game_8c.html#a193a818b9f61c0b72d19f2389ff42253" title="Checks if there is any piece in the diagonal path between two positions." alt="" coords="373,107,530,133"/>
+<area shape="rect" href="game_8c.html#adb617cd595b97ecd4f8bf3628d141580" title="Checks if there is any piece in front of a given position on the board." alt="" coords="385,157,517,184"/>
+<area shape="rect" href="game_8c.html#a860165381000e46c104b2e4631df2510" title="Checks if a square on the board is occupied by a piece." alt="" coords="377,208,526,235"/>
+<area shape="rect" href="game_8c.html#aa8a72467f38fa34620b572504d2e9115" title="Removes a piece from the board at the specified position." alt="" coords="353,259,549,285"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1279,6 +1583,19 @@ Whether the game was created</dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The index of the promoted piece in the board's pieces array, or -1 if the pawn is not found. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_a1ee684593d96bcf0e28b86235f212506_icgraph.png" border="0" usemap="#agame_8h_a1ee684593d96bcf0e28b86235f212506_icgraph" alt=""/></div>
+<map name="agame_8h_a1ee684593d96bcf0e28b86235f212506_icgraph" id="agame_8h_a1ee684593d96bcf0e28b86235f212506_icgraph">
+<area shape="rect" title="Promotes a pawn to a queen on the board." alt="" coords="917,5,1104,32"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1324,6 +1641,22 @@ Whether the game was created</dd></dl>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="game_8h_aa8a72467f38fa34620b572504d2e9115_icgraph.png" border="0" usemap="#agame_8h_aa8a72467f38fa34620b572504d2e9115_icgraph" alt=""/></div>
+<map name="agame_8h_aa8a72467f38fa34620b572504d2e9115_icgraph" id="agame_8h_aa8a72467f38fa34620b572504d2e9115_icgraph">
+<area shape="rect" title="Removes a piece from the board at the specified position." alt="" coords="1335,31,1531,57"/>
+<area shape="rect" href="game_8c.html#abd49d26334fbdf53701754ce3b58f9a3" title="Checks if a movement of a piece on the board is legal." alt="" coords="1136,31,1287,57"/>
+<area shape="rect" href="game_8c.html#a5d5cf7f4919fd953e240529e8a92863b" title="Changes the position of a piece on the board if the move is legal." alt="" coords="917,5,1088,32"/>
+<area shape="rect" href="game_8c.html#a94a80510f34ef6a90c807b05256b26d5" title="Moves a piece on the board if the move is legal." alt="" coords="952,56,1053,83"/>
+<area shape="rect" href="mouse_8c.html#a6fa632a85f47c9d846c55b975d118df9" title="In game mouse movement." alt="" coords="663,5,869,32"/>
+<area shape="rect" href="mouse_8c.html#a7c35b8ea4b294430bfbb2d6c0dd98354" title="parses the values of the mouse packet" alt="" coords="507,5,615,32"/>
+<area shape="rect" href="mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title="Subscribes mouse interrupts." alt="" coords="373,5,459,32"/>
+<area shape="rect" href="controller_8c.html#a36011516c792514a2664ca1340b1c573" title="Parses mouse input and updates the display accordingly." alt="" coords="176,5,325,32"/>
+<area shape="rect" href="main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="Main loop of the program." alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>

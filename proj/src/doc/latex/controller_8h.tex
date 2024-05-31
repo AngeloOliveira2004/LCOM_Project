@@ -72,15 +72,13 @@ void \mbox{\hyperlink{controller_8h_a3785128f2a9492f2254ab7db8af81fef}{parse\+\_
 \begin{DoxyCompactList}\small\item\em Parses keyboard input. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{controller_8h_a36011516c792514a2664ca1340b1c573}{parse\+\_\+mouse\+\_\+input}} ()
 \begin{DoxyCompactList}\small\item\em Parses mouse input. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{controller_8h_aa2e421f9f161db4a8464ffef78070d69}\label{controller_8h_aa2e421f9f161db4a8464ffef78070d69}} 
 void \mbox{\hyperlink{controller_8h_aa2e421f9f161db4a8464ffef78070d69}{update\+\_\+game}} ()
 \begin{DoxyCompactList}\small\item\em Updates the game state. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{controller_8h_a04a6d2a31e79c09343524b363d57fe7a}\label{controller_8h_a04a6d2a31e79c09343524b363d57fe7a}} 
 void \mbox{\hyperlink{controller_8h_a04a6d2a31e79c09343524b363d57fe7a}{update\+\_\+menu}} ()
 \begin{DoxyCompactList}\small\item\em Updates the menu state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{controller_8h_ab0957bc720f28c7bbfc56f57309dffcb}{router}} ()
 \begin{DoxyCompactList}\small\item\em Routes to the appropriate functionality based on the current state. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{controller_8h_a466fdd853b121ea8bca59f3d3a53f1db}{init\+\_\+game}} (struct \mbox{\hyperlink{structGame}{Game}} $\ast$\mbox{\hyperlink{mouse_8c_abcd66f5a5ff960ad9b26a34a702d408d}{game}}, int minutes, int seconds)
+void \mbox{\hyperlink{controller_8h_a466fdd853b121ea8bca59f3d3a53f1db}{init\+\_\+game}} (struct \mbox{\hyperlink{structGame}{Game}} $\ast$\mbox{\hyperlink{mouse_8c_abcd66f5a5ff960ad9b26a34a702d408d}{game}}, int \mbox{\hyperlink{controller_8c_ab693b677bdc9ded12b06daf49778101c}{minutes}}, int \mbox{\hyperlink{controller_8c_a77bd4f876bdc3afed5acdd936f775d34}{seconds}})
 \begin{DoxyCompactList}\small\item\em Initializes the game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{controller_8h_af3ae34fba8ae3b1f47d23af125079282}{game\+\_\+loop}} (struct \mbox{\hyperlink{structGame}{Game}} $\ast$\mbox{\hyperlink{mouse_8c_abcd66f5a5ff960ad9b26a34a702d408d}{game}})
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structGame}{Game}} loop function. \end{DoxyCompactList}\item 
@@ -91,16 +89,12 @@ int() \mbox{\hyperlink{controller_8h_a9bb0db8002fe1cc1ef244c31ce221684}{change\+
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{controller_8h_abcd66f5a5ff960ad9b26a34a702d408d}\label{controller_8h_abcd66f5a5ff960ad9b26a34a702d408d}} 
 struct \mbox{\hyperlink{structGame}{Game}} $\ast$ \mbox{\hyperlink{controller_8h_abcd66f5a5ff960ad9b26a34a702d408d}{game}}
 \begin{DoxyCompactList}\small\item\em Pointer to the current game instance. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{controller_8h_a9cca847cb3897394f80807f2bba47b2e}\label{controller_8h_a9cca847cb3897394f80807f2bba47b2e}} 
 struct \mbox{\hyperlink{structBoard}{Board}} \mbox{\hyperlink{controller_8h_a9cca847cb3897394f80807f2bba47b2e}{board\+Array}} \mbox{[}1024\mbox{]}
 \begin{DoxyCompactList}\small\item\em Array to store game boards. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{controller_8h_aaaf1ac02dfa554a3cdffc647d512a77b}\label{controller_8h_aaaf1ac02dfa554a3cdffc647d512a77b}} 
 int \mbox{\hyperlink{controller_8h_aaaf1ac02dfa554a3cdffc647d512a77b}{index\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Index variable for the board\+Array. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{controller_8h_a3875f818be825762ae9d4c0f88e7976c}\label{controller_8h_a3875f818be825762ae9d4c0f88e7976c}} 
 int \mbox{\hyperlink{controller_8h_a3875f818be825762ae9d4c0f88e7976c}{max\+\_\+index}}
 \begin{DoxyCompactList}\small\item\em Maximum index value for the board\+Array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -241,6 +235,22 @@ This function changes the current state of the game to the pause menu state. It 
 \begin{DoxyReturn}{Returns}
 0 upon successful state change. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_a9bb0db8002fe1cc1ef244c31ce221684_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_a9bb0db8002fe1cc1ef244c31ce221684_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{controller_8h_acb677e252595a3a91a9d3bfe595108c3}\label{controller_8h_acb677e252595a3a91a9d3bfe595108c3}} 
 \index{controller.h@{controller.h}!decrease\_player\_timer@{decrease\_player\_timer}}
 \index{decrease\_player\_timer@{decrease\_player\_timer}!controller.h@{controller.h}}
@@ -253,7 +263,23 @@ Decreases the player timer based on the current turn.
 
 Decreases the player timer based on the current turn.
 
-This function decreases the timer of the current player (either White or Black) by one tenth of a second. If the timer reaches zero, it decrements the minutes and seconds accordingly. It also updates the display if {\ttfamily can\+\_\+draw\+\_\+this} is true. \mbox{\Hypertarget{controller_8h_af3ae34fba8ae3b1f47d23af125079282}\label{controller_8h_af3ae34fba8ae3b1f47d23af125079282}} 
+This function decreases the timer of the current player (either White or Black) by one tenth of a second. If the timer reaches zero, it decrements the minutes and seconds accordingly. It also updates the display if {\ttfamily can\+\_\+draw\+\_\+this} is true. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_acb677e252595a3a91a9d3bfe595108c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{controller_8h_acb677e252595a3a91a9d3bfe595108c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{controller_8h_af3ae34fba8ae3b1f47d23af125079282}\label{controller_8h_af3ae34fba8ae3b1f47d23af125079282}} 
 \index{controller.h@{controller.h}!game\_loop@{game\_loop}}
 \index{game\_loop@{game\_loop}!controller.h@{controller.h}}
 \doxysubsubsection{\texorpdfstring{game\_loop()}{game\_loop()}}
@@ -277,6 +303,22 @@ This function represents the main game loop. It updates the game state, checks f
 {\em game} & Pointer to the \mbox{\hyperlink{structGame}{Game}} structure representing the current game state. \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_af3ae34fba8ae3b1f47d23af125079282_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{controller_8h_af3ae34fba8ae3b1f47d23af125079282_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{controller_8h_a466fdd853b121ea8bca59f3d3a53f1db}\label{controller_8h_a466fdd853b121ea8bca59f3d3a53f1db}} 
 \index{controller.h@{controller.h}!init\_game@{init\_game}}
 \index{init\_game@{init\_game}!controller.h@{controller.h}}
@@ -309,6 +351,22 @@ This function initializes a new game with the given time limit for each player. 
 {\em seconds} & The number of seconds for each player. \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{controller_8h_a466fdd853b121ea8bca59f3d3a53f1db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_a466fdd853b121ea8bca59f3d3a53f1db_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{controller_8h_a3785128f2a9492f2254ab7db8af81fef}\label{controller_8h_a3785128f2a9492f2254ab7db8af81fef}} 
 \index{controller.h@{controller.h}!parse\_keyboard\_input@{parse\_keyboard\_input}}
 \index{parse\_keyboard\_input@{parse\_keyboard\_input}!controller.h@{controller.h}}
@@ -321,7 +379,23 @@ Parses keyboard input.
 
 Parses keyboard input.
 
-This function reads keyboard input, interprets the scan code received, and updates the current key pressed accordingly. It then calls the router function to handle the input. \mbox{\Hypertarget{controller_8h_a36011516c792514a2664ca1340b1c573}\label{controller_8h_a36011516c792514a2664ca1340b1c573}} 
+This function reads keyboard input, interprets the scan code received, and updates the current key pressed accordingly. It then calls the router function to handle the input. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_a3785128f2a9492f2254ab7db8af81fef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{controller_8h_a3785128f2a9492f2254ab7db8af81fef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{controller_8h_a36011516c792514a2664ca1340b1c573}\label{controller_8h_a36011516c792514a2664ca1340b1c573}} 
 \index{controller.h@{controller.h}!parse\_mouse\_input@{parse\_mouse\_input}}
 \index{parse\_mouse\_input@{parse\_mouse\_input}!controller.h@{controller.h}}
 \doxysubsubsection{\texorpdfstring{parse\_mouse\_input()}{parse\_mouse\_input()}}
@@ -333,7 +407,23 @@ Parses mouse input.
 
 Parses mouse input.
 
-This function handles mouse input, updates the display, and redraws the board and clock values if the current state is the game. It also draws the mouse cursor. \mbox{\Hypertarget{controller_8h_ab0957bc720f28c7bbfc56f57309dffcb}\label{controller_8h_ab0957bc720f28c7bbfc56f57309dffcb}} 
+This function handles mouse input, updates the display, and redraws the board and clock values if the current state is the game. It also draws the mouse cursor. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_a36011516c792514a2664ca1340b1c573_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{controller_8h_a36011516c792514a2664ca1340b1c573_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{controller_8h_ab0957bc720f28c7bbfc56f57309dffcb}\label{controller_8h_ab0957bc720f28c7bbfc56f57309dffcb}} 
 \index{controller.h@{controller.h}!router@{router}}
 \index{router@{router}!controller.h@{controller.h}}
 \doxysubsubsection{\texorpdfstring{router()}{router()}}
@@ -345,4 +435,82 @@ Routes to the appropriate functionality based on the current state.
 
 Routes to the appropriate functionality based on the current state.
 
-This function manages the program flow, including transitions between different states (such as MENU, NEW\+\_\+\+GAME, INSTRUCTIONS, etc.) and handling user input. 
+This function manages the program flow, including transitions between different states (such as MENU, NEW\+\_\+\+GAME, INSTRUCTIONS, etc.) and handling user input. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_ab0957bc720f28c7bbfc56f57309dffcb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{controller_8h_ab0957bc720f28c7bbfc56f57309dffcb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{controller_8h_aa2e421f9f161db4a8464ffef78070d69}\label{controller_8h_aa2e421f9f161db4a8464ffef78070d69}} 
+\index{controller.h@{controller.h}!update\_game@{update\_game}}
+\index{update\_game@{update\_game}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{update\_game()}{update\_game()}}
+{\footnotesize\ttfamily void update\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the game state. 
+
+\mbox{\Hypertarget{controller_8h_a04a6d2a31e79c09343524b363d57fe7a}\label{controller_8h_a04a6d2a31e79c09343524b363d57fe7a}} 
+\index{controller.h@{controller.h}!update\_menu@{update\_menu}}
+\index{update\_menu@{update\_menu}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{update\_menu()}{update\_menu()}}
+{\footnotesize\ttfamily void update\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the menu state. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{controller_8h_a9cca847cb3897394f80807f2bba47b2e}\label{controller_8h_a9cca847cb3897394f80807f2bba47b2e}} 
+\index{controller.h@{controller.h}!boardArray@{boardArray}}
+\index{boardArray@{boardArray}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{boardArray}{boardArray}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structBoard}{Board}} board\+Array\mbox{[}1024\mbox{]}}
+
+
+
+Array to store game boards. 
+
+\mbox{\Hypertarget{controller_8h_abcd66f5a5ff960ad9b26a34a702d408d}\label{controller_8h_abcd66f5a5ff960ad9b26a34a702d408d}} 
+\index{controller.h@{controller.h}!game@{game}}
+\index{game@{game}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{game}{game}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structGame}{Game}}$\ast$ game}
+
+
+
+Pointer to the current game instance. 
+
+\mbox{\Hypertarget{controller_8h_aaaf1ac02dfa554a3cdffc647d512a77b}\label{controller_8h_aaaf1ac02dfa554a3cdffc647d512a77b}} 
+\index{controller.h@{controller.h}!index\_@{index\_}}
+\index{index\_@{index\_}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{index\_}{index\_}}
+{\footnotesize\ttfamily int index\+\_\+}
+
+
+
+Index variable for the board\+Array. 
+
+\mbox{\Hypertarget{controller_8h_a3875f818be825762ae9d4c0f88e7976c}\label{controller_8h_a3875f818be825762ae9d4c0f88e7976c}} 
+\index{controller.h@{controller.h}!max\_index@{max\_index}}
+\index{max\_index@{max\_index}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{max\_index}{max\_index}}
+{\footnotesize\ttfamily int max\+\_\+index}
+
+
+
+Maximum index value for the board\+Array. 
+
