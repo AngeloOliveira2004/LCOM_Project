@@ -13,7 +13,7 @@
 #include <machine/int86.h>
 #include <stdio.h>
 
-extern int counter;
+//extern int counter;
 int elapsed_seconds = true;
 
 const int desiredFrameRate = 30;
@@ -24,6 +24,7 @@ bool isRunning = true;
 uint8_t timer_hook_id = 0;
 uint8_t keyboard_hook_id = 1;
 uint8_t mouse_hook_id = 2;
+uint8_t rtc_hook_id = 8;
 
 int counter_packet_print = 0;
 
@@ -32,10 +33,27 @@ extern int counter_mouse;
 extern struct cursor cursor;
 
 extern enum ClickedKey key_pressed;
+extern enum FlowState current_state;
 
+extern struct Board *board;
 extern struct Game *game;
 extern struct Menu *menu;
-extern enum FlowState current_state;
+/*
+int rtc_test_date(void) {
+    date_time dt;
+    while (true){
+        int ret = rtc_get_datetime(&dt);
+        if (ret == -1) return -1;
+        else if (ret == 1) continue;
+        show_date(&dt);
+        printf(" ");
+        show_time(&dt);
+        printf("\n");
+        return 0;
+    }
+}
+*/
+extern uint32_t counter;
 
 int main(int argc, char *argv[]) {
 
@@ -143,8 +161,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
   setup();
-/*
-  if (draw_backBackGround() != 0) {
+
+/*  if (draw_backBackGround() != 0) {
     return 1;
   }
 
@@ -163,15 +181,17 @@ int(proj_main_loop)(int argc, char *argv[]) {
   if (return_to_initial_pos(&board->pieces[0], &initalPos, board) != 0) {
     return 1;
   }
-*/
 
+*/
   if(draw_menu(0,0) != 0){
     return 1;
   }
 
   swap_buffers();
-
+  int x = 10;
   while (isRunning) {
+    x--;
+    
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
     }
@@ -199,7 +219,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
               else {
                 parse_keyboard_input();
 
-                if (key_pressed == ESC) {
+                printf("is running %d" , isRunning);
+
+                if (key_pressed == ESC && current_state == MENU) {
+                  printf("esc pressed");
                   isRunning = false;
                 }
               }
@@ -211,9 +234,13 @@ int(proj_main_loop)(int argc, char *argv[]) {
           break;
       }
     }
+    
+
+    //rtc_test_date();
   }
 
   _exit_();
 
   return 0;
 }
+

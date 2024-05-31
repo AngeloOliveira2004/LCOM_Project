@@ -24,7 +24,8 @@
     "game.h": "c",
     "lcf.h": "c",
     "menu.h": "c",
-    "linked_list.h": "c"
+    "linked_list.h": "c",
+    "rtc.h": "c"
   },
   "C_Cpp.errorSquiggles": "disabled",
 }

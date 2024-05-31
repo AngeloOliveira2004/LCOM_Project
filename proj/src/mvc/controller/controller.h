@@ -7,6 +7,8 @@
 #include "../model/menu.h"
 #include "../view/view.h"
 #include "keyboard/keyboard.h"
+#include "rtc/rtc.h"
+#include "rtc/I_RTC.h"
 
 #include "mouse/mouse.h"
 #include "graphics/graphic.h"
@@ -43,6 +45,8 @@ struct Game * game;
 struct Board boardArray[1024]; 
 int index_;
 int max_index;
+
+date_time dt;
 
 void start_menu();
 void start_game();

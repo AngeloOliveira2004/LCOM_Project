@@ -8,8 +8,6 @@
 #include <minix/sysutil.h>
 #include "I_RTC.h"
 
-
-
 /**
  * @brief Struct to represent date and time.
  */

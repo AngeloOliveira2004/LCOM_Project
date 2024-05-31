@@ -1,5 +1,6 @@
 #include "controller.h"
 #include "keyboard/keyboard.h"
+#include "../controller/rtc/rtc.h"
 
 extern uint8_t scancode;
 extern struct scancode_info scan_info;
@@ -16,8 +17,11 @@ bool game_alredy_started = false;
 
 struct Board tempBoard;
 
+date_time dt = {0,0,0,0,0,0,0};
+bool isWhiteTurn = true;
 
 void init_game(struct Game *game,int minutes, int seconds) {
+      printf("%02d:%02d:%02d", dt.hours, dt.minutes, dt.seconds);
   // game->White_player = {};
   init_board(&game->board);
   init_player(&game->Black_player, false, minutes, seconds);
@@ -70,12 +74,26 @@ void game_loop(struct Game *game) {
 
   if(king_count == 1){
     current_state = WINNER_SCREEN;
+    dt.day = 0;
+    dt.month = 0;
+    dt.year = 0;
+    dt.hours = 0;
+    dt.minutes = 0;
+    dt.seconds = 0;
+
     game_alredy_started = false;
     free(game);
     erase_buffer();
     draw_white_wins();
   }else if(king_count == -1){
     current_state = WINNER_SCREEN;
+    dt.day = 0;
+    dt.month = 0;
+    dt.year = 0;
+    dt.hours = 0;
+    dt.minutes = 0;
+    dt.seconds = 0;
+
     game_alredy_started = false;
     free(game);
     erase_buffer();
@@ -84,6 +102,13 @@ void game_loop(struct Game *game) {
 
   if(game->White_player.clock.minutes == 0 && game->White_player.clock.seconds == 0 && game->White_player.clock.a_tenth_of_a_second == 0){
     current_state = WINNER_SCREEN;
+    dt.day = 0;
+    dt.month = 0;
+    dt.year = 0;
+    dt.hours = 0;
+    dt.minutes = 0;
+    dt.seconds = 0;
+
     game_alredy_started = false;
     free(game);
     erase_buffer();
@@ -92,6 +117,13 @@ void game_loop(struct Game *game) {
 
   if(game->Black_player.clock.minutes == 0 && game->Black_player.clock.seconds == 0 && game->Black_player.clock.a_tenth_of_a_second == 0){
     current_state = WINNER_SCREEN;
+    dt.day = 0;
+    dt.month = 0;
+    dt.year = 0;
+    dt.hours = 0;
+    dt.minutes = 0;
+    dt.seconds = 0;
+
     game_alredy_started = false;
     free(game);
     erase_buffer();
@@ -275,6 +307,91 @@ void router() {
       }
 
     case LOAD_GAME:
+      printf("Load game\n");
+
+      if(game_alredy_started == false){
+        return;
+      }else{
+        if (dt.day != 0 && dt.month != 0 && dt.year != 0 && dt.hours != 0 && dt.minutes != 0 && dt.seconds != 0) {
+          
+          date_time dt2;
+          rtc_get_datetime(&dt2);
+
+          show_time(&dt);
+          show_time(&dt2);
+
+          int start_total_seconds = dt.hours * 3600 + dt.minutes * 60 + dt.seconds;
+          int end_total_seconds = dt2.hours * 3600 + dt2.minutes * 60 + dt2.seconds;
+
+          int diff_seconds = end_total_seconds - start_total_seconds;
+          if (diff_seconds < 0) {
+              diff_seconds += 24 * 3600;
+          }
+
+          int diff_minutes = diff_seconds / 60;
+          int remaining_seconds = diff_seconds % 60;
+
+          if (isWhiteTurn) {
+              game->White_player.clock.minutes -= diff_minutes;
+              game->White_player.clock.seconds -= remaining_seconds;
+
+              if (game->White_player.clock.seconds < 0) {
+                  game->White_player.clock.minutes -= 1;
+                  game->White_player.clock.seconds += 60;
+              }
+
+              if (game->White_player.clock.minutes < 0) {
+                  game->White_player.clock.minutes = 0;
+                  game->White_player.clock.seconds = 0;
+              }
+          } else {
+              game->Black_player.clock.minutes -= diff_minutes;
+              game->Black_player.clock.seconds -= remaining_seconds;
+
+              if (game->Black_player.clock.seconds < 0) {
+                  game->Black_player.clock.minutes -= 1;
+                  game->Black_player.clock.seconds += 60;
+              }
+
+              if (game->Black_player.clock.minutes < 0) {
+                  game->Black_player.clock.minutes = 0;
+                  game->Black_player.clock.seconds = 0;
+              }
+            }
+
+          if(game->White_player.clock.minutes <= 0 && game->White_player.clock.seconds <= 0){
+            current_state = WINNER_SCREEN;
+            game_alredy_started = false;
+            dt.day = 0;
+            dt.month = 0;
+            dt.year = 0;
+            dt.hours = 0;
+            dt.minutes = 0;
+            dt.seconds = 0;
+
+            free(game);
+            erase_buffer();
+            draw_black_wins();
+          }
+
+          if(game->Black_player.clock.minutes <= 0 && game->Black_player.clock.seconds <= 0){
+            current_state = WINNER_SCREEN;
+            game_alredy_started = false;
+            dt.day = 0;
+            dt.month = 0;
+            dt.year = 0;
+            dt.hours = 0;
+            dt.minutes = 0;
+            dt.seconds = 0;
+
+            free(game);
+            erase_buffer();
+            draw_white_wins();
+          }
+        }
+      }
+
+
       break;
     case INSTRUCTIONS:
       switch (key_pressed){
@@ -393,6 +510,32 @@ void router() {
         key_pressed = NOKEY;
         break;
       case TWO:
+        
+        while (true){
+            int ret = rtc_get_datetime(&dt);
+            if (ret == -1) 
+              return ;
+            else if (ret == 1) 
+              continue;
+            break;
+        }
+
+        FILE *file = fopen("current_date_time.txt", "w");
+
+        if (file == NULL) {
+            printf("Error opening file\n");
+            break; 
+        } else {
+            printf("File opened successfully\n");
+        }
+
+        fprintf(file, "%02d-%02d-%04d %02d:%02d:%02d\n",
+                dt.day, dt.month, dt.year, dt.hours, dt.minutes, dt.seconds);
+        
+        fclose(file);
+
+        isWhiteTurn = game->isWhiteTurn;
+
         current_state = MENU;
         key_pressed = NOKEY;
 
@@ -409,6 +552,8 @@ void router() {
       printf("Exiting game...\n");
 
       current_state = MENU;
+
+      key_pressed = ESC;
 
       erase_buffer();
 

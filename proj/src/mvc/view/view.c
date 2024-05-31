@@ -89,7 +89,7 @@ int draw_clockValue(struct Player *player1,struct Player *player2){
 
 
 
-int draw_backBackGround(struct Player * player1, struct Player * player2){
+int draw_backBackGround(){
   
 
   if(draw_game_background() != 0)
