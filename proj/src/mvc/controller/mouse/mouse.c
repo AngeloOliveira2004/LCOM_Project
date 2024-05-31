@@ -249,7 +249,21 @@ int(in_game_mouse_movement)() {
       break;
     case PIECE_SELECTED:
       printf("PIECE_SELECTED\n");
-      if (mouse.lb != BUTTON_PRESSED) {
+      if (mouse.lb != BUTTON_PRESSED) {if(change_piece_position(piece_selected,&initial_pos,&final_pos,&game->board)){
+        printf("Piece moved\n");
+
+        changeTurn(game);
+      }
+
+      if(is_check(game)){
+        printf("Check\n");
+      }
+
+      if(piece_selected->type == PAWN) {
+        if((piece_selected->isWhite && final_pos.y == 0) || (piece_selected->isWhite == false && final_pos.y  == 7)){
+        promote_pawn_to_queen(&game->board,piece_selected);
+      }
+      }
         _current_state = PIECE_CLICKED;
         cursor.type = HOVERING;
       }
@@ -288,12 +302,23 @@ int(in_game_mouse_movement)() {
         changeTurn(game);
       }
 
+       
+      if(game->board.squares[final_pos.x][final_pos.y].type == PAWN) {
+    if((game->board.squares[final_pos.x][final_pos.y].isWhite && final_pos.y == 7) || 
+       (!game->board.squares[final_pos.x][final_pos.y].isWhite && final_pos.y == 0)) {
+        promote_pawn_to_queen(&game->board, &game->board.squares[final_pos.x][final_pos.y]);
+    }
+}
+
 
       if(is_check(game)){
         printf("Check\n");
       }
+
+
       piece_selected = NULL;
       break;
   }
   return 0;
 }
+

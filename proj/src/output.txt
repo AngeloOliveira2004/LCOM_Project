@@ -6,6 +6,7 @@ Load game
 is running 1Scancode: 0x82
 Key pressed: 0
 Menu state: 2
+<<<<<<< HEAD
 Load game
 is running 1Scancode: 0x2
 Key pressed: 7
@@ -15,6 +16,22 @@ is running 1Scancode: 0x82
 Key pressed: 0
 Menu state: 1
 is running 1Click x: 4
+=======
+Scancode: 0x5
+Key pressed: 10
+Menu state: 2
+Scancode: 0x85
+Key pressed: 0
+Menu state: 1
+Click x: 3
+Click y: 1
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 1
+piece selected is white 1
+Click x: 3
+>>>>>>> refs/remotes/origin/Projeto
 Click y: 6
 Inside board
 Piece type: 0
@@ -22,6 +39,7 @@ piece_selected is not NULL
 white turn 1
 piece selected is white 0
 PIECE_SELECTED
+<<<<<<< HEAD
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -46,8 +64,152 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 COMPLETE
 InitPosX 4
+=======
+InitPosX 3
+>>>>>>> refs/remotes/origin/Projeto
 InitPosY 6
-FinalPosX 4
+FinalPosX 0
+FinalPosY 0
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 1)
+Final Position: (3, 2)
+Iteration 1
+Initial Position: (3, 1)
+Final Position: (3, 3)
+Possible moves for piece 4
+Iteration 0
+Initial Position: (4, 1)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 1)
+Final Position: (4, 3)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Possible moves for piece 10
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Possible moves for piece 13
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+COMPLETE
+InitPosX 3
+InitPosY 6
+FinalPosX 3
 FinalPosY 4
 Piece moved
 King Found
@@ -74,18 +236,18 @@ Initial Position: (2, 6)
 Final Position: (2, 5)
 Possible moves for piece 19
 Iteration 0
-Initial Position: (3, 6)
-Final Position: (3, 4)
+Initial Position: (3, 4)
+Final Position: (3, 2)
 Iteration 1
-Initial Position: (3, 6)
-Final Position: (3, 5)
+Initial Position: (3, 4)
+Final Position: (3, 3)
 Possible moves for piece 20
 Iteration 0
-Initial Position: (4, 4)
-Final Position: (4, 2)
+Initial Position: (4, 6)
+Final Position: (4, 4)
 Iteration 1
-Initial Position: (4, 4)
-Final Position: (4, 3)
+Initial Position: (4, 6)
+Final Position: (4, 5)
 Possible moves for piece 21
 Iteration 0
 Initial Position: (5, 6)
@@ -121,7 +283,25 @@ Final Position: (0, 5)
 Iteration 1
 Initial Position: (1, 7)
 Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
 Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
 Possible moves for piece 27
 Iteration 0
 Initial Position: (3, 7)
@@ -131,14 +311,619 @@ Initial Position: (3, 7)
 Final Position: (3, 1)
 Iteration 2
 Initial Position: (3, 7)
-Final Position: (4, 6)
+Final Position: (3, 5)
 Iteration 3
 Initial Position: (3, 7)
+Final Position: (3, 6)
+Possible moves for piece 29
+Possible moves for piece 30
+Iteration 0
+Initial Position: (6, 7)
 Final Position: (5, 5)
+Iteration 1
+Initial Position: (6, 7)
+Final Position: (7, 5)
+Possible moves for piece 31
+Iteration 0
+Initial Position: (7, 7)
+Final Position: (7, 0)
+Iteration 1
+Initial Position: (7, 7)
+Final Position: (7, 1)
+Click x: 4
+Click y: 1
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+InitPosX 4
+InitPosY 1
+FinalPosX 3
+FinalPosY 4
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (3, 4)
+Final Position: (3, 2)
+Iteration 1
+Initial Position: (3, 4)
+Final Position: (3, 3)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 6)
+Final Position: (4, 4)
+Iteration 1
+Initial Position: (4, 6)
+Final Position: (4, 5)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 1)
+Iteration 2
+Initial Position: (3, 7)
+Final Position: (3, 5)
+Iteration 3
+Initial Position: (3, 7)
+Final Position: (3, 6)
+Possible moves for piece 29
+Possible moves for piece 30
+Iteration 0
+Initial Position: (6, 7)
+Final Position: (5, 5)
+Iteration 1
+Initial Position: (6, 7)
+Final Position: (7, 5)
+Possible moves for piece 31
+Iteration 0
+Initial Position: (7, 7)
+Final Position: (7, 0)
+Iteration 1
+Initial Position: (7, 7)
+Final Position: (7, 1)
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+COMPLETE
+InitPosX 4
+InitPosY 1
+FinalPosX 4
+FinalPosY 3
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 1)
+Final Position: (3, 2)
+Iteration 1
+Initial Position: (3, 1)
+Final Position: (3, 3)
+Possible moves for piece 4
+Iteration 0
+Initial Position: (4, 3)
+Final Position: (3, 4)
+Iteration 1
+Initial Position: (4, 3)
+Final Position: (4, 4)
+Iteration 2
+Initial Position: (4, 3)
+Final Position: (4, 5)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Possible moves for piece 10
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 4)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (5, 0)
+Final Position: (1, 4)
+Iteration 2
+Initial Position: (5, 0)
+Final Position: (2, 3)
+Iteration 3
+Initial Position: (5, 0)
+Final Position: (3, 2)
+Iteration 4
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 4
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+InitPosX 4
+InitPosY 6
+FinalPosX 4
+FinalPosY 3
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 1)
+Final Position: (3, 2)
+Iteration 1
+Initial Position: (3, 1)
+Final Position: (3, 3)
+Possible moves for piece 4
+Iteration 0
+Initial Position: (4, 3)
+Final Position: (3, 4)
+Iteration 1
+Initial Position: (4, 3)
+Final Position: (4, 4)
+Iteration 2
+Initial Position: (4, 3)
+Final Position: (4, 5)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Possible moves for piece 10
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 4)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (5, 0)
+Final Position: (1, 4)
+Iteration 2
+Initial Position: (5, 0)
+Final Position: (2, 3)
+Iteration 3
+Initial Position: (5, 0)
+Final Position: (3, 2)
+Iteration 4
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+COMPLETE
+InitPosX 4
+InitPosY 6
+FinalPosX 4
+FinalPosY 4
+Piece moved
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (3, 4)
+Final Position: (3, 2)
+Iteration 1
+Initial Position: (3, 4)
+Final Position: (3, 3)
+Iteration 2
+Initial Position: (3, 4)
+Final Position: (4, 3)
+Possible moves for piece 20
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 1)
+Iteration 2
+Initial Position: (3, 7)
+Final Position: (3, 5)
+Iteration 3
+Initial Position: (3, 7)
+Final Position: (3, 6)
 Iteration 4
 Initial Position: (3, 7)
-Final Position: (6, 4)
+Final Position: (4, 6)
 Iteration 5
+Initial Position: (3, 7)
+Final Position: (5, 5)
+Iteration 6
+Initial Position: (3, 7)
+Final Position: (6, 4)
+Iteration 7
 Initial Position: (3, 7)
 Final Position: (7, 3)
 Possible moves for piece 29
@@ -174,6 +959,7 @@ Final Position: (7, 0)
 Iteration 1
 Initial Position: (7, 7)
 Final Position: (7, 1)
+<<<<<<< HEAD
 Click x: 253
 Click y: 255
 Outside board
@@ -229,11 +1015,3561 @@ Load game
 Key pressed: 0
 Menu state: 6
 is running 1Scancode: 0x2
+=======
+Click x: 3
+Click y: 1
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+InitPosX 3
+InitPosY 1
+FinalPosX 4
+FinalPosY 4
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (3, 4)
+Final Position: (3, 2)
+Iteration 1
+Initial Position: (3, 4)
+Final Position: (3, 3)
+Iteration 2
+Initial Position: (3, 4)
+Final Position: (4, 3)
+Possible moves for piece 20
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 1)
+Iteration 2
+Initial Position: (3, 7)
+Final Position: (3, 5)
+Iteration 3
+Initial Position: (3, 7)
+Final Position: (3, 6)
+Iteration 4
+Initial Position: (3, 7)
+Final Position: (4, 6)
+Iteration 5
+Initial Position: (3, 7)
+Final Position: (5, 5)
+Iteration 6
+Initial Position: (3, 7)
+Final Position: (6, 4)
+Iteration 7
+Initial Position: (3, 7)
+Final Position: (7, 3)
+Possible moves for piece 29
+Iteration 0
+Initial Position: (5, 7)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (5, 7)
+Final Position: (1, 3)
+Iteration 2
+Initial Position: (5, 7)
+Final Position: (2, 4)
+Iteration 3
+Initial Position: (5, 7)
+Final Position: (3, 5)
+Iteration 4
+Initial Position: (5, 7)
+Final Position: (4, 6)
+Possible moves for piece 30
+Iteration 0
+Initial Position: (6, 7)
+Final Position: (4, 6)
+Iteration 1
+Initial Position: (6, 7)
+Final Position: (5, 5)
+Iteration 2
+Initial Position: (6, 7)
+Final Position: (7, 5)
+Possible moves for piece 31
+Iteration 0
+Initial Position: (7, 7)
+Final Position: (7, 0)
+Iteration 1
+Initial Position: (7, 7)
+Final Position: (7, 1)
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+COMPLETE
+InitPosX 3
+InitPosY 1
+FinalPosX 3
+FinalPosY 3
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 3)
+Final Position: (4, 4)
+Possible moves for piece 4
+Iteration 0
+Initial Position: (4, 3)
+Final Position: (3, 4)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Iteration 2
+Initial Position: (1, 0)
+Final Position: (3, 1)
+Possible moves for piece 10
+Iteration 0
+Initial Position: (2, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (2, 0)
+Final Position: (4, 2)
+Iteration 2
+Initial Position: (2, 0)
+Final Position: (5, 3)
+Iteration 3
+Initial Position: (2, 0)
+Final Position: (6, 4)
+Iteration 4
+Initial Position: (2, 0)
+Final Position: (7, 5)
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 2)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (3, 4)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 6
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 7
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (5, 0)
+Final Position: (1, 4)
+Iteration 2
+Initial Position: (5, 0)
+Final Position: (2, 3)
+Iteration 3
+Initial Position: (5, 0)
+Final Position: (3, 2)
+Iteration 4
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 5
+piece_selected is not NULL
+white turn 1
+piece selected is white 1
+Click x: 3
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+InitPosX 3
+InitPosY 4
+FinalPosX 3
+FinalPosY 3
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 3)
+Final Position: (4, 4)
+Possible moves for piece 4
+Iteration 0
+Initial Position: (4, 3)
+Final Position: (3, 4)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Iteration 2
+Initial Position: (1, 0)
+Final Position: (3, 1)
+Possible moves for piece 10
+Iteration 0
+Initial Position: (2, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (2, 0)
+Final Position: (4, 2)
+Iteration 2
+Initial Position: (2, 0)
+Final Position: (5, 3)
+Iteration 3
+Initial Position: (2, 0)
+Final Position: (6, 4)
+Iteration 4
+Initial Position: (2, 0)
+Final Position: (7, 5)
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 2)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (3, 4)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 6
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 7
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (5, 0)
+Final Position: (1, 4)
+Iteration 2
+Initial Position: (5, 0)
+Final Position: (2, 3)
+Iteration 3
+Initial Position: (5, 0)
+Final Position: (3, 2)
+Iteration 4
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+PIECE_CLICKED
+COMPLETE
+InitPosX 3
+InitPosY 4
+FinalPosX 4
+FinalPosY 3
+Piece moved
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (4, 3)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (4, 3)
+Final Position: (4, 2)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (3, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 3)
+Iteration 2
+Initial Position: (3, 7)
+Final Position: (3, 4)
+Iteration 3
+Initial Position: (3, 7)
+Final Position: (3, 5)
+Iteration 4
+Initial Position: (3, 7)
+Final Position: (3, 6)
+Iteration 5
+Initial Position: (3, 7)
+Final Position: (4, 6)
+Iteration 6
+Initial Position: (3, 7)
+Final Position: (5, 5)
+Iteration 7
+Initial Position: (3, 7)
+Final Position: (6, 4)
+Iteration 8
+Initial Position: (3, 7)
+Final Position: (7, 3)
+Possible moves for piece 29
+Iteration 0
+Initial Position: (5, 7)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (5, 7)
+Final Position: (1, 3)
+Iteration 2
+Initial Position: (5, 7)
+Final Position: (2, 4)
+Iteration 3
+Initial Position: (5, 7)
+Final Position: (3, 5)
+Iteration 4
+Initial Position: (5, 7)
+Final Position: (4, 6)
+Possible moves for piece 30
+Iteration 0
+Initial Position: (6, 7)
+Final Position: (4, 6)
+Iteration 1
+Initial Position: (6, 7)
+Final Position: (5, 5)
+Iteration 2
+Initial Position: (6, 7)
+Final Position: (7, 5)
+Possible moves for piece 31
+Iteration 0
+Initial Position: (7, 7)
+Final Position: (7, 0)
+Iteration 1
+Initial Position: (7, 7)
+Final Position: (7, 1)
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 5
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 4
+InitPosY 0
+FinalPosX 3
+FinalPosY 1
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 3)
+Final Position: (3, 4)
+Iteration 1
+Initial Position: (3, 3)
+Final Position: (3, 5)
+Iteration 2
+Initial Position: (3, 3)
+Final Position: (4, 4)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Possible moves for piece 10
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (4, 0)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (5, 0)
+Final Position: (1, 4)
+Iteration 2
+Initial Position: (5, 0)
+Final Position: (2, 3)
+Iteration 3
+Initial Position: (5, 0)
+Final Position: (3, 2)
+Iteration 4
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 4
+Click y: 3
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 4
+InitPosY 3
+FinalPosX 4
+FinalPosY 2
+Piece moved
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (4, 2)
+Final Position: (3, 1)
+King is in danger
+Check
+Click x: 3
+Click y: 3
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 3
+InitPosY 3
+FinalPosX 3
+FinalPosY 4
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 4)
+Final Position: (3, 5)
+Iteration 1
+Initial Position: (3, 4)
+Final Position: (3, 6)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Possible moves for piece 10
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (4, 0)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (5, 0)
+Final Position: (1, 4)
+Iteration 2
+Initial Position: (5, 0)
+Final Position: (2, 3)
+Iteration 3
+Initial Position: (5, 0)
+Final Position: (3, 2)
+Iteration 4
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 4
+Click y: 2
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 4
+InitPosY 2
+FinalPosX 4
+FinalPosY 1
+Piece moved
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (4, 1)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (4, 1)
+Final Position: (4, 0)
+Iteration 2
+Initial Position: (4, 1)
+Final Position: (5, 0)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 1)
+King is in danger
+Check
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 4
+Click y: 3
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 3
+InitPosY 4
+FinalPosX 3
+FinalPosY 3
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (4, 1)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (4, 1)
+Final Position: (4, 0)
+Iteration 2
+Initial Position: (4, 1)
+Final Position: (5, 0)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 1)
+King is in danger
+Check
+Click x: 3
+Click y: 3
+Inside board
+Click x: 3
+Click y: 1
+Inside board
+Piece type: 5
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 3
+InitPosY 1
+FinalPosX 3
+FinalPosY 2
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 4)
+Final Position: (3, 5)
+Iteration 1
+Initial Position: (3, 4)
+Final Position: (3, 6)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Iteration 2
+Initial Position: (1, 0)
+Final Position: (3, 1)
+Possible moves for piece 10
+Iteration 0
+Initial Position: (2, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (2, 0)
+Final Position: (4, 2)
+Iteration 2
+Initial Position: (2, 0)
+Final Position: (5, 3)
+Iteration 3
+Initial Position: (2, 0)
+Final Position: (6, 4)
+Iteration 4
+Initial Position: (2, 0)
+Final Position: (7, 5)
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (4, 0)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Possible moves for piece 13
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 4
+Click y: 1
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 4
+InitPosY 1
+FinalPosX 4
+FinalPosY 0
+Piece moved
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (4, 0)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (4, 0)
+Final Position: (0, 4)
+Iteration 2
+Initial Position: (4, 0)
+Final Position: (1, 0)
+Iteration 3
+Initial Position: (4, 0)
+Final Position: (1, 3)
+Iteration 4
+Initial Position: (4, 0)
+Final Position: (2, 0)
+Iteration 5
+Initial Position: (4, 0)
+Final Position: (2, 2)
+Iteration 6
+Initial Position: (4, 0)
+Final Position: (3, 0)
+Iteration 7
+Initial Position: (4, 0)
+Final Position: (3, 1)
+Iteration 8
+Initial Position: (4, 0)
+Final Position: (4, 1)
+Iteration 9
+Initial Position: (4, 0)
+Final Position: (4, 2)
+Iteration 10
+Initial Position: (4, 0)
+Final Position: (4, 3)
+Iteration 11
+Initial Position: (4, 0)
+Final Position: (5, 0)
+Iteration 12
+Initial Position: (4, 0)
+Final Position: (5, 1)
+Iteration 13
+Initial Position: (4, 0)
+Final Position: (6, 0)
+Iteration 14
+Initial Position: (4, 0)
+Final Position: (7, 0)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 2)
+King is in danger
+Check
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 3
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 3
+InitPosY 0
+FinalPosX 2
+FinalPosY 2
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (4, 0)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (4, 0)
+Final Position: (0, 4)
+Iteration 2
+Initial Position: (4, 0)
+Final Position: (1, 0)
+Iteration 3
+Initial Position: (4, 0)
+Final Position: (1, 3)
+Iteration 4
+Initial Position: (4, 0)
+Final Position: (2, 0)
+Iteration 5
+Initial Position: (4, 0)
+Final Position: (2, 2)
+Iteration 6
+Initial Position: (4, 0)
+Final Position: (3, 0)
+Iteration 7
+Initial Position: (4, 0)
+Final Position: (3, 1)
+Iteration 8
+Initial Position: (4, 0)
+Final Position: (4, 1)
+Iteration 9
+Initial Position: (4, 0)
+Final Position: (4, 2)
+Iteration 10
+Initial Position: (4, 0)
+Final Position: (4, 3)
+Iteration 11
+Initial Position: (4, 0)
+Final Position: (5, 0)
+Iteration 12
+Initial Position: (4, 0)
+Final Position: (5, 1)
+Iteration 13
+Initial Position: (4, 0)
+Final Position: (6, 0)
+Iteration 14
+Initial Position: (4, 0)
+Final Position: (7, 0)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 2)
+King is in danger
+Check
+Click x: 2
+Click y: 2
+Inside board
+Click x: 3
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 3
+InitPosY 4
+FinalPosX 3
+FinalPosY 3
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (4, 0)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (4, 0)
+Final Position: (0, 4)
+Iteration 2
+Initial Position: (4, 0)
+Final Position: (1, 0)
+Iteration 3
+Initial Position: (4, 0)
+Final Position: (1, 3)
+Iteration 4
+Initial Position: (4, 0)
+Final Position: (2, 0)
+Iteration 5
+Initial Position: (4, 0)
+Final Position: (2, 2)
+Iteration 6
+Initial Position: (4, 0)
+Final Position: (3, 0)
+Iteration 7
+Initial Position: (4, 0)
+Final Position: (3, 1)
+Iteration 8
+Initial Position: (4, 0)
+Final Position: (4, 1)
+Iteration 9
+Initial Position: (4, 0)
+Final Position: (4, 2)
+Iteration 10
+Initial Position: (4, 0)
+Final Position: (4, 3)
+Iteration 11
+Initial Position: (4, 0)
+Final Position: (5, 0)
+Iteration 12
+Initial Position: (4, 0)
+Final Position: (5, 1)
+Iteration 13
+Initial Position: (4, 0)
+Final Position: (6, 0)
+Iteration 14
+Initial Position: (4, 0)
+Final Position: (7, 0)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 2)
+King is in danger
+Check
+Click x: 3
+Click y: 4
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 3
+InitPosY 4
+FinalPosX 3
+FinalPosY 5
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 5)
+Final Position: (2, 6)
+Iteration 1
+Initial Position: (3, 5)
+Final Position: (3, 6)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 1)
+Final Position: (5, 2)
+Iteration 1
+Initial Position: (5, 1)
+Final Position: (5, 3)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Iteration 2
+Initial Position: (0, 0)
+Final Position: (4, 0)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Iteration 2
+Initial Position: (1, 0)
+Final Position: (3, 1)
+Possible moves for piece 10
+Iteration 0
+Initial Position: (2, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (2, 0)
+Final Position: (4, 2)
+Iteration 2
+Initial Position: (2, 0)
+Final Position: (5, 3)
+Iteration 3
+Initial Position: (2, 0)
+Final Position: (6, 4)
+Iteration 4
+Initial Position: (2, 0)
+Final Position: (7, 5)
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (4, 0)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 6
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (4, 0)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 2
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 4
+Click y: 0
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 4
+InitPosY 0
+FinalPosX 0
+FinalPosY 4
+Piece moved
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (2, 6)
+Final Position: (3, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (0, 4)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 4)
+Final Position: (0, 1)
+Iteration 2
+Initial Position: (0, 4)
+Final Position: (0, 2)
+Iteration 3
+Initial Position: (0, 4)
+Final Position: (0, 3)
+Iteration 4
+Initial Position: (0, 4)
+Final Position: (0, 5)
+Iteration 5
+Initial Position: (0, 4)
+Final Position: (1, 3)
+Iteration 6
+Initial Position: (0, 4)
+Final Position: (1, 4)
+Iteration 7
+Initial Position: (0, 4)
+Final Position: (1, 5)
+Iteration 8
+Initial Position: (0, 4)
+Final Position: (2, 2)
+Iteration 9
+Initial Position: (0, 4)
+Final Position: (2, 4)
+Iteration 10
+Initial Position: (0, 4)
+Final Position: (3, 1)
+Iteration 11
+Initial Position: (0, 4)
+Final Position: (3, 4)
+Iteration 12
+Initial Position: (0, 4)
+Final Position: (4, 0)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+Iteration 1
+Initial Position: (0, 7)
+Final Position: (0, 1)
+Possible moves for piece 25
+Iteration 0
+Initial Position: (1, 7)
+Final Position: (0, 5)
+Iteration 1
+Initial Position: (1, 7)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (1, 7)
+Final Position: (3, 6)
+Possible moves for piece 26
+Iteration 0
+Initial Position: (2, 7)
+Final Position: (3, 6)
+Iteration 1
+Initial Position: (2, 7)
+Final Position: (4, 5)
+Iteration 2
+Initial Position: (2, 7)
+Final Position: (5, 4)
+Iteration 3
+Initial Position: (2, 7)
+Final Position: (6, 3)
+Iteration 4
+Initial Position: (2, 7)
+Final Position: (7, 2)
+Possible moves for piece 27
+Iteration 0
+Initial Position: (3, 7)
+Final Position: (3, 0)
+Iteration 1
+Initial Position: (3, 7)
+Final Position: (3, 2)
+King is in danger
+Check
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 1
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 5
+InitPosY 1
+FinalPosX 5
+FinalPosY 2
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 5)
+Final Position: (2, 6)
+Iteration 1
+Initial Position: (3, 5)
+Final Position: (3, 6)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 2)
+Final Position: (5, 3)
+Iteration 1
+Initial Position: (5, 2)
+Final Position: (5, 4)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 2
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Iteration 2
+Initial Position: (1, 0)
+Final Position: (3, 1)
+Possible moves for piece 10
+Iteration 0
+Initial Position: (2, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (2, 0)
+Final Position: (4, 2)
+Iteration 2
+Initial Position: (2, 0)
+Final Position: (5, 3)
+Iteration 3
+Initial Position: (2, 0)
+Final Position: (6, 4)
+Iteration 4
+Initial Position: (2, 0)
+Final Position: (7, 5)
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (4, 0)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 0
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 0
+InitPosY 4
+FinalPosX 3
+FinalPosY 4
+Piece moved
+King Found
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (2, 6)
+Final Position: (3, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (3, 4)
+Final Position: (0, 1)
+Iteration 1
+Initial Position: (3, 4)
+Final Position: (0, 4)
+Iteration 2
+Initial Position: (3, 4)
+Final Position: (1, 2)
+Iteration 3
+Initial Position: (3, 4)
+Final Position: (1, 4)
+Iteration 4
+Initial Position: (3, 4)
+Final Position: (2, 3)
+Iteration 5
+Initial Position: (3, 4)
+Final Position: (2, 4)
+Iteration 6
+Initial Position: (3, 4)
+Final Position: (2, 5)
+Iteration 7
+Initial Position: (3, 4)
+Final Position: (3, 0)
+Iteration 8
+Initial Position: (3, 4)
+Final Position: (3, 2)
+King is in danger
+Check
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 6
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 5
+Inside board
+Click x: 5
+Click y: 2
+Inside board
+Piece type: 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 5
+InitPosY 2
+FinalPosX 5
+FinalPosY 3
+Piece moved
+King Found
+Possible moves for piece 0
+Iteration 0
+Initial Position: (0, 1)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (0, 1)
+Final Position: (0, 3)
+Possible moves for piece 1
+Iteration 0
+Initial Position: (1, 1)
+Final Position: (1, 2)
+Iteration 1
+Initial Position: (1, 1)
+Final Position: (1, 3)
+Possible moves for piece 2
+Iteration 0
+Initial Position: (2, 1)
+Final Position: (2, 2)
+Iteration 1
+Initial Position: (2, 1)
+Final Position: (2, 3)
+Possible moves for piece 3
+Iteration 0
+Initial Position: (3, 5)
+Final Position: (2, 6)
+Iteration 1
+Initial Position: (3, 5)
+Final Position: (3, 6)
+Possible moves for piece 5
+Iteration 0
+Initial Position: (5, 3)
+Final Position: (4, 4)
+Iteration 1
+Initial Position: (5, 3)
+Final Position: (5, 4)
+Iteration 2
+Initial Position: (5, 3)
+Final Position: (5, 5)
+Possible moves for piece 6
+Iteration 0
+Initial Position: (6, 1)
+Final Position: (6, 2)
+Iteration 1
+Initial Position: (6, 1)
+Final Position: (6, 3)
+Possible moves for piece 7
+Iteration 0
+Initial Position: (7, 1)
+Final Position: (7, 2)
+Iteration 1
+Initial Position: (7, 1)
+Final Position: (7, 3)
+Possible moves for piece 8
+Iteration 0
+Initial Position: (0, 0)
+Final Position: (0, 6)
+Iteration 1
+Initial Position: (0, 0)
+Final Position: (0, 7)
+Possible moves for piece 9
+Iteration 0
+Initial Position: (1, 0)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (1, 0)
+Final Position: (2, 2)
+Iteration 2
+Initial Position: (1, 0)
+Final Position: (3, 1)
+Possible moves for piece 10
+Iteration 0
+Initial Position: (2, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (2, 0)
+Final Position: (4, 2)
+Possible moves for piece 11
+Iteration 0
+Initial Position: (3, 0)
+Final Position: (3, 1)
+Iteration 1
+Initial Position: (3, 0)
+Final Position: (3, 4)
+Iteration 2
+Initial Position: (3, 0)
+Final Position: (3, 7)
+Iteration 3
+Initial Position: (3, 0)
+Final Position: (4, 0)
+Iteration 4
+Initial Position: (3, 0)
+Final Position: (4, 1)
+Iteration 5
+Initial Position: (3, 0)
+Final Position: (5, 2)
+Iteration 6
+Initial Position: (3, 0)
+Final Position: (6, 3)
+Iteration 7
+Initial Position: (3, 0)
+Final Position: (7, 4)
+Possible moves for piece 13
+Iteration 0
+Initial Position: (5, 0)
+Final Position: (4, 1)
+Possible moves for piece 14
+Iteration 0
+Initial Position: (6, 0)
+Final Position: (4, 1)
+Iteration 1
+Initial Position: (6, 0)
+Final Position: (5, 2)
+Iteration 2
+Initial Position: (6, 0)
+Final Position: (7, 2)
+Possible moves for piece 15
+Iteration 0
+Initial Position: (7, 0)
+Final Position: (7, 6)
+Iteration 1
+Initial Position: (7, 0)
+Final Position: (7, 7)
+Click x: 3
+Click y: 4
+Inside board
+Piece type: 4
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+InitPosX 3
+InitPosY 4
+FinalPosX 3
+FinalPosY 2
+Piece moved
+Possible moves for piece 16
+Iteration 0
+Initial Position: (0, 6)
+Final Position: (0, 4)
+Iteration 1
+Initial Position: (0, 6)
+Final Position: (0, 5)
+Possible moves for piece 17
+Iteration 0
+Initial Position: (1, 6)
+Final Position: (1, 4)
+Iteration 1
+Initial Position: (1, 6)
+Final Position: (1, 5)
+Possible moves for piece 18
+Iteration 0
+Initial Position: (2, 6)
+Final Position: (2, 4)
+Iteration 1
+Initial Position: (2, 6)
+Final Position: (2, 5)
+Iteration 2
+Initial Position: (2, 6)
+Final Position: (3, 5)
+Possible moves for piece 19
+Iteration 0
+Initial Position: (3, 2)
+Final Position: (0, 2)
+Iteration 1
+Initial Position: (3, 2)
+Final Position: (0, 5)
+Iteration 2
+Initial Position: (3, 2)
+Final Position: (1, 0)
+Iteration 3
+Initial Position: (3, 2)
+Final Position: (1, 2)
+Iteration 4
+Initial Position: (3, 2)
+Final Position: (1, 4)
+Iteration 5
+Initial Position: (3, 2)
+Final Position: (2, 1)
+Iteration 6
+Initial Position: (3, 2)
+Final Position: (2, 2)
+Iteration 7
+Initial Position: (3, 2)
+Final Position: (2, 3)
+Iteration 8
+Initial Position: (3, 2)
+Final Position: (3, 0)
+Iteration 9
+Initial Position: (3, 2)
+Final Position: (3, 1)
+Iteration 10
+Initial Position: (3, 2)
+Final Position: (3, 3)
+Iteration 11
+Initial Position: (3, 2)
+Final Position: (3, 4)
+Iteration 12
+Initial Position: (3, 2)
+Final Position: (3, 5)
+Iteration 13
+Initial Position: (3, 2)
+Final Position: (4, 1)
+Iteration 14
+Initial Position: (3, 2)
+Final Position: (4, 2)
+Iteration 15
+Initial Position: (3, 2)
+Final Position: (4, 3)
+Iteration 16
+Initial Position: (3, 2)
+Final Position: (5, 0)
+Iteration 17
+Initial Position: (3, 2)
+Final Position: (5, 2)
+Iteration 18
+Initial Position: (3, 2)
+Final Position: (5, 4)
+Iteration 19
+Initial Position: (3, 2)
+Final Position: (6, 2)
+Iteration 20
+Initial Position: (3, 2)
+Final Position: (6, 5)
+Iteration 21
+Initial Position: (3, 2)
+Final Position: (7, 2)
+Possible moves for piece 20
+Iteration 0
+Initial Position: (4, 4)
+Final Position: (4, 2)
+Iteration 1
+Initial Position: (4, 4)
+Final Position: (4, 3)
+Iteration 2
+Initial Position: (4, 4)
+Final Position: (5, 3)
+Possible moves for piece 21
+Iteration 0
+Initial Position: (5, 6)
+Final Position: (5, 4)
+Iteration 1
+Initial Position: (5, 6)
+Final Position: (5, 5)
+Possible moves for piece 22
+Iteration 0
+Initial Position: (6, 6)
+Final Position: (6, 4)
+Iteration 1
+Initial Position: (6, 6)
+Final Position: (6, 5)
+Possible moves for piece 23
+Iteration 0
+Initial Position: (7, 6)
+Final Position: (7, 4)
+Iteration 1
+Initial Position: (7, 6)
+Final Position: (7, 5)
+Possible moves for piece 24
+Iteration 0
+Initial Position: (0, 7)
+Final Position: (0, 0)
+King is in danger
+Check
+Scancode: 0x2
+>>>>>>> refs/remotes/origin/Projeto
 Key pressed: 7
 Menu state: 6
 is running 1Scancode: 0x82
 Key pressed: 0
 Menu state: 0
+<<<<<<< HEAD
 Load game
 is running 1Scancode: 0x2
 Key pressed: 7
@@ -299,3 +4635,27 @@ Menu state: 0
 Load game
 is running 1Scancode: 0x81
 is running 1esc pressedText mode setted
+=======
+Scancode: 0x4
+Key pressed: 9
+Menu state: 0
+Scancode: 0x84
+Key pressed: 0
+Menu state: 5
+Scancode: 0x4
+Key pressed: 9
+Menu state: 5
+Scancode: 0x84
+Key pressed: 9
+Menu state: 5
+Scancode: 0x2
+Key pressed: 7
+Menu state: 5
+Scancode: 0x82
+Key pressed: 0
+Menu state: 0
+Scancode: 0x5
+Key pressed: 10
+Menu state: 0
+Text mode setted
+>>>>>>> refs/remotes/origin/Projeto

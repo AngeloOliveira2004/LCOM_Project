@@ -120,3 +120,5 @@ void remove_piece_from_board(struct Board *board, struct Position *pos);
 bool is_movement_legal_without_removing(struct Board *board, enum PieceType PieceType, struct Piece * piece, struct Position *init_pos , struct Position *final_pos);
 
 bool is_check(struct Game *game);
+
+int promote_pawn_to_queen(struct Board *board, struct Piece *pawn);
