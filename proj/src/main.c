@@ -219,8 +219,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
               else {
                 parse_keyboard_input();
 
-                printf("is running %d" , isRunning);
-
                 if (key_pressed == ESC && current_state == MENU) {
                   printf("esc pressed");
                   isRunning = false;

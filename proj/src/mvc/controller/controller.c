@@ -455,7 +455,7 @@ void router() {
         index_++;
         
         if((index_-1) >= max_index){
-          index_ = max_index-1;
+          index_ = max_index-2;
         }
          tempBoard = boardArray[index_];
          erase_buffer();

@@ -1,12 +1,107 @@
 front buffer size : 1440000
 Scancode: 0x2
-is running 1Scancode: 0x82
-is running 1Scancode: 0x2
-is running 1Scancode: 0x82
-is running 1piece_selected is not NULL
+Scancode: 0x82
+Scancode: 0x3
+Scancode: 0x83
+piece_selected is not NULL
 white turn 1
 piece selected is white 0
 PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+Piece moved
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+Piece moved
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -69,8 +164,191 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
 COMPLETE
 Piece moved
+piece_selected is not NULL
+white turn 1
+piece selected is white 1
+Scancode: 0xe0
+Scancode: 0x4b
+Scancode: 0xe0
+Scancode: 0xcb
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0xe0
+Scancode: 0x4d
+Scancode: 0xe0
+Scancode: 0xcd
+Scancode: 0x38
+Scancode: 0xe0
+Scancode: 0x1d
+Scancode: 0xe0
+Scancode: 0x9d
+Scancode: 0xb8
+Scancode: 0x1
+Scancode: 0x81
+Scancode: 0x1
+Scancode: 0x81
+Scancode: 0xf
+Scancode: 0x8f
 piece_selected is not NULL
 white turn 1
 piece selected is white 0
@@ -95,6 +373,16 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
+COMPLETE
+piece_selected is not NULL
+white turn 1
+piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -109,7 +397,42 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 COMPLETE
 Piece moved
-Check
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 0
+piece_selected is not NULL
+white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
 piece_selected is not NULL
 white turn 0
 piece selected is white 1
@@ -141,6 +464,7 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
+PIECE_DRAGGED
 COMPLETE
 Piece moved
 piece_selected is not NULL
@@ -169,42 +493,25 @@ PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
-PIECE_DRAGGED
 COMPLETE
-Piece moved
-Check
-Scancode: 0x2
-is running 1Scancode: 0x82
-is running 1Scancode: 0x2
-is running 1Scancode: 0x82
-is running 1Scancode: 0x2
-is running 1Scancode: 0x82
-is running 1piece_selected is not NULL
+piece_selected is not NULL
+white turn 1
+piece selected is white 1
+piece_selected is not NULL
 white turn 1
 piece selected is white 0
 PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
 PIECE_DRAGGED
@@ -239,14 +546,62 @@ COMPLETE
 Piece moved
 piece_selected is not NULL
 white turn 0
+piece selected is white 1
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+Piece moved
+Check
+piece_selected is not NULL
+white turn 1
 piece selected is white 0
+PIECE_SELECTED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+PIECE_DRAGGED
+COMPLETE
+Piece moved
 Scancode: 0x3
 File opened successfully
-is running 1Scancode: 0x83
-15:39:5015:39:51is running 1Scancode: 0x3
-15:39:5015:40:40is running 1Scancode: 0x83
-is running 1Scancode: 0x2
-is running 1Scancode: 0x82
-is running 1Scancode: 0x1
-is running 1Scancode: 0x81
-is running 1esc pressedText mode setted
+Scancode: 0x83
+15:56:3015:56:31Scancode: 0x1
+15:56:3015:56:32Scancode: 0x81
+esc pressedText mode setted
