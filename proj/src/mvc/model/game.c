@@ -647,7 +647,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
           return true;
         }
 
-        if (can_take(board, final_pos, piece) && (init_pos->x == final_pos->x || init_pos->y == final_pos->y)) {
+        if (can_take(board, final_pos, piece) && (init_pos->x == final_pos->x || init_pos->y == final_pos->y) && !isPieceInFront) {
           remove_piece_from_board(board, final_pos);
           piece->hasMoved = true;
           return true;
@@ -682,7 +682,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
           bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
           bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-          if (isSquareOccupied && can_take(board, final_pos, piece)) {
+          if (isSquareOccupied && !isPieceInDiagonal && can_take(board, final_pos, piece)) {
             remove_piece_from_board(board, final_pos);
             return true;
           }
@@ -705,7 +705,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
             return true;
           }
 
-          if (can_take(board, final_pos, piece) && (init_pos->x == final_pos->x || init_pos->y == final_pos->y)) {
+          if (can_take(board, final_pos, piece) && !isPieceInFront && (init_pos->x == final_pos->x || init_pos->y == final_pos->y)) {
             remove_piece_from_board(board, final_pos);
             piece->hasMoved = true;
             return true;
@@ -715,7 +715,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
           bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
           bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-          if (isSquareOccupied && can_take(board, final_pos, piece)) {
+          if (isSquareOccupied && !isPieceInDiagonal && can_take(board, final_pos, piece)) {
             remove_piece_from_board(board, final_pos);
             return true;
           }
@@ -736,7 +736,7 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
             return true;
           }
 
-          if (can_take(board, final_pos, piece)) {
+          if (can_take(board, final_pos, piece) && board->squares[final_pos->x][final_pos->y].type != KING) {
             remove_piece_from_board(board, final_pos);
             return true;
           }

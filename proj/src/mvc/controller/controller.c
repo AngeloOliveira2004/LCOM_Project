@@ -292,7 +292,12 @@ void router() {
           break;
       }
     case NEW_GAME:
-    
+
+    if(game_alredy_started == true){
+      game_alredy_started = false;
+      free(game);
+    }
+  
     switch (key_pressed) {
       case ONE:
         minutes = 1;
