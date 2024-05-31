@@ -233,8 +233,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
       }
     }
     
-
-    //rtc_test_date();
   }
 
   _exit_();
