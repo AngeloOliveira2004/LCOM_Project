@@ -1,3 +1,8 @@
+/**
+ * @file I_RTC.h
+ * @brief File containing the constants and functions to interact with the RTC
+*/
+
 #ifndef _I_RTC_H_
 #define _I_RTC_H_
 
@@ -7,7 +12,7 @@
 
 
 #define INP_REG 0x70
-#define OUT_REG 0x71
+#define OUT_REG 0x71 
 #define UPDATE_REG 0x0A
 
 #define UPDATE_IN_PROGRESS BIT(7)
