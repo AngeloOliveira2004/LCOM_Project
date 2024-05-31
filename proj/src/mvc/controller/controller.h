@@ -3,8 +3,6 @@
 #include <lcom/lcf.h>
 #include <stdio.h>
 #include "../model/game.h"
-#include "../model/board.h"
-#include "../model/menu.h"
 #include "../view/view.h"
 #include "keyboard/keyboard.h"
 #include "rtc/rtc.h"
@@ -46,11 +44,6 @@ struct Board boardArray[1024];
 int index_;
 int max_index;
 
-date_time dt;
-
-void start_menu();
-void start_game();
-
 void parse_keyboard_input();
 void parse_mouse_input();
 
@@ -61,6 +54,5 @@ void router();
 
 void init_game(struct Game *game,int minutes, int seconds);
 void game_loop(struct Game * game);
-void controller_loop(struct Game * game, struct Menu * menu);
 void decrease_player_timer();
 int(change_game_state_to_menu)();

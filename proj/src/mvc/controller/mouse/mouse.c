@@ -1,5 +1,4 @@
 #include "mouse.h"
-#include "../../model/board.h"
 #include "../../proj/src/mvc/model/game.h"
 #include "../../proj/src/sprites/Cursor/cursors.xpm"
 #include "../../view/view.h"

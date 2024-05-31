@@ -15,8 +15,6 @@
 #include "sprites/Characters/Characters20x32/two_point.xpm"
 #include "sprites/Menus/go_to_menu.xpm"
 #include "../controller/controller.h"
-#include "../model/board.h"
-#include "../model/menu.h"
 
 
 int initialize_graphics(uint16_t* mode);

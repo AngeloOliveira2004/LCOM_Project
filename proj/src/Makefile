@@ -28,7 +28,7 @@ PROG=proj
  
 
 # source code files to be compiled
-SRCS = main.c utils.c keyboard.c kbc.c mouse.c rtc.c graphic.c view.c timer.c game.c board.c menu.c controller.c
+SRCS = main.c utils.c keyboard.c kbc.c mouse.c rtc.c graphic.c view.c timer.c game.c controller.c
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
 CFLAGS += -pedantic

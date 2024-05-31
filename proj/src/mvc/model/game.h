@@ -1,7 +1,6 @@
 #include <lcom/lcf.h>
 #include <stdio.h>
 
-#include "board.h"
 #include "enum.h"
 
 #pragma once

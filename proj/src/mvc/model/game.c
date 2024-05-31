@@ -80,7 +80,7 @@ bool is_check(struct Game *game) {
       if (board->pieces[i].isWhite != game->isWhiteTurn) {
         king_pos.x = board->pieces[i].position.x;
         king_pos.y = board->pieces[i].position.y;
-        printf("King Found\n");
+       
         break;
       }
     }
@@ -89,17 +89,12 @@ bool is_check(struct Game *game) {
   for (int i = 0; i < 32; i++) {
     if (board->pieces[i].isWhite == isWhite && board->pieces[i].type != EMPTY && board->pieces[i].type != KING) {
       struct Movelist possible_moves = get_possible_moves(game, &board->pieces[i]);
-      printf("Possible moves for piece %d\n", i);
+      
       for (int j = 0; j < possible_moves.index; j++) {
         struct Move *move = possible_moves.moves[j];
         struct Position *init_pos = move->init_pos;
         struct Position *final_pos = move->final_pos;
-        printf("Iteration %d\n", j);
-        printf("Initial Position: (%d, %d)\n", init_pos->x, init_pos->y);
-        printf("Final Position: (%d, %d)\n", final_pos->x, final_pos->y);
-        if (king_pos.x == final_pos->x && king_pos.y == final_pos->y) {
-          printf("King is in danger\n");
-        }
+       
         if (is_movement_legal_without_removing(board, board->pieces[i].type, &board->pieces[i], init_pos, final_pos) && king_pos.x == final_pos->x && king_pos.y == final_pos->y) {
           return true;
         }
@@ -585,23 +580,16 @@ struct Piece *get_piece_from_click(int click_x, int click_y, int square_size, st
   pos.x = (click_x - 200) / square_size;
   pos.y = (click_y - 100) / square_size;
 
-  printf("Click x: %d\n", pos.x);
-  printf("Click y: %d\n", pos.y);
-
   if (board == NULL) {
     printf("null board\n");
     return NULL;
   }
 
   if (is_inside_board(&pos)) {
-    printf("Inside board\n");
+    
     if (board->squares[pos.x][pos.y].type != EMPTY) {
-      printf("Piece type: %d\n", board->squares[pos.x][pos.y].type);
       return &board->squares[pos.x][pos.y];
     }
-  }
-  else {
-    printf("Outside board\n");
   }
 
   return NULL;
@@ -609,12 +597,6 @@ struct Piece *get_piece_from_click(int click_x, int click_y, int square_size, st
 
 bool change_piece_position(struct Piece *piece,
                            struct Position *init_pos, struct Position *final_pos, struct Board *board) {
-
-  printf("InitPosX %d\n", piece->position.x);
-  printf("InitPosY %d\n", piece->position.y);
-
-  printf("FinalPosX %d\n", final_pos->x);
-  printf("FinalPosY %d\n", final_pos->y);
 
   if (is_movement_legal(board, piece->type, piece, init_pos, final_pos) && is_inside_board(final_pos)) {
     for (int i = 0; i < 32; i++) {
@@ -630,9 +612,7 @@ bool change_piece_position(struct Piece *piece,
         break;
       }
     }
-    printf("Piece moved to new position: (%d, %d)\n", piece->position.x, piece->position.y);
-    printf("Square at final position now has piece type: %d\n", board->squares[final_pos->x][final_pos->y].type);
-    printf("Square at initial position is now empty: %d\n", board->squares[init_pos->x][init_pos->y].type);
+
   }
   return false;
 }

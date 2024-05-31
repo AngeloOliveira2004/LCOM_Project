@@ -31,3 +31,11 @@ enum GameStates{
   END,
   ONGOING
 };
+
+enum MenuStates
+{
+    MAIN_MENU,
+    GAME_MENU,
+    SETTINGS_MENU,
+    EXIT_MENU
+};

@@ -17,11 +17,10 @@ bool game_alredy_started = false;
 
 struct Board tempBoard;
 
-date_time dt = {0,0,0,0,0,0,0};
+current_date dt = {0,0,0,0,0,0,0};
 bool isWhiteTurn = true;
 
 void init_game(struct Game *game,int minutes, int seconds) {
-      printf("%02d:%02d:%02d", dt.hours, dt.minutes, dt.seconds);
   // game->White_player = {};
   init_board(&game->board);
   init_player(&game->Black_player, false, minutes, seconds);
@@ -57,9 +56,7 @@ void game_loop(struct Game *game) {
             boardArray[index_] = game->board;
             index_++;
             max_index = index_;
-        } else {
-            printf("Board array is full\n");
-        }
+        } 
     }
   int king_count = 0;
 
@@ -200,10 +197,7 @@ void parse_keyboard_input() {
         break;
     }
   }
-
-  printf("Key pressed: %d\n", key_pressed);
-  printf("Menu state: %d\n", current_state);
-
+  
   router();
 }
 
@@ -307,18 +301,17 @@ void router() {
       }
 
     case LOAD_GAME:
-      printf("Load game\n");
 
       if(game_alredy_started == false){
         return;
       }else{
         if (dt.day != 0 && dt.month != 0 && dt.year != 0 && dt.hours != 0 && dt.minutes != 0 && dt.seconds != 0) {
           
-          date_time dt2;
-          rtc_get_datetime(&dt2);
+          current_date dt2;
+          rtc_get_current_date(&dt2);
 
-          show_time(&dt);
-          show_time(&dt2);
+          print_time(&dt);
+          print_time(&dt2);
 
           int start_total_seconds = dt.hours * 3600 + dt.minutes * 60 + dt.seconds;
           int end_total_seconds = dt2.hours * 3600 + dt2.minutes * 60 + dt2.seconds;
@@ -438,13 +431,12 @@ void router() {
           can_draw_this = true;
           break;
       case ARROW_LEFT:
-        printf("arrow left\n");
+        
         index_--;
         if(index_ <= 0){
           index_ = 0;
         }
 
-        printf("index %d\n",index_);
 
         tempBoard = boardArray[index_];
 
@@ -461,7 +453,7 @@ void router() {
       case ARROW_RIGHT:
         
         index_++;
-        printf("index after increment  %d\n",index_);
+        
         if((index_-1) >= max_index){
           index_ = max_index-1;
         }
@@ -512,7 +504,7 @@ void router() {
       case TWO:
         
         while (true){
-            int ret = rtc_get_datetime(&dt);
+            int ret = rtc_get_current_date(&dt);
             if (ret == -1) 
               return ;
             else if (ret == 1) 
@@ -520,7 +512,7 @@ void router() {
             break;
         }
 
-        FILE *file = fopen("current_date_time.txt", "w");
+        FILE *file = fopen("current_current_date.txt", "w");
 
         if (file == NULL) {
             printf("Error opening file\n");
@@ -548,8 +540,6 @@ void router() {
       break;
     break;
     case EXIT:
-
-      printf("Exiting game...\n");
 
       current_state = MENU;
 
