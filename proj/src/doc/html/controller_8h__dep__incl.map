@@ -1,0 +1,11 @@
+<map id="/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX&#45;LCOM/shared/g1/proj/src/mvc/controller/controller.h" name="/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX&#45;LCOM/shared/g1/proj/src/mvc/controller/controller.h">
+<area shape="rect" id="node1" title="This file contains the declaration of the functions that will be used to control the game...." alt="" coords="181,5,373,91"/>
+<area shape="rect" id="node2" href="$controller_8c.html" title="This file contains the implementation of the controller." alt="" coords="5,139,197,224"/>
+<area shape="rect" id="node3" href="$mouse_8h.html" title="File containing the constants and functions to interact with the mouse." alt="" coords="347,139,539,224"/>
+<area shape="rect" id="node7" href="$view_8h.html" title="This file contains the declaration of the functions that will be used to draw the game on the screen." alt="" coords="129,413,335,483"/>
+<area shape="rect" id="node4" href="$graphic_8h.html" title="File containing the constants and functions to interact with the graphic card." alt="" coords="347,272,539,357"/>
+<area shape="rect" id="node8" href="$mouse_8c.html" title="File containing the implementation of the functions to interact with the mouse." alt="" coords="544,539,736,624"/>
+<area shape="rect" id="node5" href="$graphic_8c.html" title="File containing the implementation of the functions to interact with the graphic card." alt="" coords="360,405,552,491"/>
+<area shape="rect" id="node6" href="$view_8c.html" title="This file contains the implementation of the functions that will be used to draw the game on the scre..." alt="" coords="313,546,519,617"/>
+<area shape="rect" id="node9" href="$game_8c.html" title="Implementation of the chess game logic." alt="" coords="66,546,289,617"/>
+</map>

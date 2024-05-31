@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['read_5fcommands_5fkbc_217',['read_commands_kbc',['../kbc_8c.html#afea21b2fd0fa8db0f39a9ca17f633aad',1,'read_commands_kbc(uint8_t *data):&#160;kbc.c'],['../kbc_8h.html#afea21b2fd0fa8db0f39a9ca17f633aad',1,'read_commands_kbc(uint8_t *data):&#160;kbc.c']]],
+  ['read_5fout_5fbuffer_218',['read_out_buffer',['../keyboard_8c.html#ad02355ed53c92ce490bb67d40c44c0b4',1,'read_out_buffer(uint8_t *out):&#160;keyboard.c'],['../keyboard_8h.html#ab9cc7424b64d31a408f6c1317f35babf',1,'read_out_buffer(uint8_t *out):&#160;keyboard.c']]],
+  ['read_5fregister_219',['read_register',['../rtc_8c.html#a67b735a7406ec94e19258b318f939b2f',1,'read_register(uint32_t reg, uint8_t *val):&#160;rtc.c'],['../rtc_8h.html#aab7d2f68770d2f83ffd6913fb4efab6e',1,'read_register(uint32_t reg, uint8_t *st):&#160;rtc.c']]],
+  ['read_5fstatus_5fregister_220',['read_status_register',['../keyboard_8c.html#ab72fb7a6e78f00cc63adbfbc3276d1eb',1,'read_status_register(uint8_t *st):&#160;keyboard.c'],['../keyboard_8h.html#ac4d625586bbed9a409aca94111f27305',1,'read_status_register(uint8_t *st):&#160;keyboard.c'],['../mouse_8h.html#ab72fb7a6e78f00cc63adbfbc3276d1eb',1,'read_status_register(uint8_t *st):&#160;keyboard.c']]],
+  ['readme_221',['README',['../md__home_bruno_Desktop_FEUP_2o_ano_2o_semetre_lcom_MINIX_LCOM_shared_g1_proj_src_README.html',1,'']]],
+  ['receive_5fkeyboard_5fscan_222',['receive_keyboard_scan',['../keyboard_8c.html#aafd4a17c8dbc26ddeb0f405c9d993d92',1,'receive_keyboard_scan(struct scancode_info *scan_info, uint8_t *scancode):&#160;keyboard.c'],['../keyboard_8h.html#aafd4a17c8dbc26ddeb0f405c9d993d92',1,'receive_keyboard_scan(struct scancode_info *scan_info, uint8_t *scancode):&#160;keyboard.c']]],
+  ['remove_5fpiece_5ffrom_5fboard_223',['remove_piece_from_board',['../game_8h.html#aa8a72467f38fa34620b572504d2e9115',1,'remove_piece_from_board(struct Board *board, struct Position *pos):&#160;game.c'],['../game_8c.html#aa8a72467f38fa34620b572504d2e9115',1,'remove_piece_from_board(struct Board *board, struct Position *pos):&#160;game.c']]],
+  ['reset_5fmouse_5fstruct_224',['reset_mouse_struct',['../mouse_8c.html#a1d0d211f4db5439b6cc36482e4529e67',1,'reset_mouse_struct(struct packet *mouse):&#160;mouse.c'],['../mouse_8h.html#a1d0d211f4db5439b6cc36482e4529e67',1,'reset_mouse_struct(struct packet *mouse):&#160;mouse.c']]],
+  ['return_5fto_5finitial_5fpos_225',['return_to_initial_pos',['../view_8c.html#a1add12a8f215611a402c91a709a12698',1,'return_to_initial_pos(struct Piece *piece, struct Position *initialPos, struct Board *board):&#160;view.c'],['../view_8h.html#acc07b9de3740549633bd0be0e9cd4713',1,'return_to_initial_pos(struct Piece *piece, struct Position *initialPos, struct Board *board):&#160;view.c']]],
+  ['rook_226',['ROOK',['../enum_8h.html#a12ed9719bbdf7bc596ff7a6f4bf3f021a49b75ad9a5137e805c60f32ed9cc2820',1,'enum.h']]],
+  ['router_227',['router',['../controller_8c.html#ab0957bc720f28c7bbfc56f57309dffcb',1,'router():&#160;controller.c'],['../controller_8h.html#ab0957bc720f28c7bbfc56f57309dffcb',1,'router():&#160;controller.c']]],
+  ['rtc_2ec_228',['rtc.c',['../rtc_8c.html',1,'']]],
+  ['rtc_2eh_229',['rtc.h',['../rtc_8h.html',1,'']]],
+  ['rtc_5fget_5fcurrent_5fdate_230',['rtc_get_current_date',['../rtc_8c.html#ae25620ae8cbe29e1f673cf5cfa545ecf',1,'rtc_get_current_date(current_date *date):&#160;rtc.c'],['../rtc_8h.html#a91a55b24e60f4cbdd890dbab86e4ea2e',1,'rtc_get_current_date(current_date *dt):&#160;rtc.c']]],
+  ['rtc_5fsubscribe_5fint_231',['rtc_subscribe_int',['../rtc_8c.html#a6bbe679f115cec90d36d50eb2aac1b89',1,'rtc_subscribe_int(uint8_t *bit_no):&#160;rtc.c'],['../rtc_8h.html#a6bbe679f115cec90d36d50eb2aac1b89',1,'rtc_subscribe_int(uint8_t *bit_no):&#160;rtc.c']]],
+  ['rtc_5funsubscribe_5fint_232',['rtc_unsubscribe_int',['../rtc_8c.html#a9d4850bb2a488644672d43287f160622',1,'rtc_unsubscribe_int():&#160;rtc.c'],['../rtc_8h.html#a9d4850bb2a488644672d43287f160622',1,'rtc_unsubscribe_int():&#160;rtc.c']]]
+];

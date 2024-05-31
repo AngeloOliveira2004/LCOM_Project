@@ -1,0 +1,78 @@
+\hypertarget{VBE_8h}{}\doxysection{/home/bruno/\+Desktop/\+FEUP/2o ano/2o semetre/lcom/\+MINIX-\/\+LCOM/shared/g1/proj/src/mvc/controller/graphics/\+VBE.h File Reference}
+\label{VBE_8h}\index{/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX-\/LCOM/shared/g1/proj/src/mvc/controller/graphics/VBE.h@{/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX-\/LCOM/shared/g1/proj/src/mvc/controller/graphics/VBE.h}}
+
+
+File containing the constants and functions to interact with the VBE.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$machine/int86.\+h$>$}\newline
+Include dependency graph for VBE.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{VBE_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{VBE_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{VBE_8h_a241aeeb764887ae5e3de58b98f04b16d}\label{VBE_8h_a241aeeb764887ae5e3de58b98f04b16d}} 
+\#define {\bfseries WIDTH}~800
+\item 
+\mbox{\Hypertarget{VBE_8h_aed89bd71aee8be823e8a20ec4e093c1e}\label{VBE_8h_aed89bd71aee8be823e8a20ec4e093c1e}} 
+\#define {\bfseries HEIGHT}~600
+\item 
+\mbox{\Hypertarget{VBE_8h_a82647154ad1c8062cf6e84cc8ea4bd3a}\label{VBE_8h_a82647154ad1c8062cf6e84cc8ea4bd3a}} 
+\#define {\bfseries CELL\+\_\+\+SIZE\+\_\+\+WIDTH}~50
+\item 
+\mbox{\Hypertarget{VBE_8h_af70d4a1f25a4abb05cdfa7da39edb738}\label{VBE_8h_af70d4a1f25a4abb05cdfa7da39edb738}} 
+\#define {\bfseries CELL\+\_\+\+SIZE\+\_\+\+HEIGHT}~50
+\item 
+\mbox{\Hypertarget{VBE_8h_a0dce6cd59a06e8c6866893af0d2fc369}\label{VBE_8h_a0dce6cd59a06e8c6866893af0d2fc369}} 
+\#define {\bfseries VBE\+\_\+1024x768\+\_\+\+IC}~0x105
+\item 
+\mbox{\Hypertarget{VBE_8h_a9e0ae3265852302866419706a002225b}\label{VBE_8h_a9e0ae3265852302866419706a002225b}} 
+\#define {\bfseries VBE\+\_\+640x480\+\_\+\+DC}~0x110
+\item 
+\mbox{\Hypertarget{VBE_8h_a71e008f83ed8607064bac9b9383e9788}\label{VBE_8h_a71e008f83ed8607064bac9b9383e9788}} 
+\#define {\bfseries VBE\+\_\+800x600\+\_\+\+DC}~0x115
+\item 
+\mbox{\Hypertarget{VBE_8h_a8f275dd0212a4943c99fb6f102d29226}\label{VBE_8h_a8f275dd0212a4943c99fb6f102d29226}} 
+\#define {\bfseries VBE\+\_\+1280x1024\+\_\+\+DC}~0x11A
+\item 
+\mbox{\Hypertarget{VBE_8h_a22c99eb78b90c6fd24df86201d252415}\label{VBE_8h_a22c99eb78b90c6fd24df86201d252415}} 
+\#define {\bfseries VBE\+\_\+1152x864\+\_\+\+DC}~0x14C
+\item 
+\mbox{\Hypertarget{VBE_8h_ab1daaa52e370c2e7c04dd389eacf4e73}\label{VBE_8h_ab1daaa52e370c2e7c04dd389eacf4e73}} 
+\#define {\bfseries VBE\+\_\+\+MODE\+\_\+\+SET}~0x4\+F02
+\item 
+\mbox{\Hypertarget{VBE_8h_aeb39f420fc37ae246aff8f4e490bfe74}\label{VBE_8h_aeb39f420fc37ae246aff8f4e490bfe74}} 
+\#define {\bfseries VBE\+\_\+\+LINEAR\+\_\+\+FB}~BIT(14)
+\item 
+\mbox{\Hypertarget{VBE_8h_aa1736cd349cf2b4f9dbe368c2a13e5be}\label{VBE_8h_aa1736cd349cf2b4f9dbe368c2a13e5be}} 
+\#define {\bfseries DIRECT\+\_\+\+COLOR}~0x06
+\item 
+\mbox{\Hypertarget{VBE_8h_a8cc35ceb6edb14480e5afceb3ce2ee8b}\label{VBE_8h_a8cc35ceb6edb14480e5afceb3ce2ee8b}} 
+\#define {\bfseries INDEXED\+\_\+\+COLOR}~0x105
+\item 
+\mbox{\Hypertarget{VBE_8h_ab24869309c7ba2690959423d322e8bc2}\label{VBE_8h_ab24869309c7ba2690959423d322e8bc2}} 
+\#define {\bfseries BIOS\+\_\+\+SET\+\_\+\+VIDEOMODE}~0x00
+\item 
+\mbox{\Hypertarget{VBE_8h_ac4d721714eb997cb83831b97296c009f}\label{VBE_8h_ac4d721714eb997cb83831b97296c009f}} 
+\#define {\bfseries BIOS\+\_\+\+VIDEOCARD\+\_\+\+SERV}~0x10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the constants and functions to interact with the VBE. 
+

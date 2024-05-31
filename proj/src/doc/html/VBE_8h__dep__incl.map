@@ -1,0 +1,12 @@
+<map id="/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX&#45;LCOM/shared/g1/proj/src/mvc/controller/graphics/VBE.h" name="/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX&#45;LCOM/shared/g1/proj/src/mvc/controller/graphics/VBE.h">
+<area shape="rect" id="node1" title="File containing the constants and functions to interact with the VBE." alt="" coords="445,5,637,91"/>
+<area shape="rect" id="node2" href="$graphic_8h.html" title="File containing the constants and functions to interact with the graphic card." alt="" coords="445,139,637,224"/>
+<area shape="rect" id="node3" href="$controller_8h.html" title="This file contains the declaration of the functions that will be used to control the game...." alt="" coords="269,272,461,357"/>
+<area shape="rect" id="node7" href="$view_8h.html" title="This file contains the declaration of the functions that will be used to draw the game on the screen." alt="" coords="438,413,645,483"/>
+<area shape="rect" id="node9" href="$view_8c.html" title="This file contains the implementation of the functions that will be used to draw the game on the scre..." alt="" coords="579,546,786,617"/>
+<area shape="rect" id="node10" href="$graphic_8c.html" title="File containing the implementation of the functions to interact with the graphic card." alt="" coords="720,272,912,357"/>
+<area shape="rect" id="node4" href="$controller_8c.html" title="This file contains the implementation of the controller." alt="" coords="221,405,413,491"/>
+<area shape="rect" id="node5" href="$mouse_8h.html" title="File containing the constants and functions to interact with the mouse." alt="" coords="5,405,197,491"/>
+<area shape="rect" id="node6" href="$mouse_8c.html" title="File containing the implementation of the functions to interact with the mouse." alt="" coords="61,539,253,624"/>
+<area shape="rect" id="node8" href="$game_8c.html" title="Implementation of the chess game logic." alt="" coords="333,546,555,617"/>
+</map>

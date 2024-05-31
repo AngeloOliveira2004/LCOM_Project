@@ -1,0 +1,13 @@
+<map id="/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX&#45;LCOM/shared/g1/proj/src/mvc/controller/rtc/rtc.h" name="/home/bruno/Desktop/FEUP/2o ano/2o semetre/lcom/MINIX&#45;LCOM/shared/g1/proj/src/mvc/controller/rtc/rtc.h">
+<area shape="rect" id="node1" title="File containing the implementation of the functions to interact with the RTC." alt="" coords="151,5,343,91"/>
+<area shape="rect" id="node2" href="$controller_8c.html" title="This file contains the implementation of the controller." alt="" coords="5,272,197,357"/>
+<area shape="rect" id="node3" href="$controller_8h.html" title="This file contains the declaration of the functions that will be used to control the game...." alt="" coords="151,139,343,224"/>
+<area shape="rect" id="node11" href="$rtc_8c.html" title="File containing the implementation of the functions to interact with the RTC." alt="" coords="367,139,559,224"/>
+<area shape="rect" id="node4" href="$mouse_8h.html" title="File containing the constants and functions to interact with the mouse." alt="" coords="347,272,539,357"/>
+<area shape="rect" id="node8" href="$view_8h.html" title="This file contains the declaration of the functions that will be used to draw the game on the screen." alt="" coords="143,546,350,617"/>
+<area shape="rect" id="node5" href="$graphic_8h.html" title="File containing the constants and functions to interact with the graphic card." alt="" coords="296,405,488,491"/>
+<area shape="rect" id="node9" href="$mouse_8c.html" title="File containing the implementation of the functions to interact with the mouse." alt="" coords="537,672,729,757"/>
+<area shape="rect" id="node6" href="$graphic_8c.html" title="File containing the implementation of the functions to interact with the graphic card." alt="" coords="425,539,617,624"/>
+<area shape="rect" id="node7" href="$view_8c.html" title="This file contains the implementation of the functions that will be used to draw the game on the scre..." alt="" coords="285,679,491,750"/>
+<area shape="rect" id="node10" href="$game_8c.html" title="Implementation of the chess game logic." alt="" coords="38,679,261,750"/>
+</map>
