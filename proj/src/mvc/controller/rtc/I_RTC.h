@@ -15,21 +15,25 @@ typedef struct{
     uint8_t year;            
 } current_date;
 
+#define RTC_ADDR_REG 0x70
+
+#define RTC_DATA_REG 0x71
+
 #define RTC_IRQ 8
-#define RTC_MASK 5
 
-#define RTC_INP_REG 0x70
-#define RTC_OUT_REG 0x71
-
-#define BIN BIT(2)
-#define HOUR_MODE BIT(1)
-#define UPDATE BIT(7)
-
-#define SEC 0x00
-#define MIN 0x02
-#define HOUR 0x04
-#define DAY 0x07
-#define MONTH 0x08
-#define YEAR 0x09
+#define RTC_SECONDS            0
+#define RTC_SECONDS_ALARM      1
+#define RTC_MINUTES            2
+#define RTC_MINUTES_ALARM      3
+#define RTC_HOURS              4
+#define RTC_HOURS_ALARM        5
+#define RTC_DAY_OF_WEEK        6
+#define RTC_DAY_OF_MONTH       7
+#define RTC_MONTH              8
+#define RTC_YEAR               9
+#define RTC_REGISTER_A        10
+#define RTC_REGISTER_B        11
+#define RTC_REGISTER_C        12
+#define RTC_REGISTER_D        13
 
 #endif

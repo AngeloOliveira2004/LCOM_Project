@@ -1,12 +1,12 @@
 #include "rtc.h"
 
-int __hook_id_rtc = 8;
+int hook_id_rtc = 8;
 
 int (rtc_subscribe_int)(uint8_t *bit_no){
+	if (bit_no == NULL) return -1;
 
-	*bit_no = __hook_id_rtc;
-
-	if (sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &__hook_id_rtc) != 0){
+	*bit_no = hook_id_rtc;
+	if (sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &hook_id_rtc) != 0){
 		printf("Error subscribing rtc.\n");
 		return -1;
 	}
@@ -14,7 +14,7 @@ int (rtc_subscribe_int)(uint8_t *bit_no){
 }
 
 int (rtc_unsubscribe_int)() {
-	if (sys_irqrmpolicy(&__hook_id_rtc) != 0){
+	if (sys_irqrmpolicy(&hook_id_rtc) != 0){
 		printf("Error unsubscribing rtc.\n");
 		return -1;
 	}
@@ -219,3 +219,4 @@ int (rtc_ih) (){
 	}
 	return 0;
 }
+

@@ -4,6 +4,7 @@
 #include "mvc/controller/keyboard/keyboard.h"
 #include "mvc/controller/mouse/mouse.h"
 #include "mvc/controller/timer/timer.h"
+#include "mvc/controller/rtc/rtc.h"
 #include "mvc/model/game.h"
 #include "sprites/Cursor/cursors.xpm"
 #include "sprites/pieces.xpm"
@@ -113,6 +114,9 @@ int _exit_() {
     return 1;
   if (mouse_unsubscribe_int() != 0)
     return 1;
+  if(rtc_unsubscribe_int() != 0){
+    return 1;
+  }
   if (vg_exit() != 0)
     return 1;
 
@@ -123,7 +127,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   int ipc_status, r;
   message msg;
-  uint8_t irq_timer, irq_keyboard, irq_mouse;
+  uint8_t irq_timer, irq_keyboard, irq_mouse , irq_rtc;
 
   if (enable_mouse_report() != 0) {
     return 1;
@@ -135,7 +139,9 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   if (mouse_subscribe_int(&irq_mouse) != 0)
     return 1;
-
+  if(rtc_subscribe_int(&irq_rtc) != 0){
+    return 1;
+  }
   setup();
 /*
   if (draw_backBackGround() != 0) {
@@ -205,8 +211,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
           break;
       }
     }
-
-    
   }
 
   _exit_();

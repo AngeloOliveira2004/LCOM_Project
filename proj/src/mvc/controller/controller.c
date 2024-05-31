@@ -70,11 +70,13 @@ void game_loop(struct Game *game) {
 
   if(king_count == 1){
     current_state = WINNER_SCREEN;
+    game_alredy_started = false;
     free(game);
     erase_buffer();
     draw_white_wins();
   }else if(king_count == -1){
     current_state = WINNER_SCREEN;
+    game_alredy_started = false;
     free(game);
     erase_buffer();
     draw_black_wins();
