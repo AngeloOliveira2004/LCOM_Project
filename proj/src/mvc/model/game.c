@@ -499,18 +499,16 @@ bool is_movement_legal(struct Board *board, enum PieceType PieceType, struct Pie
     case BISHOP:
       if (is_inside_board(final_pos)) {
         if (abs(init_pos->x - final_pos->x) == abs(init_pos->y - final_pos->y)) {
-          if (!is_square_occupied(board, final_pos) && !is_piece_in_diagonal(board, init_pos, final_pos)) {
-            bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
-            bool isSquareOccupied = is_square_occupied(board, final_pos);
+          bool isPieceInDiagonal = is_piece_in_diagonal(board, init_pos, final_pos);
+          bool isSquareOccupied = is_square_occupied(board, final_pos);
 
-            if (isSquareOccupied && can_take(board, final_pos, piece)) {
-              remove_piece_from_board(board, final_pos);
-              return true;
-            }
+          if (isSquareOccupied && can_take(board, final_pos, piece)) {
+            remove_piece_from_board(board, final_pos);
+            return true;
+          }
 
-            if (!isSquareOccupied && !isPieceInDiagonal) {
-              return true;
-            }
+          if (!isSquareOccupied && !isPieceInDiagonal) {
+            return true;
           }
         }
         return false;
@@ -813,4 +811,17 @@ bool is_movement_legal_without_removing(struct Board *board, enum PieceType Piec
   }
 
   return false;
+}
+
+int promote_pawn_to_queen(struct Board *board, struct Piece *pawn) {
+
+  for (int i = 0; i < 32; i++) {
+    if (board->pieces[i].position.x == pawn->position.x && board->pieces[i].position.y == pawn->position.y) {
+      board->pieces[i].type = QUEEN;
+      board->squares[pawn->position.x][pawn->position.y].type = QUEEN;
+      pawn->type = QUEEN;
+      return i;
+    }
+  }
+  return -1;
 }
