@@ -14,6 +14,7 @@
 int hook_id = 1;
 uint8_t scancode;
 struct scancode_info scan_info;
+int interrupt_count = 0;
 
 /**
  * @brief Subscribes and enables keyboard interrupts
@@ -100,6 +101,11 @@ void (kbc_ih)() {
 
   if((st & OUT_BUFF_FULL) == 1){
     read_out_buffer(&scancode);
+    if ((scancode & BIT(7))) {
+      interrupt_count++;
+      printf("Number of interrupts received: %d\n", interrupt_count);
+    }
+
   }
 
   if((st & KEYBOARD_STATUS_ERRORS) == 1){
