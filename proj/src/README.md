@@ -4,6 +4,12 @@ Neste projeto, desenvolvemos um jogo de xadrez que utiliza os drivers dos perif�
 
 #### Com isto podemos ver como usamos a funções:
 ![Function Graph](../doc/functionGraph.png)
+
+### Link do video de demonstração
+
+[![Watch the video]](https://youtu.be/8OmHCuy_lGY)
+
+
 ### Autores:
 
 * Angelo Rafael Araújo Oliveira (up202207798@up.pt)
