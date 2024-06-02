@@ -102,7 +102,7 @@ void game_loop(struct Game *game) {
     dt.seconds = 0;
 
     game_alredy_started = false;
-    printf("game altredy started here3 = false");
+
     free(game);
     erase_buffer();
     draw_white_wins();
@@ -116,7 +116,7 @@ void game_loop(struct Game *game) {
     dt.seconds = 0;
 
     game_alredy_started = false;
-    printf("game altredy started here4 = false");
+
     free(game);
     erase_buffer();
     draw_black_wins();
@@ -132,7 +132,7 @@ void game_loop(struct Game *game) {
     dt.seconds = 0;
 
     game_alredy_started = false;
-    printf("game altredy started here5 = false");
+
     free(game);
     erase_buffer();
     draw_black_wins();
@@ -148,7 +148,7 @@ void game_loop(struct Game *game) {
     dt.seconds = 0;
 
     game_alredy_started = false;
-    printf("game altredy started here6 = false");
+
     free(game);
     erase_buffer();
     draw_white_wins();
@@ -281,8 +281,13 @@ void router() {
           key_pressed = NOKEY;
           break;
         case TWO:
-          printf("load game\n");
-          current_state = LOAD_GAME;
+          
+          if(game_alredy_started == false){
+            key_pressed = ONE;
+          }else{
+            current_state = LOAD_GAME;
+            key_pressed = NOKEY;
+          }
           router();
           break;
         case THREE:
@@ -297,15 +302,11 @@ void router() {
         default:
           break;
       }
+      break;
     case NEW_GAME:
-    printf("new game\n");
-    printf("game alredy started %d\n",game_alredy_started);
   
     if(game_alredy_started == true && game != NULL){
-      printf("game alredy started setted to false\n");
       game_alredy_started = false;
-      printf("game altredy started here7 = false");
-      printf("key pressed %d\n",key_pressed);
       free(game);
     }
 
@@ -370,20 +371,22 @@ void router() {
         current_state = MENU;
         draw_menu(0,0);
         break;
+      case NOKEY:
+
+        break;
       default:
+
         break;
       }
     break;
     case LOAD_GAME:
-      printf("loading game\n");
-      printf("game alredy started %d\n",game_alredy_started);
+
       if(game_alredy_started == false){
         current_state = MENU;
         key_pressed = NOKEY;
       }else{
         key_pressed = NOKEY;
         current_state = GAME;
-        printf("current state %d\n",current_state);
         if (dt.day != 0 && dt.month != 0 && dt.year != 0 && dt.hours != 0 && dt.minutes != 0 && dt.seconds != 0) {
           
           current_date dt2;
@@ -434,14 +437,12 @@ void router() {
           if(game->White_player.clock.minutes <= 0 && game->White_player.clock.seconds <= 0){
             current_state = WINNER_SCREEN;
             game_alredy_started = false;
-            printf("game altredy started here1 = false");
             dt.day = 1;
             dt.month = 1;
             dt.year = 1;
             dt.hours = 1;
             dt.minutes = 1;
             dt.seconds = 1;
-            printf("freeing game\n");
             free(game);
             erase_buffer();
             draw_black_wins();
@@ -450,20 +451,16 @@ void router() {
           if(game->Black_player.clock.minutes <= 0 && game->Black_player.clock.seconds <= 0){
             current_state = WINNER_SCREEN;
             game_alredy_started = false;
-            printf("game altredy started here2 = false");
             dt.day = 0;
             dt.month = 0;
             dt.year = 0;
             dt.hours = 0;
             dt.minutes = 0;
             dt.seconds = 0;
-            printf("freeing game\n");
             free(game);
             erase_buffer();
             draw_white_wins();
           }
-        }else{
-          printf("game not loaded\n");
         }
       }
 
@@ -489,12 +486,10 @@ void router() {
       }
       break;
     case GAME:
-      printf("game case\n");
-      printf("key pressed %d\n",key_pressed);
+
       switch (key_pressed)
       {
       case NOKEY:
-        printf("no key\n");
         
           tempBoard = game->board;
           erase_buffer();

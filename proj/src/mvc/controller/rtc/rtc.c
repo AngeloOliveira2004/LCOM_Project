@@ -5,7 +5,7 @@
 
 #include "rtc.h"
 
-int __hook_id_rtc = 8;
+int __hook_id_rtc = 6;
 /**
  * @brief Subscribes and enables RTC interrupts
  * 
