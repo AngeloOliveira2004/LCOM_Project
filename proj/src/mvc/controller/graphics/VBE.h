@@ -31,14 +31,3 @@
 #define BIOS_VIDEOCARD_SERV 0x10
 
 #endif 
-
-/*
-
-Function |	AH |	AL |	Ref in VBE standard |	Notes
-Set VBE mode |	0x4F |	0x02 |	page 25 |	mode is passed in register BX, which should have bit 14set;
-Return VBE Mode Info |	0x4F | 0x01 |	page 16 |	mode is passed on CX must provide address for returned info in registers ES:DI;
-Return VBE Controller Information |	0x4F |	0x00 |	page 12 |	must provide address for returned info in registers ES:DI;
-BIOS Set Video Mode |	0x00 |	< video mode > |		not a VBE function, but a BIOS function
-set AL to 0x03 to return to Minix's default text mode ;
-
-*/
