@@ -1,10 +1,11 @@
-# LCOM Project
+<img src="proj/doc/logo.png" alt="logo" width="200"/>
 
-LCOM Project for group T&lt;m&gt;&lt;n&gt;G&lt;p&gt;&lt;q&gt;.
+Neste projeto, desenvolvemos um jogo de xadrez que utiliza os drivers dos periféricos disponíveis nos computadores. O objetivo foi proporcionar uma compreensão prática de como os drivers podem permitir a comunicação entre periféricos e o computador. Essa experiência nos oferece insights valiosos sobre a integração e funcionamento dos dispositivos externos com o sistema computacional.
 
-Group members:
+#### Com isto podemos ver como usamos a funções:
+![Function Graph](proj/doc/functionGraph.png)
+### Autores:
 
-1. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-2. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-3. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
-4. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
+* Angelo Rafael Araújo Oliveira (up202207798@up.pt)
+* José Pedro Pereira da Costa(up202207871@up.pt)
+* Bruno Miguel Ataide Fortes(up202209730@up.pt)
