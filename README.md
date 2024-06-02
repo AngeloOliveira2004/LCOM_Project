@@ -1,4 +1,4 @@
-<img src="proj/doc/logo.png" alt="logo" width="200"/>
+<img src="proj/doc/logo.png" alt="logo" width="300"/>
 
 Neste projeto, desenvolvemos um jogo de xadrez que utiliza os drivers dos periféricos disponíveis nos computadores. O objetivo foi proporcionar uma compreensão prática de como os drivers podem permitir a comunicação entre periféricos e o computador. Essa experiência nos oferece insights valiosos sobre a integração e funcionamento dos dispositivos externos com o sistema computacional.
 
